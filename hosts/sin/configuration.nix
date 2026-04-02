@@ -11,24 +11,15 @@
       inputs.home-manager.nixosModules.default
     ];
 
-#  # Bootloader.
-#  boot.loader = {
-#    grub = {
-#      enable = true;
-#      device = "nodev";
-#      efiSupport = true;
-#      useOSProber = true;
-#    };
-#    efi.canTouchEfiVariables = true;
-#  };
-
+  # Bootloader.
   boot.loader = {
-    limine = {
+    grub = {
       enable = true;
-      efiInstallAsRemovable = true;
+      device = "nodev";
       efiSupport = true;
-      maxGenerations = 15;
+      useOSProber = true;
     };
+    efi.canTouchEfiVariables = true;
   };
 
   boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
