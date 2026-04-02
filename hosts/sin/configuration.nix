@@ -93,7 +93,6 @@
       "alice" = {
         imports = [
           ./../../home/home.nix
-          inputs.caelestianix.homeManagerModules.default
         ];
       };
     };
@@ -103,7 +102,6 @@
   # services.xserver.libinput.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alice = {
     isNormalUser = true;
     description = "Alice";
