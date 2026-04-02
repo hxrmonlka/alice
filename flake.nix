@@ -41,6 +41,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
             }
+            caelestianix.homeManagerModules.default
             (
               { pkgs, ... }:
               {
