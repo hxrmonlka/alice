@@ -26,6 +26,9 @@
     swappy
     pavucontrol
     wlr-randr
+    wlr-which-key
+    quickshell
+    zoxide
   ];
 
   # Let Home Manager install and manage itself.

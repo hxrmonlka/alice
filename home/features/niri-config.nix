@@ -36,7 +36,7 @@
       };
 
       binds = with config.lib.niri; {
-        "Mod+Return".action = spawn "foot";
+        "Mod+Return".action = spawn "kitty";
         "Mod+Q".action = close-window;
         "Mod+F".action = maximize-column;
         "Mod+G".action = fullscreen-window;
@@ -96,10 +96,14 @@
         "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
         "XF86AudioMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
+
+        # Vimjoyer's specific keybinds
+        "Mod+S".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
+        "Mod+D".action = spawn "wlr-which-key";
       };
 
       spawn-at-startup = [
-        { command = [ "waybar" ]; }
+        { command = [ "noctalia-shell" ]; }
         { command = [ "swaybg" "-i" "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg" "-m" "fill" ]; }
       ];
     };
