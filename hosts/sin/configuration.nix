@@ -93,6 +93,7 @@
       "alice" = {
         imports = [
           ./../../home/home.nix
+          inputs.niri-flake.homeModules.niri
         ];
       };
     };
