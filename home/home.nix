@@ -26,11 +26,9 @@
     foot.enable = true;
   };
 
-# starship.toml from upstream caelestia-dots
   xdg.configFile."starship.toml".source =
-    "${inputs.caelestia-nixos.inputs.caelestia-dots}/starship/starship.toml";
+    "${inputs.caelestianix.inputs.caelestia-dots}/starship/starship.toml";
   
-  # fish: the upstream config is literally just these two things
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -44,13 +42,11 @@
     };
   };
   
-  # eza aliases (standard ones caelestia-nixos generates)
   programs.fish.shellAliases = {
     ls  = "eza";
     ll  = "eza -lh";
     la  = "eza -lah";
     lt  = "eza --tree";
-    # add more as desired
   };
 
   # Let Home Manager install and manage itself.
