@@ -87,20 +87,10 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "alice" = imports = {
-        ./../../home/home.nix
-      };
-      };
-    };
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
       "alice" = {
-        imports; [
+        imports = [
           ./../../home/home.nix
-          caelestia-nixos.homeManagerModules.default
+          inputs.caelestianix.homeManagerModules.default
         ];
       };
     };
