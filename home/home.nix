@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     neovim
+    gemini-cli
   ];
 
   # Let Home Manager install and manage itself.
