@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./features
-    ./modules
+    ./features/
+    ./programs/index.nix
   ];
 }
