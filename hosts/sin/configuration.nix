@@ -136,7 +136,7 @@
    niri
    xwayland-satellite
    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
-   qtsvg
+   libsForQt5.qt5.qtsvg
    qtimageformats
    qtmultimedia
    qt5compat
