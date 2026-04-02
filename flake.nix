@@ -12,10 +12,6 @@
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    caelestianix = {
-      url = "github:Xellor-Dev/caelestia-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -24,7 +20,6 @@
       nixpkgs,
       home-manager,
       nix-cachyos-kernel,
-      caelestianix,
       antigravity-nix,
       ...
     }@inputs:
@@ -41,7 +36,6 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
             }
-            caelestianix.homeManagerModules.default
             (
               { pkgs, ... }:
               {
