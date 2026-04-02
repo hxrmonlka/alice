@@ -47,7 +47,7 @@
               {
                 nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
                 environment.systemPackages = with pkgs; [
-                  antigravity-nix.packages.x86_64-linux.default
+                  # antigravity-nix.packages.x86_64-linux.default
                 ];
               }
             )

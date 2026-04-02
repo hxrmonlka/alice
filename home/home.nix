@@ -12,6 +12,7 @@
     neovim
     gemini-cli
     nixfmt
+    antigravity
   ];
 
 #  programs.caelestia-dots = {
