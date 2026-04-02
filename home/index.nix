@@ -5,4 +5,4 @@
     ./features/wlr-which-key/wlr-which-key-config.nix
     ./features/quickshell/quickshell-config.nix
   ];
-};
+}

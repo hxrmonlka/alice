@@ -93,7 +93,6 @@
       "alice" = {
         imports = [
           ./../../home/home.nix
-          ./../../home/niri/niri-config.nix
           inputs.caelestianix.homeManagerModules.default
         ];
       };
