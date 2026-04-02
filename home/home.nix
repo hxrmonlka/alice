@@ -15,14 +15,14 @@
     antigravity
   ];
 
-#  programs.caelestia-dots = {
-#    enable = true;
-#    hypr.enable = true;
-#    editor.enable = true;
-#    term.enable = true;
-#    btop.enable = true;
-#    foot.enable = true;
-#  };
+  programs.caelestia-dots = {
+    enable = true;
+    hypr.enable = true;
+    editor.enable = true;
+    term.enable = true;
+    btop.enable = true;
+    foot.enable = true;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
