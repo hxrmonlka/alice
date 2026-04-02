@@ -15,6 +15,16 @@
     antigravity
     starship
     eza
+    waybar
+    swaybg
+    libnotify
+    mako
+    grim
+    slurp
+    wl-clipboard
+    swappy
+    pavucontrol
+    wlr-randr
   ];
 
   programs.caelestia-dots = {

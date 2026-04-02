@@ -63,6 +63,9 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Enable Niri
+  programs.niri.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -90,6 +93,7 @@
       "alice" = {
         imports = [
           ./../../home/home.nix
+          ./../../home/niri/niri-config.nix
           inputs.caelestianix.homeManagerModules.default
         ];
       };
@@ -128,6 +132,8 @@
    git
    gh
    github-desktop
+   niri
+   xwayland-satellite
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
