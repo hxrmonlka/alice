@@ -137,9 +137,9 @@
    xwayland-satellite
    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
    libsForQt5.qt5.qtsvg
-   qtimageformats
-   qtmultimedia
-   qt5compat
+   libsForQt5.qt5.qtimageformats
+   libsForQt5.qt5.qtmultimedia
+   kdePackages.qt5compat
    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
