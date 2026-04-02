@@ -25,7 +25,10 @@
   boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
 
   nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
-  nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+  nix.settings.trusted-public-keys = [
+    "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+    "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+   ];
 
   networking.hostName = "sin"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -132,6 +135,12 @@
    github-desktop
    niri
    xwayland-satellite
+   inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+   qtsvg
+   qtimageformats
+   qtmultimedia
+   qt5compat
+   inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

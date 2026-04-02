@@ -29,6 +29,7 @@
     wlr-which-key
     quickshell
     zoxide
+    kitty
   ];
 
   # Let Home Manager install and manage itself.
