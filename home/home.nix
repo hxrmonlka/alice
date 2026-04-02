@@ -24,6 +24,10 @@
     term.enable = false;
     btop.enable = true;
     foot.enable = true;
+    caelestia = {
+      enable = true;
+      cli.enable = false;
+    };
   };
 
   xdg.configFile."starship.toml".source =
