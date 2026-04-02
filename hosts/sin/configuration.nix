@@ -98,7 +98,7 @@
     extraSpecialArgs = { inherit inputs; };
     users = {
       "alice" = {
-        imports = [
+        imports; [
           ./../../home/home.nix
           caelestia-nixos.homeManagerModules.default
         ];
