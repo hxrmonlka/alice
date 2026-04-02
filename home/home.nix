@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./index.nix
+    ./modules/index.nix
   ];
   home.username = "alice";
   home.homeDirectory = "/home/alice";
@@ -29,7 +29,8 @@
     wlr-which-key
     quickshell
     zoxide
-    kitty
+    fish-lsp
+    babelfish
   ];
 
   # Let Home Manager install and manage itself.
