@@ -25,8 +25,7 @@
     btop.enable = true;
     foot.enable = true;
     caelestia = {
-      enable = true;
-      cli.enable = false;
+      enable = false;
     };
   };
 
