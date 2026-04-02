@@ -8,6 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestianix = {
+      url = "github:Xellor-Dev/caelestia-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,6 +24,8 @@
       nixpkgs,
       home-manager,
       nix-cachyos-kernel,
+      caelestianix,
+      antigravity-nix,
       ...
     }@inputs:
     {
@@ -35,6 +45,9 @@
               { pkgs, ... }:
               {
                 nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+                environment.systemPackages = with pkgs; [
+                  antigravity-nix.packages.x86_64-linux.default
+                ];
               }
             )
           ];
