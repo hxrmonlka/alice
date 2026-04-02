@@ -12,8 +12,16 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+    };
+    efi.canTouchEfiVariables = true;
+  };
+
   boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
 
   nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
