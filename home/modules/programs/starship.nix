@@ -1,106 +1,87 @@
 { ... }: {
   programs.starship = {
     enable = true;
+    enableFishIntegration = true; # For fish shell
     settings = {
-      add_newline = false;
-      format = "\n$cmd_duration $directory$git_branch\n  $character";
-  
-      fill = {
-        symbol = "-";
-        style = "fg:245";
-      };
-  
-      character = {
-        success_symbol = "[ ](bold fg:255)";
-        error_symbol = "[ ](bold fg:249)";
-      };
-  
-      package.disabled = true;
-  
-      git_branch = {
-        style = "bg: 252";
-        symbol = "󰘬";
-        truncation_length = 12;
-        truncation_symbol = "";
-        format = " 󰜥 [](bold fg:252)[$symbol $branch(:$remote_branch)](fg:235 bg:252)[ ](bold fg:252)";
-      };
-  
-      git_commit = {
-        commit_hash_length = 4;
-        tag_symbol = " ";
-      };
-  
-      git_state = {
-        format = ''[\($state( $progress_current of $progress_total)\)]($style) '';
-        cherry_pick = "[🍒 PICKING](bold red)";
-      };
-  
-      git_status = {
-        conflicted = " 🏳 ";
-        ahead = " 🏎💨 ";
-        behind = " 😰 ";
-        diverged = " 😵 ";
-        untracked = " 🤷 ‍";
-        stashed = " 📦 ";
-        modified = " 📝 ";
-        staged = "[++\\($count\\)](green)";
-        renamed = " ✍️ ";
-        deleted = " 🗑 ";
-      };
-  
-      hostname = {
-        ssh_only = false;
-        format = "[•$hostname](bg:252 bold fg:235)[](bold fg:252)";
-        trim_at = ".companyname.com";
-        disabled = false;
-      };
-  
-      line_break.disabled = false;
-  
-      memory_usage = {
-        disabled = true;
-        threshold = -1;
-        symbol = " ";
-        style = "bold dimmed green";
-      };
-  
-      time = {
-        disabled = true;
-        format = "🕙[\\[ $time \\]]($style) ";
-        time_format = "%T";
-      };
-  
+      format = ''
+        [](#9A348E)\
+        $os\
+        $username\
+        [](bg:#DA627D fg:#9A348E)\
+        $directory\
+        [](fg:#DA627D bg:#FCA17D)\
+        $git_branch\
+        $git_status\
+        [](fg:#FCA17D bg:#86BBD8)\
+        $c\
+        $elixir\
+        $elm\
+        $golang\
+        $gradle\
+        $haskell\
+        $java\
+        $julia\
+        $nodejs\
+        $nim\
+        $rust\
+        $scala\
+        [](fg:#86BBD8 bg:#06969A)\
+        $docker_context\
+        [](fg:#06969A bg:#33658A)\
+        $time\
+        [ ](fg:#33658A)\
+      '';
+      
       username = {
-        style_user = "bold bg:252 fg:235";
-        style_root = "red bold";
-        format = "[](bold fg:252)[$user]($style)";
-        disabled = false;
         show_always = true;
+        style_user = "bg:#9A348E";
+        style_root = "bg:#9A348E";
+        format = "[$user ]($style)";
+        disabled = false;
       };
-  
+      
       directory = {
-        home_symbol = " ";
-        read_only = "  ";
-        style = "bg:255 fg:black";
-        truncation_length = 2;
-        truncation_symbol = ".../";
-        format = "[](bold fg:255)[󰉋 → $path]($style)[](bold fg:255)";
+        style = "bg:#DA627D";
+        format = "[ $path ]($style)";
+        truncation_length = 3;
+        truncation_symbol = "…/";
         substitutions = {
-          "Desktop" = "  ";
-          "Documents" = "  ";
-          "Downloads" = "  ";
-          "Music" = " 󰎈 ";
-          "Pictures" = "  ";
-          "Videos" = "  ";
-          "GitHub" = " 󰊤 ";
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = " ";
+          "Pictures" = " ";
         };
       };
-  
-      cmd_duration = {
-        min_time = 0;
-        format = "[](bold fg:252)[󰪢 $duration](bold bg:252 fg:235)[](bold fg:252)";
+      
+      c.symbol = " ";
+      c.style = "bg:#86BBD8";
+      c.format = "[ $symbol ($version) ]($style)";
+      
+      git_branch.symbol = "";
+      git_branch.style = "bg:#FCA17D";
+      git_branch.format = "[ $symbol $branch ]($style)";
+      
+      git_status.style = "bg:#FCA17D";
+      git_status.format = "[$all_status$ahead_behind ]($style)";
+      
+      nodejs.symbol = "";
+      nodejs.style = "bg:#86BBD8";
+      nodejs.format = "[ $symbol ($version) ]($style)";
+      
+      rust.symbol = "";
+      rust.style = "bg:#86BBD8";
+      rust.format = "[ $symbol ($version) ]($style)";
+      
+      docker_context.symbol = " ";
+      docker_context.style = "bg:#06969A";
+      docker_context.format = "[ $symbol $context ]($style)";
+      
+      time = {
+        disabled = false;
+        time_format = "%R";
+        style = "bg:#33658A";
+        format = "[ ♥ $time ]($style)";
       };
     };
   };
 }
-

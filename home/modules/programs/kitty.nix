@@ -10,7 +10,6 @@
     };
     settings = {
       "cursor_shape" = "beam";
-      cursor_trail = 100;
       confirm_os_window_close = 0;
       font_family = "JetBrainsMono Nerd Font";
       shell = "${pkgs.fish}/bin/fish";
