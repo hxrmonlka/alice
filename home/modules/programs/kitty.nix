@@ -13,6 +13,7 @@
       cursor_trail = 100;
       confirm_os_window_close = 0;
       font_family = "JetBrainsMono Nerd Font";
+      shell = "${pkgs.fish}/bin/fish";
     };
     keybindings = {
       "ctrl+c" = "copy_or_interrupt";
