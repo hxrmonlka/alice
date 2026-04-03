@@ -74,7 +74,12 @@
           stiffness = 800;
           epsilon = 0.0001;
         };
-        window-open-close.spring = {
+        window-open.spring = {
+          damping-ratio = 0.85;
+          stiffness = 600;
+          epsilon = 0.0001;
+        };
+        window-close.spring = {
           damping-ratio = 0.85;
           stiffness = 600;
           epsilon = 0.0001;
