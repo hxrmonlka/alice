@@ -31,6 +31,7 @@
     zoxide
     fish-lsp
     babelfish
+    github-desktop
   ];
 
   # Let Home Manager install and manage itself.
