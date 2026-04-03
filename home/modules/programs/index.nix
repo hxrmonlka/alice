@@ -3,5 +3,6 @@
     ./kitty.nix
     ./fish.nix
     ./starship.nix
+    ./nvimdots.nix
   ];
 }

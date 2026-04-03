@@ -98,6 +98,7 @@
         imports = [
           ./../../home/home.nix
           inputs.niri-flake.homeModules.niri
+          inputs.nvimdots.homeManagerModules.default
         ];
       };
     };
@@ -142,6 +143,16 @@
    libsForQt5.qt5.qtmultimedia
    kdePackages.qt5compat
    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+   # nvimdots build tools
+   gcc
+   gnumake
+   cmake
+   pkg-config
+   unzip
+   lua-language-server
+   stylua
+   nil
+   nodePackages.prettier
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

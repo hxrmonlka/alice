@@ -22,6 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";
     };
+    nvimdots.url = "github:ayamir/nvimdots";
   };
 
   outputs =
