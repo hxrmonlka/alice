@@ -1,9 +1,22 @@
 { pkgs, ... }:
 
+# Kanagawa Wave palette reference
+# sumiInk0:    #16161d   sumiInk3:    #363646
+# sumiInk1:    #1f1f28   sumiInk6:    #54546d
+# crystalBlue: #7e9cd8   oniViolet:   #957fb8
+# waveAqua2:   #7aa89f   fujiWhite:   #dcd7ba
+
 {
   programs.niri = {
     enable = true;
     settings = {
+      prefer-no-csd = true;
+
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 24;
+      };
+
       input = {
         focus-follows-mouse.enable = true;
         keyboard = {
@@ -17,19 +30,74 @@
         touchpad = {
           tap = true;
           natural-scroll = true;
+          dwt = true;
         };
         mouse.accel-profile = "flat";
       };
 
       layout = {
-        gaps = 5;
+        gaps = 8;
+        center-focused-column = "never";
+
         focus-ring = {
           enable = true;
           width = 2;
-          active.color = "#8ec07c";
+          active.color = "#7e9cd8";    # crystalBlue
+          inactive.color = "#363646";  # sumiInk3
         };
+
+        border.enable = false;
+
+        shadow = {
+          enable = true;
+          color = "#16161dcc";          # sumiInk0 @ 80%
+          inactive-color = "#16161d66"; # sumiInk0 @ 40%
+          offset = { x = 0; y = 4; };
+          softness = 24;
+          spread = 2;
+        };
+
         default-column-width = { proportion = 0.5; };
+
+        preset-column-widths = [
+          { proportion = 0.333; }
+          { proportion = 0.5; }
+          { proportion = 0.667; }
+          { proportion = 1.0; }
+        ];
       };
+
+      animations = {
+        slowdown = 0.8;
+        workspace-switch.spring = {
+          damping-ratio = 1.0;
+          stiffness = 800;
+          epsilon = 0.0001;
+        };
+        window-open-close.spring = {
+          damping-ratio = 0.85;
+          stiffness = 600;
+          epsilon = 0.0001;
+        };
+        horizontal-view-movement.spring = {
+          damping-ratio = 1.0;
+          stiffness = 800;
+          epsilon = 0.0001;
+        };
+      };
+
+      # Rounded corners for all windows
+      window-rules = [
+        {
+          geometry-corner-radius = {
+            top-left = 8.0;
+            top-right = 8.0;
+            bottom-left = 8.0;
+            bottom-right = 8.0;
+          };
+          clip-to-geometry = true;
+        }
+      ];
 
       binds = {
         "Mod+Return".action.spawn = [ "kitty" ];
@@ -53,6 +121,9 @@
         "Mod+Shift+L".action.move-column-right = {};
         "Mod+Shift+K".action.move-window-up = {};
         "Mod+Shift+J".action.move-window-down = {};
+
+        "Mod+Ctrl+H".action.focus-monitor-left = {};
+        "Mod+Ctrl+L".action.focus-monitor-right = {};
 
         "Mod+1".action.focus-workspace = 1;
         "Mod+2".action.focus-workspace = 2;
@@ -92,14 +163,21 @@
         "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
         "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
         "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+        "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "s" "5%+" ];
+        "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "s" "5%-" ];
 
         "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
         "Mod+D".action.spawn = [ "wlr-which-key" ];
+
+        "Mod+Shift+E".action.quit.skip-confirmation = true;
+        "Mod+Shift+P".action.power-off-monitors = {};
       };
 
       spawn-at-startup = [
         { command = [ "noctalia-shell" ]; }
-        { command = [ "swaybg" "-i" "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg" "-m" "fill" ]; }
+        # solid Kanagawa sumiInk1 — swap for swww/hyprpaper if you want an actual wallpaper
+        { command = [ "swaybg" "--color" "#1f1f28" "--mode" "solid_color" ]; }
+        { command = [ "xwayland-satellite" ]; }
       ];
     };
   };
