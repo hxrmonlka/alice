@@ -1,31 +1,10 @@
-# Prerequisites:
-#   flake.nix inputs: noctalia.url = "github:noctalia-dev/noctalia-shell";
-#   In your HM sharedModules or home.nix imports:
-#     inputs.noctalia.homeModules.default
-#
-# The old home.file approach wrote to config.json which noctalia ignores.
-# settings.json is a read-only symlink managed by the HM module — don't touch it directly.
-
 { config, pkgs, lib, inputs, ... }:
-
-# Kanagawa Wave → Noctalia Material 3 token mapping
-# mSurface        → sumiInk1  #1f1f28
-# mSurfaceVariant → sumiInk2  #2a2a37
-# mOnSurface      → fujiWhite #dcd7ba
-# mOnSurfaceVariant→ oldWhite #c8c093
-# mPrimary        → crystalBlue #7e9cd8
-# mSecondary      → oniViolet  #957fb8
-# mTertiary       → waveAqua2  #7aa89f
-# mError          → autumnRed  #c34043
-# mOutline        → sumiInk6   #54546d
-# mShadow         → sumiInk0   #16161d
 
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
   programs.noctalia-shell = {
     enable = true;
-
     settings = {
       colors = {
         mError            = "#c34043"; # autumnRed
