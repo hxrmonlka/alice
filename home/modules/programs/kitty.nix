@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.kitty = {
     enable = true;
     themeFile = "kanagawa";
@@ -13,6 +14,7 @@
       confirm_os_window_close = 0;
       font_family = "JetBrainsMono Nerd Font";
       shell = "${pkgs.fish}/bin/fish";
+      cursor_trail = 1;
     };
     keybindings = {
       "ctrl+c" = "copy_or_interrupt";

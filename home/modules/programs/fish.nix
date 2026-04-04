@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.fish = {
     enable = true;
     generateCompletions = true;
@@ -7,6 +8,8 @@
     '';
     shellAbbrs = {
       ls = "eza --icons";
+      quit = "exit";
+      lsm = "/run/current-system/sw/bin/ls";
     };
   };
 }
