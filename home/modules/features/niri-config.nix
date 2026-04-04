@@ -69,22 +69,22 @@
 
       animations = {
         slowdown = 0.8;
-        workspace-switch.spring = {
+        workspace-switch.kind.spring = {
           damping-ratio = 1.0;
           stiffness = 800;
           epsilon = 0.0001;
         };
-        window-open.spring = {
+        window-open.kind.spring = {
           damping-ratio = 0.85;
           stiffness = 600;
           epsilon = 0.0001;
         };
-        window-close.spring = {
+        window-close.kind.spring = {
           damping-ratio = 0.85;
           stiffness = 600;
           epsilon = 0.0001;
         };
-        horizontal-view-movement.spring = {
+        horizontal-view-movement.kind.spring = {
           damping-ratio = 1.0;
           stiffness = 800;
           epsilon = 0.0001;
