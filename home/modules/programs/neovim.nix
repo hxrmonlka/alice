@@ -18,20 +18,19 @@
 
       mkdir -p $out/user/configs/lsp-servers
 
-      cat << 'EOF' > $out/user/init.lua
-      vim.opt.undofile = true
-      EOF
+      mkdir -p $out/user/plugins
 
-      cat << 'EOF' > $out/user/plugins.lua
-      return {
-        {
-          "mbbill/undotree",
-          cmd = "UndotreeToggle",
-          keys = {
-            { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" },
-          },
+      cat << 'EOF' > $out/user/plugins/undotree.lua
+      local plugin = {}
+
+      plugin["mbbill/undotree"] = {
+        cmd = "UndotreeToggle",
+        keys = {
+          { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" },
         },
       }
+
+      return plugin
       EOF
 
       cat << 'EOF' > $out/user/settings.lua
