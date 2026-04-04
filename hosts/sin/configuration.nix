@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, inputs
+, ...
 }:
 {
   imports = [
@@ -144,7 +143,7 @@
     lua-language-server
     stylua
     nil
-    nodePackages.prettier
+    prettier
     go
     python3
     # will work on this later.
