@@ -4,7 +4,7 @@
     enable = true;
     themeFile = "kanagawa";
     enableGitIntegration = true;
-    shellIntegration.enableFishIntegration = true;
+    shellIntegration.enableZshIntegration = true;
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 11.0;
@@ -13,7 +13,7 @@
       "cursor_shape" = "beam";
       confirm_os_window_close = 0;
       font_family = "JetBrainsMono Nerd Font";
-      shell = "${pkgs.fish}/bin/fish";
+      shell = "${pkgs.zsh}/bin/zsh";
       cursor_trail = 1;
     };
     keybindings = {
