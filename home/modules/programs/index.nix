@@ -3,7 +3,7 @@
     ./kitty.nix
     ./fish.nix
     ./starship.nix
-    ./nvimdots.nix
+    ./neovim.nix
     ./git.nix
   ];
 }
