@@ -23,43 +23,48 @@
       inputs.quickshell.follows = "quickshell";
     };
     nvimdots.url = "github:ayamir/nvimdots";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nix-cachyos-kernel,
-      antigravity-nix,
-      noctalia,
-      quickshell,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        sin = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/sin/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nix-cachyos-kernel,
+    antigravity-nix,
+    noctalia,
+    quickshell,
+    rust-overlay,
+    ...
+  } @ inputs: {
+    nixosConfigurations = {
+      sin = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/sin/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+          }
+          (
+            {pkgs, ...}: {
+              nixpkgs.overlays = [
+                nix-cachyos-kernel.overlays.pinned
+                rust-overlay.overlays.default
+              ];
+              environment.systemPackages = with pkgs; [
+                rust-bin.stable.latest.default
+              ];
             }
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
-                environment.systemPackages = with pkgs; [
-                  # antigravity-nix.packages.x86_64-linux.default
-                ];
-              }
-            )
-          ];
-        };
+          )
+        ];
       };
     };
+  };
 }

@@ -1,16 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ./modules/index.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ./modules/index.nix
+  ];
 
   # Bootloader.
   boot.loader = {
@@ -25,11 +27,11 @@
 
   boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
 
-  nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
+  nix.settings.substituters = ["https://attic.xuyh0120.win/lantian"];
   nix.settings.trusted-public-keys = [
     "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-   ];
+  ];
 
   networking.hostName = "sin"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -70,6 +72,8 @@
   # Enable Niri
   programs.niri.enable = true;
 
+  programs.nix-ld.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -92,7 +96,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users = {
       "alice" = {
         imports = [
@@ -107,13 +111,19 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   users.users.alice = {
     isNormalUser = true;
     description = "Alice";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -125,34 +135,41 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   vim
-   wget
-   nix-output-monitor
-   nh
-   nix-eval-jobs
-   nix-fast-build
-   lazygit
-   git
-   gh
-   github-desktop
-   niri
-   xwayland-satellite
-   inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
-   libsForQt5.qt5.qtsvg
-   libsForQt5.qt5.qtimageformats
-   libsForQt5.qt5.qtmultimedia
-   kdePackages.qt5compat
-   inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-   # nvimdots build tools
-   gcc
-   gnumake
-   cmake
-   pkg-config
-   unzip
-   lua-language-server
-   stylua
-   nil
-   nodePackages.prettier
+    vim
+    wget
+    nix-output-monitor
+    nh
+    nix-eval-jobs
+    nix-fast-build
+    lazygit
+    git
+    gh
+    github-desktop
+    niri
+    xwayland-satellite
+    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    libsForQt5.qt5.qtsvg
+    libsForQt5.qt5.qtimageformats
+    libsForQt5.qt5.qtmultimedia
+    kdePackages.qt5compat
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # nvimdots build tools
+    gcc
+    gnumake
+    cmake
+    pkg-config
+    unzip
+    lua-language-server
+    stylua
+    nil
+    nodePackages.prettier
+    go
+    python3
+    # will work on this later.
+    deadnix
+    statix
+    nixpkgs-fmt
+    nixfmt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -178,5 +195,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
