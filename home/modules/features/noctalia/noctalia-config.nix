@@ -3,78 +3,102 @@
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
+  # Reference QML (Faithful palette singleton + left-bar ambience). Preview with:
+  # QML2_IMPORT_PATH="$HOME/.config/noctalia/design" qml BarLeftFloatingAmbience.qml
+  xdg.configFile = {
+    "noctalia/design/qmldir".source = ./qml/design/qmldir;
+    "noctalia/design/FaithfulPalette.qml".source = ./qml/design/FaithfulPalette.qml;
+    "noctalia/design/BarLeftFloatingAmbience.qml".source = ./qml/design/BarLeftFloatingAmbience.qml;
+  };
+
   programs.noctalia-shell = {
     enable = true;
+
+    # Faithful swatches: #e985b4 #e28e8c #dbb993 #cd81a7 — aligned with BarLeftFloatingAmbience defaults.
+    colors = {
+      mError = "#e85d6a";
+      mHover = "#d77aab";
+      mOnError = "#f4eaf0";
+      mOnHover = "#151018";
+      mOnPrimary = "#151018";
+      mOnSecondary = "#151018";
+      mOnSurface = "#f4eaf0";
+      mOnSurfaceVariant = "#dbb993";
+      mOnTertiary = "#151018";
+      mOutline = "#5c4a62";
+      mPrimary = "#e985b4";
+      mSecondary = "#cd81a7";
+      mShadow = "#0a080c";
+      mSurface = "#151018";
+      mSurfaceVariant = "#221a26";
+      mTertiary = "#e28e8c";
+    };
+
     settings = {
-      colors = {
-        mError            = "#c34043"; # autumnRed
-        mHover            = "#7fb4ca"; # springBlue
-        mOnError          = "#dcd7ba"; # fujiWhite
-        mOnHover          = "#1f1f28"; # sumiInk1
-        mOnPrimary        = "#1f1f28"; # sumiInk1
-        mOnSecondary      = "#1f1f28"; # sumiInk1
-        mOnSurface        = "#dcd7ba"; # fujiWhite
-        mOnSurfaceVariant = "#c8c093"; # oldWhite
-        mOnTertiary       = "#1f1f28"; # sumiInk1
-        mOutline          = "#54546d"; # sumiInk6
-        mPrimary          = "#7e9cd8"; # crystalBlue
-        mSecondary        = "#957fb8"; # oniViolet
-        mShadow           = "#16161d"; # sumiInk0
-        mSurface          = "#1f1f28"; # sumiInk1
-        mSurfaceVariant   = "#2a2a37"; # sumiInk2
-        mTertiary         = "#7aa89f"; # waveAqua2
+      appLauncher = {
+        customLaunchPrefix = "";
+        customLaunchPrefixEnabled = false;
+        enableClipPreview = true;
+        enableClipboardHistory = true;
+        iconMode = "tabler";
+        pinnedApps = [ ];
+        position = "center";
+        showCategories = true;
+        sortByMostUsed = true;
+        terminalCommand = "kitty -e";
+        viewMode = "list";
       };
 
-      settings = {
-        appLauncher = {
-          customLaunchPrefix        = "";
-          customLaunchPrefixEnabled = false;
-          enableClipPreview         = true;
-          enableClipboardHistory    = true;
-          iconMode                  = "tabler";
-          pinnedExecs               = [];
-          position                  = "center";
-          showCategories            = true;
-          sortByMostUsed            = true;
-          terminalCommand           = "kitty -e";
-          useApp2Unit               = false;
-          viewMode                  = "list";
-        };
+      audio = {
+        mprisBlacklist = [ ];
+        preferredPlayer = "";
+        spectrumFrameRate = 60;
+        visualizerType = "linear";
+        volumeOverdrive = false;
+        volumeStep = 5;
+      };
 
-        audio = {
-          cavaFrameRate   = 60;
-          externalMixer   = "pwvucontrol || pavucontrol";
-          mprisBlacklist  = [];
-          preferredPlayer = "";
-          visualizerType  = "linear";
-          volumeOverflow  = false;
-          volumeStep      = 5;
+      bar = {
+        barType = "floating";
+        capsuleOpacity = 0.92;
+        density = "comfortable";
+        marginHorizontal = 12;
+        marginVertical = 12;
+        monitors = [ ];
+        outerCorners = true;
+        position = "left";
+        showCapsule = true;
+        showOutline = true;
+        transparent = false;
+        widgets = {
+          left = [
+            { id = "Launcher"; }
+            { id = "Workspace"; }
+          ];
+          center = [ { id = "ActiveWindow"; } ];
+          right = [
+            { id = "MediaMini"; }
+            { id = "Volume"; }
+            { id = "Network"; }
+            { id = "Battery"; }
+            { id = "Clock"; }
+            { id = "NotificationHistory"; }
+          ];
         };
+      };
 
-        bar = {
-          capsuleOpacity   = 0.92;
-          density          = "comfortable";
-          exclusive        = true;
-          floating         = true;
-          marginHorizontal = 0.4;
-          marginVertical   = 0.4;
-          monitors         = [];
-          outerCorners     = true;
-          position         = "top";
-          showCapsule      = true;
-          showOutline      = false;
-          transparent      = false;
-          widgets = {
-            left   = [ "launcher" "workspaces" ];
-            center = [ "windowTitle" ];
-            right  = [ "mpris" "volume" "network" "battery" "clock" "notifications" ];
-          };
-        };
+      colorSchemes = {
+        darkMode = true;
+        generationMethod = "tonal-spot";
+        monitorForColors = "";
+        predefinedScheme = "Noctalia (default)";
+        schedulingMode = "off";
+        syncGsettings = true;
+        useWallpaperColors = true;
+      };
 
-        notifications = {
-          position   = "top-right";
-          maxVisible = 5;
-        };
+      notifications = {
+        location = "top_right";
       };
     };
   };
