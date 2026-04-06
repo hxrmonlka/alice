@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     gemini-cli
     nixfmt
@@ -21,5 +22,6 @@
     fish-lsp
     babelfish
     github-desktop
-  ]; 
+    cliphist
+  ];
 }
