@@ -1,18 +1,10 @@
 {
-  description = "Alice's NixOS Flake.";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    niri-flake.url = "github:sodiboo/niri-flake";
-    antigravity-nix = {
-      url = "github:jacopone/antigravity-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,44 +18,11 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nix-cachyos-kernel,
-    antigravity-nix,
-    noctalia,
-    quickshell,
-    rust-overlay,
-    ...
-  } @ inputs: {
-    nixosConfigurations = {
-      sin = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/sin/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-          }
-          (
-            {pkgs, ...}: {
-              nixpkgs.overlays = [
-                nix-cachyos-kernel.overlays.pinned
-                rust-overlay.overlays.default
-              ];
-              environment.systemPackages = with pkgs; [
-                rust-bin.stable.latest.default
-              ];
-            }
-          )
-        ];
-      };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }
