@@ -1,16 +1,15 @@
+{ self
+, inputs
+, ...
+}:
 {
-  self,
-  inputs,
-  ...
-}: {
-  flake.homeModules.aliceCore = { pkgs, ... }: {
-    home.username = "alice";
-    home.homeDirectory = "/home/alice";
-    
-    # Matching the stateVersion from your NixOS configuration (25.11)
-    home.stateVersion = "25.11";
+  flake.homeModules.aliceCore =
+    { pkgs, ... }:
+    {
+      home.username = "alice";
+      home.homeDirectory = "/home/alice";
 
-    # Let Home Manager manage itself
-    programs.home-manager.enable = true;
-  };
+      # Matching the stateVersion from your NixOS configuration (25.11)
+      home.stateVersion = "25.11";
+    };
 }
