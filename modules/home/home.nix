@@ -9,8 +9,8 @@
       config.allowUnfree = true;
     };
 
-    extraSpecialArgs = { inherit inputs self; };
-    
+    extraSpecialArgs = {inherit inputs self;};
+
     modules = [
       self.homeModules.aliceCore
       self.homeModules.alicePackages
@@ -23,6 +23,7 @@
       self.homeModules.aliceZsh
 
       # Desktop Section
+      self.homeModules.aliceNiri
     ];
   };
 }

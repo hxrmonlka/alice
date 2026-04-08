@@ -25,7 +25,7 @@
       ];
       settings = {
         spawn-at-startup = [
-          # (lib.getExe self'.packages.aliceNoctalia)
+          (lib.getExe self'.packages.aliceNoctalia)
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
