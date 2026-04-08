@@ -6,7 +6,7 @@
   flake.homeModules.aliceKitty = {pkgs, ...}: {
     programs.kitty = {
       enable = true;
-      themeFile = "kanagawa";
+      themeFile = "mellow";
       enableGitIntegration = true;
       shellIntegration.enableZshIntegration = true;
       font = {

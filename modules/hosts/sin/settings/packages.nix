@@ -3,10 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.sinPackages = {
-    pkgs,
-    ...
-  }: {
+  flake.nixosModules.sinPackages = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       wget
       nix-output-monitor
@@ -43,6 +40,7 @@
       statix
       nixpkgs-fmt
       nixfmt
+      wireplumber
     ];
     nixpkgs = {
       config.allowUnfree = true;
@@ -50,6 +48,17 @@
         nix-cachyos-kernel.overlays.pinned
         rust-overlay.overlays.default
       ];
+    };
+    nix = {
+      settings = {
+        substituters = [
+          "https://attic.xuyh0120.win/lantian"
+        ];
+        trusted-public-keys = [
+          "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        ];
+      };
     };
   };
 }
