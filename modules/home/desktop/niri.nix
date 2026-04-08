@@ -34,7 +34,9 @@
             size = 24;
           };
           input = {
-            focus-follows-mouse.enable = true;
+            focus-follows-mouse = {
+              enable = true;
+            };
             keyboard = {
               xkb = {
                 layout = "us";
@@ -61,7 +63,9 @@
               inactive.color = "#363646"; # sumiInk3
             };
 
-            border.enable = false;
+            border = {
+              enable = false;
+            };
 
             shadow = {
               enable = true;
@@ -88,25 +92,33 @@
           };
           animations = {
             slowdown = 0.8;
-            workspace-switch.spring = {
-              damping-ratio = 1.0;
-              stiffness = 800;
-              epsilon = 0.0001;
+            workspace-switch.spring = _: {
+              props = {
+                damping-ratio = 1.0;
+                stiffness = 800;
+                epsilon = 0.0001;
+              };
             };
-            window-open.spring = {
-              damping-ratio = 0.85;
-              stiffness = 600;
-              epsilon = 0.0001;
+            window-open.spring = _: {
+              props = {
+                damping-ratio = 0.85;
+                stiffness = 600;
+                epsilon = 0.0001;
+              };
             };
-            window-close.spring = {
-              damping-ratio = 0.85;
-              stiffness = 600;
-              epsilon = 0.0001;
+            window-close.spring = _: {
+              props = {
+                damping-ratio = 0.85;
+                stiffness = 600;
+                epsilon = 0.0001;
+              };
             };
-            horizontal-view-movement.spring = {
-              damping-ratio = 1.0;
-              stiffness = 800;
-              epsilon = 0.0001;
+            horizontal-view-movement.spring = _: {
+              props = {
+                damping-ratio = 1.0;
+                stiffness = 800;
+                epsilon = 0.0001;
+              };
             };
           };
           window-rules = [
@@ -199,7 +211,9 @@
             "Mod+S".spawn = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
             "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
 
-            "Mod+Shift+E".quit.skip-confirmation = true;
+            "Mod+Shift+E".quit = {
+              skip-confirmation = true;
+            };
             "Mod+Shift+P".power-off-monitors = { };
           };
         };
