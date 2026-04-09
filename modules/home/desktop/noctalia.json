@@ -2,7 +2,7 @@
   "settings": {
     "settingsVersion": 59,
     "bar": {
-      "barType": "floating",
+      "barType": "simple",
       "position": "left",
       "monitors": [],
       "density": "comfortable",
@@ -680,23 +680,23 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
-        "connected": true,
-        "height": 768,
         "name": "Virtual-1",
-        "physical_height": 190,
-        "physical_width": 340,
-        "refresh_rate": 75000,
+        "connected": true,
         "scale": 1,
-        "transform": "Normal",
-        "vrr_enabled": false,
-        "vrr_supported": false,
         "width": 1366,
+        "height": 768,
         "x": 0,
-        "y": 0
+        "y": 0,
+        "physical_width": 340,
+        "physical_height": 190,
+        "refresh_rate": 75000,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775628641000
+      "lastSeenTs": 1775731057000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
