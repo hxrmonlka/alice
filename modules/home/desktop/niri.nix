@@ -18,25 +18,21 @@
     {
       packages.aliceNiriPkg = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
-        extraPackages = with pkgs; [
-          wireplumber
-        ];
+        extraPackages = with pkgs; [ wireplumber ];
         settings = {
-          spawn-at-startup = [
-            (lib.getExe self'.packages.aliceNoctalia)
-          ];
+          spawn-at-startup = [ (lib.getExe self'.packages.aliceNoctalia) ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-
           prefer-no-csd = true;
+
           cursor = {
-            theme = "NangongYuCursor";
-            size = 24;
+            xcursor-theme = "NangongYuCursor";
+            xcursor-size = 24;
           };
+
           input = {
-            focus-follows-mouse = {
-              enable = true;
-            };
+            focus-follows-mouse = _: { };
+
             keyboard = {
               xkb = {
                 layout = "us";
@@ -45,43 +41,42 @@
               repeat-rate = 40;
               repeat-delay = 250;
             };
+
             touchpad = {
-              tap = true;
-              natural-scroll = true;
-              dwt = true;
+              tap = _: { };
+              natural-scroll = _: { };
+              dwt = _: { };
             };
+
             mouse.accel-profile = "flat";
           };
+
           layout = {
             gaps = 8;
             center-focused-column = "never";
 
             focus-ring = {
-              enable = true;
               width = 2;
-              active.color = "#7e9cd8"; # crystalBlue
-              inactive.color = "#363646"; # sumiInk3
+              active-color = "#7e9cd8";
+              inactive-color = "#363646";
             };
 
-            border = {
-              enable = false;
-            };
+            border.off = _: { };
 
             shadow = {
-              enable = true;
-              color = "#16161dcc"; # sumiInk0 @ 80%
-              inactive-color = "#16161d66"; # sumiInk0 @ 40%
-              offset = {
-                x = 0;
-                y = 4;
+              color = "#16161dcc";
+              inactive-color = "#16161d66";
+              offset = _: {
+                props = {
+                  x = 0;
+                  y = 4;
+                };
               };
               softness = 24;
               spread = 2;
             };
 
-            default-column-width = {
-              proportion = 0.5;
-            };
+            default-column-width.proportion = 0.5;
 
             preset-column-widths = [
               { proportion = 0.333; }
@@ -90,6 +85,7 @@
               { proportion = 1.0; }
             ];
           };
+
           animations = {
             slowdown = 0.8;
             workspace-switch.spring = _: {
@@ -121,12 +117,14 @@
               };
             };
           };
+
           window-rules = [
             {
               geometry-corner-radius = 8.0;
               clip-to-geometry = true;
             }
           ];
+
           binds = {
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+Q".close-window = { };
@@ -175,7 +173,6 @@
 
             "Mod+Comma".consume-window-into-column = { };
             "Mod+Period".expel-window-from-column = { };
-
             "Mod+R".switch-preset-column-width = { };
             "Mod+Shift+R".reset-window-height = { };
 
@@ -206,14 +203,14 @@
               "@DEFAULT_AUDIO_SINK@"
               "toggle"
             ];
+
             "XF86MonBrightnessUp".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%+";
             "XF86MonBrightnessDown".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%-";
-            "Mod+S".spawn = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
+
+            "Mod+S".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
             "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
 
-            "Mod+Shift+E".quit = {
-              skip-confirmation = true;
-            };
+            "Mod+Shift+E".quit = _: { props."skip-confirmation" = true; };
             "Mod+Shift+P".power-off-monitors = { };
           };
         };
