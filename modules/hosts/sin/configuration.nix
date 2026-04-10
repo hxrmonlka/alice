@@ -40,11 +40,9 @@
           self.homeModules.aliceCore
           self.homeModules.alicePackages
           self.homeModules.aliceNeovim
-          self.homeModules.aliceGitConfig
-          self.homeModules.aliceKitty
-          self.homeModules.aliceOmp
-          self.homeModules.aliceZsh
           self.homeModules.aliceNiri
+          self.homeModules.aliceProgramsConfig
+          self.homeModules.aliceGamingConfig
         ];
       };
 

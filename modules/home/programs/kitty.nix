@@ -1,9 +1,10 @@
-{ self
-, inputs
-, ...
+{
+  self,
+  inputs,
+  ...
 }:
 {
-  flake.homeModules.aliceKitty =
+  flake.homeModules.aliceProgramsConfig =
     { pkgs, ... }:
     {
       programs.kitty = {

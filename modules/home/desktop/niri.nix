@@ -28,6 +28,8 @@
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           prefer-no-csd = true;
 
+          hotkey-overlay."skip-at-startup" = _: { };
+
           cursor = {
             xcursor-theme = "NangongYuCursor";
             xcursor-size = 24;
