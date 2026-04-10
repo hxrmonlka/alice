@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.homeModules.aliceProgramsConfig =
+  flake.homeModules.aliceProgramsGit =
     { pkgs, ... }:
     {
       programs.git = {

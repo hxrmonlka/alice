@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.homeModules.aliceProgramsConfig =
+  flake.homeModules.aliceProgramsKitty =
     { pkgs, ... }:
     {
       programs.kitty = {

@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.homeModules.aliceProgramsConfig =
+  flake.homeModules.aliceProgramsOmp =
     { ... }:
     {
       programs.oh-my-posh = {

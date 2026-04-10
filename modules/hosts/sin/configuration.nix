@@ -13,7 +13,7 @@
     {
       imports = [
         # Inputs section
-        inputs.niri.nixosModules.niri
+        # inputs.niri.nixosModules.niri
         inputs.home-manager.nixosModules.home-manager
 
         # Self section
@@ -41,8 +41,11 @@
           self.homeModules.alicePackages
           self.homeModules.aliceNeovim
           self.homeModules.aliceNiri
-          self.homeModules.aliceProgramsConfig
-          self.homeModules.aliceGamingConfig
+          self.homeModules.aliceProgramsGit
+          self.homeModules.aliceProgramsZsh
+          self.homeModules.aliceProgramsKitty
+          self.homeModules.aliceProgramsOmp
+          self.homeModules.aliceGamingOsu
         ];
       };
 

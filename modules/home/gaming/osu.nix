@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.homeModules.aliceGamingConfig =
+  flake.homeModules.aliceGamingOsu =
     { pkgs, ... }:
     {
       # TODO: separate GitHub repo for "resources"
