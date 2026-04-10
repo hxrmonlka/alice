@@ -12,7 +12,7 @@
       "capsuleColorKey": "none",
       "widgetSpacing": 8,
       "contentPadding": 2,
-      "fontScale": 1,
+      "fontScale": 0.9,
       "enableExclusionZoneInset": true,
       "backgroundOpacity": 0.93,
       "useSeparateOpacity": false,
@@ -52,8 +52,8 @@
             "labelMode": "index",
             "occupiedColor": "secondary",
             "pillSize": 0.6,
-            "showApplications": false,
-            "showApplicationsHover": false,
+            "showApplications": true,
+            "showApplicationsHover": true,
             "showBadge": true,
             "showLabelsOnlyWhenOccupied": true,
             "unfocusedIconsOpacity": 1
@@ -61,13 +61,13 @@
         ],
         "center": [
           {
-            "colorizeIcons": false,
+            "colorizeIcons": true,
             "hideMode": "hidden",
             "id": "ActiveWindow",
             "maxWidth": 145,
-            "scrollingMode": "hover",
+            "scrollingMode": "never",
             "showIcon": true,
-            "showText": true,
+            "showText": false,
             "textColor": "none",
             "useFixedWidth": false
           }
@@ -127,6 +127,10 @@
             "id": "NotificationHistory",
             "showUnreadBadge": true,
             "unreadBadgeColor": "primary"
+          },
+          {
+            "iconColor": "none",
+            "id": "WallpaperSelector"
           }
         ]
       },
@@ -331,7 +335,7 @@
       "density": "default"
     },
     "controlCenter": {
-      "position": "close_to_bar_button",
+      "position": "center",
       "diskPath": "/",
       "shortcuts": {
         "left": [
@@ -373,7 +377,7 @@
           "id": "shortcuts-card"
         },
         {
-          "enabled": true,
+          "enabled": false,
           "id": "audio-card"
         },
         {
@@ -419,8 +423,8 @@
     },
     "dock": {
       "enabled": false,
-      "position": "right",
-      "displayMode": "always_visible",
+      "position": "bottom",
+      "displayMode": "auto_hide",
       "dockType": "floating",
       "backgroundOpacity": 1,
       "floatingRatio": 1,
@@ -527,7 +531,7 @@
     },
     "notifications": {
       "enabled": true,
-      "enableMarkdown": false,
+      "enableMarkdown": true,
       "density": "default",
       "monitors": [],
       "location": "top_right",
@@ -544,7 +548,7 @@
         "critical": true
       },
       "sounds": {
-        "enabled": false,
+        "enabled": true,
         "volume": 0.5,
         "separateSounds": false,
         "criticalSoundFile": "",
@@ -680,23 +684,23 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
-        "name": "Virtual-1",
         "connected": true,
-        "scale": 1,
-        "width": 1366,
         "height": 768,
-        "x": 0,
-        "y": 0,
-        "physical_width": 340,
+        "name": "Virtual-1",
         "physical_height": 190,
+        "physical_width": 340,
         "refresh_rate": 75000,
-        "vrr_supported": false,
+        "scale": 1,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": false,
+        "width": 1366,
+        "x": 0,
+        "y": 0
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775731057000
+      "lastSeenTs": 1775789305000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
