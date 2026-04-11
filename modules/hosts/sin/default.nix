@@ -1,12 +1,12 @@
-{ self
-, inputs
-, ...
-}:
 {
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosConfigurations.sin = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs; };
+    specialArgs = {inherit self inputs;};
     modules = [
-      self.nixosModules.sinConfig
+      self.nixosModules.sinHostConfig
     ];
   };
 }
