@@ -26,7 +26,6 @@
         zoxide
         fish-lsp
         babelfish
-        github-desktop
         cliphist
       ];
     };

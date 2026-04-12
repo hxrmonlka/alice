@@ -1,56 +1,62 @@
+{ self
+, inputs
+, ...
+}:
 {
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.sinHostConfig = {
-    pkgs,
-    lib,
-    ...
-  }: {
-    imports = [
-      # Inputs section
-      # inputs.niri.nixosModules.niri
-      inputs.home-manager.nixosModules.home-manager
-
-      # Self section
-      self.nixosModules.sinHardware
-      self.nixosModules.sinNetworking
-      self.nixosModules.sinProgramsConfig
-      self.nixosModules.sinUserSystemConfig
-      self.nixosModules.sinPackages
-      self.nixosModules.sinLocales
-      self.nixosModules.sinServices
-      self.nixosModules.sinBootSettings
-      self.nixosModules.sinEnvironment
-
-      # Subsection: upcoming gaming modules right here.
-    ];
-
-    home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      extraSpecialArgs = {inherit inputs self;};
-      users.alice.imports = [
+  flake.nixosModules.sinHostConfig =
+    { pkgs
+    , lib
+    , ...
+    }:
+    {
+      imports = [
         # Inputs section
-        inputs.nvimdots.homeManagerModules.default
+        # inputs.niri.nixosModules.niri
+        inputs.home-manager.nixosModules.home-manager
+        inputs.nix-flatpak.nixosModules.nix-flatpak
 
         # Self section
-        self.homeModules.aliceCore
-        self.homeModules.alicePackages
-        self.homeModules.aliceNeovim
-        self.homeModules.aliceNiri
-        self.homeModules.aliceProgramsGit
-        self.homeModules.aliceProgramsZsh
-        self.homeModules.aliceProgramsKitty
-        self.homeModules.aliceProgramsOmp
-        self.homeModules.aliceProgramsBrowser
+        self.nixosModules.sinHardware
+        self.nixosModules.sinNetworking
+        self.nixosModules.sinProgramsConfig
+        self.nixosModules.sinUserSystemConfig
+        self.nixosModules.sinPackages
+        self.nixosModules.sinLocales
+        self.nixosModules.sinServices
+        self.nixosModules.sinBootSettings
+        self.nixosModules.sinEnvironment
 
-        # Subsection: Gaming modules.
-        self.homeModules.aliceGamingOsu
+        # Subsection: Settings
+        self.nixosModules.sinFlatpakConfig
+        # Subsection: upcoming gaming modules right here.
       ];
-    };
 
-    system.stateVersion = "25.11";
-  };
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = { inherit inputs self; };
+        users.alice.imports = [
+          # Inputs section
+          inputs.nvimdots.homeManagerModules.default
+          inputs.spicetify-nix.homeManagerModules.default
+
+          # Self section
+          self.homeModules.aliceCore
+          self.homeModules.alicePackages
+          self.homeModules.aliceNeovim
+          self.homeModules.aliceNiri
+          self.homeModules.aliceProgramsGitTools
+          self.homeModules.aliceProgramsZsh
+          self.homeModules.aliceProgramsKitty
+          self.homeModules.aliceProgramsOmp
+          self.homeModules.aliceProgramsBrowser
+          self.homeModules.aliceProgramsSpotify
+
+          # Subsection: Gaming modules.
+          self.homeModules.aliceGamingOsu
+        ];
+      };
+
+      system.stateVersion = "25.11";
+    };
 }

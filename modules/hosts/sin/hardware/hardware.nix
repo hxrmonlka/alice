@@ -2,52 +2,56 @@
   self,
   inputs,
   ...
-}: {
-  flake.nixosModules.sinHardware = {
-    config,
-    lib,
-    pkgs,
-    modulesPath,
-    ...
-  }: {
-    imports = [
-      (modulesPath + "/profiles/qemu-guest.nix")
-    ];
+}:
+{
+  flake.nixosModules.sinHardware =
+    {
+      config,
+      lib,
+      pkgs,
+      modulesPath,
+      ...
+    }:
 
-    boot.initrd.availableKernelModules = [
-      "ahci"
-      "sd_mod"
-      "sr_mod"
-    ];
-    boot.initrd.kernelModules = [];
-    boot.kernelModules = [];
-    boot.extraModulePackages = [];
-
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/0004dbd3-4e28-4fe7-afc9-fb204958d2b4";
-      fsType = "btrfs";
-      options = ["subvol=@"];
-    };
-
-    fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/0004dbd3-4e28-4fe7-afc9-fb204958d2b4";
-      fsType = "btrfs";
-      options = ["subvol=@home"];
-    };
-
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/F8A8-93B8";
-      fsType = "vfat";
-      options = [
-        "fmask=0077"
-        "dmask=0077"
+    {
+      imports = [
+        (modulesPath + "/profiles/qemu-guest.nix")
       ];
+
+      boot.initrd.availableKernelModules = [
+        "ahci"
+        "sd_mod"
+        "sr_mod"
+      ];
+      boot.initrd.kernelModules = [ ];
+      boot.kernelModules = [ ];
+      boot.extraModulePackages = [ ];
+
+      fileSystems."/" = {
+        device = "/dev/disk/by-uuid/7cf52ff7-e6ba-4aba-9e10-1c94ee95ffe6";
+        fsType = "btrfs";
+        options = [ "subvol=@" ];
+      };
+
+      fileSystems."/home" = {
+        device = "/dev/disk/by-uuid/7cf52ff7-e6ba-4aba-9e10-1c94ee95ffe6";
+        fsType = "btrfs";
+        options = [ "subvol=@home" ];
+      };
+
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/76E0-588F";
+        fsType = "vfat";
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
+      };
+
+      swapDevices = [
+        { device = "/dev/disk/by-uuid/3f24505c-3905-4a85-b20d-88cf4f1bcabc"; }
+      ];
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     };
-
-    swapDevices = [
-      {device = "/dev/disk/by-uuid/15cfc862-b69b-4947-a798-e3614e5f9391";}
-    ];
-
-    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  };
 }
