@@ -8,6 +8,8 @@
     {
       home.packages = with pkgs; [
         gemini-cli
+        cursor-cli
+        code-cursor-fhs
         nixfmt
         antigravity
         starship

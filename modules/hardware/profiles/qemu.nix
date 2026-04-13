@@ -1,16 +1,14 @@
-{
-  self,
-  inputs,
-  ...
+{ self
+, inputs
+, ...
 }:
 {
-  flake.nixosModules.sinHardware =
-    {
-      config,
-      lib,
-      pkgs,
-      modulesPath,
-      ...
+  flake.nixosModules.qemuHardware =
+    { config
+    , lib
+    , pkgs
+    , modulesPath
+    , ...
     }:
 
     {

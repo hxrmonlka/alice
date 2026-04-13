@@ -16,7 +16,6 @@
         inputs.nix-flatpak.nixosModules.nix-flatpak
 
         # Self section
-        self.nixosModules.sinHardware
         self.nixosModules.sinNetworking
         self.nixosModules.sinProgramsConfig
         self.nixosModules.sinUserSystemConfig
@@ -25,10 +24,14 @@
         self.nixosModules.sinServices
         self.nixosModules.sinBootSettings
         self.nixosModules.sinEnvironment
-
-        # Subsection: Settings
         self.nixosModules.sinFlatpakConfig
-        # Subsection: upcoming gaming modules right here.
+
+        # Subsection: Hardware Settings
+        self.nixosModules.intelSettings
+        self.nixosModules.qemuHardware
+
+        # Subsection: Gaming modules
+        self.nixosModules.gamingSettings
       ];
 
       home-manager = {
@@ -51,9 +54,6 @@
           self.homeModules.aliceProgramsOmp
           self.homeModules.aliceProgramsBrowser
           self.homeModules.aliceProgramsSpotify
-
-          # Subsection: Gaming modules.
-          self.homeModules.aliceGamingOsu
         ];
       };
 

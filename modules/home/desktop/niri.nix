@@ -213,6 +213,11 @@
             "Mod+M".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call media toggle";
             "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
             "Mod+W".spawn = [ "helium" ];
+            "Mod+Alt+W".spawn = [
+              "flatpak"
+              "run"
+              "app.zen_browser.zen"
+            ];
 
             "Mod+Shift+E".quit = _: { props."skip-confirmation" = true; };
             "Mod+Alt+L".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call lockScreen lock";
