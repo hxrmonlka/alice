@@ -11,7 +11,6 @@
           "app.zen_browser.zen"
         ];
         update.onActivation = true;
-        uninstallUnmanaged = true;
       };
     };
 }

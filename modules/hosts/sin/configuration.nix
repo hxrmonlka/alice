@@ -51,7 +51,7 @@
           self.homeModules.aliceProgramsGitTools
           self.homeModules.aliceProgramsZsh
           self.homeModules.aliceProgramsKitty
-          self.homeModules.aliceProgramsOmp
+          self.homeModules.aliceProgramsStarship
           self.homeModules.aliceProgramsBrowser
           self.homeModules.aliceProgramsSpotify
         ];

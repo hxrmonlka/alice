@@ -8,9 +8,9 @@
       "density": "comfortable",
       "showOutline": false,
       "showCapsule": true,
-      "capsuleOpacity": 0.92,
+      "capsuleOpacity": 1,
       "capsuleColorKey": "none",
-      "widgetSpacing": 8,
+      "widgetSpacing": 6,
       "contentPadding": 2,
       "fontScale": 0.9,
       "enableExclusionZoneInset": true,
@@ -113,12 +113,12 @@
           },
           {
             "clockColor": "none",
-            "customFont": "",
-            "formatHorizontal": "HH:mm ddd, MMM dd",
-            "formatVertical": "HH mm - dd MM",
+            "customFont": "0xProto Nerd Font",
+            "formatHorizontal": "h:mm AP",
+            "formatVertical": "h mm AP -- MM dd",
             "id": "Clock",
-            "tooltipFormat": "HH:mm ddd, MMM dd",
-            "useCustomFont": false
+            "tooltipFormat": "h:mm AP / MMM dd",
+            "useCustomFont": true
           },
           {
             "hideWhenZero": false,
@@ -548,16 +548,16 @@
         "critical": true
       },
       "sounds": {
-        "enabled": true,
+        "enabled": false,
         "volume": 0.5,
         "separateSounds": false,
         "criticalSoundFile": "",
         "normalSoundFile": "",
         "lowSoundFile": "",
-        "excludedApps": "discord,firefox,chrome,chromium,edge"
+        "excludedApps": ""
       },
-      "enableMediaToast": false,
-      "enableKeyboardLayoutToast": true,
+      "enableMediaToast": true,
+      "enableKeyboardLayoutToast": false,
       "enableBatteryToast": true
     },
     "osd": {
@@ -679,28 +679,28 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/alice/Pictures/Wallpapers/this is nsfw_.jpg"
+      "Virtual-1": "/home/alice/Pictures/Wallpapers/wallpaper.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
         "connected": true,
-        "height": 768,
+        "height": 722,
         "name": "Virtual-1",
-        "physical_height": 190,
-        "physical_width": 340,
-        "refresh_rate": 75000,
+        "physical_height": 180,
+        "physical_width": 320,
+        "refresh_rate": 74995,
         "scale": 1,
         "transform": "Normal",
         "vrr_enabled": false,
         "vrr_supported": false,
-        "width": 1366,
+        "width": 1274,
         "x": 0,
         "y": 0
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775789305000
+      "lastSeenTs": 1775955163000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"

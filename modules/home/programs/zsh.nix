@@ -1,17 +1,20 @@
-{
-  self,
-  inputs,
-  ...
+{ self
+, inputs
+, ...
 }:
 {
   flake.homeModules.aliceProgramsZsh =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       programs.zsh = {
         enable = true;
         syntaxHighlighting.enable = true;
         autosuggestion.enable = true;
         enableCompletion = true;
+        initContent = lib.mkOrder 1000 ''
+          export PF_INFO="ascii os kernel uptime pkgs memory"
+          pfetch
+        '';
         shellAliases = {
           ll = "ls -l";
           ls = "eza --icons";
@@ -21,5 +24,6 @@
           quit = "exit";
         };
       };
+      home.packages = [ pkgs.pfetch ];
     };
 }

@@ -1,0 +1,34 @@
+name: Monthly nix flake update
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-flake-lock:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+
+      - name: Update flake lock
+        run: nix flake update
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: update flake.lock"
+          title: "chore: monthly flake.lock update"
+          body: |
+            Automated monthly update of `flake.lock`.
+          branch: ci/monthly-flake-update
+          delete-branch: true

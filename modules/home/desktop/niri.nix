@@ -20,7 +20,9 @@
         inherit pkgs;
         extraPackages = with pkgs; [ wireplumber ];
         settings = {
-          spawn-at-startup = [ (lib.getExe self'.packages.aliceNoctalia) ];
+          spawn-at-startup = [
+            (lib.getExe self'.packages.aliceNoctalia)
+          ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           prefer-no-csd = true;
@@ -122,7 +124,7 @@
 
           window-rules = [
             {
-              geometry-corner-radius = 8.0;
+              geometry-corner-radius = 12.0;
               clip-to-geometry = true;
             }
           ];
