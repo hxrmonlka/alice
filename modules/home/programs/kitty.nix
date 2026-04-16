@@ -17,7 +17,6 @@
         settings = {
           "cursor_shape" = "beam";
           confirm_os_window_close = 0;
-          font_family = "JetBrainsMono Nerd Font";
           shell = "${pkgs.zsh}/bin/zsh";
           cursor_trail = 1;
           background_opacity = 0.81;

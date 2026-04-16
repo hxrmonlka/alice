@@ -181,11 +181,11 @@
       "lockScreenCountdownDuration": 10000,
       "autoStartAuth": false,
       "allowPasswordWithFprintd": false,
-      "clockStyle": "custom",
+      "clockStyle": "digital",
       "clockFormat": "hh\\nmm",
       "passwordChars": true,
       "lockScreenMonitors": [],
-      "lockScreenBlur": 0,
+      "lockScreenBlur": 0.67,
       "lockScreenTint": 0,
       "keybinds": {
         "keyUp": [
@@ -215,8 +215,8 @@
       "smoothScrollEnabled": true
     },
     "ui": {
-      "fontDefault": "Sans Serif",
-      "fontFixed": "monospace",
+      "fontDefault": "0xProto Nerd Font Mono",
+      "fontFixed": "0xProto Nerd Font",
       "fontDefaultScale": 0.95,
       "fontFixedScale": 0.95,
       "tooltipsEnabled": true,
@@ -226,7 +226,7 @@
       "translucentWidgets": true,
       "panelsAttachedToBar": true,
       "settingsPanelMode": "attached",
-      "settingsPanelSideBarCardStyle": false
+      "settingsPanelSideBarCardStyle": true
     },
     "location": {
       "name": "Caloocan",
@@ -277,7 +277,7 @@
       "automationEnabled": false,
       "wallpaperChangeMode": "random",
       "randomIntervalSec": 300,
-      "transitionDuration": 1500,
+      "transitionDuration": 600,
       "transitionType": [
         "fade",
         "disc",
@@ -332,7 +332,7 @@
       "ignoreMouseInput": false,
       "screenshotAnnotationTool": "",
       "overviewLayer": false,
-      "density": "default"
+      "density": "comfortable"
     },
     "controlCenter": {
       "position": "center",
@@ -649,7 +649,7 @@
       "colorGeneration": ""
     },
     "plugins": {
-      "autoUpdate": false,
+      "autoUpdate": true,
       "notifyUpdates": true
     },
     "idle": {
@@ -674,21 +674,7 @@
       "monitorWidgets": [
         {
           "name": "Virtual-1",
-          "widgets": [
-            {
-              "clockColor": "secondary",
-              "clockStyle": "binary",
-              "customFont": "",
-              "format": "HH:mm\\nd MMMM yyyy",
-              "id": "Clock",
-              "roundedCorners": true,
-              "scale": 1,
-              "showBackground": true,
-              "useCustomFont": false,
-              "x": 1211,
-              "y": 615
-            }
-          ]
+          "widgets": []
         }
       ]
     }
@@ -700,24 +686,24 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/alice/Pictures/Wallpapers/wallpaper.jpg"
+      "Virtual-1": "/home/alice/Pictures/Wallpapers/qw.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
-        "name": "Virtual-1",
         "connected": true,
-        "scale": 1,
-        "width": 1274,
         "height": 722,
-        "x": 0,
-        "y": 0,
-        "physical_width": 320,
+        "name": "Virtual-1",
         "physical_height": 180,
+        "physical_width": 320,
         "refresh_rate": 74995,
-        "vrr_supported": false,
+        "scale": 1,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": false,
+        "width": 1274,
+        "x": 0,
+        "y": 0
       }
     },
     "notificationsState": {

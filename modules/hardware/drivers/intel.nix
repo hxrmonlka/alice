@@ -1,8 +1,3 @@
-# Covers:
-#   • iGPU (HD/UHD/Iris Xe): modesetting + VA-API (iHD / QSV)
-#   • Intel Arc dGPU: same driver stack, extra firmware hints
-#   • Intel CPU microcode and P-state tuning
-#
 # Generation guide (pick one for gpu.generation):
 #
 #   "pre-broadwell"  Sandy/Ivy Bridge, Haswell (1st–4th gen, pre-2014)
@@ -24,7 +19,7 @@
 #   hardware.alice.intel = {
 #     gpu = {
 #       enable     = true;
-#       generation = "legacy";   # ← correct for i5-8xxxU / UHD 620/630
+#       generation = "legacy";
 #     };
 #     cpu.enable = true;
 #   };
@@ -32,10 +27,11 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.hardwareIntel =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       cfgGpu = config.hardware.alice.intel.gpu;
@@ -167,9 +163,9 @@
                   (lib.optional cfgGpu.openclNeo intel-compute-runtime)
                 ]
               else if isLegacy then
-              # 5th–10th gen (including 8th-gen Coffee Lake UHD 620/630):
-              # Ship both iHD and i965. iHD handles most tasks; i965 is kept
-              # because it performs better in browsers (Gecko / Chromium).
+                # 5th–10th gen (including 8th-gen Coffee Lake UHD 620/630):
+                # Ship both iHD and i965. iHD handles most tasks; i965 is kept
+                # because it performs better in browsers (Gecko / Chromium).
                 let
                   vaDriver =
                     if cfgGpu.hybridCodec then
@@ -184,7 +180,7 @@
                   (lib.optional cfgGpu.openclLegacy intel-compute-runtime-legacy1)
                 ]
               else
-              # pre-broadwell: i965 only, no iHD support
+                # pre-broadwell: i965 only, no iHD support
                 [
                   pkgs.intel-vaapi-driver
                   pkgs.libvdpau-va-gl
@@ -220,7 +216,6 @@
             LIBVA_DRIVER_NAME = if isPreBroadwell then "i965" else "iHD";
           };
 
-          # Early KMS: i915 in initrd.
           boot.initrd.kernelModules = lib.optional cfgGpu.earlyKms "i915";
 
           # GuC/HuC firmware param — only emit when explicitly enabled.

@@ -45,6 +45,7 @@
         overlays = with inputs; [
           nix-cachyos-kernel.overlays.pinned
           rust-overlay.overlays.default
+          millennium.overlays.default
         ];
       };
       nix = {

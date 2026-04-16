@@ -29,7 +29,8 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

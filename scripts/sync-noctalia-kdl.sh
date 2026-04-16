@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SOURCE_FILE="/home/alice/.config/niri/noctalia.kdl"
+SOURCE_FILE="$HOME/.config/niri/noctalia.kdl"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 TARGET_FILE="${REPO_ROOT}/modules/home/desktop/noctalia.kdl"
 
