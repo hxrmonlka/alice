@@ -1,14 +1,12 @@
-{
-  self,
-  inputs,
-  ...
+{ self
+, inputs
+, ...
 }:
 {
   flake.nixosModules.sinHostConfig =
-    {
-      pkgs,
-      lib,
-      ...
+    { pkgs
+    , lib
+    , ...
     }:
     {
       imports = [
@@ -56,6 +54,7 @@
           self.homeModules.aliceProgramsStarship
           self.homeModules.aliceProgramsBrowser
           self.homeModules.aliceProgramsSpotify
+          self.homeModules.aliceProgramsBtop
         ];
       };
 
