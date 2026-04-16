@@ -1,13 +1,15 @@
-{ self
-, inputs
-, ...
+{
+  self,
+  inputs,
+  ...
 }:
 {
   flake.homeModules.aliceNeovim =
-    { pkgs
-    , inputs
-    , lib
-    , ...
+    {
+      pkgs,
+      inputs,
+      lib,
+      ...
     }:
     {
       programs.neovim = {

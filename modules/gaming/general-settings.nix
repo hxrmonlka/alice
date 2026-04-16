@@ -13,9 +13,6 @@
         protonplus
         lutris
         umu-launcher
-
-        # literal games are here.
-        inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
       ];
 
       programs.steam = {

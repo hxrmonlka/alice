@@ -49,9 +49,9 @@
           };
 
           git_branch = {
-            format = "[ $branch]($style)";
+            format = "[ $symbol$branch]($style)";
             style = "mauve";
-            symbol = "";
+            symbol = "λ ";
           };
 
           git_status = {

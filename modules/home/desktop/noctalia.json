@@ -603,8 +603,29 @@
       "syncGsettings": true
     },
     "templates": {
-      "activeTemplates": [],
-      "enableUserTheming": false
+      "activeTemplates": [
+        {
+          "enabled": true,
+          "id": "niri"
+        },
+        {
+          "enabled": true,
+          "id": "steam"
+        },
+        {
+          "enabled": true,
+          "id": "spicetify"
+        },
+        {
+          "enabled": true,
+          "id": "kitty"
+        },
+        {
+          "enabled": true,
+          "id": "btop"
+        }
+      ],
+      "enableUserTheming": true
     },
     "nightLight": {
       "enabled": false,
@@ -684,23 +705,23 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
-        "connected": true,
-        "height": 722,
         "name": "Virtual-1",
-        "physical_height": 180,
-        "physical_width": 320,
-        "refresh_rate": 74995,
+        "connected": true,
         "scale": 1,
-        "transform": "Normal",
-        "vrr_enabled": false,
-        "vrr_supported": false,
         "width": 1274,
+        "height": 722,
         "x": 0,
-        "y": 0
+        "y": 0,
+        "physical_width": 320,
+        "physical_height": 180,
+        "refresh_rate": 74995,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775955163000
+      "lastSeenTs": 1776168464000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"

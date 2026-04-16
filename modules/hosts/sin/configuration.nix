@@ -1,21 +1,22 @@
-{ self
-, inputs
-, ...
+{
+  self,
+  inputs,
+  ...
 }:
 {
   flake.nixosModules.sinHostConfig =
-    { pkgs
-    , lib
-    , ...
+    {
+      pkgs,
+      lib,
+      ...
     }:
     {
       imports = [
         # Inputs section
-        # inputs.niri.nixosModules.niri
         inputs.home-manager.nixosModules.home-manager
         inputs.nix-flatpak.nixosModules.nix-flatpak
 
-        # Self section
+        # Self section (under ./modules/hosts/sin/)
         self.nixosModules.sinNetworking
         self.nixosModules.sinProgramsConfig
         self.nixosModules.sinUserSystemConfig
@@ -26,12 +27,13 @@
         self.nixosModules.sinEnvironment
         self.nixosModules.sinFlatpakConfig
 
-        # Subsection: Hardware Settings
+        # Subsection: Hardware Settings (under ./modules/hardware)
         self.nixosModules.intelSettings
         self.nixosModules.qemuHardware
 
-        # Subsection: Gaming modules
+        # Subsection: Gaming modules (under ./modules/gaming)
         self.nixosModules.gamingSettings
+        self.nixosModules.games
       ];
 
       home-manager = {

@@ -1,19 +1,22 @@
-{ self
-, inputs
-, ...
+{
+  self,
+  inputs,
+  ...
 }:
 {
   flake.homeModules.aliceNiri =
-    { pkgs
-    , lib
-    , ...
+    {
+      pkgs,
+      lib,
+      ...
     }:
     { };
   perSystem =
-    { pkgs
-    , lib
-    , self'
-    , ...
+    {
+      pkgs,
+      lib,
+      self',
+      ...
     }:
     {
       packages.aliceNiriPkg = inputs.wrapper-modules.wrappers.niri.wrap {
@@ -223,11 +226,15 @@
 
             "Mod+Shift+E".quit = _: { props."skip-confirmation" = true; };
             "Mod+Alt+L".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call lockScreen lock";
+            "Mod+Shift+T".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call wallpaper toggle";
             "Ctrl+Alt+Delete".spawn-sh =
               "${lib.getExe self'.packages.aliceNoctalia} ipc call sessionMenu toggle";
             "Mod+V".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher clipboard";
             "Mod+Shift+P".power-off-monitors = { };
           };
+          extraConfig = ''
+            include "${pkgs.writeText "noctalia.kdl" (builtins.readFile ./noctalia.kdl)}"
+          '';
         };
       };
     };
