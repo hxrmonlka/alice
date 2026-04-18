@@ -14,6 +14,7 @@
         initContent = lib.mkOrder 1000 ''
           export PF_INFO="ascii os kernel uptime pkgs memory"
           pfetch
+          eval "$(zoxide init zsh)"
         '';
         shellAliases = {
           ll = "ls -l";
@@ -22,8 +23,12 @@
           ols = "/run/current-system/sw/bin/ls";
           jj = "lazygit";
           quit = "exit";
+          cd = "z";
         };
       };
-      home.packages = [ pkgs.pfetch ];
+      home.packages = with pkgs; [
+        pfetch
+        zoxide
+      ];
     };
 }

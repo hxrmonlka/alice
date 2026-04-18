@@ -10,6 +10,8 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+        "docker"
+        "libvirtd"
       ];
     };
   };

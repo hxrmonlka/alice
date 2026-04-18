@@ -1,9 +1,13 @@
-name: Monthly nix flake update
+name: Weekly nix flake update
 
 on:
   schedule:
-    - cron: "0 5 1 * *"
+    - cron: "0 5 * * 1"
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -15,20 +19,20 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v27
+        uses: cachix/install-nix-action@v31
 
       - name: Update flake lock
         run: nix flake update
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "chore: update flake.lock"
-          title: "chore: monthly flake.lock update"
+          title: "chore: weekly flake.lock update"
           body: |
-            Automated monthly update of `flake.lock`.
-          branch: ci/monthly-flake-update
+            Automated weekly update of `flake.lock`.
+          branch: ci/weekly-flake-update
           delete-branch: true

@@ -103,6 +103,12 @@
             "textColor": "none"
           },
           {
+            "displayMode": "onhover",
+            "iconColor": "none",
+            "id": "Bluetooth",
+            "textColor": "none"
+          },
+          {
             "deviceNativePath": "__default__",
             "displayMode": "graphic-clean",
             "hideIfIdle": false,
@@ -127,10 +133,6 @@
             "id": "NotificationHistory",
             "showUnreadBadge": true,
             "unreadBadgeColor": "primary"
-          },
-          {
-            "iconColor": "none",
-            "id": "WallpaperSelector"
           }
         ]
       },

@@ -25,7 +25,6 @@
         pavucontrol
         wlr-randr
         wlr-which-key
-        zoxide
         fish-lsp
         babelfish
         cliphist
