@@ -19,7 +19,7 @@ modules/
 │   ├── programs/      # kitty, zsh, neovim, browser, spotify, etc.
 │   └── packages.nix   # standalone packages
 ├── hosts/sin/         # machine-specific system config
-├── hardware/          # driver modules & hw profiles
+├── hardware/          # driver modules & hw profiles (heads up below)
 └── gaming/            # steam, retroarch, lutris, the works
 ```
 
@@ -78,6 +78,10 @@ sudo nixos-rebuild switch --flake .#sin
 That's it. Everything else resolves from the flake.
 
 There's also a GitHub Action that updates `flake.lock` on the first of every month, so inputs don't go stale without anyone noticing.
+
+## Hardware
+
+There are driver modules in here for Intel, AMD, NVIDIA, and Framework laptops, plus a QEMU profile for VMs. Fair warning though — only the Intel config has actually been tested. The rest are there and *should* work, but no promises. If you're pulling from those, double-check things on your end.
 
 ## One more thing
 
