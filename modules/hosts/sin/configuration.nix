@@ -1,12 +1,14 @@
-{ self
-, inputs
-, ...
+{
+  self,
+  inputs,
+  ...
 }:
 {
   flake.nixosModules.sinHostConfig =
-    { pkgs
-    , lib
-    , ...
+    {
+      pkgs,
+      lib,
+      ...
     }:
     {
       imports = [
@@ -42,6 +44,7 @@
           # Inputs section
           inputs.nvimdots.homeManagerModules.default
           inputs.spicetify-nix.homeManagerModules.default
+          inputs.nixcord.homeModules.nixcord
 
           # Self section
           self.homeModules.aliceCore
@@ -55,6 +58,7 @@
           self.homeModules.aliceProgramsBrowser
           self.homeModules.aliceProgramsSpotify
           self.homeModules.aliceProgramsBtop
+          self.homeModules.nixcord
         ];
       };
 

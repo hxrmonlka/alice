@@ -31,6 +31,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
