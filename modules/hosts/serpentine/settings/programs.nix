@@ -1,9 +1,10 @@
-{ self
-, inputs
-, ...
+{
+  self,
+  inputs,
+  ...
 }:
 {
-  flake.nixosModules.sinProgramsConfig =
+  flake.nixosModules.serpentineProgramsConfig =
     { pkgs, ... }:
     {
       programs = {

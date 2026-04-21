@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.sinHostConfig = {
+  flake.nixosModules.serpentineHostConfig = {
     pkgs,
     lib,
     ...
@@ -13,16 +13,16 @@
       inputs.home-manager.nixosModules.home-manager
       inputs.nix-flatpak.nixosModules.nix-flatpak
 
-      # Self section (under ./modules/hosts/sin/)
-      self.nixosModules.sinNetworking
-      self.nixosModules.sinProgramsConfig
-      self.nixosModules.sinUserSystemConfig
-      self.nixosModules.sinPackages
-      self.nixosModules.sinLocales
-      self.nixosModules.sinServices
-      self.nixosModules.sinBootSettings
-      self.nixosModules.sinEnvironment
-      self.nixosModules.sinFlatpakConfig
+      # Self section (under ./modules/hosts/serpentine/)
+      self.nixosModules.serpentineNetworking
+      self.nixosModules.serpentineProgramsConfig
+      self.nixosModules.serpentineUserSystemConfig
+      self.nixosModules.serpentinePackages
+      self.nixosModules.serpentineLocales
+      self.nixosModules.serpentineServices
+      self.nixosModules.serpentineBootSettings
+      self.nixosModules.serpentineEnvironment
+      self.nixosModules.serpentineFlatpakConfig
 
       # Subsection: Common
       self.nixosModules.fonts

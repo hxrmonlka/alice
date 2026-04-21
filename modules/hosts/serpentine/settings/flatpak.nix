@@ -1,6 +1,10 @@
-{ self, inputs, ... }:
 {
-  flake.nixosModules.sinFlatpakConfig =
+  self,
+  inputs,
+  ...
+}:
+{
+  flake.nixosModules.serpentineFlatpakConfig =
     { ... }:
     {
       services.flatpak = {
