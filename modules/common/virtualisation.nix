@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.virtualisation = {pkgs, ...}: {
+  flake.custom.commonModules.virtualisation = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       lazydocker
       qemu_full

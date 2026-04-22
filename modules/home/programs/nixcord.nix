@@ -1,6 +1,9 @@
-{ self, inputs, ... }:
 {
-  flake.homeModules.nixcord = {
+  self,
+  inputs,
+  ...
+}: {
+  flake.custom.userModules.nixcord = {
     programs.nixcord = {
       enable = true;
       discord.vencord.enable = false;
