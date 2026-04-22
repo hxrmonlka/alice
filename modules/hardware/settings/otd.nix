@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.otdSettings = {...}: {
+  flake.custom.hardwareModules.otdSettings = {...}: {
     hardware.opentabletdriver = {
       enable = true;
       daemon.enable = true;

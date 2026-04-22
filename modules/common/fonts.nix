@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.fonts = {pkgs, ...}: {
+  flake.custom.commonModules.fonts = {pkgs, ...}: {
     fonts.fontDir.enable = true;
     fonts.packages = with pkgs; [
       pkgs.nerd-fonts._0xproto

@@ -1,17 +1,19 @@
-{ self, inputs, ... }:
 {
-  flake.nixosModules.intelSettings =
-    { ... }:
-    {
-      imports = [
-        self.nixosModules.hardwareIntel
-      ];
-      hardware.alice.intel = {
-        gpu = {
-          enable = true;
-          generation = "legacy";
-        };
-        cpu.enable = true;
+  self,
+  inputs,
+  ...
+}: {
+  flake.custom.hardwareModules.intelSettings = {...}: {
+    imports = [
+      self.custom.hardwareModules.hardwareIntel
+    ];
+    hardware.alice.intel = {
+      gpu = {
+        enable = true;
+        generation = "legacy";
+        openclLegacy = true;
       };
+      cpu.enable = true;
     };
+  };
 }

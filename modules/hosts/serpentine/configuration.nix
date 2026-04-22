@@ -24,18 +24,18 @@
       self.nixosModules.serpentineEnvironment
       self.nixosModules.serpentineFlatpakConfig
 
-      # Subsection: Common
-      self.nixosModules.fonts
-      self.nixosModules.virtualisation
-
-      # Subsection: Hardware Settings (under ./modules/hardware)
-      self.nixosModules.intelSettings
-      self.nixosModules.qemuHardware
-      self.nixosModules.otdSettings
-
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.gamingSettings
       self.nixosModules.games
+
+      # Subsection: Common
+      self.custom.commonModules.fonts
+      self.custom.commonModules.virtualisation
+
+      # Subsection: Hardware Settings (under ./modules/hardware)
+      self.custom.hardwareModules.intelSettings
+      self.custom.hardwareModules.qemuHardware
+      self.custom.hardwareModules.otdSettings
     ];
 
     home-manager = {
@@ -50,17 +50,17 @@
 
         # Self section
         self.homeModules.aliceCore
-        self.homeModules.alicePackages
-        self.homeModules.aliceNeovim
-        self.homeModules.aliceNiri
-        self.homeModules.aliceProgramsGitTools
-        self.homeModules.aliceProgramsZsh
-        self.homeModules.aliceProgramsKitty
-        self.homeModules.aliceProgramsStarship
-        self.homeModules.aliceProgramsBrowser
-        self.homeModules.aliceProgramsSpotify
-        self.homeModules.aliceProgramsBtop
-        self.homeModules.nixcord
+        self.custom.userModules.alicePackages
+        self.custom.userModules.aliceNeovim
+        self.custom.userModules.aliceNiri
+        self.custom.userModules.aliceGitTools
+        self.custom.userModules.aliceZsh
+        self.custom.userModules.aliceKitty
+        self.custom.userModules.aliceStarship
+        self.custom.userModules.aliceBrowser
+        self.custom.userModules.aliceSpotify
+        self.custom.userModules.aliceBtop
+        self.custom.userModules.nixcord
       ];
     };
 
