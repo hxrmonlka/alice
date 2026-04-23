@@ -7,7 +7,6 @@
     environment.systemPackages = with pkgs; [
       wget
       nix-output-monitor
-      nh
       nix-eval-jobs
       nix-fast-build
       xwayland-satellite
