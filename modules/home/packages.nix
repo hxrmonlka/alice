@@ -26,6 +26,11 @@
       fish-lsp
       babelfish
       cliphist
+      # note taking apps
+      anki-bin
+      obsidian
+      logseq
+      affine-bin
     ];
   };
 }
