@@ -1,3 +1,6 @@
+# Rename this file to shells.nix soon because it will
+# contain the following shells:
+# fish, nushell.
 {
   self,
   inputs,
@@ -16,7 +19,6 @@
       initContent = lib.mkOrder 1000 ''
         export PF_INFO="ascii os kernel uptime pkgs memory"
         pfetch
-        eval "$(zoxide init zsh)"
       '';
       shellAliases = {
         ll = "ls -l";
@@ -30,7 +32,10 @@
     };
     home.packages = with pkgs; [
       pfetch
-      zoxide
     ];
+    programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

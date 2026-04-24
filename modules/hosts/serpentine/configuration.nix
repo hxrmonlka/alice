@@ -12,6 +12,7 @@
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
       inputs.nix-flatpak.nixosModules.nix-flatpak
+      inputs.mangowc.nixosModules.mango
 
       # Self section (under ./modules/hosts/serpentine/)
       self.nixosModules.serpentineNetworking
@@ -46,6 +47,7 @@
         # Inputs section
         inputs.nvimdots.homeManagerModules.default
         inputs.spicetify-nix.homeManagerModules.default
+        inputs.mangowc.hmModules.mango
         inputs.nixcord.homeModules.nixcord
 
         # Self section
@@ -53,6 +55,7 @@
         self.custom.userModules.alicePackages
         self.custom.userModules.aliceNeovim
         self.custom.userModules.aliceNiri
+        self.custom.userModules.aliceMangoConfig
         self.custom.userModules.aliceGitTools
         self.custom.userModules.aliceZsh
         self.custom.userModules.aliceKitty
@@ -60,10 +63,10 @@
         self.custom.userModules.aliceBrowser
         self.custom.userModules.aliceSpotify
         self.custom.userModules.aliceBtop
+        self.custom.userModules.aliceYazi
         self.custom.userModules.nixcord
       ];
     };
-
     system.stateVersion = "25.11";
   };
 }

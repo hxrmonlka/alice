@@ -32,7 +32,11 @@
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixcord.url = "github:FlameFlag/nixcord";
+    mangowc = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }

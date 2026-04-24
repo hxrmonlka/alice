@@ -30,6 +30,7 @@
         "left": [
           {
             "colorizeSystemIcon": "primary",
+            "colorizeSystemText": "none",
             "customIconPath": "",
             "enableColorization": true,
             "icon": "rocket",
@@ -688,7 +689,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/alice/Pictures/Wallpapers/qw.jpg"
+      "Virtual-1": "/home/alice/Pictures/Wallpapers/wallpaper.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -709,10 +710,10 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776168464000
+      "lastSeenTs": 1776843099000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.5"
+      "lastSeenVersion": "v4.7.6"
     },
     "colorSchemesList": {
       "schemes": [],

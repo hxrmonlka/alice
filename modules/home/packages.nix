@@ -17,6 +17,7 @@
       libnotify
       mako
       grim
+      grimblast
       slurp
       wl-clipboard
       swappy
