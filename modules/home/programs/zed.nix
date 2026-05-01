@@ -38,8 +38,8 @@
         };
         theme = {
           mode = "system";
-          dark = "Noctalia";
-          light = "Noctalia";
+          dark = "Noctalia Dark Transparent";
+          light = "Noctalia Light Transparent";
         };
         languages = {
           Nix = {
