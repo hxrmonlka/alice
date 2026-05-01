@@ -37,7 +37,6 @@
       generateCompletions = true;
       interactiveShellInit = ''
         set fish_greeting
-        fastfetch
       '';
     };
     programs.zsh = {
