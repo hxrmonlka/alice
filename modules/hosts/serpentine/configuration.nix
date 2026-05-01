@@ -57,7 +57,6 @@
         self.custom.userModules.aliceNiri
         self.custom.userModules.aliceMangoConfig
         self.custom.userModules.aliceGitTools
-        self.custom.userModules.aliceZsh
         self.custom.userModules.aliceKitty
         self.custom.userModules.aliceStarship
         self.custom.userModules.aliceBrowser
@@ -66,6 +65,7 @@
         self.custom.userModules.aliceShells
         self.custom.userModules.nixcord
         self.custom.userModules.zed
+        self.custom.userModules.aliceFastfetchConfig
       ];
     };
     system.stateVersion = "25.11";
