@@ -626,6 +626,10 @@
         {
           "enabled": true,
           "id": "btop"
+        },
+        {
+          "enabled": true,
+          "id": "zed"
         }
       ],
       "enableUserTheming": true
@@ -694,23 +698,16 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
-        "connected": true,
-        "height": 722,
+        "height": 0,
         "name": "Virtual-1",
-        "physical_height": 180,
-        "physical_width": 320,
-        "refresh_rate": 74995,
         "scale": 1,
-        "transform": "Normal",
-        "vrr_enabled": false,
-        "vrr_supported": false,
-        "width": 1274,
+        "width": 0,
         "x": 0,
         "y": 0
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776843099000
+      "lastSeenTs": 1777536629000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"
