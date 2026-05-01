@@ -3,7 +3,11 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceKitty = {pkgs, ...}: {
+  flake.custom.userModules.aliceKitty = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.kitty = {
       enable = true;
       enableGitIntegration = true;
@@ -15,7 +19,7 @@
       settings = {
         "cursor_shape" = "beam";
         confirm_os_window_close = 0;
-        shell = "${pkgs.zsh}/bin/zsh";
+        shell = lib.getExe pkgs.fish;
         cursor_trail = 1;
         background_opacity = 0.81;
       };

@@ -63,8 +63,9 @@
         self.custom.userModules.aliceBrowser
         self.custom.userModules.aliceSpotify
         self.custom.userModules.aliceBtop
-        self.custom.userModules.aliceYazi
+        self.custom.userModules.aliceShells
         self.custom.userModules.nixcord
+        self.custom.userModules.zed
       ];
     };
     system.stateVersion = "25.11";
