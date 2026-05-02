@@ -18,7 +18,7 @@
 
         format = lib.concatStrings [
           "$cmd_duration"
-          "[ •ᴗ• ](pink)"
+          "[•ᴗ• ](pink)"
           "$character"
         ];
 

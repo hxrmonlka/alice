@@ -12,9 +12,8 @@
       enable = true;
       shellAliases = {
         ll = "ls -l";
-        ls = "eza --icons";
+        ex = "eza --icons";
         lstree = "eza --icons --tree";
-        ols = lib.getExe' pkgs.coreutils "ls";
         jj = "lazygit";
         quit = "exit";
         cd = "z";
@@ -37,6 +36,7 @@
       generateCompletions = true;
       interactiveShellInit = ''
         set fish_greeting
+        echo ">>> ls is replaced by eza."
       '';
     };
     programs.zsh = {
@@ -49,9 +49,8 @@
       '';
       shellAliases = {
         ll = "ls -l";
-        ls = "eza --icons";
+        ex = "eza --icons";
         lstree = "eza --icons --tree";
-        ols = lib.getExe' pkgs.coreutils "ls";
         jj = "lazygit";
         quit = "exit";
         cd = "z";
