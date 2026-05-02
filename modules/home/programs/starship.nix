@@ -6,6 +6,11 @@
   flake.custom.userModules.aliceStarship = {lib, ...}: {
     programs.starship = {
       enable = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      enableBashIntegration = true;
+
       settings = {
         add_newline = false;
         command_timeout = 1000;
@@ -13,7 +18,7 @@
 
         format = lib.concatStrings [
           "$cmd_duration"
-          "[•ᴗ• ](pink)"
+          "[ •ᴗ• ](pink)"
           "$character"
         ];
 
@@ -26,8 +31,6 @@
           "$status"
         ];
 
-        # ── Left ──────────────────────────────────────────────────────────
-
         cmd_duration = {
           min_time = 500;
           format = "[$duration]($style) ";
@@ -39,8 +42,6 @@
           error_symbol = "[▶︎](red)";
           vimcmd_symbol = "[▶︎](gold)";
         };
-
-        # ── Right ────────────────────────────────────────────────────────────
 
         directory = {
           format = "[$path]($style)";
