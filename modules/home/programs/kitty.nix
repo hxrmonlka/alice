@@ -11,7 +11,6 @@
     programs.kitty = {
       enable = true;
       enableGitIntegration = true;
-      shellIntegration.enableZshIntegration = true;
       font = {
         name = "JetBrainsMono Nerd Font";
         size = 13.0;
@@ -19,7 +18,7 @@
       settings = {
         "cursor_shape" = "beam";
         confirm_os_window_close = 0;
-        shell = lib.getExe pkgs.fish;
+        shell = lib.getExe pkgs.nushell;
         cursor_trail = 1;
         background_opacity = 0.81;
       };
