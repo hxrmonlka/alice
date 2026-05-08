@@ -630,6 +630,14 @@
         {
           "enabled": true,
           "id": "zed"
+        },
+        {
+          "enabled": true,
+          "id": "yazi"
+        },
+        {
+          "enabled": true,
+          "id": "starship"
         }
       ],
       "enableUserTheming": true

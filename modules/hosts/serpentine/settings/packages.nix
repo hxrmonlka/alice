@@ -40,10 +40,13 @@
     ];
     nixpkgs = {
       config.allowUnfree = true;
-      overlays = with inputs; [
-        nix-cachyos-kernel.overlays.pinned
-        rust-overlay.overlays.default
-        millennium.overlays.default
+      overlays = [
+        inputs.nix-cachyos-kernel.overlays.pinned
+        inputs.rust-overlay.overlays.default
+        inputs.millennium.overlays.default
+        (final: prev: {
+          openldap = prev.openldap.overrideAttrs {doCheck = false;};
+        })
       ];
     };
     nix = {

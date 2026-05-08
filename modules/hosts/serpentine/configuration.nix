@@ -66,6 +66,7 @@
         self.custom.userModules.nixcord
         self.custom.userModules.zed
         self.custom.userModules.aliceFastfetchConfig
+        self.custom.userModules.aliceYazi
       ];
     };
     system.stateVersion = "25.11";
