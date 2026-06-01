@@ -29,9 +29,15 @@
       prettier
       go
       python3
-      (rust-bin.stable.latest.default.override {
-        extensions = ["rust-src"];
-      })
+      # (rust-bin.stable.latest.default.override {
+      #   extensions = ["rust-src"];
+      # })
+      rustc
+      cargo
+      rust-analyzer
+      rustfmt
+      clippy
+      rustPlatform.rustLibSrc
       deadnix
       statix
       nixpkgs-fmt
@@ -42,7 +48,7 @@
       config.allowUnfree = true;
       overlays = [
         inputs.nix-cachyos-kernel.overlays.pinned
-        inputs.rust-overlay.overlays.default
+        # inputs.rust-overlay.overlays.default
         inputs.millennium.overlays.default
         (final: prev: {
           openldap = prev.openldap.overrideAttrs {doCheck = false;};
