@@ -46,7 +46,6 @@
     # Exactly one of intelBusId / amdBusId should be set for hybrid setups.
     hasPrimePeer = cfg.prime.intelBusId != "" || cfg.prime.amdBusId != "";
   in {
-    # ── Option declarations ────────────────────────────────────────────────
     options.hardware.alice.nvidia = {
       enable = lib.mkEnableOption "Alice – Nvidia GPU driver";
 
@@ -139,7 +138,6 @@
       };
     };
 
-    # ── Implementation ─────────────────────────────────────────────────────
     config = lib.mkIf cfg.enable {
       assertions = [
         {
@@ -190,7 +188,7 @@
         enable = true;
         enable32Bit = true;
         # nvidia-vaapi-driver is added by the nvidia module automatically on unstable;
-        # leaving extraPackages empty here — extend per-host if NVENC/NVDEC is needed.
+        # leaving extraPackages empty here - extend per-host if NVENC/NVDEC is needed.
       };
 
       # Required kernel modules for the open driver path.

@@ -3,11 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineHostConfig = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.serpentineHostConfig = {...}: {
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
@@ -31,7 +27,6 @@
 
       # Subsection: Common
       self.custom.commonModules.fonts
-      self.custom.commonModules.virtualisation
 
       # Subsection: Hardware Settings (under ./modules/hardware)
       self.custom.hardwareModules.intelSettings
@@ -68,7 +63,7 @@
         self.custom.userModules.aliceFastfetchConfig
         self.custom.userModules.aliceYazi
       ];
+      system.stateVersion = "26.05";
     };
-    system.stateVersion = "25.11";
   };
 }

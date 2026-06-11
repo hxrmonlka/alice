@@ -2,20 +2,17 @@
   self,
   inputs,
   ...
-}:
-{
-  flake.nixosModules.serpentineBootSettings =
-    { pkgs, ... }:
-    {
-      boot.loader = {
-        grub = {
-          enable = true;
-          device = "nodev";
-          efiSupport = true;
-          useOSProber = true;
-        };
-        efi.canTouchEfiVariables = true;
+}: {
+  flake.nixosModules.serpentineBootSettings = {pkgs, ...}: {
+    boot.loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
       };
-      boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
+      efi.canTouchEfiVariables = true;
     };
+    boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
+  };
 }

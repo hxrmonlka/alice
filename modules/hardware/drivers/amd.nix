@@ -21,7 +21,6 @@
     cfgGpu = config.hardware.alice.amd.gpu;
     cfgCpu = config.hardware.alice.amd.cpu;
   in {
-    # ── Option declarations ────────────────────────────────────────────────
     options.hardware.alice.amd = {
       gpu = {
         enable = lib.mkEnableOption "Alice – AMD GPU (amdgpu) driver";
@@ -59,7 +58,7 @@
           '';
         };
 
-        # Legacy GCN1/GCN2 support — disabled by default in mainline kernels.
+        # Legacy GCN1/GCN2 support - disabled by default in mainline kernels.
         legacySupport = {
           southernIslands = lib.mkOption {
             type = lib.types.bool;
@@ -91,7 +90,6 @@
       };
     };
 
-    # ── Implementation ─────────────────────────────────────────────────────
     config = lib.mkMerge [
       # GPU
       (lib.mkIf cfgGpu.enable {
@@ -113,7 +111,7 @@
         # Early KMS: load amdgpu in initrd so the display is up before the OS.
         boot.initrd.kernelModules = lib.optional cfgGpu.earlyKms "amdgpu";
 
-        # Legacy GCN1/GCN2 — force amdgpu over the radeon driver.
+        # Legacy GCN1/GCN2 - force amdgpu over the radeon driver.
         boot.kernelParams = lib.flatten [
           (lib.optionals cfgGpu.legacySupport.southernIslands [
             "radeon.si_support=0"

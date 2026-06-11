@@ -14,7 +14,7 @@
 #                    Uses iHD + vpl-gpu-rt (QSV). GuC firmware recommended.
 #
 # Usage example:
-#   imports = [ inputs.self.nixosModules.hardwareIntel ];
+#   imports = [ self.custom.hardwareModules.hardwareIntel ];
 #
 #   hardware.alice.intel = {
 #     gpu = {
