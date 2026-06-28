@@ -16,7 +16,6 @@
       self.nixosModules.serpentineUserSystemConfig
       self.nixosModules.serpentinePackages
       self.nixosModules.serpentineLocales
-      self.nixosModules.serpentineServices
       self.nixosModules.serpentineEnvironment
       self.nixosModules.serpentineFlatpakConfig
 
@@ -65,7 +64,7 @@
         self.custom.userModules.aliceFastfetchConfig
         self.custom.userModules.aliceYazi
       ];
-      system.stateVersion = "26.05";
     };
+    system.stateVersion = "26.05";
   };
 }
