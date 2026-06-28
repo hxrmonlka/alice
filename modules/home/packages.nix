@@ -12,10 +12,7 @@
       antigravity
       starship
       eza
-      waybar
-      swaybg
       libnotify
-      mako
       grim
       grimblast
       slurp

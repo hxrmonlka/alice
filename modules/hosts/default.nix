@@ -21,4 +21,10 @@
   #      self.nixosModules.auxVm
   #    ];
   #  };
+  #  flake.nixosConfigurations.maple = inputs.nixpkgs.lib.nixosSystem {
+  #    specialArgs = {inherit self inputs;};
+  #    modules = [
+  #      self.nixosModules.mapleHostConfig
+  #    ];
+  #  };
 }

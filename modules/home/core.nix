@@ -9,6 +9,6 @@
       home.username = "alice";
       home.homeDirectory = "/home/alice";
 
-      home.stateVersion = "25.11";
+      home.stateVersion = "26.05";
     };
 }

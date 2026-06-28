@@ -3,6 +3,15 @@
   inputs,
   ...
 }: {
+  flake.nixosModules.mangoWC = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    programs.mangowc = {
+      enable = true;
+    };
+  };
   flake.custom.userModules.aliceMangoConfig = {
     lib,
     pkgs,
