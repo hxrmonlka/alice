@@ -17,7 +17,6 @@
       self.nixosModules.serpentinePackages
       self.nixosModules.serpentineLocales
       self.nixosModules.serpentineServices
-      self.nixosModules.serpentineBootSettings
       self.nixosModules.serpentineEnvironment
       self.nixosModules.serpentineFlatpakConfig
 
@@ -25,8 +24,11 @@
       self.nixosModules.gamingSettings
       self.nixosModules.games
 
-      # Subsection: Common
+      # Subsection: Common (under ./modules/common)
       self.custom.commonModules.fonts
+      self.custom.commonModules.bootSettings
+      self.custom.commonModules.nixSettings
+      self.custom.commonModules.systemServices
 
       # Subsection: Hardware Settings (under ./modules/hardware)
       self.custom.hardwareModules.intelSettings

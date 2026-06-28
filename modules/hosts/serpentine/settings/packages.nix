@@ -29,46 +29,16 @@
       prettier
       go
       python3
-      # (rust-bin.stable.latest.default.override {
-      #   extensions = ["rust-src"];
-      # })
-      rustc
-      cargo
+      (rust-bin.stable.latest.default.override {
+        extensions = ["rust-src"];
+      })
       rust-analyzer
-      rustfmt
       clippy
       rustPlatform.rustLibSrc
       deadnix
       statix
       nixpkgs-fmt
-      nixfmt
       wireplumber
     ];
-    nixpkgs = {
-      config.allowUnfree = true;
-      overlays = [
-        inputs.nix-cachyos-kernel.overlays.pinned
-        # inputs.rust-overlay.overlays.default
-        inputs.millennium.overlays.default
-        (final: prev: {
-          openldap = prev.openldap.overrideAttrs {doCheck = false;};
-        })
-      ];
-    };
-    nix = {
-      settings = {
-        experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
-        substituters = [
-          "https://attic.xuyh0120.win/lantian"
-        ];
-        trusted-public-keys = [
-          "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-        ];
-      };
-    };
   };
 }

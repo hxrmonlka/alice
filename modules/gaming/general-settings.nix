@@ -15,14 +15,13 @@
       lutris
       umu-launcher
     ];
-
     programs.steam = {
       enable = true;
       protontricks.enable = true;
       gamescopeSession = {
         enable = true;
       };
-      package = pkgs.steam; # Change to millennium-steam
+      package = pkgs.steam;
     };
     programs.gamemode = {
       enable = true;

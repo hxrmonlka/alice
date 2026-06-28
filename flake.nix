@@ -14,10 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvimdots.url = "github:ayamir/nvimdots";
-    # rust-overlay = {
-    #   url = "github:oxalica/rust-overlay";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +29,6 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixcord.url = "github:FlameFlag/nixcord";
     mangowc = {
