@@ -613,10 +613,6 @@
         },
         {
           "enabled": true,
-          "id": "steam"
-        },
-        {
-          "enabled": true,
           "id": "spicetify"
         },
         {
@@ -706,12 +702,19 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "Virtual-1": {
-        "height": 0,
         "name": "Virtual-1",
+        "connected": true,
         "scale": 1,
-        "width": 0,
+        "width": 1274,
+        "height": 722,
         "x": 0,
-        "y": 0
+        "y": 0,
+        "physical_width": 320,
+        "physical_height": 180,
+        "refresh_rate": 74995,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
