@@ -14,6 +14,7 @@
         "net.trowell.kotoba"
         "moe.launcher.sleepy-launcher"
         "md.obsidian.Obsidian"
+        "org.localsend.localsend_app"
       ];
       update.onActivation = true;
     };
