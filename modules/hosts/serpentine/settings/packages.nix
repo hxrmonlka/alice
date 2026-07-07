@@ -39,6 +39,7 @@
       statix
       nixpkgs-fmt
       wireplumber
+      alejandra
     ];
   };
 }

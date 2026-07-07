@@ -27,7 +27,7 @@
       packages = [build-vm];
       shellHook = ''
         echo ""
-        echo "  alice dev shell — disposable VM testing"
+        echo "  alice dev shell - disposable VM testing"
         echo ""
         echo "  build-vm <host>   build and boot a NixOS host in QEMU"
         echo ""
