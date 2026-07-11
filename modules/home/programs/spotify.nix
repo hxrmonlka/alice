@@ -17,11 +17,25 @@
         shuffle
       ];
       theme =
-        spicePkgs.themes.comfy
+        spicePkgs.themes.text
         // {
           overwriteAssets = true;
         };
-      colorScheme = "Comfy";
+      colorScheme = {
+        text = "FFFFFF";
+        subtext = "B3B3B3";
+        main = "000000";
+        highlight = "1A1A1A";
+        banner = "FFFFFF";
+        header = "FFFFFF";
+        accent = "FFFFFF";
+        accent-active = "FFFFFF";
+        accent-inactive = "808080";
+        border-active = "FFFFFF";
+        border-inactive = "4D4D4D";
+        notification = "FFFFFF";
+        notification-error = "FFFFFF";
+      };
     };
   };
 }

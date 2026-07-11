@@ -9,7 +9,7 @@
         enable = true;
         package = pkgs.firefox;
       };
-      mangowc.enable = true;
+      mango.enable = true;
       nix-ld.enable = true;
       niri = {
         enable = true;

@@ -31,7 +31,7 @@
 
       # Subsection: Hardware Settings (under ./modules/hardware)
       self.custom.hardwareModules.intelSettings
-      self.custom.hardwareModules.qemuHardware
+      self.custom.hardwareModules.noctHardware
       self.custom.hardwareModules.otdSettings
     ];
 
