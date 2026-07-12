@@ -38,7 +38,7 @@
         "13-11th-intel" = "framework-11th-gen-intel";
         "13-12th-intel" = "framework-12th-gen-intel";
         "13-13th-intel" = "framework-13th-gen-intel";
-        "13-intel-cu1" = "framework-13-inch-intel-core-ultra-series1";
+        "13-intel-cu1" = "framework-intel-core-ultra-series1";
         "13-amd-7040" = "framework-13-7040-amd";
         "13-amd-ai300" = "framework-amd-ai-300-series";
         "16-amd-7040" = "framework-16-7040-amd";
