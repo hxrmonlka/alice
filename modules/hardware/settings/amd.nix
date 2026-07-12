@@ -9,7 +9,6 @@
       self.custom.hardwareModules.vulkan
     ];
     hardware.alice.amd = {
-      enable = true;
       cpu.enable = true;
       gpu.enable = true;
     };
