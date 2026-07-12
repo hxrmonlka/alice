@@ -235,10 +235,10 @@
       environment.systemPackages = lib.optional cfg.tools pkgs.vulkan-tools;
 
       environment.sessionVariables = lib.mkMerge [
-        # VK_DRIVER_FILES overrides the ICD the Vulkan loader uses globally.
+        # VK_LOADER_DRIVERS_SELECT filters the ICDs the Vulkan loader uses globally.
         # "auto" means no variable is set - standard loader behaviour.
         (lib.mkIf (cfg.defaultDriver != "auto") {
-          VK_DRIVER_FILES = icdPath.${cfg.defaultDriver};
+          VK_LOADER_DRIVERS_SELECT = builtins.replaceStrings [mesaArch "64"] ["*" "*"] (builtins.baseNameOf icdPath.${cfg.defaultDriver});
         })
 
         # The Vulkan loader only searches well-known system paths for layer
