@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+
+enable_free_tier: true
+
+reviews:
+  profile: assertive
+  poem: false
+  in_progress_fortune: false
+  sequence_diagrams: false
+  high_level_summary: true
+  collapse_walkthrough: true
+  suggested_reviewers: false
+  auto_assign_reviewers: false
+  assess_linked_issues: false
+  related_prs: true
+  request_changes_workflow: false
+
+  path_filters:
+    - "!flake.lock"
+
+  path_instructions:
+    - path: "modules/**/*.nix"
+      instructions: |
+        This repo uses the Dendritic flake-parts pattern.
+        - Every module file must expose outputs under a unique key in flake.custom.userModules,
+          flake.custom.commonModules, or flake.custom.hardwareModules, never flake.homeModules directly.
+        - Cross-class imports (NixOS ↔ Home Manager) are forbidden. Flag any.
+        - lib.mkIf is forbidden in import lists. Flag any.
+        - self must be closed over from the outer flake-parts scope, not assumed in scope inside NixOS module lambdas.
+        - Wrapped packages must be referenced via self.packages.${pkgs.stdenv.hostPlatform.system}.<name>.
+        - Noctalia theming: never source Noctalia files from the Nix store. Only reference by name/output.
+    - path: "flake.nix"
+      instructions: |
+        flake.nix must remain minimal: inputs + mkFlake only.
+        Flag any module wiring, imports, or logic added directly here.
+    - path: "scripts/**"
+      instructions: |
+        Shell scripts should be POSIX-compatible where possible.
+        Flag bashisms if the shebang is /usr/bin/env sh.
+
+  auto_review:
+    enabled: true
+    drafts: false
+    auto_incremental_review: true
+    ignore_title_keywords:
+      - "chore"
+    base_branches:
+      - "test-den"
+
+  finishing_touches:
+    docstrings:
+      enabled: false
+    unit_tests:
+      enabled: false
+
+  tools:
+    shellcheck:
+      enabled: true
+    ruff:
+      enabled: false
+    markdownlint:
+      enabled: true
+
+chat:
+  art: false
+  auto_reply: false

@@ -1,0 +1,40 @@
+name: Weekly nix flake update
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-flake-lock:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Update flake lock
+        run: nix flake update
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore: update flake.lock"
+          title: "chore: weekly flake.lock update"
+          body: |
+            Automated weekly update of `flake.lock`.
+          branch: ci/weekly-flake-update
+          delete-branch: true
