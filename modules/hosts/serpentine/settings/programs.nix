@@ -24,6 +24,10 @@
           extraArgs = "--keep 5";
         };
       };
+      appimage = {
+        enable = true;
+        binfmt = true;
+      };
     };
   };
 }

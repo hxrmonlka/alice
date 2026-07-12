@@ -14,6 +14,7 @@
       overlays = [
         inputs.nix-cachyos-kernel.overlays.pinned
         inputs.rust-overlay.overlays.default
+        inputs.millennium.overlays.default
         (final: prev: {
           openldap = prev.openldap.overrideAttrs {doCheck = false;};
         })

@@ -6,6 +6,7 @@
   flake.custom.userModules.alicePackages = {pkgs, ...}: {
     home.packages = with pkgs; [
       gemini-cli
+      antigravity-cli
       cursor-cli
       code-cursor-fhs
       nixfmt
@@ -26,7 +27,6 @@
       cliphist
       # note taking apps
       anki-bin
-      obsidian
       affine-bin
     ];
   };

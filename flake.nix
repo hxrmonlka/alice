@@ -31,6 +31,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixcord.url = "github:FlameFlag/nixcord";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     mangowc = {
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";

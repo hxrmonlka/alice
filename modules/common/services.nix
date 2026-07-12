@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.commonModules.systemServices = _: {
+  flake.custom.commonModules.systemServices = {pkgs, ...}: {
     hardware = {
       bluetooth.enable = true;
     };

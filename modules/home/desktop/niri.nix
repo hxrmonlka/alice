@@ -28,7 +28,7 @@
         hotkey-overlay."skip-at-startup" = _: {};
 
         cursor = {
-          xcursor-theme = "NangongYuCursor";
+          xcursor-theme = "AriaCursor";
           xcursor-size = 24;
         };
 

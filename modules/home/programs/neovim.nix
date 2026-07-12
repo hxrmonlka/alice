@@ -15,13 +15,13 @@
       nvimdots = {
         enable = true;
       };
-      # nvimdots' own nix module (nixos/neovim/default.nix) hardcodes
-      # `docformatter` in extraPython3Packages regardless of user settings.
-      # docformatter depends on `untokenize`, which is unmaintained (last
-      # released 2014) and not compatible with python3.14, breaking the
-      # build once nixpkgs bumps the default python3 interpreter.
-      # Override it here to drop docformatter while keeping the rest.
-      extraPython3Packages = lib.mkForce (ps: with ps; [isort pynvim]);
+      extraPython3Packages = lib.mkForce (
+        ps:
+          with ps; [
+            isort
+            pynvim
+          ]
+      );
     };
 
     xdg.configFile."nvim/lua".source = lib.mkForce (
@@ -70,6 +70,9 @@
         return function(opts)
           opts.settings = {
             ['nil'] = {
+              formatting = {
+                command = {"alejandra"},
+              },
               nix = {
                 flake = {
                   autoEvalInputs = true,
@@ -81,6 +84,14 @@
           vim.lsp.config("nil_ls", opts)
         end
         EOF
+
+        sed -i \
+          's/if status_ok and formatting_supported and client.name == "null-ls" then/if status_ok and formatting_supported and client.name == "null-ls" and vim.bo.filetype ~= "nix" then/' \
+          $out/modules/configs/completion/formatting.lua
+
+        sed -i \
+          's/handlers = {},/handlers = {\n\t\t\t\talejandra = function() end,\n\t\t\t\tnixfmt = function() end,\n\t\t\t\tnixpkgs_fmt = function() end,\n\t\t\t},/' \
+          $out/modules/configs/completion/mason-null-ls.lua
       ''
     );
   };

@@ -134,6 +134,15 @@
             "id": "NotificationHistory",
             "showUnreadBadge": true,
             "unreadBadgeColor": "primary"
+          },
+          {
+            "blacklist": [],
+            "chevronColor": "none",
+            "colorizeIcons": false,
+            "drawerEnabled": true,
+            "hidePassive": false,
+            "id": "Tray",
+            "pinned": []
           }
         ]
       },
@@ -579,7 +588,7 @@
     },
     "audio": {
       "volumeStep": 5,
-      "volumeOverdrive": false,
+      "volumeOverdrive": true,
       "spectrumFrameRate": 60,
       "visualizerType": "linear",
       "spectrumMirrored": true,
@@ -697,31 +706,31 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/alice/Pictures/Wallpapers/wallpaper.jpg"
+      "eDP-1": "/home/alice/Pictures/Wallpapers/miyabi.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "Virtual-1": {
-        "name": "Virtual-1",
+      "eDP-1": {
+        "name": "eDP-1",
         "connected": true,
         "scale": 1,
-        "width": 1274,
-        "height": 722,
+        "width": 1366,
+        "height": 768,
         "x": 0,
         "y": 0,
-        "physical_width": 320,
-        "physical_height": 180,
-        "refresh_rate": 74995,
+        "physical_width": 290,
+        "physical_height": 170,
+        "refresh_rate": 59996,
         "vrr_supported": false,
         "vrr_enabled": false,
         "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1777536629000
+      "lastSeenTs": 1783767707000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.6"
+      "lastSeenVersion": "v4.7.7"
     },
     "colorSchemesList": {
       "schemes": [],
