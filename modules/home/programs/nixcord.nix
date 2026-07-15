@@ -11,13 +11,15 @@
 
       config = {
         frameless = true;
+        useQuickCss = true;
+        enabledThemes = ["noctalia-material.theme.css"];
         plugins = {
           crashHandler.enable = true;
           betterBlockedUsers.enable = true;
           alwaysAnimate.enable = true;
-          AutoDNDWhilePlaying.enable = true;
-          BlurNSFW.enable = true;
-          ClearURLs.enable = true;
+          autoDndWhilePlaying.enable = true;
+          blurNsfw.enable = true;
+          clearUrls.enable = true;
           dragify.enable = true;
           fileUpload.enable = true;
           gitHubRepos.enable = true;

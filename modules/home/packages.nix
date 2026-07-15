@@ -28,6 +28,7 @@
       # note taking apps
       anki-bin
       affine-bin
+      xsettingsd
     ];
   };
 }

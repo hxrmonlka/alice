@@ -19,6 +19,7 @@
       extraPackages = with pkgs; [wireplumber];
       settings = {
         spawn-at-startup = [
+          (lib.getExe pkgs.xsettingsd)
           (lib.getExe self'.packages.aliceNoctalia)
         ];
 
@@ -125,6 +126,9 @@
             geometry-corner-radius = 12.0;
             clip-to-geometry = true;
           }
+          {
+            background-effect.blur = true;
+          }
         ];
 
         binds = {
@@ -211,7 +215,7 @@
 
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
           "Mod+M".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call media toggle";
-          "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
+          "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
           "Mod+Alt+W".spawn = [
             "flatpak"

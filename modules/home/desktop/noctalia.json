@@ -643,6 +643,10 @@
         {
           "enabled": true,
           "id": "starship"
+        },
+        {
+          "enabled": true,
+          "id": "discord"
         }
       ],
       "enableUserTheming": true
@@ -706,7 +710,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/alice/Pictures/Wallpapers/miyabi.jpg"
+      "eDP-1": "/home/alice/Pictures/Wallpapers/Norma.jpeg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -727,7 +731,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1783767707000
+      "lastSeenTs": 1783851031000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
