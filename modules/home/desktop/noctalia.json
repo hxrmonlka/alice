@@ -279,7 +279,7 @@
       "monitorDirectories": [],
       "enableMultiMonitorDirectories": false,
       "showHiddenFiles": false,
-      "viewMode": "single",
+      "viewMode": "recursive",
       "setWallpaperOnAllMonitors": true,
       "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
@@ -647,6 +647,10 @@
         {
           "enabled": true,
           "id": "discord"
+        },
+        {
+          "enabled": true,
+          "id": "steam"
         }
       ],
       "enableUserTheming": true
@@ -710,7 +714,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/alice/Pictures/Wallpapers/Norma.jpeg"
+      "eDP-1": "/home/alice/Pictures/Wallpapers/remielle.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -731,7 +735,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1783851031000
+      "lastSeenTs": 1785228653000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

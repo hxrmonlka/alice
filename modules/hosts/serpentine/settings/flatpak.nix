@@ -15,6 +15,7 @@
         "moe.launcher.sleepy-launcher"
         "md.obsidian.Obsidian"
         "org.localsend.localsend_app"
+        "org.kde.krita"
       ];
       update.onActivation = true;
     };

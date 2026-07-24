@@ -187,9 +187,9 @@
           "Mod+Shift+Minus".set-window-height = "-10%";
           "Mod+Shift+Equal".set-window-height = "+10%";
 
-          "Print".screenshot = {};
-          "Mod+Print".screenshot-screen = {};
-          "Mod+Shift+Print".screenshot-window = {};
+          "Mod+T".screenshot = {};
+          "Mod+Shift+T".screenshot-screen = {};
+          "Mod+Ctrl+T".screenshot-window = {};
 
           "XF86AudioRaiseVolume".spawn = [
             "wpctl"
@@ -215,6 +215,7 @@
 
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
           "Mod+M".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call media toggle";
+          "Mod+Semicolon".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher emoji";
           "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
           "Mod+Alt+W".spawn = [
@@ -223,9 +224,8 @@
             "app.zen_browser.zen"
           ];
 
-          "Mod+Shift+E".quit = _: {props."skip-confirmation" = true;};
           "Mod+Alt+L".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call lockScreen lock";
-          "Mod+Shift+T".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call wallpaper toggle";
+          "Mod+Shift+W".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call wallpaper toggle";
           "Mod+Shift+I".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call controlCenter toggle";
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Ctrl+Alt+Delete".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call sessionMenu toggle";
