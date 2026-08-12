@@ -10,7 +10,7 @@
       cursor-cli
       code-cursor-fhs
       nixfmt
-      antigravity
+      antigravity-ide
       starship
       eza
       libnotify

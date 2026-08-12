@@ -16,7 +16,7 @@
   }: {
     packages.aliceNiriPkg = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
-      extraPackages = with pkgs; [wireplumber];
+      runtimePkgs = with pkgs; [wireplumber];
       settings = {
         spawn-at-startup = [
           (lib.getExe pkgs.xsettingsd)
@@ -214,7 +214,7 @@
           "XF86MonBrightnessDown".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%-";
 
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
-          "Mod+M".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call media toggle";
+          "Mod+N".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call media toggle";
           "Mod+Semicolon".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher emoji";
           "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
@@ -231,6 +231,7 @@
           "Ctrl+Alt+Delete".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call sessionMenu toggle";
           "Mod+V".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher clipboard";
           "Mod+Shift+P".power-off-monitors = {};
+          "Mod+M".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call volume muteInput";
         };
         extraConfig = ''
           include "${pkgs.writeText "noctalia.kdl" (builtins.readFile ./noctalia.kdl)}"

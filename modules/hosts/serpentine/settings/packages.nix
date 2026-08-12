@@ -40,6 +40,8 @@
       nixpkgs-fmt
       wireplumber
       alejandra
+      asciinema
+      devin-cli
     ];
   };
 }
