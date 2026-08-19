@@ -16,6 +16,9 @@
         "md.obsidian.Obsidian"
         "org.localsend.localsend_app"
         "org.kde.krita"
+        "org.libreoffice.LibreOffice"
+        "io.gitlab.theevilskeleton.Upscaler"
+        "org.upscayl.Upscayl"
       ];
       update.onActivation = true;
     };

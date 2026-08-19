@@ -28,6 +28,7 @@
       self.custom.commonModules.bootSettings
       self.custom.commonModules.nixSettings
       self.custom.commonModules.systemServices
+      self.custom.commonModules.inputRemapperPolkit
 
       # Subsection: Hardware Settings (under ./modules/hardware)
       self.custom.hardwareModules.intelSettings
@@ -65,6 +66,7 @@
         self.custom.userModules.zed
         self.custom.userModules.aliceFastfetchConfig
         self.custom.userModules.aliceYazi
+        self.custom.userModules.zathura
       ];
     };
     system.stateVersion = "26.05";

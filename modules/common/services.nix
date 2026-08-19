@@ -8,6 +8,10 @@
       bluetooth.enable = true;
     };
     services = {
+      input-remapper = {
+        enable = true;
+        enableUdevRules = true;
+      };
       power-profiles-daemon.enable = true;
       upower.enable = true;
       xserver = {

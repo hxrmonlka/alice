@@ -16,11 +16,12 @@
   }: {
     packages.aliceNiriPkg = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
-      runtimePkgs = with pkgs; [wireplumber];
+      runtimePkgs = with pkgs; [wireplumber input-remapper];
       settings = {
         spawn-at-startup = [
           (lib.getExe pkgs.xsettingsd)
           (lib.getExe self'.packages.aliceNoctalia)
+          "input-remapper-control --command autoload"
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
