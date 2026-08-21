@@ -21,7 +21,7 @@
         spawn-at-startup = [
           (lib.getExe pkgs.xsettingsd)
           (lib.getExe self'.packages.aliceNoctalia)
-          "input-remapper-control --command autoload"
+          ["input-remapper-control" "--command" "autoload"]
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
