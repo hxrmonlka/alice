@@ -51,6 +51,7 @@
         self.homeModules.aliceCore
         self.homeModules.aliceXsettingsd
         self.custom.userModules.cursorSettings
+        self.custom.userModules.cursorThemes
         self.custom.userModules.alicePackages
         self.custom.userModules.aliceNeovim
         self.custom.userModules.aliceNiri

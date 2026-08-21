@@ -36,7 +36,7 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    aria-cursor = {
+    cursor-themes = {
       url = "github:hxrmonlka/resources/main";
       flake = false;
     };

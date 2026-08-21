@@ -1,7 +1,7 @@
 {
   flake.homeModules.aliceXsettingsd = {pkgs, ...}: {
     xdg.configFile."xsettingsd/xsettingsd.conf".text = ''
-      Gtk/CursorThemeName "AriaCursor"
+      Gtk/CursorThemeName "YeShunguang"
       Gtk/CursorThemeSize 24
     '';
   };
