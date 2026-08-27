@@ -5,7 +5,6 @@
 }: {
   flake.custom.userModules.alicePackages = {pkgs, ...}: {
     home.packages = with pkgs; [
-      gemini-cli
       antigravity-cli
       cursor-cli
       code-cursor-fhs

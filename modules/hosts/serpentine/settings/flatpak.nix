@@ -19,6 +19,7 @@
         "org.libreoffice.LibreOffice"
         "io.gitlab.theevilskeleton.Upscaler"
         "org.upscayl.Upscayl"
+        "io.mrarm.mcpelauncher"
       ];
       update.onActivation = true;
     };

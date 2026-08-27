@@ -86,16 +86,12 @@
           format = " $symbol";
         };
 
-        # ── Palette ──────────────────────────────────────────────────────────
-
         palettes.alice = {
           pink = "#e985b4";
           rose = "#e28e8c";
           gold = "#dbb993";
           mauve = "#cd81a7";
         };
-
-        # ── Disabled ─────────────────────────────────────────────────────────
 
         username.disabled = true;
         hostname.disabled = true;
