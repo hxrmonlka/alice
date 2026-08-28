@@ -14,10 +14,10 @@
       enableAudioWavelength = true;
       enableCalendarEvents = true;
 
-      dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+      dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
-      # settings = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).settings or {};
-      # session = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).session or {};
+      settings = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).settings or {};
+      session = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).session or {};
       clipboardSettings = {
         autoClearDays = 1;
         clearAtStartup = true;

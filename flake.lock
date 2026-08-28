@@ -55,6 +55,26 @@
         "type": "github"
       }
     },
+    "dgop": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787243419,
+        "narHash": "sha256-hQ204o7RiHznAgxZQHeHt3NLSpBP1UIn3ZaUKoTm4N4=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "473bc52af4b760429ea14593208cc211be075817",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
+      }
+    },
     "dms": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -839,6 +859,7 @@
       "inputs": {
         "cursor-themes": "cursor-themes",
         "danksearch": "danksearch",
+        "dgop": "dgop",
         "dms": "dms",
         "flake-parts": "flake-parts",
         "helium": "helium",

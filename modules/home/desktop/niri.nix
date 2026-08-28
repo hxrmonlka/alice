@@ -20,8 +20,9 @@
       settings = {
         spawn-at-startup = [
           (lib.getExe pkgs.xsettingsd)
-          (lib.getExe self'.packages.aliceNoctalia)
+          # (lib.getExe self'.packages.aliceNoctalia) # You can still go back to using Noctalia.
           ["input-remapper-control" "--command" "autoload"]
+          ["dms" "run"]
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
@@ -214,9 +215,13 @@
           "XF86MonBrightnessUp".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%+";
           "XF86MonBrightnessDown".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%-";
 
-          "Mod+S".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher toggle";
-          "Mod+N".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call media toggle";
-          "Mod+Semicolon".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher emoji";
+          "Mod+S".spawn = [
+            "dms"
+            "ipc"
+            "launcher"
+            "toggle"
+          ];
+          "Mod+Semicolon".spawn = ["dms" "ipc" "call" "emojiPicker" "toggle"]; # Available if you have Emoji Picker by Loc Huynh installed # Available if you have Emoji Picker by Loc Huynh installed.
           "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
           "Mod+Alt+W".spawn = [
@@ -225,14 +230,36 @@
             "app.zen_browser.zen"
           ];
 
-          "Mod+Alt+L".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call lockScreen lock";
-          "Mod+Shift+W".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call wallpaper toggle";
-          "Mod+Shift+I".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call controlCenter toggle";
+          "Mod+Alt+L".spawn = [
+            "dms"
+            "ipc"
+            "lock"
+            "lock"
+          ];
+          "Mod+Shift+W".spawn = [
+            "dms"
+            "ipc"
+            "call"
+            "dash"
+            "toggle"
+            "wallpaper"
+          ];
+          "Mod+Shift+I".spawn = [
+            "dms"
+            "ipc"
+            "control-center"
+            "toggle"
+          ];
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
-          "Ctrl+Alt+Delete".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call sessionMenu toggle";
-          "Mod+V".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call launcher clipboard";
+          "Ctrl+Alt+Delete".spawn = [
+            "dms"
+            "ipc"
+            "powermenu"
+            "toggle"
+          ];
+          "Mod+V".spawn = ["dms" "ipc" "clipboard" "toggle"];
           "Mod+Shift+P".power-off-monitors = {};
-          "Mod+M".spawn-sh = "${lib.getExe self'.packages.aliceNoctalia} ipc call volume muteInput";
+          "Mod+M".spawn = ["dms" "ipc" "mic" "mute"];
         };
         extraConfig = ''
           include "${pkgs.writeText "noctalia.kdl" (builtins.readFile ./noctalia.kdl)}"
