@@ -32,6 +32,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixcord.url = "github:FlameFlag/nixcord";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mangowc = {
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +43,14 @@
     cursor-themes = {
       url = "github:hxrmonlka/resources/main";
       flake = false;
+    };
+    danksearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

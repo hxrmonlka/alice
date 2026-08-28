@@ -20,6 +20,7 @@
         "io.gitlab.theevilskeleton.Upscaler"
         "org.upscayl.Upscayl"
         "io.mrarm.mcpelauncher"
+        "com.danklinux.dankcalendar"
       ];
       update.onActivation = true;
     };

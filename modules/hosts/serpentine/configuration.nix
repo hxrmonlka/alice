@@ -46,6 +46,7 @@
         inputs.spicetify-nix.homeManagerModules.default
         inputs.mangowc.hmModules.mango
         inputs.nixcord.homeModules.nixcord
+        inputs.dms.homeModules.dank-material-shell
 
         # Self section
         self.homeModules.aliceCore
@@ -68,6 +69,7 @@
         self.custom.userModules.aliceFastfetchConfig
         self.custom.userModules.aliceYazi
         self.custom.userModules.zathura
+        self.custom.userModules.aliceDms
       ];
     };
     system.stateVersion = "26.05";

@@ -15,6 +15,10 @@
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNiriPkg;
       };
+      dsearch = {
+        enable = true;
+        package = inputs.danksearch.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      };
       nh = {
         enable = true;
         flake = "/home/alice/alice";
