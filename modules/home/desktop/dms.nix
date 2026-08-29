@@ -16,6 +16,7 @@
       };
     };
   };
+
   flake.custom.userModules.aliceDms = {pkgs, ...}: {
     programs.dank-material-shell = {
       enable = true;
@@ -31,6 +32,7 @@
 
       settings = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).settings or {};
       session = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).session or {};
+
       clipboardSettings = {
         autoClearDays = 1;
         clearAtStartup = true;
