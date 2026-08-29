@@ -12,7 +12,7 @@
       config = {
         frameless = true;
         useQuickCss = true;
-        enabledThemes = ["noctalia-material.theme.css"];
+        enabledThemes = ["noctalia.theme.css"];
         plugins = {
           crashHandler.enable = true;
           betterBlockedUsers.enable = true;
