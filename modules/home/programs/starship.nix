@@ -18,12 +18,12 @@
 
         format = lib.concatStrings [
           "$cmd_duration"
-          "[•ᴗ• ](pink)"
+          "[•ᴗ• ](accent)"
           "$character"
         ];
 
         right_format = lib.concatStrings [
-          "[✦ ](pink)"
+          "[✦ ](accent)"
           "$directory"
           "$git_branch"
           "$git_status"
@@ -34,31 +34,31 @@
         cmd_duration = {
           min_time = 500;
           format = "[$duration]($style) ";
-          style = "mauve";
+          style = "accent_dim";
         };
 
         character = {
-          success_symbol = "[▶︎](rose)";
-          error_symbol = "[▶︎](red)";
-          vimcmd_symbol = "[▶︎](gold)";
+          success_symbol = "[▶︎](accent)";
+          error_symbol = "[▶︎](urgent)";
+          vimcmd_symbol = "[▶︎](accent_dim)";
         };
 
         directory = {
           format = "[$path]($style)";
-          style = "gold";
+          style = "accent_dim";
           truncation_length = 3;
           truncate_to_repo = true;
         };
 
         git_branch = {
           format = "[ $symbol$branch]($style)";
-          style = "mauve";
+          style = "accent_dim";
           symbol = "λ ";
         };
 
         git_status = {
           format = "([$all_status$ahead_behind]($style))";
-          style = "mauve";
+          style = "accent_dim";
           ahead = "↑\${count}";
           behind = "↓\${count}";
           diverged = "↕";
@@ -72,7 +72,7 @@
           command = "echo ♯";
           when = ''[ -n "$VIRTUAL_ENV" ]'';
           format = " [$output]($style)";
-          style = "gold";
+          style = "accent";
           shell = [
             "bash"
             "-c"
@@ -81,16 +81,15 @@
 
         status = {
           disabled = false;
-          success_symbol = "[❤︎](#e28e8c)";
-          symbol = "[×](red)";
+          success_symbol = "[❤︎](accent)";
+          symbol = "[×](urgent)";
           format = " $symbol";
         };
 
         palettes.alice = {
-          pink = "#e985b4";
-          rose = "#e28e8c";
-          gold = "#dbb993";
-          mauve = "#cd81a7";
+          accent = "#677de4";
+          accent_dim = "#4a5fc4";
+          urgent = "#fd4663";
         };
 
         username.disabled = true;
