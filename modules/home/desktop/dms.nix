@@ -3,6 +3,19 @@
   self,
   ...
 }: {
+  flake.nixosModules.dgreet = {pkgs, ...}: {
+    services.displayManager.dms-greeter = {
+      enable = true;
+      compositor.name = "niri";
+      package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      configHome = "/home/alice";
+      configFiles = ["/home/alice/.config/DankMaterialShell/settings.json"];
+      logs = {
+        save = true;
+        path = "/tmp/dms-greeter.log";
+      };
+    };
+  };
   flake.custom.userModules.aliceDms = {pkgs, ...}: {
     programs.dank-material-shell = {
       enable = true;
@@ -24,18 +37,6 @@
         disabled = false;
         disableHistory = false;
         disablePersist = true;
-      };
-    };
-
-    services.displayManager.dms-greeter = {
-      enable = true;
-      compositor.name = "niri";
-      package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      configHome = "/home/alice";
-      configFiles = ["/home/alice/.config/DankMaterialShell/settings.json"];
-      logs = {
-        save = true;
-        path = "/tmp/dms-greeter.log";
       };
     };
   };

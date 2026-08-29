@@ -34,6 +34,9 @@
       self.custom.hardwareModules.intelSettings
       self.custom.hardwareModules.noctHardware
       self.custom.hardwareModules.otdSettings
+
+      # Misc
+      self.nixosModules.dgreet
     ];
 
     home-manager = {
