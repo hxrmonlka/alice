@@ -12,7 +12,7 @@
       enableNushellIntegration = true;
       enableFishIntegration = true;
       settings.theme.flavor.use = "noctalia";
-      keymap.manager.prepend_keymap = [
+      keymap.mgr.prepend_keymap = [
         {
           on = ["c" "a" "a"];
           run = "plugin compress";
