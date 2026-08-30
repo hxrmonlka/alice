@@ -38,6 +38,26 @@
           run = "plugin compress -phl";
           desc = "Archive selected files (password+header+level)";
         }
+        {
+          on = ["m"];
+          run = "plugin bookmarks save";
+          desc = "Save current position as a bookmark";
+        }
+        {
+          on = ["'"];
+          run = "plugin bookmarks jump";
+          desc = "Jump to a bookmark";
+        }
+        {
+          on = ["b" "d"];
+          run = "plugin bookmarks delete";
+          desc = "Delete a bookmark";
+        }
+        {
+          on = ["b" "D"];
+          run = "plugin bookmarks delete_all";
+          desc = "Delete all bookmarks";
+        }
       ];
     };
   };
