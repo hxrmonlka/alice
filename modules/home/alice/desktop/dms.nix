@@ -17,7 +17,7 @@
     };
   };
 
-  flake.custom.userModules.aliceDms = {pkgs, ...}: {
+  flake.custom.aliceModules.dms = {pkgs, ...}: {
     programs.dank-material-shell = {
       enable = true;
       systemd.enable = false;

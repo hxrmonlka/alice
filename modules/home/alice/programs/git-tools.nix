@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceGitTools = {pkgs, ...}: {
+  flake.custom.aliceModules.gitTools = {pkgs, ...}: {
     programs.git = {
       enable = true;
       settings = {

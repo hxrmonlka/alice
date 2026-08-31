@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.cursorSettings = {
+  flake.custom.aliceModules.cursorSettings = {
     pkgs,
     lib,
     ...

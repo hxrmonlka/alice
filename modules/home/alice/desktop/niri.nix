@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceNiri = {
+  flake.custom.aliceModules.niri = {
     pkgs,
     lib,
     ...
@@ -20,6 +20,7 @@
       settings = {
         spawn-at-startup = [
           (lib.getExe pkgs.xsettingsd)
+          (lib.getExe inputs.hibiki.packages.${pkgs.stdenv.hostPlatform.system}.default)
           # (lib.getExe self'.packages.aliceNoctalia) # You can still go back to using Noctalia.
           ["input-remapper-control" "--command" "autoload"]
           ["dms" "run"]
@@ -221,7 +222,8 @@
             "launcher"
             "toggle"
           ];
-          "Mod+Semicolon".spawn = ["dms" "ipc" "call" "emojiPicker" "toggle"]; # Available if you have Emoji Picker by Loc Huynh installed # Available if you have Emoji Picker by Loc Huynh installed.
+          "Mod+N".spawn = ["dms" "ipc" "dash" "toggle" "media"];
+          "Mod+Semicolon".spawn = ["dms" "ipc" "call" "emojiPicker" "toggle"]; # Available if you have Emoji Picker by Loc Huynh installed
           "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
           "Mod+Alt+W".spawn = [
@@ -229,7 +231,6 @@
             "run"
             "app.zen_browser.zen"
           ];
-
           "Mod+Alt+L".spawn = [
             "dms"
             "ipc"

@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceSpotify = {
+  flake.custom.aliceModules.spotify = {
     inputs,
     pkgs,
     ...
@@ -19,6 +19,7 @@
 
       theme = spicePkgs.themes.text;
 
+      # TODO: Use Lumina as a script injector for DMS' Matugen User Template.
       customColorScheme = {
         text = "FFFFFF";
         subtext = "999999";

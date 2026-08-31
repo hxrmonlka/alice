@@ -6,10 +6,10 @@
     };
 
     flake.custom = {
-      userModules = lib.mkOption {
+      aliceModules = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.unspecified;
         default = {};
-        description = "Home Manager modules from ./modules/home.";
+        description = "Alice's dedicated homeModules from ./modules/home/alice.";
       };
 
       commonModules = lib.mkOption {

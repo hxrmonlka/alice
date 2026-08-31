@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceShells = {
+  flake.custom.aliceModules.shells = {
     pkgs,
     lib,
     ...

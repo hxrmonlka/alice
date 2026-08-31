@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceYazi = {pkgs, ...}: {
+  flake.custom.aliceModules.yazi = {pkgs, ...}: {
     programs.yazi = {
       enable = true;
       shellWrapperName = "y";
@@ -13,6 +13,7 @@
       enableFishIntegration = true;
       settings.theme.flavor.use = "noctalia";
       keymap.mgr.prepend_keymap = [
+        # compress.yazi -> ya pkg add KKV9/compress
         {
           on = ["c" "a" "a"];
           run = "plugin compress";
@@ -38,6 +39,7 @@
           run = "plugin compress -phl";
           desc = "Archive selected files (password+header+level)";
         }
+        # bookmarks.yazi -> ya pkg add dedukun/bookmarks
         {
           on = ["m"];
           run = "plugin bookmarks save";

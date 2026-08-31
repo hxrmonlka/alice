@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceNeovim = {
+  flake.custom.aliceModules.neovim = {
     pkgs,
     inputs,
     lib,
@@ -24,6 +24,7 @@
       );
     };
 
+    # TODO: This also needs Lumina.
     xdg.configFile."nvim/lua".source = lib.mkForce (
       pkgs.runCommand "nvimdots-lua-custom" {} ''
         mkdir -p $out

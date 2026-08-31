@@ -17,7 +17,6 @@
       qt5.qtimageformats
       qt5.qtmultimedia
       kdePackages.qt5compat
-      # nvimdots build tools
       gcc
       gnumake
       cmake
@@ -42,6 +41,8 @@
       alejandra
       asciinema
       devin-cli
+      nodejs_22
+      clang-tools
     ];
   };
 }

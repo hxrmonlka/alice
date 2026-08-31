@@ -54,25 +54,26 @@
         # Self section
         self.homeModules.aliceCore
         self.homeModules.aliceXsettingsd
-        self.custom.userModules.cursorSettings
-        self.custom.userModules.cursorThemes
-        self.custom.userModules.alicePackages
-        self.custom.userModules.aliceNeovim
-        self.custom.userModules.aliceNiri
-        self.custom.userModules.aliceMangoConfig
-        self.custom.userModules.aliceGitTools
-        self.custom.userModules.aliceKitty
-        self.custom.userModules.aliceStarship
-        self.custom.userModules.aliceBrowser
-        self.custom.userModules.aliceSpotify
-        self.custom.userModules.aliceBtop
-        self.custom.userModules.aliceShells
-        self.custom.userModules.nixcord
-        self.custom.userModules.zed
-        self.custom.userModules.aliceFastfetchConfig
-        self.custom.userModules.aliceYazi
-        self.custom.userModules.zathura
-        self.custom.userModules.aliceDms
+        self.custom.aliceModules.cursorSettings
+        self.custom.aliceModules.cursorThemes
+        self.custom.aliceModules.packages
+        self.custom.aliceModules.neovim
+        self.custom.aliceModules.niri
+        self.custom.aliceModules.mangoConfig
+        self.custom.aliceModules.gitTools
+        self.custom.aliceModules.kitty
+        self.custom.aliceModules.starship
+        self.custom.aliceModules.browser
+        self.custom.aliceModules.spotify
+        self.custom.aliceModules.btop
+        self.custom.aliceModules.shells
+        self.custom.aliceModules.nixcord
+        self.custom.aliceModules.zed
+        self.custom.aliceModules.fastfetchConfig
+        self.custom.aliceModules.yazi
+        self.custom.aliceModules.zathura
+        self.custom.aliceModules.dms
+        self.custom.aliceModules.gtk
       ];
     };
     system.stateVersion = "26.05";

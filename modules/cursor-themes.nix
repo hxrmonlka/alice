@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.cursorThemes = {
+  flake.custom.aliceModules.cursorThemes = {
     pkgs,
     lib,
     ...
@@ -28,3 +28,4 @@
     };
   };
 }
+

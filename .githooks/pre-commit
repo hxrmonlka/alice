@@ -4,4 +4,4 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 
 "${REPO_ROOT}/scripts/sync-noctalia-kdl.sh"
-git add "${REPO_ROOT}/modules/home/desktop/noctalia.kdl"
+git add "${REPO_ROOT}/modules/home/alice/desktop/noctalia.kdl"

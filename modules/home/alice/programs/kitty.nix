@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceKitty = {
+  flake.custom.aliceModules.kitty = {
     pkgs,
     lib,
     ...
@@ -13,7 +13,7 @@
       enableGitIntegration = true;
       font = {
         name = "JetBrainsMono Nerd Font";
-        size = 13.0;
+        size = 9.0;
       };
       settings = {
         "cursor_shape" = "beam";

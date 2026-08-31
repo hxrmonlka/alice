@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceStarship = {lib, ...}: {
+  flake.custom.aliceModules.starship = {lib, ...}: {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;

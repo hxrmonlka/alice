@@ -12,7 +12,7 @@
       enable = true;
     };
   };
-  flake.custom.userModules.aliceMangoConfig = {
+  flake.custom.aliceModules.mangoConfig = {
     lib,
     pkgs,
     self,

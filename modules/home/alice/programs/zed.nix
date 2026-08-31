@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.zed = {
+  flake.custom.aliceModules.zed = {
     pkgs,
     lib,
     ...

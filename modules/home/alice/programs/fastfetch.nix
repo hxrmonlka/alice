@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceFastfetchConfig = {
+  flake.custom.aliceModules.fastfetchConfig = {
     pkgs,
     lib,
     ...

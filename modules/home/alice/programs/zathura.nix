@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.zathura = {pkgs, ...}: {
+  flake.custom.aliceModules.zathura = {pkgs, ...}: {
     home.packages = with pkgs; [
       zathuraPkgs.zathura_pdf_poppler
     ];
