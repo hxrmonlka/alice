@@ -24,7 +24,6 @@
       );
     };
 
-    # TODO: This also needs Lumina.
     xdg.configFile."nvim/lua".source = lib.mkForce (
       pkgs.runCommand "nvimdots-lua-custom" {} ''
         mkdir -p $out
@@ -48,8 +47,23 @@
         return plugin
         EOF
 
+        cat << 'EOF' > $out/user/plugins/base46.lua
+        local plugin = {}
+
+        plugin["AvengeMedia/base46"] = {
+          lazy = false,
+          priority = 1000,
+          config = function()
+            require("base46").setup({})
+          end,
+        }
+
+        return plugin
+        EOF
+
         cat << 'EOF' > $out/user/settings.lua
         local settings = {}
+        settings["colorscheme"] = "dms"
         settings["lsp_deps"] = {
           "bashls",
           "clangd",

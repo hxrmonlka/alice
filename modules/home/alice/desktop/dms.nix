@@ -30,8 +30,8 @@
 
       dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
-      settings = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).settings or {};
-      session = (builtins.fromJSON (builtins.readFile ./dms-settings.json)).session or {};
+      settings = builtins.fromJSON (builtins.readFile ./dms-settings.json);
+      session = {};
 
       clipboardSettings = {
         autoClearDays = 1;
