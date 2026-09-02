@@ -4,6 +4,10 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    lumina = {
+      url = "github:hxrmonlka/lumina/un/test";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";

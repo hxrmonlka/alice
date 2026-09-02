@@ -9,6 +9,7 @@
       inputs.home-manager.nixosModules.home-manager
       inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.mangowc.nixosModules.mango
+      inputs.lumina.nixosModules.signature
 
       # Self section (under ./modules/hosts/serpentine/)
       self.nixosModules.serpentineNetworking
@@ -45,6 +46,7 @@
       extraSpecialArgs = {inherit inputs self;};
       users.alice.imports = [
         # Inputs section
+        inputs.lumina.homeModules.signature
         inputs.nvimdots.homeManagerModules.default
         inputs.spicetify-nix.homeManagerModules.default
         inputs.mangowc.hmModules.mango

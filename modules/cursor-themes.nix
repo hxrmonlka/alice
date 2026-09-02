@@ -3,11 +3,11 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.cursorThemes = {
+  flake.custom.aliceModules.cursorThemes = ({
     pkgs,
     lib,
     ...
-  }: {};
+  }: {});
   perSystem = {pkgs, ...}: {
     packages.cursor-themes = pkgs.stdenvNoCC.mkDerivation {
       pname = "cursor-themes";
