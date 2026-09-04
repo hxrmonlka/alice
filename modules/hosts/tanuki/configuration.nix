@@ -14,9 +14,13 @@
       self.nixosModules.tanukiUserSystemConfig
       self.nixosModules.tanukiPrograms
       self.nixosModules.tanukiBootOverride
+      self.nixosModules.tanukiHardware
 
       # Common section
       self.custom.commonModules.nixSettings
+
+      # Hardware section
+      self.nixosModules.tanukiHardware
     ];
     system.stateVersion = "26.05";
   };
