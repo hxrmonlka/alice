@@ -443,14 +443,18 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1788344016,
-        "narHash": "sha256-7PB0KP4+znFX3k/RFaGBUvCIWKoCNL/qGLQ0JwdMRPw=",
-        "path": "/home/alice/Projects/lumina",
-        "type": "path"
+        "lastModified": 1788347190,
+        "narHash": "sha256-PO6NdeVeo7EDQ6X6jwm77EgVXSQ+Hmumd+2NHwWEurQ=",
+        "owner": "hxrmonlka",
+        "repo": "lumina",
+        "rev": "c4d256cc336b5c0962c5955dff589f555b9176f7",
+        "type": "github"
       },
       "original": {
-        "path": "/home/alice/Projects/lumina",
-        "type": "path"
+        "owner": "hxrmonlka",
+        "ref": "un/test",
+        "repo": "lumina",
+        "type": "github"
       }
     },
     "mangowc": {

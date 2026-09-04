@@ -21,6 +21,7 @@
         "org.upscayl.Upscayl"
         "io.mrarm.mcpelauncher"
         "com.danklinux.dankcalendar"
+        "org.blender.Blender"
       ];
       update.onActivation = true;
     };

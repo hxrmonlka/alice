@@ -17,7 +17,11 @@
     };
   };
 
-  flake.custom.aliceModules.dms = {pkgs, ...}: {
+  flake.custom.aliceModules.dms = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.dank-material-shell = {
       enable = true;
       systemd.enable = false;
@@ -41,5 +45,11 @@
         disablePersist = true;
       };
     };
+
+    home.activation.maskDmsSystemdUnit = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      export XDG_RUNTIME_DIR="''${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+      ${pkgs.systemd}/bin/systemctl --user disable --now dms.service 2>/dev/null || true
+      ${pkgs.systemd}/bin/systemctl --user mask dms.service 2>/dev/null || true
+    '';
   };
 }

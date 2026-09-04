@@ -26,7 +26,8 @@
         "ctrl+c" = "copy_or_interrupt";
       };
       extraConfig = ''
-        include themes/noctalia.conf
+        include dank-theme.conf
+        include dank-tabs.conf
       '';
     };
   };

@@ -1,0 +1,64 @@
+add_newline = false
+command_timeout = 1000
+palette = "alice"
+format = "$cmd_duration[•ᴗ• ](accent)$character"
+right_format = "[✦ ](accent)$directory$git_branch$git_status${custom.venv}$status"
+
+[cmd_duration]
+min_time = 500
+format = "[$duration]($style) "
+style = "accent_dim"
+
+[character]
+success_symbol = "[▶︎](accent)"
+error_symbol = "[▶︎](urgent)"
+vimcmd_symbol = "[▶︎](accent_dim)"
+
+[directory]
+format = "[$path]($style)"
+style = "accent_dim"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "[ $symbol$branch]($style)"
+style = "accent_dim"
+symbol = "λ "
+
+[git_status]
+format = "([$all_status$ahead_behind]($style))"
+style = "accent_dim"
+ahead = "↑${count}"
+behind = "↓${count}"
+diverged = "↕"
+modified = "~"
+staged = "+"
+untracked = "?"
+deleted = "-"
+
+[custom.venv]
+command = "echo ♯"
+when = '[ -n "$VIRTUAL_ENV" ]'
+format = " [$output]($style)"
+style = "accent"
+shell = ["bash", "-c"]
+
+[status]
+disabled = false
+success_symbol = "[❤︎](accent)"
+symbol = "[×](urgent)"
+format = " $symbol"
+
+[palettes.alice]
+accent = "{{colors.primary.default.hex}}"
+accent_dim = "{{colors.primary_fixed_dim.default.hex}}"
+urgent = "{{colors.error.default.hex}}"
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[package]
+disabled = true

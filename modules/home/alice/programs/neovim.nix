@@ -7,24 +7,10 @@
     pkgs,
     inputs,
     lib,
+    config,
     ...
-  }: {
-    programs.neovim = {
-      enable = true;
-      withRuby = true;
-      nvimdots = {
-        enable = true;
-      };
-      extraPython3Packages = lib.mkForce (
-        ps:
-          with ps; [
-            isort
-            pynvim
-          ]
-      );
-    };
-
-    xdg.configFile."nvim/lua".source = lib.mkForce (
+  }: let
+    nvimLuaCustom =
       pkgs.runCommand "nvimdots-lua-custom" {} ''
         mkdir -p $out
         cp -r ${inputs.nvimdots}/lua/* $out/
@@ -55,6 +41,47 @@
           priority = 1000,
           config = function()
             require("base46").setup({})
+          end,
+        }
+
+        return plugin
+        EOF
+
+        cat << 'EOF' > $out/user/plugins/notify.lua
+        local plugin = {}
+
+        plugin["rcarriga/nvim-notify"] = {
+          lazy = true,
+          event = "VeryLazy",
+          config = function()
+            local notify = require("notify")
+            local icons = {
+              diagnostics = require("modules.utils.icons").get("diagnostics"),
+              ui = require("modules.utils.icons").get("ui"),
+            }
+
+            require("modules.utils").load_plugin("notify", {
+              stages = "fade",
+              render = "default",
+              fps = 20,
+              timeout = 2000,
+              minimum_width = 50,
+              background_colour = "NormalFloat",
+              icons = {
+                ERROR = icons.diagnostics.Error,
+                WARN = icons.diagnostics.Warning,
+                INFO = icons.diagnostics.Information,
+                DEBUG = icons.ui.Bug,
+                TRACE = icons.ui.Pencil,
+              },
+              on_open = function(win)
+                vim.api.nvim_set_option_value("winblend", 0, { scope = "local", win = win })
+                vim.api.nvim_win_set_config(win, { zindex = 90 })
+              end,
+              level = "INFO",
+            })
+
+            vim.notify = notify
           end,
         }
 
@@ -107,7 +134,44 @@
         sed -i \
           's/handlers = {},/handlers = {\n\t\t\t\talejandra = function() end,\n\t\t\t\tnixfmt = function() end,\n\t\t\t\tnixpkgs_fmt = function() end,\n\t\t\t},/' \
           $out/modules/configs/completion/mason-null-ls.lua
-      ''
-    );
+      '';
+  in {
+    programs.neovim = {
+      enable = true;
+      withRuby = true;
+      nvimdots = {
+        enable = true;
+      };
+      extraPython3Packages = lib.mkForce (
+        ps:
+          with ps; [
+            isort
+            pynvim
+          ]
+      );
+    };
+
+    xdg.configFile."nvim/lua".enable = false;
+
+    home.activation.linkNvimLua = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      SOURCE_DIR="${nvimLuaCustom}"
+      TARGET_DIR="${config.home.homeDirectory}/.config/nvim/lua"
+
+      mkdir -p "$TARGET_DIR"
+
+      for entry in "$SOURCE_DIR"/*; do
+        entry_name=$(basename "$entry")
+        TARGET="$TARGET_DIR/$entry_name"
+
+        if [ -d "$TARGET" ] && [ ! -L "$TARGET" ]; then
+          echo "nvimdots-lua safety lock: $TARGET already exists as a physical directory. Skipping symlink creation."
+        else
+          rm -f "$TARGET"
+          ln -s "$entry" "$TARGET"
+        fi
+      done
+
+      mkdir -p "$TARGET_DIR/lualine/themes"
+    '';
   };
 }

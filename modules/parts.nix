@@ -6,6 +6,12 @@
     };
 
     flake.custom = {
+      konoeModules = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "Konoe's dedicated homeModules from ./modules/home/konoe.";
+      };
+
       aliceModules = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.unspecified;
         default = {};

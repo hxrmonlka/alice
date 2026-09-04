@@ -35,11 +35,11 @@
       thunar = {
         enable = true;
         plugins = with pkgs; [
-          xfce.thunar-archive-plugin
-          xfce.thunar-media-tags-plugin
-          xfce.thunar-vcs-plugin
+          thunar-archive-plugin
+          thunar-media-tags-plugin
+          thunar-vcs-plugin
           thunar-shares-plugin
-          xfce.thunar-volman
+          thunar-volman
         ];
       };
     };

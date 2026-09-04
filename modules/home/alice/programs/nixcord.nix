@@ -16,7 +16,6 @@
         plugins = {
           crashHandler.enable = true;
           betterBlockedUsers.enable = true;
-          alwaysAnimate.enable = true;
           autoDndWhilePlaying.enable = true;
           blurNsfw.enable = true;
           clearUrls.enable = true;
