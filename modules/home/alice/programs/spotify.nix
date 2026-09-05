@@ -44,14 +44,31 @@
     config,
     ...
   }: let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
     liveApply = inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.spicetify-live-apply;
     liveDir = "${config.xdg.dataHome}/alice/spicetify-live";
     colorFile = "${config.xdg.stateHome}/alice/spicetify-colors.json";
+
+    liveExtensions = [
+      spicePkgs.extensions.adblock
+      spicePkgs.extensions.shuffle
+    ];
+    extensionArgs = lib.concatMapStringsSep " " (
+      e: "--extension ${lib.escapeShellArg e.src} ${lib.escapeShellArg e.name}"
+    ) liveExtensions;
+    patchArgs = lib.concatStringsSep " " (
+      lib.mapAttrsToList (k: v: "--patch ${lib.escapeShellArg k} ${lib.escapeShellArg v}") spicePkgs.themes.text.patches
+    );
+
     spicetifyLive = pkgs.writeShellScriptBin "spicetify-live" ''
       exec ${liveApply}/bin/spicetify-live-apply \
-        --base "${config.programs.spicetify.spicedSpotify}/share/spotify" \
-        --colors "${colorFile}" \
-        --live-dir "${liveDir}"
+        --spotify ${lib.escapeShellArg "${pkgs.spotify}/share/spotify"} \
+        --theme-src ${lib.escapeShellArg "${spicePkgs.themes.text.src}"} \
+        --theme-name text \
+        --colors ${lib.escapeShellArg colorFile} \
+        --live-dir ${lib.escapeShellArg liveDir} \
+        ${extensionArgs} \
+        ${patchArgs}
     '';
   in {
     home.packages = [spicetifyLive];

@@ -4,7 +4,7 @@
   ...
 }: {
   flake.custom.aliceModules.yazi = {pkgs, ...}: {
-    imports = [inputs.lumina.homeModules.yazi-plugin-manager];
+    imports = [inputs.lumina.homeModules.lumina-yazi-plugins];
 
     lumina.yazi.plugins = [
       "KKV9/compress"
