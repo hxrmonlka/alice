@@ -4,6 +4,13 @@
   ...
 }: {
   flake.custom.aliceModules.yazi = {pkgs, ...}: {
+    imports = [inputs.lumina.homeModules.yazi-plugin-manager];
+
+    lumina.yazi.plugins = [
+      "KKV9/compress"
+      "dedukun/bookmarks"
+    ];
+
     programs.yazi = {
       enable = true;
       shellWrapperName = "y";

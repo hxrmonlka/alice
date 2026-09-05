@@ -443,11 +443,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1788347190,
-        "narHash": "sha256-PO6NdeVeo7EDQ6X6jwm77EgVXSQ+Hmumd+2NHwWEurQ=",
+        "lastModified": 1788584852,
+        "narHash": "sha256-jr49SE27HLYRpiZVoBJXpasN5lLtYmm3oGye+XyXvkA=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "c4d256cc336b5c0962c5955dff589f555b9176f7",
+        "rev": "0b1eec0fba56ed8ea09aba13256a7344befab0dd",
         "type": "github"
       },
       "original": {
