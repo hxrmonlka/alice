@@ -6,13 +6,20 @@
   flake.custom.aliceModules.spotify = {
     inputs,
     pkgs,
-    config,
     ...
   }: {
     programs.spicetify = let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-      colorFile = "${config.xdg.stateHome}/alice/spicetify-colors.json";
-      fallbackColors = {
+    in {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        shuffle
+      ];
+
+      theme = spicePkgs.themes.text;
+
+      customColorScheme = {
         text = "FFFFFF";
         subtext = "999999";
         main = "000000";
@@ -27,37 +34,43 @@
         notification = "CCCCCC";
         notification-error = "808080";
       };
-    in {
-      enable = true;
-      enabledExtensions = with spicePkgs.extensions; [
-        adblock
-        shuffle
-      ];
-
-      theme = spicePkgs.themes.text;
-
-      customColorScheme =
-        if builtins.pathExists colorFile
-        then builtins.fromJSON (builtins.readFile colorFile)
-        else fallbackColors;
     };
   };
 
   flake.custom.aliceModules.spotifyMatugen = {
+    inputs,
     lib,
+    pkgs,
     config,
     ...
-  }: {
+  }: let
+    liveApply = inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.spicetify-live-apply;
+    liveDir = "${config.xdg.dataHome}/alice/spicetify-live";
+    colorFile = "${config.xdg.stateHome}/alice/spicetify-colors.json";
+    spicetifyLive = pkgs.writeShellScriptBin "spicetify-live" ''
+      exec ${liveApply}/bin/spicetify-live-apply \
+        --base "${config.programs.spicetify.spicedSpotify}/share/spotify" \
+        --colors "${colorFile}" \
+        --live-dir "${liveDir}"
+    '';
+  in {
+    home.packages = [spicetifyLive];
+
     xdg.configFile."matugen/templates/spicetify-colors.json".source = ./toml/spicetify-matugen.json;
     xdg.configFile."matugen/config.toml".text = lib.mkAfter ''
 
       [templates.spicetify]
       input_path = '${config.xdg.configHome}/matugen/templates/spicetify-colors.json'
-      output_path = '${config.xdg.stateHome}/alice/spicetify-colors.json'
+      output_path = '${colorFile}'
+      post_hook = 'spicetify-live'
     '';
 
     home.activation.aliceStateDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
       run mkdir -p ${config.xdg.stateHome}/alice
+    '';
+
+    home.activation.spicetifyLiveSeed = lib.hm.dag.entryAfter ["aliceStateDir"] ''
+      run ${spicetifyLive}/bin/spicetify-live || true
     '';
   };
 }
