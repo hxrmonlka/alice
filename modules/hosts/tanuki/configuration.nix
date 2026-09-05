@@ -18,9 +18,11 @@
 
       # Common section
       self.custom.commonModules.nixSettings
+      self.custom.commonModules.fonts
 
       # Hardware section
-      self.nixosModules.tanukiHardware
+      self.nixosModules.tanukiHardwareSettings
+      self.custom.hardwareModules.asustuf
     ];
     system.stateVersion = "26.05";
   };

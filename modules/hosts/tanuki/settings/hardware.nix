@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.tanukiHardware = {...}: {
+  flake.nixosModules.tanukiHardwareSettings = {...}: {
     imports = [
       inputs.nixos-hardware.nixosModules.asus-fa506nc
       self.custom.hardwareModules.vulkan

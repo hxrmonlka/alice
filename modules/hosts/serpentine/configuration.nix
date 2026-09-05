@@ -19,6 +19,7 @@
       self.nixosModules.serpentineLocales
       self.nixosModules.serpentineEnvironment
       self.nixosModules.serpentineFlatpakConfig
+      self.nixosModules.serpentineServicesOverride
 
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.gamingSettings
@@ -28,7 +29,6 @@
       self.custom.commonModules.fonts
       self.custom.commonModules.bootSettings
       self.custom.commonModules.nixSettings
-      self.custom.commonModules.systemServices
       self.custom.commonModules.inputRemapperPolkit
 
       # Subsection: Hardware Settings (under ./modules/hardware)

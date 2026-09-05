@@ -9,8 +9,8 @@
     };
     services = {
       input-remapper = {
-        enable = true;
-        enableUdevRules = true;
+        enable = false;
+        enableUdevRules = false;
       };
       power-profiles-daemon.enable = true;
       upower.enable = true;

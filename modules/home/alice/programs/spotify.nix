@@ -56,6 +56,20 @@
   in {
     home.packages = [spicetifyLive];
 
+    xdg.desktopEntries.spotify = {
+      name = "Spotify";
+      genericName = "Music Player";
+      comment = "Play music from Spotify";
+      icon = "spotify-client";
+      exec = "${liveDir}/spotify %U";
+      terminal = false;
+      categories = ["Audio" "Music" "Player" "AudioVideo"];
+      mimeType = ["x-scheme-handler/spotify"];
+      settings = {
+        StartupWMClass = "spotify";
+      };
+    };
+
     xdg.configFile."matugen/templates/spicetify-colors.json".source = ./toml/spicetify-matugen.json;
     xdg.configFile."matugen/config.toml".text = lib.mkAfter ''
 
@@ -70,7 +84,7 @@
     '';
 
     home.activation.spicetifyLiveSeed = lib.hm.dag.entryAfter ["aliceStateDir"] ''
-      run ${spicetifyLive}/bin/spicetify-live || true
+      run ${spicetifyLive}/bin/spicetify-live
     '';
   };
 }
