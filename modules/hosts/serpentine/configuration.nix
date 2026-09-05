@@ -68,6 +68,7 @@
         self.custom.aliceModules.starshipMatugen
         self.custom.aliceModules.browser
         self.custom.aliceModules.spotify
+        self.custom.aliceModules.spotifyMatugen
         self.custom.aliceModules.btop
         self.custom.aliceModules.shells
         self.custom.aliceModules.nixcord

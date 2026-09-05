@@ -12,6 +12,7 @@
     pkgs,
     lib,
     self',
+    config,
     ...
   }: {
     packages.aliceNiriPkg = inputs.wrapper-modules.wrappers.niri.wrap {
@@ -263,7 +264,7 @@
           "Mod+M".spawn = ["dms" "ipc" "mic" "mute"];
         };
         extraConfig = ''
-          include "${pkgs.writeText "noctalia.kdl" (builtins.readFile ./noctalia.kdl)}"
+          include optional=true "~/.config/niri/dms/colors.kdl"
         '';
       };
     };
