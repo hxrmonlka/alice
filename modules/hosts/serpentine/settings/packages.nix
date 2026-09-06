@@ -12,7 +12,6 @@
       xwayland-satellite
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
       self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNiriPkg
-      self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia
       qt5.qtsvg
       qt5.qtimageformats
       qt5.qtmultimedia

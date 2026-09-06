@@ -233,13 +233,13 @@
           "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
 
           # Noctalia IPC
-          "SUPER,s,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call launcher toggle"
-          "SUPER,m,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call media toggle"
-          "SUPER+ALT,l,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call lockScreen lock"
-          "SUPER+SHIFT,t,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call wallpaper toggle"
-          "SUPER+SHIFT,i,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call controlCenter toggle"
-          "CTRL+ALT,Delete,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call sessionMenu toggle"
-          "SUPER,v,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call launcher clipboard"
+          #          "SUPER,s,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call launcher toggle"
+          #          "SUPER,m,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call media toggle"
+          #          "SUPER+ALT,l,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call lockScreen lock"
+          #          "SUPER+SHIFT,t,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call wallpaper toggle"
+          #          "SUPER+SHIFT,i,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call controlCenter toggle"
+          #          "CTRL+ALT,Delete,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call sessionMenu toggle"
+          #          "SUPER,v,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call launcher clipboard"
 
           # Apps
           "SUPER,w,spawn,helium"

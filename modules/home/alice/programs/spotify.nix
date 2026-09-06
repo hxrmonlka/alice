@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.userModules.aliceSpotify = {
+  flake.custom.aliceModules.spotify = {
     inputs,
     pkgs,
     ...
@@ -17,23 +17,31 @@
         shuffle
       ];
 
-      theme = spicePkgs.themes.text;
+      theme = spicePkgs.themes.dribbblish;
+      colorScheme = "catppuccin-mocha";
 
-      customColorScheme = {
-        text = "FFFFFF";
-        subtext = "999999";
-        main = "000000";
-        highlight = "1A1A1A";
-        header = "2E2E2E";
-        accent = "FFFFFF";
-        accent-active = "FFFFFF";
-        accent-inactive = "1A1A1A";
-        banner = "FFFFFF";
-        border-active = "FFFFFF";
-        border-inactive = "4D4D4D";
-        notification = "CCCCCC";
-        notification-error = "808080";
-      };
+      #      customColorScheme = {
+      #        text = "FFFFFF";
+      #        subtext = "999999";
+      #        nav-active-text = "FFFFFF";
+      #        main = "000000";
+      #        sidebar = "1A1A1A";
+      #        player = "1A1A1A";
+      #        card = "1A1A1A";
+      #        shadow = "000000";
+      #        main-secondary = "2E2E2E";
+      #        button = "FFFFFF";
+      #        button-secondary = "999999";
+      #        button-active = "FFFFFF";
+      #        button-disabled = "4D4D4D";
+      #        nav-active = "FFFFFF";
+      #        play-button = "FFFFFF";
+      #        tab-active = "1A1A1A";
+      #        notification = "CCCCCC";
+      #        notification-error = "808080";
+      #        playback-bar = "FFFFFF";
+      #        misc = "FFFFFF";
+      #      };
     };
   };
 }

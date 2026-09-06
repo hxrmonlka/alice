@@ -24,6 +24,8 @@
       };
       keybindings = {
         "ctrl+c" = "copy_or_interrupt";
+        "ctrl+shift+h" = "previous_tab";
+        "ctrl+shift+l" = "next_tab";
       };
       extraConfig = ''
         include dank-theme.conf

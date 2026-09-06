@@ -14,7 +14,7 @@
   };
 
   flake.custom.aliceModules.starshipMatugen = {config, ...}: {
-    xdg.configFile."matugen/templates/starship.toml".source = ./toml/starship-matugen.toml;
+    xdg.configFile."matugen/templates/starship.toml".source = ./misc/starship-matugen.toml;
     xdg.configFile."matugen/config.toml".text = ''
       [config]
 

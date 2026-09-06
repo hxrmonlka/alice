@@ -22,7 +22,7 @@
         spawn-at-startup = [
           (lib.getExe pkgs.xsettingsd)
           (lib.getExe inputs.hibiki.packages.${pkgs.stdenv.hostPlatform.system}.default)
-          # (lib.getExe self'.packages.aliceNoctalia) # You can still go back to using Noctalia.
+          # Nope, not anymore.
           ["input-remapper-control" "--command" "autoload"]
           ["dms" "run"]
         ];

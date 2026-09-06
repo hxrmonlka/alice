@@ -20,6 +20,7 @@
       self.nixosModules.serpentineEnvironment
       self.nixosModules.serpentineFlatpakConfig
       self.nixosModules.serpentineServicesOverride
+      self.nixosModules.serpentineBootOverride
 
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.gamingSettings
@@ -27,7 +28,6 @@
 
       # Subsection: Common (under ./modules/common)
       self.custom.commonModules.fonts
-      self.custom.commonModules.bootSettings
       self.custom.commonModules.nixSettings
       self.custom.commonModules.inputRemapperPolkit
 
@@ -68,7 +68,6 @@
         self.custom.aliceModules.starshipMatugen
         self.custom.aliceModules.browser
         self.custom.aliceModules.spotify
-        self.custom.aliceModules.spotifyMatugen
         self.custom.aliceModules.btop
         self.custom.aliceModules.shells
         self.custom.aliceModules.nixcord
