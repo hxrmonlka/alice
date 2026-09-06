@@ -21,7 +21,7 @@
       self.custom.commonModules.fonts
 
       # Hardware section
-      self.nixosModules.tanukiHardwareSettings
+      self.custom.hardwareModules.asusSettings
       self.custom.hardwareModules.asustuf
     ];
     system.stateVersion = "26.05";
