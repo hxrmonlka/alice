@@ -32,8 +32,6 @@
       enableAudioWavelength = true;
       enableCalendarEvents = true;
 
-      dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
       settings = builtins.fromJSON (builtins.readFile ./dms-settings.json);
       session = {};
 

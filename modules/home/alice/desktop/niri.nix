@@ -253,6 +253,7 @@
             "toggle"
           ];
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
+          "Mod+Shift+C".spawn = ["dms" "color" "pick"];
           "Ctrl+Alt+Delete".spawn = [
             "dms"
             "ipc"

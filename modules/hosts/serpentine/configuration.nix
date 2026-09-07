@@ -61,7 +61,6 @@
         self.custom.aliceModules.packages
         self.custom.aliceModules.neovim
         self.custom.aliceModules.niri
-        self.custom.aliceModules.mangoConfig
         self.custom.aliceModules.gitTools
         self.custom.aliceModules.kitty
         self.custom.aliceModules.starship
