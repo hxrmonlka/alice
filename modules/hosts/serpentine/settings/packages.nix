@@ -42,6 +42,7 @@
       devin-cli
       nodejs_22
       clang-tools
+      dgop
     ];
   };
 }
