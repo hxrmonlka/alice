@@ -22,7 +22,7 @@
         "make"
         "latex"
         "lua"
-        "c#"
+        "csharp"
         "dart"
         "swift"
         "python"

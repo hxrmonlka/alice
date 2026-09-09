@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SOURCE_FILE="$HOME/.config/DankMaterialShell/settings.json"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 TARGET_FILE="${REPO_ROOT}/modules/home/alice/desktop/dms-settings.json"
 
-if [[ ! -f "${SOURCE_FILE}" ]]; then
-	echo "error: source file not found: ${SOURCE_FILE}" >&2
+SETTINGS_JSON="$(dms ipc call settings dump)"
+
+if [[ -z "${SETTINGS_JSON}" ]]; then
+	echo "error: 'dms ipc call settings dump' returned nothing. Is DMS running?" >&2
 	exit 1
 fi
 
-if [[ ! -s "${SOURCE_FILE}" ]]; then
-	echo "error: source file is empty: ${SOURCE_FILE}" >&2
+if ! printf '%s' "${SETTINGS_JSON}" | python3 -c "import json,sys; json.load(sys.stdin)" >/dev/null 2>&1; then
+	echo "error: dump output is not valid JSON" >&2
 	exit 1
 fi
 
 mkdir -p "$(dirname "${TARGET_FILE}")"
-cp "${SOURCE_FILE}" "${TARGET_FILE}"
+printf '%s\n' "${SETTINGS_JSON}" > "${TARGET_FILE}"
 
-echo "synced: ${SOURCE_FILE} -> ${TARGET_FILE}"
+echo "synced: dms ipc call settings dump -> ${TARGET_FILE}"

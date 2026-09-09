@@ -3,16 +3,10 @@
   inputs,
   ...
 }: {
-  flake.nixosConfigurations.serpentine = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = {inherit self inputs;};
-    modules = [
-      self.nixosModules.serpentineHostConfig
-    ];
-  };
-  flake.nixosConfigurations.tanuki = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = {inherit self inputs;};
-    modules = [
-      self.nixosModules.tanukiHostConfig
-    ];
+  imports = [inputs.easy-hosts.flakeModule];
+
+  easy-hosts.hosts = {
+    serpentine.modules = [self.nixosModules.serpentineHostConfig];
+    tanuki.modules = [self.nixosModules.tanukiHostConfig];
   };
 }

@@ -43,6 +43,7 @@
       nodejs_22
       clang-tools
       dgop
+      ardour
     ];
   };
 }

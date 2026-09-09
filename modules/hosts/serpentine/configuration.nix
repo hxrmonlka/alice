@@ -30,6 +30,7 @@
       self.custom.commonModules.fonts
       self.custom.commonModules.nixSettings
       self.custom.commonModules.inputRemapperPolkit
+      self.custom.commonModules.virtualisation
 
       # Subsection: Hardware Settings (under ./modules/hardware)
       self.custom.hardwareModules.intelSettings

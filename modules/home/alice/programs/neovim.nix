@@ -10,131 +10,164 @@
     config,
     ...
   }: let
-    nvimLuaCustom =
-      pkgs.runCommand "nvimdots-lua-custom" {} ''
-        mkdir -p $out
-        cp -r ${inputs.nvimdots}/lua/* $out/
-        chmod -R +w $out
+    nvimLuaCustom = pkgs.runCommand "nvimdots-lua-custom" {} ''
+      mkdir -p $out
+      cp -r ${inputs.nvimdots}/lua/* $out/
+      chmod -R +w $out
 
-        mkdir -p $out/user/configs/lsp-servers
+      mkdir -p $out/user/configs/lsp-servers
 
-        mkdir -p $out/user/plugins
+      mkdir -p $out/user/plugins
 
-        cat << 'EOF' > $out/user/plugins/undotree.lua
-        local plugin = {}
+      cat << 'EOF' > $out/user/plugins/undotree.lua
+      local plugin = {}
 
-        plugin["mbbill/undotree"] = {
-          cmd = "UndotreeToggle",
-          keys = {
-            { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" },
-          },
-        }
+      plugin["mbbill/undotree"] = {
+        cmd = "UndotreeToggle",
+        keys = {
+          { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" },
+        },
+      }
 
-        return plugin
-        EOF
+      return plugin
+      EOF
 
-        cat << 'EOF' > $out/user/plugins/base46.lua
-        local plugin = {}
+      cat << 'EOF' > $out/user/plugins/base46.lua
+      local plugin = {}
 
-        plugin["AvengeMedia/base46"] = {
-          lazy = false,
-          priority = 1000,
-          config = function()
-            require("base46").setup({})
-          end,
-        }
+      plugin["AvengeMedia/base46"] = {
+        lazy = false,
+        priority = 1000,
+        config = function()
+          local base46 = require("base46")
+          base46.setup({
+            hl_override = {
+              EndOfBuffer = { link = "Normal" },
+            },
+          })
 
-        return plugin
-        EOF
+          local colors_dir = vim.fn.stdpath("config") .. "/colors"
+          vim.fn.mkdir(colors_dir, "p")
 
-        cat << 'EOF' > $out/user/plugins/notify.lua
-        local plugin = {}
+          local uv = vim.uv or vim.loop
+          local watcher = uv.new_fs_event()
+          local debounce = uv.new_timer()
 
-        plugin["rcarriga/nvim-notify"] = {
-          lazy = true,
-          event = "VeryLazy",
-          config = function()
-            local notify = require("notify")
-            local icons = {
-              diagnostics = require("modules.utils.icons").get("diagnostics"),
-              ui = require("modules.utils.icons").get("ui"),
-            }
+          if watcher and debounce then
+            local function reload()
+              debounce:stop()
+              debounce:start(
+                150,
+                0,
+                vim.schedule_wrap(function()
+                  if vim.g.colors_name == "dms" then
+                    base46.theme_tables["dms"] = nil
+                    vim.cmd.colorscheme("dms")
+                  end
+                end)
+              )
+            end
 
-            require("modules.utils").load_plugin("notify", {
-              stages = "fade",
-              render = "default",
-              fps = 20,
-              timeout = 2000,
-              minimum_width = 50,
-              background_colour = "NormalFloat",
-              icons = {
-                ERROR = icons.diagnostics.Error,
-                WARN = icons.diagnostics.Warning,
-                INFO = icons.diagnostics.Information,
-                DEBUG = icons.ui.Bug,
-                TRACE = icons.ui.Pencil,
-              },
-              on_open = function(win)
-                vim.api.nvim_set_option_value("winblend", 0, { scope = "local", win = win })
-                vim.api.nvim_win_set_config(win, { zindex = 90 })
-              end,
-              level = "INFO",
-            })
+            watcher:start(colors_dir, {}, function(err, filename)
+              if not err and filename == "dms.lua" then
+                reload()
+              end
+            end)
+          end
+        end,
+      }
 
-            vim.notify = notify
-          end,
-        }
+      return plugin
+      EOF
 
-        return plugin
-        EOF
+      cat << 'EOF' > $out/user/plugins/notify.lua
+      local plugin = {}
 
-        cat << 'EOF' > $out/user/settings.lua
-        local settings = {}
-        settings["colorscheme"] = "dms"
-        settings["lsp_deps"] = {
-          "bashls",
-          "clangd",
-          "gopls",
-          "html",
-          "jsonls",
-          "lua_ls",
-          "ruff",
-          "nil_ls",
-        }
-        settings["null_ls_deps"] = {
-          "deadnix",
-          "statix",
-        }
-        return settings
-        EOF
+      plugin["rcarriga/nvim-notify"] = {
+        lazy = true,
+        event = "VeryLazy",
+        config = function()
+          local notify = require("notify")
+          local icons = {
+            diagnostics = require("modules.utils.icons").get("diagnostics"),
+            ui = require("modules.utils.icons").get("ui"),
+          }
 
-        cat << 'EOF' > $out/user/configs/lsp-servers/nil_ls.lua
-        return function(opts)
-          opts.settings = {
-            ['nil'] = {
-              formatting = {
-                command = {"alejandra"},
-              },
-              nix = {
-                flake = {
-                  autoEvalInputs = true,
-                  autoArchive = true,
-                },
+          require("modules.utils").load_plugin("notify", {
+            stages = "fade",
+            render = "default",
+            fps = 20,
+            timeout = 2000,
+            minimum_width = 50,
+            background_colour = "NormalFloat",
+            icons = {
+              ERROR = icons.diagnostics.Error,
+              WARN = icons.diagnostics.Warning,
+              INFO = icons.diagnostics.Information,
+              DEBUG = icons.ui.Bug,
+              TRACE = icons.ui.Pencil,
+            },
+            on_open = function(win)
+              vim.api.nvim_set_option_value("winblend", 0, { scope = "local", win = win })
+              vim.api.nvim_win_set_config(win, { zindex = 90 })
+            end,
+            level = "INFO",
+          })
+
+          vim.notify = notify
+        end,
+      }
+
+      return plugin
+      EOF
+
+      cat << 'EOF' > $out/user/settings.lua
+      local settings = {}
+      settings["colorscheme"] = "dms"
+      settings["lsp_deps"] = {
+        "bashls",
+        "clangd",
+        "gopls",
+        "html",
+        "jsonls",
+        "lua_ls",
+        "ruff",
+        "nil_ls",
+      }
+      settings["null_ls_deps"] = {
+        "deadnix",
+        "statix",
+      }
+      return settings
+      EOF
+
+      cat << 'EOF' > $out/user/configs/lsp-servers/nil_ls.lua
+      return function(opts)
+        opts.settings = {
+          ['nil'] = {
+            formatting = {
+              command = {"alejandra"},
+            },
+            nix = {
+              flake = {
+                autoEvalInputs = true,
+                autoArchive = true,
               },
             },
-          }
-          vim.lsp.config("nil_ls", opts)
-        end
-        EOF
+          },
+        }
+        vim.lsp.config("nil_ls", opts)
+      end
+      EOF
 
-        sed -i \
-          's/if status_ok and formatting_supported and client.name == "null-ls" then/if status_ok and formatting_supported and client.name == "null-ls" and vim.bo.filetype ~= "nix" then/' \
-          $out/modules/configs/completion/formatting.lua
+      sed -i \
+        's/if status_ok and formatting_supported and client.name == "null-ls" then/if status_ok and formatting_supported and client.name == "null-ls" and vim.bo.filetype ~= "nix" then/' \
+        $out/modules/configs/completion/formatting.lua
 
-        sed -i \
-          's/handlers = {},/handlers = {\n\t\t\t\talejandra = function() end,\n\t\t\t\tnixfmt = function() end,\n\t\t\t\tnixpkgs_fmt = function() end,\n\t\t\t},/' \
-          $out/modules/configs/completion/mason-null-ls.lua
-      '';
+      sed -i \
+        's/handlers = {},/handlers = {\n\t\t\t\talejandra = function() end,\n\t\t\t\tnixfmt = function() end,\n\t\t\t\tnixpkgs_fmt = function() end,\n\t\t\t},/' \
+        $out/modules/configs/completion/mason-null-ls.lua
+    '';
   in {
     programs.neovim = {
       enable = true;

@@ -23,13 +23,16 @@ reviews:
     - path: "modules/**/*.nix"
       instructions: |
         This repo uses the Dendritic flake-parts pattern.
-        - Every module file must expose outputs under a unique key in flake.custom.userModules,
-          flake.custom.commonModules, or flake.custom.hardwareModules, never flake.homeModules directly.
+        - Every module file should expose outputs under a unique key in flake.custom.aliceModules,
+          flake.custom.konoeModules, flake.custom.commonModules, or flake.custom.hardwareModules,
+          never flake.homeModules directly.
         - Cross-class imports (NixOS ↔ Home Manager) are forbidden. Flag any.
+          (Exclude any configuration.nix files inside any hosts directory.)
         - lib.mkIf is forbidden in import lists. Flag any.
         - self must be closed over from the outer flake-parts scope, not assumed in scope inside NixOS module lambdas.
         - Wrapped packages must be referenced via self.packages.${pkgs.stdenv.hostPlatform.system}.<name>.
         - Noctalia theming: never source Noctalia files from the Nix store. Only reference by name/output.
+          Same applies to DMS (DankMaterialShell).
     - path: "flake.nix"
       instructions: |
         flake.nix must remain minimal: inputs + mkFlake only.
