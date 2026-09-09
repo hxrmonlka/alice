@@ -25,7 +25,7 @@
           # Nope, not anymore.
           ["input-remapper-control" "--command" "autoload"]
           ["dms" "run"]
-          ["com.danklinux.dankcalendar" "--daemon"]
+          ["com.danklinux.dankcalendar" "daemon"]
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
