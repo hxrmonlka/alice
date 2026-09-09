@@ -41,6 +41,7 @@
         config = function()
           local base46 = require("base46")
           base46.setup({
+            transparency = true,
             hl_override = {
               EndOfBuffer = { link = "Normal" },
             },
