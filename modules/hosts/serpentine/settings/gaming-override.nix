@@ -7,5 +7,8 @@
     pkgs,
     lib,
     ...
-  }: {programs.steam.package = lib.mkForce pkgs.millennium-steam;};
+  }: {
+    imports = [self.nixosModules.gamingSettings];
+    programs.steam.package = lib.mkForce pkgs.millennium-steam;
+  };
 }

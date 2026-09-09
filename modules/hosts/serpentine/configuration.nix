@@ -21,9 +21,9 @@
       self.nixosModules.serpentineFlatpakConfig
       self.nixosModules.serpentineServicesOverride
       self.nixosModules.serpentineBootOverride
+      self.nixosModules.serpentineGamingOverride
 
       # Subsection: Gaming modules (under ./modules/gaming)
-      self.nixosModules.gamingSettings
       self.nixosModules.games
 
       # Subsection: Common (under ./modules/common)
@@ -77,6 +77,7 @@
         self.custom.aliceModules.zathura
         self.custom.aliceModules.dms
         self.custom.aliceModules.gtk
+        self.custom.aliceModules.steamFix
       ];
     };
     system.stateVersion = "26.05";
