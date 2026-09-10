@@ -4,11 +4,12 @@
   ...
 }: {
   flake.custom.alice.yazi = {pkgs, ...}: {
-    imports = [inputs.lumina.homeModules.lumina-yazi-plugins];
+    imports = [inputs.lumina.homeModules.yazi-plugins];
 
     lumina.yazi.plugins = [
       "KKV9/compress"
       "dedukun/bookmarks"
+      "yazi-rs/plugins:chmod"
     ];
 
     programs.yazi = {
@@ -66,6 +67,11 @@
           on = ["b" "D"];
           run = "plugin bookmarks delete_all";
           desc = "Delete all bookmarks";
+        }
+        {
+          on = ["c" "m"];
+          run = "plugin chmod";
+          desc = "Chmod on selected files";
         }
       ];
     };

@@ -29,6 +29,7 @@
         anki-bin
         affine-bin
         xsettingsd
+        proton-authenticator
       ]
       ++ [inputs.hibiki.packages.${pkgs.stdenv.hostPlatform.system}.default];
   };
