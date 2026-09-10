@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineNetworking = _: {
+  flake.custom.serpentine.networking = _: {
     networking = {
       hostName = "serpentine";
       networkmanager = {

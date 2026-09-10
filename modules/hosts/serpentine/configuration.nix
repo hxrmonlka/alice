@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineHostConfig = {...}: {
+  flake.custom.serpentine.hostConfig = {...}: {
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
@@ -12,16 +12,16 @@
       inputs.lumina.nixosModules.signature
 
       # Self section (under ./modules/hosts/serpentine/)
-      self.nixosModules.serpentineNetworking
-      self.nixosModules.serpentineProgramsConfig
-      self.nixosModules.serpentineUserSystemConfig
-      self.nixosModules.serpentinePackages
-      self.nixosModules.serpentineLocales
-      self.nixosModules.serpentineEnvironment
-      self.nixosModules.serpentineFlatpakConfig
-      self.nixosModules.serpentineServicesOverride
-      self.nixosModules.serpentineBootOverride
-      self.nixosModules.serpentineGamingOverride
+      self.custom.serpentine.networking
+      self.custom.serpentine.programs
+      self.custom.serpentine.userSystemConfig
+      self.custom.serpentine.packages
+      self.custom.serpentine.locales
+      self.custom.serpentine.environment
+      self.custom.serpentine.flatpaks
+      self.custom.serpentine.servicesOverride
+      self.custom.serpentine.bootOverride
+      self.custom.serpentine.gamingOverride
 
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.games
@@ -55,29 +55,29 @@
         inputs.dms.homeModules.dank-material-shell
 
         # Self section
-        self.homeModules.aliceCore
-        self.homeModules.aliceXsettingsd
-        self.custom.aliceModules.cursorSettings
-        self.custom.aliceModules.cursorThemes
-        self.custom.aliceModules.packages
-        self.custom.aliceModules.neovim
-        self.custom.aliceModules.niri
-        self.custom.aliceModules.gitTools
-        self.custom.aliceModules.kitty
-        self.custom.aliceModules.starship
-        self.custom.aliceModules.starshipMatugen
-        self.custom.aliceModules.browser
-        self.custom.aliceModules.spotify
-        self.custom.aliceModules.btop
-        self.custom.aliceModules.shells
-        self.custom.aliceModules.nixcord
-        self.custom.aliceModules.zed
-        self.custom.aliceModules.fastfetchConfig
-        self.custom.aliceModules.yazi
-        self.custom.aliceModules.zathura
-        self.custom.aliceModules.dms
-        self.custom.aliceModules.gtk
-        self.custom.aliceModules.steamFix
+        self.custom.alice.core
+        self.custom.alice.xsettingsd
+        self.custom.alice.cursorSettings
+        self.custom.alice.cursorThemes
+        self.custom.alice.packages
+        self.custom.alice.neovim
+        self.custom.alice.niri
+        self.custom.alice.gitTools
+        self.custom.alice.kitty
+        self.custom.alice.starship
+        self.custom.alice.starshipMatugen
+        self.custom.alice.browser
+        self.custom.alice.spotify
+        self.custom.alice.btop
+        self.custom.alice.shells
+        self.custom.alice.nixcord
+        self.custom.alice.zed
+        self.custom.alice.fastfetchConfig
+        self.custom.alice.yazi
+        self.custom.alice.zathura
+        self.custom.alice.dms
+        self.custom.alice.gtk
+        self.custom.alice.steamFix
       ];
     };
     system.stateVersion = "26.05";

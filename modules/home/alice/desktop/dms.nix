@@ -17,7 +17,7 @@
     };
   };
 
-  flake.custom.aliceModules.dms = {
+  flake.custom.alice.dms = {
     pkgs,
     lib,
     ...

@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.homeModules.aliceCore = {
+  flake.custom.alice.core = {
     pkgs,
     lib,
     config,

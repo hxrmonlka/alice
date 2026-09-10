@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.btop = {pkgs, ...}: {
+  flake.custom.alice.btop = {pkgs, ...}: {
     programs.btop = {
       enable = true;
       settings = {

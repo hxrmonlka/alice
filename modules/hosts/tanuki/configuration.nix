@@ -3,18 +3,18 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.tanukiHostConfig = {...}: {
+  flake.custom.tanuki.hostConfig = {...}: {
     imports = [
       # Inputs Section
       inputs.lumina.nixosModules.signature
+      inputs.home-manager.nixosModules.home-manager
 
       # Self section
-      self.nixosModules.tanukiLocales
-      self.nixosModules.tanukiNetworking
-      self.nixosModules.tanukiUserSystemConfig
-      self.nixosModules.tanukiPrograms
-      self.nixosModules.tanukiHardware
-      self.nixosModules.tanukiPackages
+      self.custom.tanuki.locales
+      self.custom.tanuki.networking
+      self.custom.tanuki.userSystemConfig
+      self.custom.tanuki.programs
+      self.custom.tanuki.packages
 
       # Common section
       self.custom.commonModules.nixSettings
@@ -38,8 +38,8 @@
         inputs.spicetify-nix.homeManagerModules.default
 
         # Self section
-        self.homeModules.konoeCore
-        self.custom.konoeModules.spotify
+        self.custom.konoe.core
+        self.custom.konoe.spotify
       ];
     };
     system.stateVersion = "26.05";

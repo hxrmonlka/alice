@@ -12,10 +12,9 @@
       enable = true;
     };
   };
-  flake.custom.aliceModules.mangoConfig = {
+  flake.custom.alice.mangoConfig = {
     lib,
     pkgs,
-    self,
     ...
   }: {
     wayland.windowManager.mango = {

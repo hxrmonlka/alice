@@ -3,7 +3,11 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.cursorSettings = {pkgs, lib, ...}: {
+  flake.custom.alice.cursorSettings = {
+    pkgs,
+    lib,
+    ...
+  }: {
     home.packages = [
       self.packages.${pkgs.stdenv.hostPlatform.system}.cursor-themes
     ];

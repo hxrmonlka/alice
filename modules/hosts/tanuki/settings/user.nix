@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.tanukiUserSystemConfig = {...}: {
+  flake.custom.tanuki.userSystemConfig = {...}: {
     users.users.konoe = {
       isNormalUser = true;
       description = "Konoe";

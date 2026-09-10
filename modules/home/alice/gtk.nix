@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.gtk = {
+  flake.custom.alice.gtk = {
     pkgs,
     lib,
     ...

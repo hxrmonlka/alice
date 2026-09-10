@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentinePackages = {pkgs, ...}: {
+  flake.custom.serpentine.packages = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       wget
       nix-output-monitor

@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.neovim = {
+  flake.custom.alice.neovim = {
     pkgs,
     inputs,
     lib,

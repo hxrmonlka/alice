@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.kitty = {
+  flake.custom.alice.kitty = {
     pkgs,
     lib,
     ...

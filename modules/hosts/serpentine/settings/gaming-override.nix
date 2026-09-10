@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineGamingOverride = {
+  flake.custom.serpentine.gamingOverride = {
     pkgs,
     lib,
     ...

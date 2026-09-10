@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.tanukiPrograms = {pkgs, ...}: {
+  flake.custom.tanuki.programs = {pkgs, ...}: {
     programs = {
       firefox = {
         enable = true;

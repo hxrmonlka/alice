@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineUserSystemConfig = {...}: {
+  flake.custom.serpentine.userSystemConfig = {...}: {
     users.users.alice = {
       isNormalUser = true;
       description = "Alice";

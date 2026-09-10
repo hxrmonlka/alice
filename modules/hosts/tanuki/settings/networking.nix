@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.tanukiNetworking = _: {
+  flake.custom.tanuki.networking = _: {
     networking = {
       hostName = "tanuki";
       networkmanager = {

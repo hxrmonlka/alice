@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.yazi = {pkgs, ...}: {
+  flake.custom.alice.yazi = {pkgs, ...}: {
     imports = [inputs.lumina.homeModules.lumina-yazi-plugins];
 
     lumina.yazi.plugins = [

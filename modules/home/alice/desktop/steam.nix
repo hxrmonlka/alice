@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.steamFix = {
+  flake.custom.alice.steamFix = {
     pkgs,
     lib,
     ...

@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.starship = {...}: {
+  flake.custom.alice.starship = {...}: {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
@@ -13,7 +13,7 @@
     };
   };
 
-  flake.custom.aliceModules.starshipMatugen = {config, ...}: {
+  flake.custom.alice.starshipMatugen = {config, ...}: {
     xdg.configFile."matugen/templates/starship.toml".source = ./misc/starship-matugen.toml;
     xdg.configFile."matugen/config.toml".text = ''
       [config]

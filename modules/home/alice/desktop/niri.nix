@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.niri = {
+  flake.custom.alice.niri = {
     pkgs,
     lib,
     ...

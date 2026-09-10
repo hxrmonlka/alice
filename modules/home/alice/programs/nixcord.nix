@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.nixcord = {
+  flake.custom.alice.nixcord = {
     programs.nixcord = {
       enable = true;
       discord.vencord.enable = false;

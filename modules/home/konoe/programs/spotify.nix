@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.konoeModules.spotify = {
+  flake.custom.konoe.spotify = {
     pkgs,
     inputs,
     ...

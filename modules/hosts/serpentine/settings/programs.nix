@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineProgramsConfig = {pkgs, ...}: {
+  flake.custom.serpentine.programs = {pkgs, ...}: {
     programs = {
       firefox = {
         enable = true;

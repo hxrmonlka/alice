@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineServicesOverride = {lib, ...}: {
+  flake.custom.serpentine.servicesOverride = {lib, ...}: {
     imports = [
       self.custom.commonModules.systemServices
     ];

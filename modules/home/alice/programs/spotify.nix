@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.spotify = {
+  flake.custom.alice.spotify = {
     inputs,
     pkgs,
     ...

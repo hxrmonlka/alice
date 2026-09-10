@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.homeModules.konoeCore = {
+  flake.custom.konoe.core = {
     pkgs,
     lib,
     config,

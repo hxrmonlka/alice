@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.aliceModules.packages = {pkgs, ...}: {
+  flake.custom.alice.packages = {pkgs, ...}: {
     home.packages = with pkgs;
       [
         antigravity-cli

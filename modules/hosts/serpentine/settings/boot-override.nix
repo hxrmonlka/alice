@@ -4,7 +4,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineBootOverride = {
+  flake.custom.serpentine.bootOverride = {
     pkgs,
     lib,
     ...

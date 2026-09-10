@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineLocales = {pkgs, ...}: {
+  flake.custom.serpentine.locales = {pkgs, ...}: {
     time.timeZone = "Asia/Manila";
     # Whenever I switch countries.
     # time.timeZone = "Asia/Tokyo";

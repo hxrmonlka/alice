@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineFlatpakConfig = {...}: {
+  flake.custom.serpentine.flatpaks = {...}: {
     services.flatpak = {
       enable = true;
       packages = [
