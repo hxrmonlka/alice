@@ -3,14 +3,27 @@
   inputs,
   ...
 }: {
-  flake.custom.alice.yazi = {pkgs, ...}: {
+  flake.custom.alice.yazi = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [inputs.lumina.homeModules.yazi-plugins];
 
-    lumina.yazi.plugins = [
-      "KKV9/compress"
-      "dedukun/bookmarks"
-      "yazi-rs/plugins:chmod"
-    ];
+    lumina.yazi.plugins = {
+      "dedukun/bookmarks.yazi" = {
+        rev = "9ef1254d8afe88aba21cd56a186f4485dd532ab8";
+        hash = lib.fakeHash;
+      };
+      "KKV9/compress.yazi" = {
+        rev = "80e5268ec74c7ac17d4d739e13a9958cba4c70d3";
+        hash = lib.fakeHash;
+      };
+      "yazi-rs/plugins:chmod" = {
+        rev = "58c4f4e2f4835cc9bf6751f39e3f7c574fc7f55a";
+        hash = lib.fakeHash;
+      };
+    };
 
     programs.yazi = {
       enable = true;
