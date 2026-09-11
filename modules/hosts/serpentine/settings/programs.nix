@@ -17,7 +17,7 @@
         enable = true;
         keyMode = "vi";
         clock24 = true;
-        baseIndex = 0;
+        baseIndex = 1;
         extraConfig = ''
           set -g default-shell ${lib.getExe pkgs.nushell}
           unbind C-b

@@ -8,7 +8,7 @@
     lib,
     ...
   }: {
-    programs.mangowc = {
+    programs.mango = {
       enable = true;
     };
   };
@@ -20,12 +20,14 @@
     wayland.windowManager.mango = {
       enable = true;
       autostart_sh = ''
-        noctalia-shell
+        "dms run"
+        "input-remapper-control --command autoload"
+        "com.danklinux.dankcalendar daemon"
       '';
       settings = {
         # Window decoration
         blur = 1;
-        blur_layer = 1;
+        blur_layer = 0;
         blur_optimized = 1;
         blur_params_num_passes = 1;
         blur_params_noise = "0.015";
@@ -78,7 +80,6 @@
         # Overview
         hotarea_size = 10;
         enable_hotarea = 1;
-        ov_tab_mode = 0;
         overviewgappi = 5;
         overviewgappo = 30;
 
@@ -148,6 +149,7 @@
 
         bind = [
           "SUPER,r,reload_config"
+          "SUPER,o,toggleoverview"
 
           # Core window management
           "SUPER,Return,spawn,${lib.getExe pkgs.kitty}"
@@ -156,8 +158,8 @@
           "SUPER,g,togglefullscreen"
           "SUPER+SHIFT,f,togglefloating"
           "ALT,Tab,toggleoverview"
-          "ALT,z,toggle_scratchpad"
-          "SUPER,n,switch_layout"
+          # "ALT,z,toggle_scratchpad"
+          "SUPER+SHIFT,n,switch_layout"
           "SUPER+SHIFT,e,quit"
 
           # Focus (HJKL + arrow mirrors)
@@ -218,9 +220,9 @@
           "SUPER+SHIFT,9,tag,9,0"
 
           # Screenshots
-          "NONE,Print,spawn,grimblast copy area"
-          "SUPER,Print,spawn,grimblast copy screen"
-          "SUPER+SHIFT,Print,spawn,grimblast copy window"
+          "SUPER,t,spawn,grimblast copy area"
+          "SUPER+SHIFT,t,spawn,grimblast copy screen"
+          "SUPER+CTRL,t,spawn,grimblast copy window"
 
           # Volume
           "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
@@ -231,19 +233,22 @@
           "NONE,XF86MonBrightnessUp,spawn,${lib.getExe pkgs.brightnessctl} s 5%+"
           "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
 
-          # Noctalia IPC
-          #          "SUPER,s,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call launcher toggle"
-          #          "SUPER,m,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call media toggle"
-          #          "SUPER+ALT,l,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call lockScreen lock"
-          #          "SUPER+SHIFT,t,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call wallpaper toggle"
-          #          "SUPER+SHIFT,i,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call controlCenter toggle"
-          #          "CTRL+ALT,Delete,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call sessionMenu toggle"
-          #          "SUPER,v,spawn,${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia} ipc call launcher clipboard"
+          "SUPER,s,spawn,dms ipc launcher toggle"
+          "SUPER,n,spawn,dms ipc dash toggle media"
+          "SUPER,semicolon,spawn,dms ipc call emojiPicker toggle"
+          "SUPER+ALT,l,spawn,dms ipc lock lock"
+          "SUPER+SHIFT,w,spawn,dms ipc call dash toggle wallpaper"
+          "SUPER+SHIFT,i,spawn,dms ipc control-center toggle"
+          "SUPER+ALT,t,spawn,dms ipc mux toggle"
+          "SUPER+SHIFT,c,spawn,dms ipc color-picker open"
+          "CTRL+ALT,Delete,spawn,dms ipc powermenu toggle"
+          "SUPER,v,spawn,dms ipc clipboard toggle"
+          "SUPER,m,spawn,dms ipc mic mute"
 
           # Apps
           "SUPER,w,spawn,helium"
           "SUPER+ALT,w,spawn,flatpak run app.zen_browser.zen"
-          "SUPER,d,spawn,${lib.getExe pkgs.wlr-which-key}"
+          "SUPER,d,spawn,discord"
           "SUPER,e,spawn,${lib.getExe pkgs.nautilus}"
         ];
 

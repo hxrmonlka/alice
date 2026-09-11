@@ -39,6 +39,7 @@
 
       # Misc
       self.nixosModules.dgreet
+      self.nixosModules.mangoWC
     ];
 
     home-manager = {
@@ -77,6 +78,7 @@
         self.custom.alice.zathura
         self.custom.alice.dms
         self.custom.alice.gtk
+        self.custom.alice.mangoConfig
       ];
     };
     system.stateVersion = "26.05";
