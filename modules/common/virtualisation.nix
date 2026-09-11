@@ -7,6 +7,8 @@
     environment.systemPackages = with pkgs; [
       lazydocker
       qemu_kvm
+      androidenv.androidPkgs.platform-tools
+      scrcpy
     ];
     programs.virt-manager.enable = true;
     virtualisation = {

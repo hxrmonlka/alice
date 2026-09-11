@@ -88,7 +88,6 @@
         lazy = true,
         event = "VeryLazy",
         config = function()
-          local notify = require("notify")
           local icons = {
             diagnostics = require("modules.utils.icons").get("diagnostics"),
             ui = require("modules.utils.icons").get("ui"),
@@ -115,7 +114,7 @@
             level = "INFO",
           })
 
-          vim.notify = notify
+          vim.notify = function() end
         end,
       }
 
@@ -135,11 +134,19 @@
         "ruff",
         "nil_ls",
       }
-      settings["null_ls_deps"] = {
-        "deadnix",
-        "statix",
-      }
       return settings
+      EOF
+
+      cat << 'EOF' > $out/user/configs/null-ls.lua
+      local null_ls = require("null-ls")
+
+      return {
+        sources = {
+          null_ls.builtins.diagnostics.statix,
+          null_ls.builtins.diagnostics.deadnix,
+          null_ls.builtins.code_actions.statix,
+        },
+      }
       EOF
 
       cat << 'EOF' > $out/user/configs/lsp-servers/nil_ls.lua

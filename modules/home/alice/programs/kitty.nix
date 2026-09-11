@@ -18,7 +18,7 @@
       settings = {
         "cursor_shape" = "beam";
         confirm_os_window_close = 0;
-        shell = lib.getExe pkgs.nushell;
+        shell = lib.getExe pkgs.tmux;
         cursor_trail = 1;
         background_opacity = 0.81;
       };

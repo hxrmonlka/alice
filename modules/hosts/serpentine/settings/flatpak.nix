@@ -22,6 +22,7 @@
         "io.mrarm.mcpelauncher"
         "com.danklinux.dankcalendar"
         "org.blender.Blender"
+        "org.inkscape.Inkscape"
       ];
       update.onActivation = true;
     };
