@@ -17,8 +17,8 @@
         shuffle
       ];
 
-      theme = spicePkgs.themes.dribbblish;
-      colorScheme = "catppuccin-mocha";
+      theme = spicePkgs.themes.text;
+      colorScheme = "RosePine";
 
       #      customColorScheme = {
       #        text = "FFFFFF";
