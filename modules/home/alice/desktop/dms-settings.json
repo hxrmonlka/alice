@@ -98,6 +98,7 @@
   "batteryProfileName": "0",
   "batteryChargeLimit": 95,
   "batteryAutoPowerSaver": true,
+  "runUserMatugenTemplates": true,
   "matugenTemplateNeovim": true,
   "dankIslandBarId": "default",
   "dankIslandCompactHeight": 27,

@@ -12,7 +12,7 @@
       config = {
         frameless = true;
         useQuickCss = true;
-        enabledThemes = ["noctalia.theme.css"];
+        enabledThemes = ["dank-discord.css"];
         plugins = {
           crashHandler.enable = true;
           betterBlockedUsers.enable = true;
