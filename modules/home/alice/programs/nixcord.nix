@@ -3,7 +3,16 @@
   inputs,
   ...
 }: {
-  flake.custom.alice.nixcord = {
+  flake.custom.alice.nixcord = {config, ...}: {
+    xdg.configFile = {
+      "matugen/templates/dank-discord.css".source = "${inputs.dms}/quickshell/matugen/templates/vesktop.css";
+      "matugen/dms/configs/equicord.toml".text = ''
+        [templates.equicord]
+        input_path = '${config.xdg.configHome}/matugen/templates/dank-discord.css'
+        output_path = '${config.xdg.configHome}/Equicord/themes/dank-discord.css'
+      '';
+    };
+
     programs.nixcord = {
       enable = true;
       discord.vencord.enable = false;

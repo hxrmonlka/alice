@@ -14,16 +14,11 @@
   };
 
   flake.custom.alice.starshipMatugen = {config, ...}: {
-    xdg.configFile."matugen/templates/dank-discord.css".source = "${inputs.dms}/quickshell/matugen/templates/vesktop.css";
     xdg.configFile."matugen/templates/starship.toml".source = ./misc/starship-matugen.toml;
     xdg.configFile."matugen/config.toml".text = ''
       [config]
 
       [templates]
-
-      [templates.equicord]
-      input_path = '${config.xdg.configHome}/matugen/templates/dank-discord.css'
-      output_path = '${config.xdg.configHome}/Equicord/themes/dank-discord.css'
 
       [templates.starship]
       input_path = '${config.xdg.configHome}/matugen/templates/starship.toml'
