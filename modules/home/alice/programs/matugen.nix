@@ -1,8 +1,4 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{...}: {
   flake.custom.alice.matugen = {config, ...}: {
     xdg.configFile."matugen/templates/starship.toml".source = ./misc/starship-matugen.toml;
     xdg.configFile."matugen/templates/millennium.css".source = ./misc/millennium-matugen.css;
@@ -20,5 +16,8 @@
       input_path = '${config.xdg.configHome}/matugen/templates/millennium.css'
       output_path = '${config.home.homeDirectory}/.steam/steam/millennium/themes/Material-Theme/css/main/colors/matugen.css'
     '';
+
+    home.file.".steam/steam/millennium/themes/Material-Theme/js/main/colors/matugen.js".source =
+      ./misc/millennium-matugen.js;
   };
 }
