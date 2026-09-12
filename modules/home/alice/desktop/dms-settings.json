@@ -9,71 +9,71 @@
   "controlCenterShowMicPercent": true,
   "controlCenterWidgets": [
     {
+      "enabled": true,
       "id": "volumeSlider",
-      "enabled": true,
       "width": 50
     },
     {
+      "enabled": true,
       "id": "brightnessSlider",
-      "enabled": true,
       "width": 50
     },
     {
+      "enabled": true,
       "id": "inputVolumeSlider",
-      "enabled": true,
       "width": 50
     },
     {
+      "enabled": true,
       "id": "wifi",
-      "enabled": true,
       "width": 50
     },
     {
+      "enabled": true,
       "id": "bluetooth",
-      "enabled": true,
       "width": 25
     },
     {
+      "enabled": true,
       "id": "audioInput",
-      "enabled": true,
       "width": 25
     },
     {
+      "enabled": true,
       "id": "audioOutput",
-      "enabled": true,
       "width": 50
     },
     {
+      "enabled": true,
       "id": "darkMode",
-      "enabled": true,
       "width": 25
     },
     {
+      "enabled": true,
       "id": "doNotDisturb",
-      "enabled": true,
       "width": 25
     },
     {
-      "id": "nightMode",
       "enabled": true,
+      "id": "nightMode",
       "width": 50
     },
     {
-      "id": "diskUsage",
       "enabled": true,
-      "width": 25,
+      "id": "diskUsage",
       "instanceId": "mtshkwvaj7iwggdhbiqar1b5sfph6k",
       "mountPath": "/",
-      "showMountPath": true
-    },
-    {
-      "id": "idleInhibitor",
-      "enabled": true,
+      "showMountPath": true,
       "width": 25
     },
     {
-      "id": "plugin_colorPickerDms",
       "enabled": true,
+      "id": "idleInhibitor",
+      "width": 25
+    },
+    {
+      "enabled": true,
+      "id": "plugin_colorPickerDms",
       "width": 50
     }
   ],
@@ -92,13 +92,12 @@
       "hideWhenTyping": false
     },
     "size": 24,
-    "theme": "System Default"
+    "theme": "YeShunguang"
   },
   "acProfileName": "2",
   "batteryProfileName": "0",
   "batteryChargeLimit": 95,
   "batteryAutoPowerSaver": true,
-  "runUserMatugenTemplates": true,
   "matugenTemplateNeovim": true,
   "dankIslandBarId": "default",
   "dankIslandCompactHeight": 27,

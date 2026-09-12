@@ -20,9 +20,9 @@
     wayland.windowManager.mango = {
       enable = true;
       autostart_sh = ''
-        "dms run"
-        "input-remapper-control --command autoload"
-        "com.danklinux.dankcalendar daemon"
+        dms run &
+        input-remapper-control --command autoload
+        com.danklinux.dankcalendar daemon &
       '';
       settings = {
         # Window decoration
@@ -93,6 +93,7 @@
         enable_floating_snap = 0;
         snap_distance = 30;
         cursor_size = 24;
+        cursor_theme = "YeShunguang";
         drag_tile_to_tile = 1;
         axis_bind_apply_timeout = 100;
 
