@@ -221,9 +221,9 @@
           "SUPER+SHIFT,9,tag,9,0"
 
           # Screenshots
-          "SUPER,t,spawn,grimblast copy area"
-          "SUPER+SHIFT,t,spawn,grimblast copy screen"
-          "SUPER+CTRL,t,spawn,grimblast copy window"
+          "SUPER,t,spawn,dms screenshot"
+          "SUPER+SHIFT,t,spawn,dms screenshot full"
+          "SUPER+CTRL,t,spawn,dms screenshot window"
 
           # Volume
           "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
@@ -240,7 +240,7 @@
           "SUPER+ALT,l,spawn,dms ipc lock lock"
           "SUPER+SHIFT,w,spawn,dms ipc call dash toggle wallpaper"
           "SUPER+SHIFT,i,spawn,dms ipc control-center toggle"
-          "SUPER+ALT,t,spawn,dms ipc mux toggle"
+          "SUPER+ALT,p,spawn,dms ipc mux toggle"
           "SUPER+SHIFT,c,spawn,dms ipc color-picker open"
           "CTRL+ALT,Delete,spawn,dms ipc powermenu toggle"
           "SUPER,v,spawn,dms ipc clipboard toggle"

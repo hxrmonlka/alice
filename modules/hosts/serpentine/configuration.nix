@@ -66,7 +66,7 @@
         self.custom.alice.gitTools
         self.custom.alice.kitty
         self.custom.alice.starship
-        self.custom.alice.starshipMatugen
+        self.custom.alice.matugen
         self.custom.alice.browser
         self.custom.alice.spotify
         self.custom.alice.btop

@@ -1,3 +1,4 @@
+# Has been unused since day 2 because Mango solves this exact problem.
 {
   self,
   inputs,
