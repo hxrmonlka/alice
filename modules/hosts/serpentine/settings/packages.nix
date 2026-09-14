@@ -44,6 +44,7 @@
       clang-tools
       dgop
       ardour
+      qbittorrent
     ];
   };
 }

@@ -17,7 +17,9 @@
       output_path = '${config.home.homeDirectory}/.steam/steam/millennium/themes/Material-Theme/css/main/colors/matugen.css'
     '';
 
-    home.file.".steam/steam/millennium/themes/Material-Theme/js/main/colors/matugen.js".source =
-      ./misc/millennium-matugen.js;
+    home.file.".steam/steam/millennium/themes/Material-Theme/js/main/colors/matugen.js" = {
+      source = ./misc/millennium-matugen.js;
+      force = true;
+    };
   };
 }
