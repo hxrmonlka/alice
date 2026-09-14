@@ -66,7 +66,6 @@
         animation_curve_tag = "0.46,1.0,0.29,1";
         animation_curve_close = "0.08,0.92,0,1";
 
-        # Scroller / tile layout
         scroller_structs = 20;
         scroller_default_proportion = "0.5";
         scroller_focus_center = 0;
@@ -137,15 +136,15 @@
 
         # Tag layout rules
         tagrule = [
-          "id:1,layout_name:tile"
-          "id:2,layout_name:tile"
-          "id:3,layout_name:tile"
-          "id:4,layout_name:tile"
-          "id:5,layout_name:tile"
-          "id:6,layout_name:tile"
-          "id:7,layout_name:tile"
-          "id:8,layout_name:tile"
-          "id:9,layout_name:tile"
+          "id:1,layout_name:scroller"
+          "id:2,layout_name:scroller"
+          "id:3,layout_name:scroller"
+          "id:4,layout_name:scroller"
+          "id:5,layout_name:scroller"
+          "id:6,layout_name:scroller"
+          "id:7,layout_name:scroller"
+          "id:8,layout_name:scroller"
+          "id:9,layout_name:scroller"
         ];
 
         bind = [

@@ -15,11 +15,13 @@
       self.custom.tanuki.userSystemConfig
       self.custom.tanuki.programs
       self.custom.tanuki.packages
+      self.custom.tanuki.flatpaks
 
       # Common section
       self.custom.commonModules.nixSettings
       self.custom.commonModules.fonts
       self.custom.commonModules.bootSettings
+      self.custom.commonModules.systemServices
 
       # Gaming section
       self.nixosModules.gamingSettings
@@ -40,6 +42,7 @@
         # Self section
         self.custom.konoe.core
         self.custom.konoe.spotify
+        self.custom.konoe.niri
       ];
     };
     system.stateVersion = "26.05";
