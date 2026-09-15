@@ -6,7 +6,7 @@
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     lumina = {
-      url = "github:hxrmonlka/lumina/un/test";
+      url = "github:hxrmonlka/lumina/un/test-helium-policy2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
@@ -14,10 +14,7 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
     nvimdots.url = "github:ayamir/nvimdots";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
