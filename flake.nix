@@ -6,7 +6,7 @@
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     lumina = {
-      url = "github:hxrmonlka/lumina/un/test-helium-policy2";
+      url = "github:hxrmonlka/lumina/un/test";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";

@@ -475,16 +475,16 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1789468336,
-        "narHash": "sha256-fFZ1ajRrK9/0RrtlKEyo0dNV/mgGI3j6b2WMhHjem7g=",
+        "lastModified": 1789470978,
+        "narHash": "sha256-MJoMytxM36y7qY57/W9RELpyw7kkVIuHr856VUY/FVw=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "8b07369a36279320663aff4338397ce4876a6ad9",
+        "rev": "e2211ad5f88704f189a33de2b3288448a9b79ae2",
         "type": "github"
       },
       "original": {
         "owner": "hxrmonlka",
-        "ref": "un/test-helium-policy2",
+        "ref": "un/test",
         "repo": "lumina",
         "type": "github"
       }
