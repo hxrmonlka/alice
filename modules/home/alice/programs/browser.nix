@@ -14,7 +14,9 @@
       inputs.lumina.nixosModules.helium-extensions
     ];
     lumina.helium.extensions = [
-      "cofdbpoegempjloogbagkncekinflcnj"
+      "ghmbeldphafepmbegfdlkpapadhbakde"
+      "jplgfhpmjnbigmhklmmbgecoobifkmpa"
+      "hfjbmagddngcpeloejdejnfgbamkjaeg"
     ];
   };
 }
