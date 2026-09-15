@@ -7,7 +7,6 @@
     environment.systemPackages = with pkgs; [
       git
       neovim
-      git
       discord
       protonup-qt
       lutris
