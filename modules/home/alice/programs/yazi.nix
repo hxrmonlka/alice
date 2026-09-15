@@ -34,7 +34,7 @@
       enableFishIntegration = true;
       settings.theme.flavor.use = "noctalia";
       keymap.mgr.prepend_keymap = [
-        # compress.yazi -> ya pkg add KKV9/compress
+        # compress.yazi
         {
           on = ["c" "a" "a"];
           run = "plugin compress";
@@ -60,7 +60,7 @@
           run = "plugin compress -phl";
           desc = "Archive selected files (password+header+level)";
         }
-        # bookmarks.yazi -> ya pkg add dedukun/bookmarks
+        # bookmarks.yazi
         {
           on = ["m"];
           run = "plugin bookmarks save";
@@ -81,6 +81,7 @@
           run = "plugin bookmarks delete_all";
           desc = "Delete all bookmarks";
         }
+        # chmod.yazi
         {
           on = ["c" "m"];
           run = "plugin chmod";

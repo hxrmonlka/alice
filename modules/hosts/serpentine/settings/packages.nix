@@ -45,6 +45,7 @@
       dgop
       ardour
       qbittorrent
+      usbutils
     ];
   };
 }
