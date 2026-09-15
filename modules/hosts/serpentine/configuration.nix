@@ -40,6 +40,7 @@
       # Misc
       self.nixosModules.dgreet
       self.nixosModules.mangoWC
+      self.nixosModules.lumina-browser-settings
     ];
 
     home-manager = {
