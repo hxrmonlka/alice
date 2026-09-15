@@ -25,6 +25,7 @@
 
       # Gaming section
       self.nixosModules.gamingSettings
+      self.nixosModules.games
 
       # Hardware section
       self.custom.hardwareModules.asusSettings

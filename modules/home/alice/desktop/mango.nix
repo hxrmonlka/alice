@@ -240,7 +240,7 @@
           "SUPER+SHIFT,w,spawn,dms ipc call dash toggle wallpaper"
           "SUPER+SHIFT,i,spawn,dms ipc control-center toggle"
           "SUPER+ALT,p,spawn,dms ipc mux toggle"
-          "SUPER+SHIFT,c,spawn,dms ipc color-picker open"
+          "SUPER+SHIFT,c,spawn,dms color pick -a"
           "CTRL+ALT,Delete,spawn,dms ipc powermenu toggle"
           "SUPER,v,spawn,dms ipc clipboard toggle"
           "SUPER,m,spawn,dms ipc mic mute"
