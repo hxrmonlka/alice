@@ -149,7 +149,6 @@
       "removeWidgetPadding": false,
       "rightWidgets": [
         "systemTray",
-        "cpuUsage",
         "memUsage",
         "notificationButton",
         "controlCenterButton"
