@@ -10,7 +10,6 @@
       inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.mangowc.nixosModules.mango
       inputs.lumina.nixosModules.signature
-      inputs.lumina.nixosModules.helium-extensions
 
       # Self section (under ./modules/hosts/serpentine/)
       self.custom.serpentine.networking
@@ -41,10 +40,7 @@
       # Misc
       self.nixosModules.dgreet
       self.nixosModules.mangoWC
-    ];
-
-    lumina.helium.extensions = [
-      "cofdbpoegempjloogbagkncekinflcnj"
+      self.nixosModules.lumina-browser-settings
     ];
 
     home-manager = {
