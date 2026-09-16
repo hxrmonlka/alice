@@ -36,12 +36,16 @@
           };
 
           touchpad = {
+            off = _: {};
             tap = _: {};
             natural-scroll = _: {};
             dwt = _: {};
           };
 
-          mouse.accel-profile = "flat";
+          mouse = {
+            accel-profile = "flat";
+            accel-speed = 0.2;
+          };
         };
 
         layout = {
@@ -122,7 +126,7 @@
         ];
 
         binds = {
-          "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
           "Mod+Q".close-window = {};
           "Mod+F".maximize-column = {};
           "Mod+G".fullscreen-window = {};
@@ -223,7 +227,7 @@
           "Mod+M".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call volume muteInput";
         };
         extraConfig = ''
-          include optional=true "noctalia.kdl"
+          include optional=true "~/.config/niri/noctalia.kdl"
         '';
       };
     };

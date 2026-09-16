@@ -6,7 +6,6 @@
   flake.custom.tanuki.hostConfig = {...}: {
     imports = [
       # Inputs Section
-      inputs.lumina.nixosModules.signature
       inputs.home-manager.nixosModules.home-manager
 
       # Self section
@@ -16,12 +15,12 @@
       self.custom.tanuki.programs
       self.custom.tanuki.packages
       self.custom.tanuki.flatpaks
+      self.custom.tanuki.services-override
 
       # Common section
       self.custom.commonModules.nixSettings
       self.custom.commonModules.fonts
       self.custom.commonModules.bootSettings
-      self.custom.commonModules.systemServices
 
       # Gaming section
       self.nixosModules.gamingSettings
@@ -44,6 +43,8 @@
         self.custom.konoe.core
         self.custom.konoe.spotify
         self.custom.konoe.niri
+        self.custom.konoe.alacritty
+        self.custom.konoe.code
       ];
     };
     system.stateVersion = "26.05";

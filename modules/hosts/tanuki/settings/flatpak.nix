@@ -7,6 +7,7 @@
         "app.zen_browser.zen"
         "org.vinegarhq.Sober"
         "com.obsproject.Studio"
+        "io.github.shiftey.Desktop"
       ];
     };
   };

@@ -10,6 +10,9 @@
       discord
       protonup-qt
       lutris
+      alejandra
+      nixfmt
+      fastfetch
     ];
   };
 }

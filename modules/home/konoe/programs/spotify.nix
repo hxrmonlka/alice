@@ -17,7 +17,7 @@
       ];
 
       theme = spicePkgs.themes.text;
-      colorScheme = "rigel";
+      colorScheme = "Rigel";
     };
   };
 }
