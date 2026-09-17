@@ -8,5 +8,6 @@
   easy-hosts.hosts = {
     serpentine.modules = [self.custom.serpentine.hostConfig];
     tanuki.modules = [self.custom.tanuki.hostConfig];
+    aux-mini.modules = [self.custom.aux-mini.hostConfig];
   };
 }

@@ -14,6 +14,7 @@
       nixfmt
       fastfetch
       self.packages.${pkgs.stdenv.hostPlatform.system}.konoeNoctalia
+      inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.sklauncher
     ];
   };
 }

@@ -18,6 +18,12 @@
         description = "System-level namespace for Serpentine.";
       };
 
+      aux-mini = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "System-level namespace for aux-mini.";
+      };
+
       konoe = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.unspecified;
         default = {};
