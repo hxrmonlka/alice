@@ -134,9 +134,9 @@
           "Mod+C".center-column = {};
 
           "Mod+H".focus-column-left = {};
-          "Mod+L".focus-column-right = {};
+          "Mod+J".focus-column-right = {};
           "Mod+K".focus-window-up = {};
-          "Mod+J".focus-window-down = {};
+          "Mod+L".focus-window-down = {};
 
           "Mod+Left".focus-column-left = {};
           "Mod+Right".focus-column-right = {};
@@ -225,6 +225,7 @@
           "Mod+V".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher clipboard";
           "Mod+Shift+P".power-off-monitors = {};
           "Mod+M".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call volume muteInput";
+          "Mod+O".toggle-overview = {};
         };
         extraConfig = ''
           include optional=true "~/.config/niri/noctalia.kdl"
