@@ -23,8 +23,8 @@ reviews:
     - path: "modules/**/*.nix"
       instructions: |
         This repo uses the Dendritic flake-parts pattern.
-        - Every module file should expose outputs under a unique key in flake.custom.aliceModules,
-          flake.custom.konoeModules, flake.custom.commonModules, or flake.custom.hardwareModules,
+        - Every module file should expose outputs under a unique key in flake.custom.alice,
+          flake.custom.konoe, flake.custom.serpentine, flake.custom.tanuki, flake.custom.commonModules, or flake.custom.hardwareModules,
           never flake.homeModules directly.
         - Cross-class imports (NixOS ↔ Home Manager) are forbidden. Flag any.
           (Exclude any configuration.nix files inside any hosts directory.)

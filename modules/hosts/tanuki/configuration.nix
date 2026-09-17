@@ -6,6 +6,7 @@
   flake.custom.tanuki.hostConfig = {...}: {
     imports = [
       # Inputs Section
+      (inputs.lumina.lib.signatures.mkHostSignature "tanuki")
       inputs.home-manager.nixosModules.home-manager
 
       # Self section
@@ -37,6 +38,7 @@
       extraSpecialArgs = {inherit inputs self;};
       users.konoe.imports = [
         # Inputs section
+        (inputs.lumina.lib.signatures.mkUserSignature "tanuki" "konoe")
         inputs.spicetify-nix.homeManagerModules.default
 
         # Self section
