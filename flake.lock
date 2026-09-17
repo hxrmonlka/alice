@@ -1025,7 +1025,8 @@
         "quickshell": "quickshell",
         "rust-overlay": "rust-overlay",
         "spicetify-nix": "spicetify-nix",
-        "wrapper-modules": "wrapper-modules_2"
+        "wrapper-modules": "wrapper-modules_2",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-overlay": {
@@ -1189,6 +1190,29 @@
       "original": {
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789584125,
+        "narHash": "sha256-C9BpLH4dNggam12nz/Fx/M0Vlbw8WcT/cpOc37DPQAA=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "a12d482485d877cc066516ea256b435b209a1a8c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

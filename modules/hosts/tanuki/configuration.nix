@@ -47,6 +47,7 @@
         self.custom.konoe.niri
         self.custom.konoe.alacritty
         self.custom.konoe.code
+        self.custom.konoe.zen-browser
       ];
     };
     system.stateVersion = "26.05";
