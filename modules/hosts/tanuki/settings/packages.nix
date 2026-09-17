@@ -10,6 +10,10 @@
       discord
       protonup-qt
       lutris
+      alejandra
+      nixfmt
+      fastfetch
+      self.packages.${pkgs.stdenv.hostPlatform.system}.konoeNoctalia
     ];
   };
 }

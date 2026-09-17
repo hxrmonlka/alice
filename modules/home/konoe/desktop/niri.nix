@@ -36,12 +36,17 @@
           };
 
           touchpad = {
+            off = _: {};
             tap = _: {};
             natural-scroll = _: {};
             dwt = _: {};
           };
 
-          mouse.accel-profile = "flat";
+          mouse = {
+            accel-profile = "flat";
+            accel-speed =
+              1.2;
+          };
         };
 
         layout = {
@@ -122,17 +127,17 @@
         ];
 
         binds = {
-          "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
           "Mod+Q".close-window = {};
-          "Mod+F".maximize-column = {};
-          "Mod+G".fullscreen-window = {};
+          "Shift+Return".maximize-column = {};
+          "F11".fullscreen-window = {};
           "Mod+Shift+F".toggle-window-floating = {};
           "Mod+C".center-column = {};
 
           "Mod+H".focus-column-left = {};
-          "Mod+L".focus-column-right = {};
+          "Mod+J".focus-column-right = {};
           "Mod+K".focus-window-up = {};
-          "Mod+J".focus-window-down = {};
+          "Mod+L".focus-window-down = {};
 
           "Mod+Left".focus-column-left = {};
           "Mod+Right".focus-column-right = {};
@@ -177,9 +182,9 @@
           "Mod+Shift+Minus".set-window-height = "-10%";
           "Mod+Shift+Equal".set-window-height = "+10%";
 
-          "Mod+T".screenshot = {};
-          "Mod+Shift+T".screenshot-screen = {};
-          "Mod+Ctrl+T".screenshot-window = {};
+          "Mod+Shift+S".screenshot = {};
+          "Mod+S".screenshot-screen = {};
+          "Mod+Ctrl+S".screenshot-window = {};
 
           "XF86AudioRaiseVolume".spawn = [
             "wpctl"
@@ -203,7 +208,7 @@
           "XF86MonBrightnessUp".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%+";
           "XF86MonBrightnessDown".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%-";
 
-          "Mod+S".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher toggle";
+          "Mod+Space".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher toggle";
           "Mod+N".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call media toggle";
           "Mod+Semicolon".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher emoji";
           "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
@@ -221,9 +226,10 @@
           "Mod+V".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher clipboard";
           "Mod+Shift+P".power-off-monitors = {};
           "Mod+M".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call volume muteInput";
+          "Mod+O".toggle-overview = {};
         };
         extraConfig = ''
-          include optional=true "noctalia.kdl"
+          include optional=true "~/.config/niri/noctalia.kdl"
         '';
       };
     };

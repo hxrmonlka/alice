@@ -142,7 +142,10 @@
             "drawerEnabled": true,
             "hidePassive": false,
             "id": "Tray",
-            "pinned": []
+            "pinned": [
+              "spotify-client",
+              "Discord"
+            ]
           }
         ]
       },
@@ -275,10 +278,10 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": true,
-      "directory": "/home/alice/Pictures/Wallpapers",
+      "directory": "/home/konoe/Pictures/Wallpapers",
       "monitorDirectories": [],
       "enableMultiMonitorDirectories": false,
-      "showHiddenFiles": false,
+      "showHiddenFiles": true,
       "viewMode": "recursive",
       "setWallpaperOnAllMonitors": true,
       "linkLightAndDarkWallpapers": true,
@@ -626,10 +629,6 @@
         },
         {
           "enabled": true,
-          "id": "kitty"
-        },
-        {
-          "enabled": true,
           "id": "btop"
         },
         {
@@ -638,19 +637,23 @@
         },
         {
           "enabled": true,
-          "id": "yazi"
-        },
-        {
-          "enabled": true,
-          "id": "starship"
-        },
-        {
-          "enabled": true,
           "id": "discord"
         },
         {
           "enabled": true,
           "id": "steam"
+        },
+        {
+          "enabled": true,
+          "id": "code"
+        },
+        {
+          "enabled": true,
+          "id": "zenBrowser"
+        },
+        {
+          "enabled": true,
+          "id": "alacritty"
         }
       ],
       "enableUserTheming": true
@@ -714,7 +717,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/alice/Pictures/Wallpapers/remielle.jpg"
+      "eDP-1": "/home/konoe/Pictures/Wallpapers/ruuya.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -722,20 +725,20 @@
         "name": "eDP-1",
         "connected": true,
         "scale": 1,
-        "width": 1366,
-        "height": 768,
+        "width": 1920,
+        "height": 1080,
         "x": 0,
         "y": 0,
-        "physical_width": 290,
-        "physical_height": 170,
-        "refresh_rate": 59996,
-        "vrr_supported": false,
+        "physical_width": 340,
+        "physical_height": 190,
+        "refresh_rate": 144003,
+        "vrr_supported": true,
         "vrr_enabled": false,
         "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1785228653000
+      "lastSeenTs": 0
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

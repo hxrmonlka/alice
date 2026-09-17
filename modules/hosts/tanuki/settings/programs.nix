@@ -16,6 +16,15 @@
         enable = true;
         binfmt = true;
       };
+      nh = {
+        enable = true;
+        flake = "/home/konoe/.local/alice/";
+        clean = {
+          enable = true;
+          dates = "monthly";
+          extraArgs = "--keep 5";
+        };
+      };
     };
   };
 }
