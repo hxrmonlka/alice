@@ -128,7 +128,7 @@
         binds = {
           "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
           "Mod+Q".close-window = {};
-          "Shift+Return".maximize-column = {};
+          "Shift+F11".maximize-column = {};
           "F11".fullscreen-window = {};
           "Mod+Shift+F".toggle-window-floating = {};
           "Mod+C".center-column = {};

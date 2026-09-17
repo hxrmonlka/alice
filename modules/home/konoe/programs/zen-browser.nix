@@ -5,7 +5,7 @@
 }: {
   flake.custom.konoe.zen-browser = {pkgs, ...}: {
     imports = [
-      inputs.zen-browser.homeManagerModules.beta
+      inputs.zen-browser.homeModules.beta
     ];
 
     programs.zen-browser = {
