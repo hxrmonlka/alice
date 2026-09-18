@@ -18,7 +18,8 @@
       installPhase = ''
         runHook preInstall
         mkdir -p $out/share/icons
-        cp -r * $out/share/icons/
+        cp -r AriaCursor $out/share/icons/
+        cp -r YeShunguang $out/share/icons/
         runHook postInstall
       '';
 
