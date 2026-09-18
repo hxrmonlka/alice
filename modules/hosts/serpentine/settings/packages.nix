@@ -46,6 +46,7 @@
       ardour
       qbittorrent
       usbutils
+      inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
     ];
   };
 }

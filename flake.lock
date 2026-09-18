@@ -3,11 +3,11 @@
     "cursor-themes": {
       "flake": false,
       "locked": {
-        "lastModified": 1787371242,
-        "narHash": "sha256-8rox5Xi7wC9VZkqFxL9ciYy8e57dF6CJuudgvstPGzw=",
+        "lastModified": 1789711516,
+        "narHash": "sha256-idraacLjVtk0g4ocyAMqjVzywxSdYpnUbUNpbsTiywE=",
         "owner": "hxrmonlka",
         "repo": "resources",
-        "rev": "b00e8977cd74496571d49a669c13d8ad77c65b13",
+        "rev": "6c6c394e15c32986c962a2d566928235fc990c06",
         "type": "github"
       },
       "original": {
@@ -350,6 +350,22 @@
         "type": "github"
       }
     },
+    "grub-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789711516,
+        "owner": "hxrmonlka",
+        "repo": "resources",
+        "rev": "6c6c394e15c32986c962a2d566928235fc990c06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hxrmonlka",
+        "ref": "main",
+        "repo": "resources",
+        "type": "github"
+      }
+    },
     "helium": {
       "inputs": {
         "nixpkgs": [
@@ -468,6 +484,7 @@
     "lumina": {
       "inputs": {
         "flake-parts": "flake-parts_2",
+        "grub-theme": "grub-theme",
         "import-tree": "import-tree_2",
         "nixpkgs": [
           "nixpkgs"
@@ -475,11 +492,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1789704679,
-        "narHash": "sha256-c6PuXn1VlHThHGMLjciLBa9H3k5wEY99pogFOwVCu/0=",
+        "lastModified": 1789713493,
+        "narHash": "sha256-wle7tK/enz8qiBpmpPsz1zgW7pyUGcxlu2SxmNvRSz8=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "d4c38aa7c91d13b370308eacf755f76c45aa2c16",
+        "rev": "affb0a00e3dd8f7033c2cdfddd11805eac44b871",
         "type": "github"
       },
       "original": {
