@@ -54,7 +54,7 @@
     };
     # --------------------------------My Resources------------------------------------------
     cursor-themes = {
-      url = "github:hxrmonlka/resources/main";
+      url = "github:hxrmonlka/resources/cursors";
       flake = false;
     };
     # --------------------------------My Resources------------------------------------------
