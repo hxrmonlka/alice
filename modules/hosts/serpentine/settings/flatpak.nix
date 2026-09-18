@@ -4,6 +4,9 @@
   ...
 }: {
   flake.custom.serpentine.flatpaks = {...}: {
+    imports = [
+      inputs.nix-flatpak.nixosModules.nix-flatpak
+    ];
     services.flatpak = {
       enable = true;
       packages = [

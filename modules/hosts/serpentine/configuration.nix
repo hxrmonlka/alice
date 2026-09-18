@@ -7,8 +7,6 @@
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
-      inputs.nix-flatpak.nixosModules.nix-flatpak
-      inputs.mangowc.nixosModules.mango
       (inputs.lumina.lib.signatures.mkHostSignature "serpentine")
 
       # Self section (under ./modules/hosts/serpentine/)
