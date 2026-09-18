@@ -353,15 +353,16 @@
     "grub-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1789711516,
+        "lastModified": 1789740240,
+        "narHash": "sha256-+kiMd7GhrZSX1oLz1Vn16KaU1WwF7Vb3P2Mgj5RJaU8=",
         "owner": "hxrmonlka",
         "repo": "resources",
-        "rev": "6c6c394e15c32986c962a2d566928235fc990c06",
+        "rev": "7c448b7e9246088ac9d97860604a03ca2d77e700",
         "type": "github"
       },
       "original": {
         "owner": "hxrmonlka",
-        "ref": "main",
+        "ref": "grub",
         "repo": "resources",
         "type": "github"
       }
@@ -492,11 +493,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1789731431,
-        "narHash": "sha256-557fwoOozYOdFlQam89aS0QC2kQZkloQhuFouJyz4FU=",
+        "lastModified": 1789742288,
+        "narHash": "sha256-YzlUt8qeXB0zJ3MSR4xwDsDVQr0bYCRLAgPI5oUIkRo=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "22ef767d0629b0273c888fb01c4ccf8f39e0c95e",
+        "rev": "a6c0aae5fcc67f1dd00137eb6a577b4e63a349e0",
         "type": "github"
       },
       "original": {
