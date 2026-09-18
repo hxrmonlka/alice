@@ -52,10 +52,12 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # --------------------------------My Resources------------------------------------------
     cursor-themes = {
       url = "github:hxrmonlka/resources/main";
       flake = false;
     };
+    # --------------------------------My Resources------------------------------------------
     danksearch = {
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";
