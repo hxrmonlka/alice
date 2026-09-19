@@ -48,6 +48,9 @@
         self.custom.konoe.alacritty
         self.custom.konoe.code
         self.custom.konoe.zen-browser
+
+        # Common section
+        self.custom.home-common.fastfetchConfig
       ];
     };
     system.stateVersion = "26.05";

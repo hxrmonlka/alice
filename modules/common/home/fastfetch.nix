@@ -3,19 +3,24 @@
   inputs,
   ...
 }: {
-  flake.custom.alice.fastfetchConfig = {
+  flake.custom.home-common.fastfetchConfig = {
     pkgs,
     lib,
+    config,
+    osConfig,
     ...
   }: {
     programs.fastfetch = {
       enable = true;
       settings = {
         logo = {
-          type = "small";
-          # source = "/path/to/picture.jpeg";
+          source = "${config.home.homeDirectory}/Projects/resources/fastfetch-source.jpg";
+          width = 40;
+          height = 18;
         };
-        modules = [
+        modules = let
+          esc = builtins.fromJSON ''"\u001b"'';
+        in [
           "break"
           {
             type = "custom";
@@ -23,9 +28,25 @@
           }
           {
             type = "custom";
-            format = "Nobo";
+            format = "Alice — ${osConfig.networking.hostName}";
             key = " PC";
             keyColor = "green";
+          }
+          {
+            type = "opengl";
+            key = "│ ├󰾲";
+            keyColor = "green";
+          }
+          {
+            type = "vulkan";
+            key = "│ └󰢮";
+            keyColor = "green";
+          }
+          {
+            type = "wifi";
+            key = "│ └󰤥";
+            keyColor = "green";
+            format = "({signal-quality}%)";
           }
           {
             type = "custom";
@@ -43,12 +64,12 @@
           }
           {
             type = "kernel";
-            key = "│ ├";
+            key = "│ ├";
             keyColor = "yellow";
           }
           {
             type = "bios";
-            key = "│ ├";
+            key = "│ ├";
             keyColor = "yellow";
           }
           {
@@ -58,7 +79,7 @@
           }
           {
             type = "shell";
-            key = "└ └";
+            key = "└ └";
             keyColor = "yellow";
           }
           "break"
@@ -69,12 +90,12 @@
           }
           {
             type = "lm";
-            key = "│ ├";
+            key = "│ ├󰍂";
             keyColor = "blue";
           }
           {
             type = "wm";
-            key = "│ ├";
+            key = "│ ├󰕮";
             keyColor = "blue";
           }
           {
@@ -84,8 +105,14 @@
           }
           {
             type = "terminal";
-            key = "└ └";
+            key = "│ ├";
             keyColor = "blue";
+          }
+          {
+            type = "custom";
+            format = "${esc}]8;;https://github.com/hxrmonlka/alice${esc}\\github:hxrmonlka/alice${esc}]8;;${esc}\\";
+            key = "└ └";
+            keyColor = "";
           }
           {
             type = "custom";
