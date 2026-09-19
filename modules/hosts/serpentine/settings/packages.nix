@@ -3,7 +3,14 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.packages = {pkgs, ...}: {
+  flake.custom.serpentine.packages = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    imports = [
+      self.custom.commonModules.nixSettings
+    ];
     environment.systemPackages = with pkgs; [
       wget
       nix-output-monitor
@@ -48,5 +55,10 @@
       usbutils
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
     ];
+    nixpkgs = {
+      config = {
+        allowUnfree = lib.mkForce true;
+      };
+    };
   };
 }

@@ -6,7 +6,7 @@
   flake.custom.commonModules.nixSettings = {pkgs, ...}: {
     nixpkgs = {
       config = {
-        allowUnfree = true;
+        allowUnfree = false;
         permittedInsecurePackages = [
           "electron-39.8.10"
         ];
