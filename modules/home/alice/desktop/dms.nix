@@ -3,13 +3,17 @@
   self,
   ...
 }: {
-  flake.nixosModules.dgreet = {pkgs, ...}: {
+  flake.nixosModules.dgreet = {
+    pkgs,
+    config,
+    ...
+  }: {
     services.displayManager.dms-greeter = {
       enable = true;
       compositor.name = "niri";
       package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
       configHome = "/home/alice";
-      configFiles = ["/home/alice/.config/DankMaterialShell/settings.json"];
+      configFiles = ["${config.users.users.alice.home}/.config/DankMaterialShell/settings.json"];
       logs = {
         save = true;
         path = "/tmp/dms-greeter.log";

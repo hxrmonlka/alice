@@ -7,6 +7,7 @@
     users.users.konoe = {
       isNormalUser = true;
       description = "Konoe";
+      home = "/home/konoe";
       extraGroups = [
         "networkmanager"
         "wheel"

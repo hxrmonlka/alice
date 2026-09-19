@@ -46,7 +46,7 @@
             type = "wifi";
             key = "│ └󰤥";
             keyColor = "green";
-            format = "({signal-quality}%)";
+            format = "({signal-quality})";
           }
           {
             type = "custom";

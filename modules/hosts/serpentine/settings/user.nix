@@ -7,6 +7,7 @@
     users.users.alice = {
       isNormalUser = true;
       description = "Alice";
+      home = "/home/alice";
       extraGroups = [
         "networkmanager"
         "wheel"
