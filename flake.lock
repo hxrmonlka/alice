@@ -129,6 +129,23 @@
         "type": "github"
       }
     },
+    "fastfetch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789794204,
+        "narHash": "sha256-WQYA7x5vng8CAOkAkPNqJN4cEk3NHoS+BjV4FNnRInc=",
+        "owner": "hxrmonlka",
+        "repo": "resources",
+        "rev": "6d2ade7af7d061a486b26c87ff500cf3b8f0247b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hxrmonlka",
+        "ref": "fastfetch",
+        "repo": "resources",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -484,6 +501,7 @@
     },
     "lumina": {
       "inputs": {
+        "fastfetch": "fastfetch",
         "flake-parts": "flake-parts_2",
         "grub-theme": "grub-theme",
         "import-tree": "import-tree_2",
@@ -493,11 +511,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1789742288,
-        "narHash": "sha256-YzlUt8qeXB0zJ3MSR4xwDsDVQr0bYCRLAgPI5oUIkRo=",
+        "lastModified": 1789803629,
+        "narHash": "sha256-hQRMJdoOR1MsDAVdBnVGhiwgmUHdWp9kUYPRbgm9T24=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "a6c0aae5fcc67f1dd00137eb6a577b4e63a349e0",
+        "rev": "401435b44791f2aabd6e70fe4eaf291e258d433a",
         "type": "github"
       },
       "original": {
