@@ -54,6 +54,7 @@
       qbittorrent
       usbutils
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
+      ani-cli
     ];
     nixpkgs = {
       config = {
