@@ -1,4 +1,8 @@
-{self,inputs,...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.custom.tanuki.services-override = {...}: {
     imports = [self.custom.commonModules.systemServices];
 
