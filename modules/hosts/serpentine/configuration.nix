@@ -26,7 +26,6 @@
 
       # Subsection: Common (under ./modules/common)
       self.custom.commonModules.fonts
-      self.custom.commonModules.nixSettings
       self.custom.commonModules.inputRemapperPolkit
       self.custom.commonModules.virtualisation
 
