@@ -71,12 +71,14 @@
         self.custom.alice.shells
         self.custom.alice.nixcord
         self.custom.alice.zed
-        self.custom.alice.fastfetchConfig
         self.custom.alice.yazi
         self.custom.alice.zathura
         self.custom.alice.dms
         self.custom.alice.gtk
         self.custom.alice.mangoConfig
+
+        # Common section
+        self.custom.home-common.fastfetchConfig
       ];
     };
     system.stateVersion = "26.05";
