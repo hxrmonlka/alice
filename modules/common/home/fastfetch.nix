@@ -14,7 +14,7 @@
       enable = true;
       settings = {
         logo = {
-          source = "${config.home.homeDirectory}/Projects/resources/fastfetch-source.jpg";
+          source = "${inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.fastfetch-source}/fastfetch-source.jpg";
           width = 40;
           height = 18;
         };
