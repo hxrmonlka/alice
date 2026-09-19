@@ -3,7 +3,11 @@
   inputs,
   ...
 }: {
-  flake.custom.tanuki.packages = {pkgs, ...}: {
+  flake.custom.tanuki.packages = {
+    pkgs,
+    lib,
+    ...
+  }: {
     environment.systemPackages = with pkgs; [
       git
       neovim
