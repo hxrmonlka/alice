@@ -3,16 +3,16 @@
     "cursor-themes": {
       "flake": false,
       "locked": {
-        "lastModified": 1789711516,
-        "narHash": "sha256-idraacLjVtk0g4ocyAMqjVzywxSdYpnUbUNpbsTiywE=",
+        "lastModified": 1787371242,
+        "narHash": "sha256-8rox5Xi7wC9VZkqFxL9ciYy8e57dF6CJuudgvstPGzw=",
         "owner": "hxrmonlka",
         "repo": "resources",
-        "rev": "6c6c394e15c32986c962a2d566928235fc990c06",
+        "rev": "b00e8977cd74496571d49a669c13d8ad77c65b13",
         "type": "github"
       },
       "original": {
         "owner": "hxrmonlka",
-        "ref": "main",
+        "ref": "cursors",
         "repo": "resources",
         "type": "github"
       }

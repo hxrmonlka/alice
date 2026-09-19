@@ -35,6 +35,11 @@
             binary = {
               path = lib.getExe pkgs.nil;
             };
+            settings = {
+              flake = {
+                autoArchive = true;
+              };
+            };
           };
         };
         theme = {
