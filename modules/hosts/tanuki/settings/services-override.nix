@@ -9,6 +9,7 @@
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
+      asusd.enable = true;
     };
 
     systemd.services.aura-static-color = {
@@ -16,10 +17,11 @@
       after = ["asusd.service"];
       requires = ["asusd.service"];
       wantedBy = ["multi-user.target"];
+
       serviceConfig = {
-        type = "oneshot";
+        Type = "oneshot";
         RemainAfterExit = true;
-        ExecStart = "${pkgs.asusctl}/bin/asusctl aura static -c 00CCFF";
+        ExecStart = "${pkgs.asusctl}/bin/asusctl aura effect static -c 00CCFF";
       };
     };
   };
