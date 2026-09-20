@@ -11,7 +11,7 @@
     environment.systemPackages = with pkgs; [
       git
       neovim
-      discord
+      vesktop
       protonup-qt
       lutris
       alejandra
