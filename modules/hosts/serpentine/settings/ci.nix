@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  flake.custom.serpentine.ci = {...}: {
+  flake.custom.serpentine.ci = {pkgs, ...}: {
     environment.systemPackages = [
       (pkgs.writeShellScriptBin "alice-ci-store-cleanup" ''
         exec ${pkgs.systemd}/bin/systemctl start alice-ci-store-cleanup.service
