@@ -21,7 +21,6 @@
       self.custom.serpentine.servicesOverride
       self.custom.serpentine.bootOverride
       self.custom.serpentine.gamingOverride
-      inputs.alice-ci.nixosModules.ci
 
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.games
