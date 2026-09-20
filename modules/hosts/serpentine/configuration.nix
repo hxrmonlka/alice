@@ -7,6 +7,7 @@
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
+      inputs.harmonia.nixosModules.harmonia
       (inputs.lumina.lib.signatures.mkHostSignature "serpentine")
 
       # Self section (under ./modules/hosts/serpentine/)
@@ -20,6 +21,7 @@
       self.custom.serpentine.servicesOverride
       self.custom.serpentine.bootOverride
       self.custom.serpentine.gamingOverride
+      self.custom.serpentine.ci
 
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.games
