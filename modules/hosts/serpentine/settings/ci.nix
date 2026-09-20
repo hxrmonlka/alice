@@ -11,6 +11,7 @@
       tokenFile = "/var/lib/secrets/github-runner-serpentine";
       tokenType = "registration";
       replace = true;
+
       extraLabels = [
         "serpentine"
         "nix"
@@ -31,6 +32,7 @@
     };
 
     systemd.tmpfiles.rules = [
+      "z /var/lib/secrets 0710 root harmonia - -"
       "z /var/lib/secrets/harmonia.pub 0640 root harmonia - -"
     ];
   };
