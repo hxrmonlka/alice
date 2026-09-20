@@ -1,7 +1,6 @@
 {
   self,
   inputs,
-  pkgs,
   ...
 }: {
   flake.custom.serpentine.ci = {pkgs, ...}: {
