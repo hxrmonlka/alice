@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.ci = {pkgs, ...}: {
+  flake.custom.serpentine.ci = {...}: {
     services.github-runners.serpentine = {
       enable = true;
       name = "serpentine";
@@ -31,17 +31,16 @@
       ];
     };
 
-    systemd.tmpfiles.rules = [
-      "z /var/lib/secrets 0710 root harmonia - -"
-      "z /var/lib/secrets/harmonia.pub 0640 root harmonia - -"
+    security.sudo.extraRules = [
+      {
+        users = ["github-runner-serpentine"];
+        commands = [
+          {
+            command = "${inputs.nixpkgs.legacyPackages.x86_64-linux.systemd}/bin/systemctl start alice-ci-store-cleanup.service";
+            options = ["NOPASSWD"];
+          }
+        ];
+      }
     ];
-
-    systemd.services.alice-ci-store-cleanup = {
-      description = "Clean Alice CI Nix store";
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = "${pkgs.nix}/bin/nix-store --gc --store /var/lib/alice-ci";
-      };
-    };
   };
 }
