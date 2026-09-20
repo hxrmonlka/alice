@@ -55,6 +55,7 @@
       usbutils
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
       ani-cli
+      glab
     ];
     nixpkgs = {
       config = {

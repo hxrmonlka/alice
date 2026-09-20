@@ -15,7 +15,6 @@
       # common modules
       self.custom.commonModules.bootSettings
       self.custom.commonModules.fonts
-      self.custom.commonModules.bootSettings
       self.custom.commonModules.systemServices
 
       # hardware settings
