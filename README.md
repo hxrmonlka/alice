@@ -1,7 +1,7 @@
 <h1 align="center">
 ⏾ Alice .✦ ݁˖
 </h1>
----
+
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/hxrmonlka/alice?style=for-the-badge&color=E8E8E8&logo=git&logoColor=ffffff&labelColor=1a1a1a" alt="Last Commit">
   <img src="https://img.shields.io/github/repo-size/hxrmonlka/alice?style=for-the-badge&color=E8E8E8&label=SIZE&logo=protondrive&logoColor=ffffff&labelColor=1a1a1a" alt="Repo Size">
@@ -37,11 +37,11 @@ Each hosts are managed by collaborators who use Alice's dotfiles:
 ### Gallery
 Current look of each hosts in Alice:
 
-| Serpentine                                               | Tanuki                                               |
-| :------------------------------------------------------- | :--------------------------------------------------- |
-| <img src="preview_1.png" width="1920" alt="Serpentine"/> | <img src="preview_2.png" width="1920" alt="Tanuki"/> |
-Each hosts have their kind of aesthetics, hardware settings, etc. Depending on the set up, they are also used for specific fields. `serpentine` is made entirely for daily-basis activities, `tanuki` is slightly more for the gaming side.
+| Serpentine                                                        | Tanuki                                                        |
+| :---------------------------------------------------------------- | :------------------------------------------------------------ |
+| <img src="previews/preview_1.png" width="1920" alt="Serpentine"/> | <img src="previews/preview_2.png" width="1920" alt="Tanuki"/> |
 
+Each hosts have their kind of aesthetics, hardware settings, etc. Depending on the set up, they are also used for specific fields. `serpentine` is made entirely for daily-basis activities, `tanuki` is slightly more for the gaming side.
 ## Structure
 Every `.nix` file under `modules/` loads automatically through `import-tree` where no manual import list exists.
 
