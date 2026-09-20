@@ -8,7 +8,6 @@
       hostName = "tanuki";
       networkmanager = {
         enable = true;
-        wifi.macAddress = "random";
       };
     };
   };

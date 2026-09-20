@@ -11,6 +11,9 @@
     programs.gh = {
       enable = true;
       gitCredentialHelper.enable = true;
+    };
+    programs.git = {
+      enable = true;
       settings = {
         url = {
           "https://github.com/" = {
@@ -18,9 +21,6 @@
           };
         };
       };
-    };
-    programs.git = {
-      enable = true;
     };
   };
 }
