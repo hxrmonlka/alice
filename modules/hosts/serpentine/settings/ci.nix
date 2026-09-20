@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.ci = {...}: {
+  flake.custom.serpentine.ci = {pkgs, ...}: {
     services.github-runners.serpentine = {
       enable = true;
       name = "serpentine";
@@ -35,5 +35,13 @@
       "z /var/lib/secrets 0710 root harmonia - -"
       "z /var/lib/secrets/harmonia.pub 0640 root harmonia - -"
     ];
+
+    systemd.services.alice-ci-store-cleanup = {
+      description = "Clean Alice CI Nix store";
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.nix}/bin/nix-store --gc --store /var/lib/alice-ci";
+      };
+    };
   };
 }
