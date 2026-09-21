@@ -7,6 +7,7 @@
         "org.vinegarhq.Sober"
         "com.obsproject.Studio"
         "io.github.shiftey.Desktop"
+        "dev.vencord.Vesktop"
       ];
     };
   };
