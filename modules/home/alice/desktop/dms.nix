@@ -11,7 +11,7 @@
     imports = [inputs.dank-greeter.nixosModules.default];
     programs.dms-greeter = {
       enable = true;
-      package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.dms-greeter;
+      package = pkgs.dms-greeter;
       compositor.name = "mango";
       configHome = "/home/alice";
       configFiles = ["${config.users.users.alice.home}/.config/DankMaterialShell/settings.json"];
