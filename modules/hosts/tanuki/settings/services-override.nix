@@ -21,7 +21,7 @@
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
-        ExecStart = "${pkgs.asusctl}/bin/asusctl aura effect static -c 00CCFF";
+        ExecStart = "${pkgs.asusctl}/bin/asusctl aura effect static -c 8dcfec";
       };
     };
   };
