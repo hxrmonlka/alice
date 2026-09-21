@@ -56,6 +56,7 @@
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
       ani-cli
       glab
+      dms-greeter
     ];
     nixpkgs = {
       config = {

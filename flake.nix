@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    dank-greeter.url = "github:AvengeMedia/dank-greeter";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

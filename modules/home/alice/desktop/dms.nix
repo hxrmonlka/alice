@@ -8,14 +8,15 @@
     config,
     ...
   }: {
-    services.displayManager.dms-greeter = {
+    imports = [inputs.dank-greeter.nixosModules.default];
+    programs.dms-greeter = {
       enable = true;
-      compositor.name = "niri";
-      package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.dms-greeter;
+      compositor.name = "mango";
       configHome = "/home/alice";
       configFiles = ["${config.users.users.alice.home}/.config/DankMaterialShell/settings.json"];
       logs = {
-        save = true;
+        save = false;
         path = "/tmp/dms-greeter.log";
       };
     };
