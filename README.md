@@ -23,6 +23,7 @@ The name's just there because my humour sucks.
 <summary><b>Where can I learn more about it?</b></summary>
 You can learn more about it by going through the <a href="https://github.com/hxrmonlka/alice/wiki">documentation</a>. (Though this is still being developed.)
 </details>
+
 ## Introduction
 Alice is built upon the [Dendritic pattern](https://discourse.nixos.org/t/the-dendritic-pattern/61271); it uses vic's import-tree to practically autoload whatever Nix modules is inside the `modules` directory. flake-parts is used to break my Nix dotfiles into small flakes, basically.
 
@@ -43,7 +44,7 @@ Current look of each hosts in Alice:
 
 Each hosts have their kind of aesthetics, hardware settings, etc. Depending on the set up, they are also used for specific fields. `serpentine` is made entirely for daily-basis activities, `tanuki` is slightly more for the gaming side.
 ## Structure
-Every `.nix` file under `modules/` loads automatically through `import-tree` where no manual import list exists.
+This is a basic example of what Alice currently contains, preferably focusing on the important part. 
 
 ```
 .
@@ -91,7 +92,7 @@ cd alice
 nh os switch
 ```
 
-Test a host in a disposable VM instead of rebuilding your running system:
+Test a host in a disposable VM:
 ```bash
 nix develop
 build-vm <host>   # serpentine, tanuki, or aux-mini
