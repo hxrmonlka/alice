@@ -3,6 +3,9 @@
   inputs,
   ...
 }: {
+  flake.nixosModules.zsh-sys-level = _: {
+    programs.zsh.enable = true;
+  };
   flake.custom.alice.shells = {
     pkgs,
     lib,
@@ -48,7 +51,7 @@
         setOptions = [
           "CORRECT"
         ];
-        defaultKeymap = "vi";
+        defaultKeymap = "viins";
         initContent = lib.mkOrder 1000 ''
           echo ">>> Current mode: $SHELL"
         '';

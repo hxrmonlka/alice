@@ -39,6 +39,7 @@
       self.nixosModules.dgreet
       self.nixosModules.mangoWC
       self.nixosModules.lumina-browser-settings
+      self.nixosModules.zsh-sys-level
     ];
 
     home-manager = {
