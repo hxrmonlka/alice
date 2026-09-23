@@ -59,8 +59,8 @@
           "alt+l=next_tab"
 
           # Tab management
-          "alt+shift+n=new_tab"
-          "alt+shift+w=close_tab"
+          "alt+n=new_tab"
+          "alt+w=close_tab"
         ];
       };
     };

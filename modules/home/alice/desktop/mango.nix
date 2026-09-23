@@ -80,8 +80,7 @@
         smartgaps = 0;
 
         # Overview
-        hotarea_size = 10;
-        enable_hotarea = 1;
+        enable_hotarea = 0;
         overviewgappi = 5;
         overviewgappo = 30;
 
@@ -107,7 +106,7 @@
         xkb_rules_options = "caps:escape";
 
         # Touchpad
-        disable_trackpad = 0;
+        disable_trackpad = 1;
         tap_to_click = 1;
         tap_and_drag = 1;
         drag_lock = 1;
@@ -152,10 +151,10 @@
 
         bind = [
           "SUPER,r,reload_config"
-          "SUPER,o,toggleoverview"
+          "SUPER,o,toggleoverview,1"
 
           # Core window management
-          "SUPER,Return,spawn,${lib.getExe pkgs.ghostty}"
+          "SUPER,Return,spawn,${lib.getExe pkgs.kitty}"
           "SUPER,q,killclient"
           "SUPER,f,togglemaximizescreen"
           "SUPER,g,togglefullscreen"
@@ -253,7 +252,7 @@
           "SUPER+ALT,v,spawn,virt-manager &"
           "SUPER+ALT,w,spawn,flatpak run app.zen_browser.zen"
           "SUPER,d,spawn,discord"
-          "SUPER,e,spawn,${lib.getExe pkgs.nautilus}"
+          "SUPER,e,spawn,${lib.getExe pkgs.thunar}"
         ];
 
         mousebind = [

@@ -8,6 +8,7 @@
       self.custom.commonModules.systemServices
     ];
     services = {
+      tumbler.enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
       printing.enable = lib.mkForce true;
