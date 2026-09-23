@@ -30,6 +30,8 @@
         affine-bin
         xsettingsd
         proton-authenticator
+        bat
+        ripgrep
       ]
       ++ [inputs.hibiki.packages.${pkgs.stdenv.hostPlatform.system}.default];
   };

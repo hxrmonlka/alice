@@ -1,17 +1,15 @@
 {
+  withSystem,
   self,
   inputs,
   ...
 }: {
-  flake.custom.alice.core = {
-    pkgs,
-    lib,
-    config,
-    ...
-  }: {
-    home.username = "alice";
-    home.homeDirectory = "/home/alice";
-    home.sessionPath = ["${config.home.homeDirectory}/.local/bin"];
+  flake.custom.alice.core = {config, ...}: {
+    home = {
+      username = "alice";
+      homeDirectory = "/home/alice";
+      sessionPath = ["${config.home.homeDirectory}/.local/bin"];
+    };
 
     home.stateVersion = "26.05";
   };

@@ -64,7 +64,7 @@
         self.custom.alice.neovim
         self.custom.alice.niri
         self.custom.alice.gitTools
-        self.custom.alice.kitty
+        self.custom.alice.terminals
         self.custom.alice.starship
         self.custom.alice.matugen
         self.custom.alice.browser

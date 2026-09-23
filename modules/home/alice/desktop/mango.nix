@@ -155,7 +155,7 @@
           "SUPER,o,toggleoverview"
 
           # Core window management
-          "SUPER,Return,spawn,${lib.getExe pkgs.kitty}"
+          "SUPER,Return,spawn,${lib.getExe pkgs.ghostty}"
           "SUPER,q,killclient"
           "SUPER,f,togglemaximizescreen"
           "SUPER,g,togglefullscreen"
@@ -250,6 +250,7 @@
 
           # Apps
           "SUPER,w,spawn,helium"
+          "SUPER+ALT,v,spawn,virt-manager &"
           "SUPER+ALT,w,spawn,flatpak run app.zen_browser.zen"
           "SUPER,d,spawn,discord"
           "SUPER,e,spawn,${lib.getExe pkgs.nautilus}"

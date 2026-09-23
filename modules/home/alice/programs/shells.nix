@@ -40,6 +40,7 @@
         generateCompletions = true;
         interactiveShellInit = ''
           set fish_greeting
+          echo ">>> Current mode: fish"
           echo ">>> ls is replaced by eza."
         '';
       };
@@ -53,7 +54,8 @@
         ];
         defaultKeymap = "viins";
         initContent = lib.mkOrder 1000 ''
-          echo ">>> Current mode: $SHELL"
+          echo ">>> Current mode: zsh"
+          echo ">>> ls is replaced by eza."
         '';
         shellAliases = {
           ll = "ls -l";

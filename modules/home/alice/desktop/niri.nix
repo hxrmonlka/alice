@@ -137,7 +137,7 @@
         ];
 
         binds = {
-          "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
           "Mod+Q".close-window = {};
           "Mod+F".maximize-column = {};
           "Mod+G".fullscreen-window = {};
