@@ -123,13 +123,13 @@
         background-color: alpha(@thunar_on_surface, 0.08);
       }
 
-      .thunar actionbar {
+      .thunar infobar {
         background-color: @thunar_surface_container_high;
         border-top: 1px solid @thunar_outline_variant;
         padding: 8px;
       }
 
-      .thunar actionbar button {
+      .thunar infobar button {
         background-color: @thunar_surface_container_highest;
         color: @thunar_on_surface;
         border: 1px solid @thunar_outline;
@@ -137,7 +137,7 @@
         padding: 4px 16px;
       }
 
-      .thunar actionbar button:hover {
+      .thunar infobar button:hover {
         background-color: alpha(@thunar_on_surface, 0.08);
       }
 
