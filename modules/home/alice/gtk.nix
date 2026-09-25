@@ -101,6 +101,46 @@
         color: @thunar_on_secondary_container;
       }
 
+      .thunar notebook header {
+        background-color: @thunar_surface_container_high;
+        border-bottom: 1px solid @thunar_outline_variant;
+        padding: 0 4px;
+      }
+
+      .thunar notebook header tab {
+        background-color: transparent;
+        color: @thunar_on_surface_variant;
+        padding: 6px 14px;
+      }
+
+      .thunar notebook header tab:checked {
+        background-color: @thunar_surface;
+        color: @thunar_on_surface;
+        box-shadow: inset 0 -2px @thunar_primary;
+      }
+
+      .thunar notebook header tab:hover {
+        background-color: alpha(@thunar_on_surface, 0.08);
+      }
+
+      .thunar actionbar {
+        background-color: @thunar_surface_container_high;
+        border-top: 1px solid @thunar_outline_variant;
+        padding: 8px;
+      }
+
+      .thunar actionbar button {
+        background-color: @thunar_surface_container_highest;
+        color: @thunar_on_surface;
+        border: 1px solid @thunar_outline;
+        border-radius: 20px;
+        padding: 4px 16px;
+      }
+
+      .thunar actionbar button:hover {
+        background-color: alpha(@thunar_on_surface, 0.08);
+      }
+
       .thunar statusbar {
         background-color: @thunar_surface_container;
         color: @thunar_on_surface_variant;
