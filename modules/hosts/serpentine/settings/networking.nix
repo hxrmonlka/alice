@@ -2,17 +2,14 @@
   self,
   inputs,
   ...
-}:
-{
-  flake.nixosModules.serpentineNetworking =
-    { ... }:
-    {
-      networking = {
-        hostName = "serpentine";
-        networkmanager = {
-          enable = true;
-          wifi.macAddress = "random";
-        };
+}: {
+  flake.custom.serpentine.networking = _: {
+    networking = {
+      hostName = "serpentine";
+      networkmanager = {
+        enable = true;
+        wifi.macAddress = "random";
       };
     };
+  };
 }

@@ -3,7 +3,14 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentinePackages = {pkgs, ...}: {
+  flake.custom.serpentine.packages = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    imports = [
+      self.custom.commonModules.nixSettings
+    ];
     environment.systemPackages = with pkgs; [
       wget
       nix-output-monitor
@@ -12,12 +19,10 @@
       xwayland-satellite
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
       self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNiriPkg
-      self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNoctalia
       qt5.qtsvg
       qt5.qtimageformats
       qt5.qtmultimedia
       kdePackages.qt5compat
-      # nvimdots build tools
       gcc
       gnumake
       cmake
@@ -40,6 +45,25 @@
       nixpkgs-fmt
       wireplumber
       alejandra
+      asciinema
+      devin-cli
+      nodejs_22
+      clang-tools
+      dgop
+      ardour
+      qbittorrent
+      usbutils
+      inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
+      ani-cli
+      proton-vpn
+      hicolor-icon-theme
+      loupe
+      showtime
     ];
+    nixpkgs = {
+      config = {
+        allowUnfree = lib.mkForce true;
+      };
+    };
   };
 }

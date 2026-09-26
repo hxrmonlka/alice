@@ -1,9 +1,9 @@
-{ self
-, inputs
-, ...
-}:
 {
-  flake.nixosModules.gamingSettings = { pkgs, ... }: {
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.gamingSettings = {pkgs, ...}: {
     services.xserver.desktopManager.retroarch = {
       enable = true;
     };
@@ -21,7 +21,7 @@
       gamescopeSession = {
         enable = true;
       };
-      package = pkgs.millennium-steam;
+      package = pkgs.steam;
     };
     programs.gamemode = {
       enable = true;

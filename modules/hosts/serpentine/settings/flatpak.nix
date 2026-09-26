@@ -3,7 +3,10 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineFlatpakConfig = {...}: {
+  flake.custom.serpentine.flatpaks = {...}: {
+    imports = [
+      inputs.nix-flatpak.nixosModules.nix-flatpak
+    ];
     services.flatpak = {
       enable = true;
       packages = [
@@ -15,6 +18,14 @@
         "moe.launcher.sleepy-launcher"
         "md.obsidian.Obsidian"
         "org.localsend.localsend_app"
+        "org.kde.krita"
+        "org.libreoffice.LibreOffice"
+        "io.gitlab.theevilskeleton.Upscaler"
+        "org.upscayl.Upscayl"
+        "io.mrarm.mcpelauncher"
+        "com.danklinux.dankcalendar"
+        "org.blender.Blender"
+        "org.inkscape.Inkscape"
       ];
       update.onActivation = true;
     };

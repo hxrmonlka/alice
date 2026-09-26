@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
+# When applying settings instead, use noctalia-shell ipc call state all > modules/home/konoe/desktop/noctalia.json.
 set -euo pipefail
 
 SOURCE_FILE="$HOME/.config/niri/noctalia.kdl"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-TARGET_FILE="${REPO_ROOT}/modules/home/desktop/noctalia.kdl"
+TARGET_FILE="${REPO_ROOT}/modules/home/konoe/desktop/noctalia.kdl"
 
 if [[ ! -f "${SOURCE_FILE}" ]]; then
-  echo "error: source file not found: ${SOURCE_FILE}" >&2
-  exit 1
+	echo "error: source file not found: ${SOURCE_FILE}" >&2
+	exit 1
 fi
 
 if [[ ! -s "${SOURCE_FILE}" ]]; then
-  echo "error: source file is empty: ${SOURCE_FILE}" >&2
-  exit 1
+	echo "error: source file is empty: ${SOURCE_FILE}" >&2
+	exit 1
 fi
 
 mkdir -p "$(dirname "${TARGET_FILE}")"

@@ -21,6 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
+          ref: test-den
           persist-credentials: false
 
       - name: Install Nix
@@ -37,4 +38,5 @@ jobs:
           body: |
             Automated weekly update of `flake.lock`.
           branch: ci/weekly-flake-update
+          base: test-den
           delete-branch: true

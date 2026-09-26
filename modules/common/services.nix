@@ -3,11 +3,15 @@
   inputs,
   ...
 }: {
-  flake.custom.commonModules.systemServices = {pkgs, ...}: {
+  flake.custom.commonModules.systemServices = _: {
     hardware = {
       bluetooth.enable = true;
     };
     services = {
+      input-remapper = {
+        enable = false;
+        enableUdevRules = false;
+      };
       power-profiles-daemon.enable = true;
       upower.enable = true;
       xserver = {
@@ -17,9 +21,7 @@
           variant = "";
         };
       };
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      printing.enable = true;
+      printing.enable = false;
       pulseaudio.enable = false;
       pipewire = {
         enable = true;
