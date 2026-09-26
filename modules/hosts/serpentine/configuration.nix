@@ -7,7 +7,6 @@
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
-      inputs.harmonia.nixosModules.harmonia
       (inputs.lumina.lib.signatures.mkHostSignature "serpentine")
 
       # Self section (under ./modules/hosts/serpentine/)

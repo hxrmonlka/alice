@@ -67,7 +67,6 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    harmonia.url = "github:nix-community/harmonia";
     hibiki = {
       url = "github:linuxmobile/hibiki";
       inputs.nixpkgs.follows = "nixpkgs";

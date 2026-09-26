@@ -56,6 +56,9 @@
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
       ani-cli
       proton-vpn
+      hicolor-icon-theme
+      loupe
+      showtime
     ];
     nixpkgs = {
       config = {

@@ -9,9 +9,7 @@
     ];
     services = {
       tumbler.enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      printing.enable = lib.mkForce true;
+      xserver.enable = lib.mkForce false;
       input-remapper = {
         enable = lib.mkForce true;
         enableUdevRules = lib.mkForce true;
