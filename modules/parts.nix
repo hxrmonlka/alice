@@ -6,10 +6,40 @@
     };
 
     flake.custom = {
-      userModules = lib.mkOption {
+      tanuki = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.unspecified;
         default = {};
-        description = "Home Manager modules from ./modules/home.";
+        description = "System-level namespace for Tanuki.";
+      };
+
+      serpentine = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "System-level namespace for Serpentine.";
+      };
+
+      aux-mini = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "System-level namespace for aux-mini.";
+      };
+
+      konoe = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "Konoe's dedicated homeModules from ./modules/home/konoe.";
+      };
+
+      alice = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "Alice's dedicated homeModules from ./modules/home/alice.";
+      };
+
+      home-common = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "Shared NixOS modules from ./modules/common/home.";
       };
 
       commonModules = lib.mkOption {
@@ -22,6 +52,12 @@
         type = lib.types.lazyAttrsOf lib.types.unspecified;
         default = {};
         description = "Hardware modules from ./modules/hardware.";
+      };
+
+      system-modules = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.unspecified;
+        default = {};
+        description = "System modules from ./modules/systems, for other Linux machines using Alice.";
       };
     };
   };

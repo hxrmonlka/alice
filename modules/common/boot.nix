@@ -1,4 +1,4 @@
-# boot.nix is shared in a way, use lib.mkForce on boot.kernelPackages while importing this module.
+# boot.nix is shared in a way: boot.kernelPackages should have lib.mkForce with override value upon using this module.
 {
   self,
   inputs,
@@ -10,10 +10,10 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
-        useOSProber = true;
+        useOSProber = false; # Unnecessary unless a host specifically requires another operating system alongside NixOS.
       };
       efi.canTouchEfiVariables = true;
     };
-    boot.kernelPackages = pkgs.cachyosKernels."linuxPackages-cachyos-latest";
+    boot.kernelPackages = pkgs.linuxPackages_latest;
   };
 }

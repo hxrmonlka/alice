@@ -1,10 +1,23 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    dank-greeter.url = "github:AvengeMedia/dank-greeter";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+    easy-hosts.url = "github:tgirlcloud/easy-hosts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    lumina = {
+      url = "github:hxrmonlka/lumina/un/test";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,9 +45,32 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixcord.url = "github:FlameFlag/nixcord";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mangowc = {
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # --------------------------------My Resources------------------------------------------
+    cursor-themes = {
+      url = "github:hxrmonlka/resources/cursors";
+      flake = false;
+    };
+    # --------------------------------My Resources------------------------------------------
+    danksearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hibiki = {
+      url = "github:linuxmobile/hibiki";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
   };
 

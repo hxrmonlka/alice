@@ -43,7 +43,6 @@
     isLegacy = gen == "legacy"; # 5th–10th gen incl. Coffee Lake 8th gen
     isXe = gen == "xe"; # 12th-gen+ / Iris Xe / Arc
   in {
-    # ── Option declarations ────────────────────────────────────────────────
     options.hardware.alice.intel = {
       gpu = {
         enable = lib.mkEnableOption "Alice – Intel GPU driver";
@@ -128,7 +127,6 @@
       };
     };
 
-    # ── Implementation ─────────────────────────────────────────────────────
     config = lib.mkMerge [
       # GPU
       (lib.mkIf cfgGpu.enable {
@@ -216,7 +214,6 @@
 
         boot.initrd.kernelModules = lib.optional cfgGpu.earlyKms "i915";
 
-        # GuC/HuC firmware param — only emit when explicitly enabled.
         boot.kernelParams = lib.optional cfgGpu.enableGuC "i915.enable_guc=3";
 
         hardware.enableRedistributableFirmware = lib.mkDefault true;

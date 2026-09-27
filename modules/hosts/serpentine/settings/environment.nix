@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.serpentineEnvironment = {
+  flake.custom.serpentine.environment = {
     pkgs,
     lib,
     ...

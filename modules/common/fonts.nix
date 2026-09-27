@@ -6,7 +6,8 @@
   flake.custom.commonModules.fonts = {pkgs, ...}: {
     fonts.fontDir.enable = true;
     fonts.packages = with pkgs; [
-      pkgs.nerd-fonts._0xproto
+      nerd-fonts._0xproto
+      nerd-fonts.fira-mono
       nerd-fonts.jetbrains-mono
       noto-fonts
       noto-fonts-color-emoji
