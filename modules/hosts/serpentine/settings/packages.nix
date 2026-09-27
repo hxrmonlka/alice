@@ -53,7 +53,6 @@
       ardour
       qbittorrent
       usbutils
-      inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
       ani-cli
       proton-vpn
       hicolor-icon-theme
@@ -63,6 +62,7 @@
       sourcekit-lsp
       openssl
       kdePackages.ark
+      todoist-electron
     ];
     nixpkgs = {
       config = {

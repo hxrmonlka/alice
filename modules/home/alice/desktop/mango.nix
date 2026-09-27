@@ -159,7 +159,7 @@
           "SUPER,f,togglemaximizescreen"
           "SUPER,g,togglefullscreen"
           "SUPER+SHIFT,f,togglefloating"
-          "ALT,Tab,toggleoverview"
+          "SUPER,Tab,toggleoverview"
           # "ALT,z,toggle_scratchpad"
           "SUPER+SHIFT,n,switch_layout"
           "SUPER+SHIFT,e,quit"
