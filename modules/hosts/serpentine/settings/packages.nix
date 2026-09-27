@@ -59,6 +59,10 @@
       hicolor-icon-theme
       loupe
       showtime
+      glibc
+      sourcekit-lsp
+      openssl
+      kdePackages.ark
     ];
     nixpkgs = {
       config = {

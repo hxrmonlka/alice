@@ -64,6 +64,7 @@
           jj = "lazygit";
           quit = "exit";
           cd = "z";
+          nd = "nix develop -c zsh";
         };
       };
       zoxide = {

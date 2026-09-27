@@ -27,7 +27,10 @@
         "org.blender.Blender"
         "org.inkscape.Inkscape"
       ];
-      update.onActivation = true;
+      update = {
+        auto.enable = true;
+        auto.onCalendar = "weekly";
+      };
     };
   };
 }
