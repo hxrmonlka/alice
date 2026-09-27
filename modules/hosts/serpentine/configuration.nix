@@ -77,6 +77,7 @@
         self.custom.alice.dms
         self.custom.alice.gtk
         self.custom.alice.mangoConfig
+        self.custom.alice.rust
 
         # Common section
         self.custom.home-common.fastfetchConfig
