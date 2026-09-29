@@ -20,6 +20,11 @@
     pkgs,
     ...
   }: {
+    xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
+      [screencast]
+      chooser_type=simple
+      chooser_cmd=${lib.getExe pkgs.slurp} -f %o -or
+    '';
     wayland.windowManager.mango = {
       enable = true;
       autostart_sh = ''
