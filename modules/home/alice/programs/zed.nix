@@ -36,8 +36,12 @@
               path = lib.getExe pkgs.nil;
             };
             settings = {
-              flake = {
-                autoArchive = true;
+              nil = {
+                nix = {
+                  flake = {
+                    autoArchive = true;
+                  };
+                };
               };
             };
           };
