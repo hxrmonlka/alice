@@ -127,6 +127,11 @@
       "iconScale": 1,
       "id": "default",
       "innerPadding": 4,
+      "island": true,
+      "islandCompactThickness": 27,
+      "islandHoverCloseDelay": 70,
+      "islandHoverOpenDelay": 400,
+      "islandSatelliteGap": 23,
       "leftWidgets": [
         "launcherButton",
         "workspaceSwitcher",
@@ -170,12 +175,7 @@
       "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 1,
       "widgetPadding": 8,
-      "widgetTransparency": 1,
-      "island": true,
-      "islandCompactThickness": 27,
-      "islandHoverOpenDelay": 400,
-      "islandHoverCloseDelay": 70,
-      "islandSatelliteGap": 23
+      "widgetTransparency": 1
     }
   ],
   "desktopClockCustomColor": {

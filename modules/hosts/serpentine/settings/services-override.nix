@@ -27,6 +27,7 @@
     };
 
     services = {
+      accounts-daemon.enable = true;
       tumbler.enable = true;
       xserver.enable = lib.mkForce false;
       input-remapper = {
