@@ -1,12 +1,3 @@
-# Example:
-#   imports = [ inputs.self.nixosModules.hardwareAmd ];
-#
-#   hardware.alice.amd = {
-#     gpu.enable = true;
-#     gpu.rocm   = true;   # for compute/ML workloads
-#     gpu.lact   = true;   # for fan/power control
-#     cpu.enable = true;   # for AMD CPU power management
-#   };
 {
   self,
   inputs,

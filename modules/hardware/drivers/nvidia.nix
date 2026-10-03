@@ -1,21 +1,3 @@
-# modules/hardware/nvidia.nix
-# Reusable NixOS module for Nvidia GPU support.
-# Hosts import `flake.nixosModules.hardwareNvidia` and set options accordingly.
-#
-# Usage example (in a host's default.nix or configuration.nix):
-#
-#   imports = [ inputs.self.nixosModules.hardwareNvidia ];
-#
-#   hardware.alice.nvidia = {
-#     enable = true;
-#     prime = {
-#       enable = true;            # set on hybrid (laptop) machines
-#       mode = "offload";        # "offload" | "sync" | "reverse-sync"
-#       nvidiaBusId = "PCI:1:0:0";
-#       amdBusId    = "PCI:6:0:0"; # or intelBusId for Intel iGPU
-#     };
-#     powerManagement.enable = true;
-#   };
 {
   self,
   inputs,

@@ -1,28 +1,3 @@
-# Generation guide (pick one for gpu.generation):
-#
-#   "pre-broadwell"  Sandy/Ivy Bridge, Haswell (1st–4th gen, pre-2014)
-#                    HD 2000/3000/4000/4600 — i965 driver ONLY, no iHD support
-#
-#   "legacy"         Broadwell through Comet Lake (5th–10th gen, 2014–2020)
-#                    INCLUDES 8th-gen Coffee Lake (UHD 620/630) and
-#                    9th-gen Coffee Lake Refresh, 10th-gen Ice Lake.
-#                    Uses BOTH intel-media-driver (iHD) and intel-vaapi-driver (i965).
-#                    iHD is set as primary; i965 kept as fallback (better for browsers).
-#
-#   "xe"             Iris Xe iGPU / Intel Arc dGPU / 12th-gen+ (2021–present)
-#                    Alder Lake, Raptor Lake, Meteor Lake, Lunar Lake, Arrow Lake.
-#                    Uses iHD + vpl-gpu-rt (QSV). GuC firmware recommended.
-#
-# Usage example:
-#   imports = [ self.custom.hardwareModules.hardwareIntel ];
-#
-#   hardware.alice.intel = {
-#     gpu = {
-#       enable     = true;
-#       generation = "legacy";
-#     };
-#     cpu.enable = true;
-#   };
 {
   self,
   inputs,

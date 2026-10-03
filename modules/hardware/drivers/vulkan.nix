@@ -1,18 +1,3 @@
-# Vendor cheat-sheet:
-#   AMD   → RADV (Mesa, default, recommended for gaming)
-#           AMDVLK (AMD's own; can hurt perf - workstation/pro use only)
-#   Intel → ANV (Mesa, always present)
-#           hasvk only for Haswell (Mesa, auto on that uArch)
-#   Nvidia → proprietary ICD wired by hardwareNvidia module
-#           NVK (Mesa/Nouveau open driver; use only without proprietary driver)
-#   All   → validation layers (dev only), overlay layer, device-select layer, tools
-#
-# Force a specific ICD globally (useful on multi-GPU or hybrid systems):
-#   hardware.alice.vulkan.defaultDriver = "radv";  # or "anv", "amdvlk", "nvk", "nvidia"
-#
-# Per-app override without this module (reference):
-#   VK_DRIVER_FILES=/run/opengl-driver/share/vulkan/icd.d/radeon_icd.<arch>.json <app>
-#   where <arch> is x86_64, i686, or aarch64 depending on the host platform.
 {
   self,
   inputs,
