@@ -21,7 +21,7 @@ The name's just there because my humour sucks.
 </details>
 <details>
 <summary><b>Where can I learn more about it?</b></summary>
-You can learn more about it by going through the <a href="https://github.com/hxrmonlka/alice/wiki">documentation</a>. (Though this is still being developed.)
+You can learn more about it by going through the <a href="https://github.com/hxrmonlka/alice/wiki">documentation</a>.
 </details>
 
 ## Introduction

@@ -63,6 +63,8 @@
       openssl
       kdePackages.ark
       todoist-electron
+      concord-tui
+      mpv
     ];
     nixpkgs = {
       config = {

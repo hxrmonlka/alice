@@ -58,6 +58,10 @@
       url = "github:hxrmonlka/resources/cursors";
       flake = false;
     };
+    tanuki-cursors = {
+      url = "github:seiryouden/cursors";
+      flake = false;
+    };
     # --------------------------------My Resources------------------------------------------
     danksearch = {
       url = "github:AvengeMedia/danksearch";
