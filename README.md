@@ -58,7 +58,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 ├── flake.nix              # mkFlake + import-tree ./modules
 ├── flake.lock
 ├── modules/
-│   ├── _systems          # Nix declarations for other systems
+│   ├── systems           # Nix declarations for other systems
 │   ├── parts.nix          # flake.custom.* namespace declarations
 │   ├── common/             # Shared NixOS config (boot, fonts, services, nix settings)
 │   │   └── home/            # Shared Home Manager config
@@ -86,7 +86,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 | `flake.custom.commonModules`   | `modules/common`           | Shared NixOS config                             |
 | `flake.custom.home-common`     | `modules/common/home`      | Shared Home Manager config                      |
 | `flake.custom.hardwareModules` | `modules/hardware`         | Hardware and driver modules                     |
-| `flake.custom.system-modules`  | `modules/_systems`         | Other systems that doesn't revolve around NixOS |
+| `flake.custom.system-modules`  | `modules/systems`          | Other systems that doesn't revolve around NixOS |
 
 ## Getting Started
 
