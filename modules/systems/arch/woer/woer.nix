@@ -39,6 +39,7 @@ in {
     modules = [
       self.custom.system-modules.arch-linux
       self.custom.system-modules.woer
+      self.custom.home-common.fastfetchConfig
     ];
   };
 }
