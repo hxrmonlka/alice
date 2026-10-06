@@ -13,7 +13,7 @@
       enableGitIntegration = true;
       font = {
         name = "JetBrainsMono Nerd Font";
-        size = 9.0;
+        size = 12.0;
       };
       settings = {
         "cursor_shape" = "beam";
