@@ -228,7 +228,7 @@
           "Mod+O".toggle-overview = {};
         };
         extraConfig = ''
-          include optional=true "~/.config/niri/noctalia.kdl"
+          include optional=true "noctalia.kdl"
         '';
       };
     };
