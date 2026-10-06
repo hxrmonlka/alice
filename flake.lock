@@ -1125,6 +1125,7 @@
         "quickshell": "quickshell",
         "rust-overlay": "rust-overlay",
         "spicetify-nix": "spicetify-nix",
+        "tanuki-cursors": "tanuki-cursors",
         "wrapper-modules": "wrapper-modules_2",
         "zen-browser": "zen-browser"
       }
@@ -1233,6 +1234,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tanuki-cursors": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790057003,
+        "narHash": "sha256-7KY79n6MRe38vDLOB2eDv7cv260iuMTZyz5+iR85eos=",
+        "owner": "seiryouden",
+        "repo": "cursors",
+        "rev": "177e4f2299aa3ff1d940f6b55205199610fa7550",
+        "type": "github"
+      },
+      "original": {
+        "owner": "seiryouden",
+        "repo": "cursors",
         "type": "github"
       }
     },
