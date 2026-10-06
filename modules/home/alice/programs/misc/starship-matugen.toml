@@ -45,8 +45,10 @@ shell = ["bash", "-c"]
 
 [status]
 disabled = false
-success_symbol = "[(˶˃ ᵕ ˂˶)](accent)"
-symbol = "[(╥﹏╥)](urgent)"
+success_symbol = "(˶˃ ᵕ ˂˶)"
+symbol = "(╥﹏╥)"
+success_style = "accent"
+failure_style = "urgent"
 format = " $symbol"
 
 [palettes.alice]
