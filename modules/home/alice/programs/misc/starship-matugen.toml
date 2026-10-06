@@ -49,7 +49,7 @@ success_symbol = "(˶˃ ᵕ ˂˶)"
 symbol = "(╥﹏╥)"
 success_style = "accent"
 failure_style = "urgent"
-format = " $symbol"
+format = " [$symbol]($style)"
 
 [palettes.alice]
 accent = "{{colors.primary.default.hex}}"
