@@ -7,6 +7,7 @@
     packages.konoeNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
       inherit pkgs;
       settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
+      outOfStoreConfig = "/home/konoe/.config/noctalia";
 
       user-templates.templates = let
         templates = "${pkgs.noctalia-shell}/share/noctalia-shell/Assets/Templates";
