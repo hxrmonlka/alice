@@ -18,6 +18,19 @@
         (final: prev: {
           openldap = prev.openldap.overrideAttrs {doCheck = false;};
         })
+        (final: prev: {
+          lazarus-qt6 = prev.lazarus-qt6.overrideAttrs (old: {
+            postInstall = let
+              ldFlags = ''$(echo "$NIX_LDFLAGS" | sed -re 's/-rpath [^ ]+//g' | tr -s ' ' | sed -re 's/(^ *| *$)//g')'';
+            in ''
+              wrapProgram $out/bin/startlazarus \
+                --prefix NIX_LDFLAGS ' ' "${ldFlags}" \
+                --prefix NIX_LDFLAGS_${prev.binutils.suffixSalt} ' ' "${ldFlags}" \
+                --prefix LCL_PLATFORM ' ' "$LCL_PLATFORM" \
+                --prefix PATH ':' "${prev.lib.makeBinPath [prev.fpc prev.gdb prev.gnumake prev.binutils]}"
+            '';
+          });
+        })
       ];
     };
     nix = {
