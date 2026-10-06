@@ -149,7 +149,9 @@
                   intel-media-driver # iHD — primary VA-API (Broadwell+)
                   vaDriver # i965 — browser fallback / hybrid codec
                   libvdpau-va-gl # VDPAU → VA-API shim
-                  (lib.optional cfgGpu.openclLegacy intel-compute-runtime-legacy1)
+                  (lib.optional cfgGpu.openclLegacy (intel-compute-runtime-legacy1.overrideAttrs (old: {
+                    cmakeFlags = (old.cmakeFlags or []) ++ ["-DCMAKE_CXX_FLAGS=-Wno-error=sfinae-incomplete"];
+                  })))
                 ]
             else
               # pre-broadwell: i965 only, no iHD support
