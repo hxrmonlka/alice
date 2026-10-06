@@ -45,8 +45,8 @@ shell = ["bash", "-c"]
 
 [status]
 disabled = false
-success_symbol = "(˶˃ ᵕ ˂˶)"
-symbol = "(╥﹏╥)"
+success_symbol = '(˵¬ᴗ¬˵)'
+symbol = '\\(╥﹏╥\\)'
 success_style = "accent"
 failure_style = "urgent"
 format = " [$symbol]($style)"
