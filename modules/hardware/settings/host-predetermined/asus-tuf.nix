@@ -12,6 +12,10 @@
     hardware.nvidia.prime.offload.enable = true;
     hardware.nvidia.powerManagement.enable = true;
 
+    services.udev.extraRules = ''
+      SUBSYSTEM=="drm", KERNEL=="card[0-9]", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x1002", TAG+="mutter-device-preferred-primary"
+    '';
+
     hardware.alice.vulkan = {
       enable = true;
       tools = true;
