@@ -17,6 +17,7 @@
       self.custom.tanuki.packages
       self.custom.tanuki.flatpaks
       self.custom.tanuki.services-override
+      self.custom.tanuki.bash
 
       # Common section
       self.custom.commonModules.nixSettings

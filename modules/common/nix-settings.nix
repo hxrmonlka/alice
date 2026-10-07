@@ -19,6 +19,15 @@
           openldap = prev.openldap.overrideAttrs {doCheck = false;};
         })
         (final: prev: {
+          breakpad = prev.breakpad.overrideAttrs (old: {
+            patches =
+              (old.patches or [])
+              ++ prev.lib.optional
+              (!prev.lib.any (p: prev.lib.hasSuffix "fix-vtable-link.patch" (toString p)) (old.patches or []))
+              ./patches/breakpad-fix-vtable-link.patch;
+          });
+        })
+        (final: prev: {
           lazarus-qt6 = prev.lazarus-qt6.overrideAttrs (old: {
             postInstall = let
               ldFlags = ''$(echo "$NIX_LDFLAGS" | sed -re 's/-rpath [^ ]+//g' | tr -s ' ' | sed -re 's/(^ *| *$)//g')'';

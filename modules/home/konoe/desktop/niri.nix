@@ -131,7 +131,6 @@
           "Shift+F11".maximize-column = {};
           "F11".fullscreen-window = {};
           "Mod+Shift+F".toggle-window-floating = {};
-          "Mod+C".center-column = {};
 
           "Mod+H".focus-column-left = {};
           "Mod+J".focus-column-right = {};
@@ -211,6 +210,7 @@
           "Mod+N".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call media toggle";
           "Mod+Semicolon".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher emoji";
           "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
+          "Mod+C".spawn = ["code"];
           "Mod+W".spawn = [
             "flatpak"
             "run"

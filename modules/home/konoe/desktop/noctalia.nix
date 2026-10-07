@@ -8,9 +8,14 @@
     system,
     ...
   }: let
-    pinned = inputs.nixpkgs-pinned.legacyPackages.${system};
-    patched = pkgs.extend (_: _: {
-      inherit (pinned) noctalia-qs noctalia-shell;
+    patched = pkgs.extend (_: prev: {
+      breakpad = prev.breakpad.overrideAttrs (old: {
+        patches =
+          (old.patches or [])
+          ++ prev.lib.optional
+          (!prev.lib.any (p: prev.lib.hasSuffix "fix-vtable-link.patch" (toString p)) (old.patches or []))
+          ../../../common/patches/breakpad-fix-vtable-link.patch;
+      });
     });
   in {
     packages.konoeNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
