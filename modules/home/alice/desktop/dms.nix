@@ -12,7 +12,15 @@
     programs.dms-greeter = {
       enable = true;
       package = pkgs.dms-greeter;
-      compositor.name = "mango";
+      compositor = {
+        name = "mango";
+        customConfig = ''
+          # Hello.
+          # This is intended to be empty,
+          # because /etc/mango/config.conf is read upon boot,
+          # but it doesn't exist, so it emits an error in the lockscreen.
+        '';
+      };
       configHome = "/home/alice";
       configFiles = ["${config.users.users.alice.home}/.config/DankMaterialShell/settings.json"];
       logs = {

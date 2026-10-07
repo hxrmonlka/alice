@@ -254,6 +254,7 @@
           # Apps
           "SUPER,w,spawn,helium"
           "SUPER+ALT,v,spawn,virt-manager &"
+          "SUPER,c,spawn,zeditor"
           "SUPER+ALT,w,spawn,flatpak run app.zen_browser.zen"
           "SUPER,d,spawn,discord"
           "SUPER,e,spawn,${lib.getExe pkgs.thunar}"
