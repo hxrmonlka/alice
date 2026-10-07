@@ -5,10 +5,10 @@
 }: let
   system = "x86_64-linux";
 in {
-  flake.custom.system-modules.woer = {...}: {
+  flake.custom.system-modules.kobo = {...}: {
     imports = [
       inputs.zen-browser.homeModules.beta
-      (inputs.lumina.lib.signatures.mkStandaloneSignature "woer" "yianyi")
+      (inputs.lumina.lib.signatures.mkStandaloneSignature "kobo" "yianyi")
     ];
 
     home = {
@@ -27,20 +27,20 @@ in {
     };
   };
 
-  flake.homeConfigurations."yianyi@woer" = inputs.home-manager.lib.homeManagerConfiguration {
+  flake.homeConfigurations."yianyi@kobo" = inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = import inputs.nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
     extraSpecialArgs = {
       inherit inputs self;
-      hostName = "woer";
+      hostName = "kobo";
     };
     modules = [
-      self.custom.system-modules.arch-linux
-      self.custom.system-modules.woer
+      self.custom.system-modules.kobo
+      self.custom.system-modules.kobo-bedrock
+      self.custom.system-modules.kobo-sway
       self.custom.home-common.fastfetchConfig
-      self.custom.system-modules.system-manager
       self.custom.system-modules.generic-linux
     ];
   };
