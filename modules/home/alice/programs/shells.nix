@@ -59,7 +59,7 @@
         '';
         shellAliases = {
           ll = "ls -l";
-          ex = "eza --icons";
+          ex = "eza --icons=always";
           lstree = "eza --icons --tree";
           jj = "lazygit";
           quit = "exit";

@@ -17,6 +17,8 @@
       "ghmbeldphafepmbegfdlkpapadhbakde"
       "jplgfhpmjnbigmhklmmbgecoobifkmpa"
       "hfjbmagddngcpeloejdejnfgbamkjaeg"
+      "nbokbjkabcmbfdlbddjidfmibcpneigj"
+      "hfjbmagddngcpeloejdejnfgbamkjaeg"
     ];
   };
 }
