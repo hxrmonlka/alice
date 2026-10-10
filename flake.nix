@@ -13,7 +13,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    wrapper-modules.url = "github:nix-community/nix-wrapper-modules";
     lumina = {
       url = "github:hxrmonlka/lumina/un/test";
       inputs.nixpkgs.follows = "nixpkgs";
