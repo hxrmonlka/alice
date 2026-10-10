@@ -10,9 +10,7 @@
   }: {
     imports = [
       inputs.dank-greeter.nixosModules.default
-      inputs.danksearch.homeModules.default
     ];
-    programs.dsearch.enable = true;
     programs.dms-greeter = {
       enable = true;
       package = pkgs.dms-greeter;
@@ -25,7 +23,7 @@
           # but it doesn't exist, so it emits an error in the lockscreen.
         '';
       };
-      configHome = "/home/alice";
+      configHome = "${config.users.users.alice.home}";
       configFiles = ["${config.users.users.alice.home}/.config/DankMaterialShell/settings.json"];
       logs = {
         save = false;
