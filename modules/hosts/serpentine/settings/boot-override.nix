@@ -13,7 +13,11 @@
       loader.timeout = 0;
       kernelPackages = lib.mkForce pkgs.cachyosKernels."linuxPackages-cachyos-latest";
       loader.grub.theme = "${inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.grub-theme}/grub/themes/tela";
-      plymouth.enable = true;
+      plymouth = {
+        enable = true;
+        theme = "spinner";
+        logo = "${pkgs.nixos-icons}/share/icons/hicolor/256x256/apps/nix-snowflake-white.png";
+      };
       consoleLogLevel = 3;
       initrd.verbose = false;
       kernelParams = [
