@@ -49,6 +49,7 @@
         self.custom.konoe.alacritty
         self.custom.konoe.code
         self.custom.konoe.zen-browser
+        self.custom.tanuki.cursor
 
         # Common section
         self.custom.home-common.fastfetchConfig

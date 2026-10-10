@@ -21,6 +21,11 @@
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
         prefer-no-csd = true;
 
+        cursor = {
+          xcursor-theme = "BlueNeonGlass";
+          xcursor-size = 24;
+        };
+
         hotkey-overlay."skip-at-startup" = _: {};
 
         input = {
