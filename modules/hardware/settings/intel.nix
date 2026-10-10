@@ -5,8 +5,8 @@
 }: {
   flake.custom.hardwareModules.intelSettings = {...}: {
     imports = [
-      self.custom.hardwareModules.hardwareIntel
-      self.custom.hardwareModules.vulkan
+      inputs.lumina.lib.hardware.intel
+      inputs.lumina.lib.hardware.vulkan
     ];
     hardware.alice.intel = {
       gpu = {

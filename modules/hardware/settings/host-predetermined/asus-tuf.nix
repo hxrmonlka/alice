@@ -6,7 +6,7 @@
   flake.custom.hardwareModules.asusSettings = {...}: {
     imports = [
       inputs.nixos-hardware.nixosModules.asus-fa506nc
-      self.custom.hardwareModules.vulkan
+      inputs.lumina.lib.hardware.vulkan
     ];
 
     hardware.nvidia.prime.offload.enable = true;

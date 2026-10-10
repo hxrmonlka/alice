@@ -5,8 +5,8 @@
 }: {
   flake.custom.hardwareModules.amdSettings = {...}: {
     imports = [
-      self.custom.hardwareModules.hardwareAmd
-      self.custom.hardwareModules.vulkan
+      inputs.lumina.lib.hardware.amd
+      inputs.lumina.lib.hardware.vulkan
     ];
     hardware.alice.amd = {
       cpu.enable = true;
