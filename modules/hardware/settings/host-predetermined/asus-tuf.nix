@@ -16,7 +16,7 @@
       SUBSYSTEM=="drm", KERNEL=="card[0-9]", SUBSYSTEMS=="pci", ATTRS{vendor}=="0x1002", TAG+="mutter-device-preferred-primary"
     '';
 
-    hardware.alice.vulkan = {
+    hardware.lumina.vulkan = {
       enable = true;
       tools = true;
     };

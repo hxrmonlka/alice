@@ -8,7 +8,7 @@
       inputs.lumina.lib.hardware.intel
       inputs.lumina.lib.hardware.vulkan
     ];
-    hardware.alice.intel = {
+    hardware.lumina.intel = {
       gpu = {
         enable = true;
         generation = "legacy";
@@ -16,7 +16,7 @@
       };
       cpu.enable = true;
     };
-    hardware.alice.vulkan = {
+    hardware.lumina.vulkan = {
       enable = true;
       tools = true;
     };
