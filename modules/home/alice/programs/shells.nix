@@ -11,17 +11,18 @@
     lib,
     ...
   }: {
+    home.sessionVariables = {
+      # Global shell aliases, I guess.
+      ll = "ls -l";
+      ex = "eza --icons=always";
+      lstree = "eza --icons=always --tree";
+      jj = "lazygit";
+      quit = "exit";
+      cd = "z";
+    };
     programs = {
       nushell = {
         enable = true;
-        shellAliases = {
-          ll = "ls -l";
-          ex = "eza --icons";
-          lstree = "eza --icons --tree";
-          jj = "lazygit";
-          quit = "exit";
-          cd = "z";
-        };
         settings = {
           show_banner = false;
         };
@@ -29,13 +30,7 @@
       fish = {
         enable = true;
         shellAbbrs = {
-          ll = "ls -l";
-          ls = "eza --icons";
-          lstree = "eza --icons --tree";
           ols = lib.getExe' pkgs.coreutils "ls";
-          jj = "lazygit";
-          quit = "exit";
-          cd = "z";
         };
         generateCompletions = true;
         interactiveShellInit = ''
@@ -58,12 +53,6 @@
           echo ">>> ls is replaced by eza."
         '';
         shellAliases = {
-          ll = "ls -l";
-          ex = "eza --icons=always";
-          lstree = "eza --icons --tree";
-          jj = "lazygit";
-          quit = "exit";
-          cd = "z";
           nd = "nix develop -c zsh";
         };
       };

@@ -8,7 +8,11 @@
     config,
     ...
   }: {
-    imports = [inputs.dank-greeter.nixosModules.default];
+    imports = [
+      inputs.dank-greeter.nixosModules.default
+      inputs.danksearch.homeModules.default
+    ];
+    programs.dsearch.enable = true;
     programs.dms-greeter = {
       enable = true;
       package = pkgs.dms-greeter;

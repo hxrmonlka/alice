@@ -239,8 +239,11 @@
           "NONE,XF86MonBrightnessUp,spawn,${lib.getExe pkgs.brightnessctl} s 5%+"
           "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
 
+          # Dank
           "SUPER,s,spawn,dms ipc spotlight-bar toggle"
-          "SUPER,n,spawn,dms ipc dash toggle media"
+          "SUPER+SHIFT,s,spawn,dms ipc call island toggle launcher"
+          "SUPER,n,spawn,dms ipc call notifications toggle"
+          "SUPER+SHIFT,m,spawn,dms ipc dash toggle media"
           "SUPER,semicolon,spawn,dms ipc call emojiPicker toggle"
           "SUPER+ALT,l,spawn,dms ipc lock lock"
           "SUPER+SHIFT,w,spawn,dms ipc call dash toggle wallpaper"
