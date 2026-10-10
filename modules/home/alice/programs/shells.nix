@@ -14,7 +14,7 @@
     home.sessionVariables = {
       # Global shell aliases, I guess.
       ll = "ls -l";
-      ex = "eza --icons=always";
+      ls = "eza --icons=always";
       lstree = "eza --icons=always --tree";
       jj = "lazygit";
       quit = "exit";
