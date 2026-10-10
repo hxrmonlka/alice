@@ -11,7 +11,7 @@
     lib,
     ...
   }: {
-    home.sessionVariables = {
+    home.shellAliases = {
       # Global shell aliases, I guess.
       ll = "ls -l";
       ls = "eza --icons=always";
@@ -19,6 +19,8 @@
       jj = "lazygit";
       quit = "exit";
       cd = "z";
+      at-world = "nix flake update; nh os boot";
+      build = "nh os switch";
     };
     programs = {
       nushell = {
