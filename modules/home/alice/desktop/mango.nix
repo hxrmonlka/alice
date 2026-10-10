@@ -155,7 +155,7 @@
 
         bind = [
           "SUPER,r,reload_config"
-          "SUPER,o,toggleoverview,1"
+          "SUPER,o,toggleoverview"
 
           # Core window management
           "SUPER,Return,spawn,${lib.getExe pkgs.kitty}"
@@ -163,7 +163,7 @@
           "SUPER,f,togglemaximizescreen"
           "SUPER,g,togglefullscreen"
           "SUPER+SHIFT,f,togglefloating"
-          "SUPER,Tab,toggleoverview"
+          "SUPER,Tab,toggleoverview,1"
           # "ALT,z,toggle_scratchpad"
           "SUPER+SHIFT,n,switch_layout"
           "SUPER+SHIFT,e,quit"
