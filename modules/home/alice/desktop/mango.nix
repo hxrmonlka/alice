@@ -45,7 +45,7 @@
         shadows_blur = 15;
         shadows_position_x = 0;
         shadows_position_y = 4;
-        shadowscolor = "0x16161dcc";
+        shadows_color = "0x16161dcc";
         border_radius = 12;
         no_radius_when_single = 0;
         focused_opacity = "1.0";
@@ -61,8 +61,8 @@
         tag_animation_direction = 1;
         zoom_initial_ratio = "0.4";
         zoom_end_ratio = "0.8";
-        fadein_begin_opacity = "0.5";
-        fadeout_begin_opacity = "0.8";
+        fade_in_begin_opacity = "0.5";
+        fade_out_begin_opacity = "0.8";
         animation_duration_move = 400;
         animation_duration_open = 350;
         animation_duration_tag = 300;
@@ -79,20 +79,20 @@
         scroller_prefer_center = 0;
         scroller_default_proportion_single = "1.0";
         scroller_proportion_preset = "0.333,0.5,0.667,1.0";
-        default_mfact = "0.55";
-        default_nmaster = 1;
-        smartgaps = 0;
+        default_master_factor = "0.55";
+        default_master_count = 1;
+        smart_gaps = 0;
 
         # Overview
         enable_hotarea = 0;
-        overviewgappi = 5;
-        overviewgappo = 30;
+        overview_gap_inner = 5;
+        overview_gap_outer = 30;
 
         # Misc
         no_border_when_single = 0;
         focus_on_activate = 1;
-        sloppyfocus = 1;
-        warpcursor = 0;
+        sloppy_focus = 1;
+        warp_cursor = 0;
         focus_cross_monitor = 0;
         focus_cross_tag = 0;
         enable_floating_snap = 0;
@@ -105,7 +105,7 @@
         # Keyboard
         repeat_rate = 40;
         repeat_delay = 250;
-        numlockon = 0;
+        numlock_on = 0;
         xkb_rules_layout = "us";
         xkb_rules_options = "caps:escape";
 
@@ -124,24 +124,24 @@
         mouse_natural_scrolling = 0;
 
         # Appearance
-        gappih = 8;
-        gappiv = 8;
-        gappoh = 8;
-        gappov = 8;
+        gap_inner_horizontal = 8;
+        gap_inner_vertical = 8;
+        gap_outer_horizontal = 8;
+        gap_outer_vertical = 8;
         scratchpad_width_ratio = "0.8";
         scratchpad_height_ratio = "0.9";
-        borderpx = 2;
-        rootcolor = "0x16161dff";
-        bordercolor = "0x2b1712ff";
-        focuscolor = "0xe985b4ff";
-        maximizescreencolor = "0xe985b4ff";
-        urgentcolor = "0xad401fff";
-        scratchpadcolor = "0x516c93ff";
-        globalcolor = "0xe985b4ff";
-        overlaycolor = "0x14a57cff";
+        border_px = 2;
+        root_color = "0x16161dff";
+        border_color = "0x2b1712ff";
+        focus_color = "0xe985b4ff";
+        maximized_screen_color = "0xe985b4ff";
+        urgent_color = "0xad401fff";
+        scratchpad_color = "0x516c93ff";
+        global_color = "0xe985b4ff";
+        overlay_color = "0x14a57cff";
 
         # Tag layout rules
-        tagrule = [
+        tag_rule = [
           "id:1,layout_name:scroller"
           "id:2,layout_name:scroller"
           "id:3,layout_name:scroller"
@@ -239,7 +239,7 @@
           "NONE,XF86MonBrightnessUp,spawn,${lib.getExe pkgs.brightnessctl} s 5%+"
           "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
 
-          "SUPER,s,spawn,dms ipc launcher toggle"
+          "SUPER,s,spawn,dms ipc spotlight-bar toggle"
           "SUPER,n,spawn,dms ipc dash toggle media"
           "SUPER,semicolon,spawn,dms ipc call emojiPicker toggle"
           "SUPER+ALT,l,spawn,dms ipc lock lock"
@@ -271,7 +271,7 @@
           "SUPER,DOWN,viewtoright_have_client"
         ];
 
-        layerrule = [
+        layer_rule = [
           "animation_type_open:zoom,layer_name:noctalia"
           "animation_type_close:zoom,layer_name:noctalia"
         ];
