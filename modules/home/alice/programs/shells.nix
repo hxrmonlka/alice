@@ -60,7 +60,6 @@
         initContent = lib.mkOrder 1000 ''
           echo ">>> Current mode: zsh"
           echo ">>> ls is replaced by eza."
-          nitch
         '';
         shellAliases = {
           nd = "nix develop -c zsh";
