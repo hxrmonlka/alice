@@ -17,7 +17,6 @@
         "toml"
         "html"
         "ruby"
-        "vue"
         "dockerfile"
         "make"
         "latex"
@@ -27,8 +26,20 @@
         "swift"
         "python"
       ];
-      extraPackages = [pkgs.nil pkgs.alejandra pkgs.statix pkgs.deadnix];
+      extraPackages = [pkgs.nil pkgs.alejandra pkgs.statix pkgs.deadnix pkgs.nixd];
       userSettings = {
+        project_panel = {
+          dock = "right";
+        };
+        debugger = {
+          dock = "right";
+        };
+        outline_panel = {
+          dock = "right";
+        };
+        git_panel = {
+          dock = "right";
+        };
         semantic_tokens = "combined";
         lsp = {
           nil = {
