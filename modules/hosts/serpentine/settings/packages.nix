@@ -65,6 +65,7 @@
       todoist-electron
       concord-tui
       mpv
+      owofetch
     ];
     nixpkgs = {
       config = {
