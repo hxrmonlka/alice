@@ -14,6 +14,7 @@
       self.custom.serpentine.programs
       self.custom.serpentine.userSystemConfig
       self.custom.serpentine.packages
+      self.custom.serpentine.fonts
       self.custom.serpentine.locales
       self.custom.serpentine.environment
       self.custom.serpentine.flatpaks
