@@ -3,8 +3,13 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.zsh-sys-level = _: {
-    programs.zsh.enable = true;
+  flake.nixosModules.zsh-sys-level = {lib, ...}: {
+    programs.zsh = {
+      enable = true;
+      promptInit = ''
+        nitch
+      '';
+    };
   };
   flake.custom.alice.shells = {
     pkgs,
@@ -21,6 +26,8 @@
       cd = "z";
       at-world = "nix flake update; nh os boot";
       nbuild = "nh os switch";
+      ga = "git add .";
+      gp = "git push";
     };
     programs = {
       nushell = {

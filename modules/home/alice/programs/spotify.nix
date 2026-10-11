@@ -20,6 +20,7 @@
       theme = spicePkgs.themes.text;
       colorScheme = "RosePine";
 
+      # Make custom color scheme for Spicetify:
       #      customColorScheme = {
       #        text = "FFFFFF";
       #        subtext = "999999";
