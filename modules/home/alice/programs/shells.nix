@@ -46,6 +46,7 @@
           set fish_greeting
           echo ">>> Current mode: fish"
           echo ">>> ls is replaced by eza."
+          nitch
         '';
       };
       zsh = {
