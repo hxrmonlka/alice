@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.zsh-sys-level = {lib, ...}: {
+  flake.nixosModules.zsh-sys-level = _: {
     programs.zsh = {
       enable = true;
       promptInit = ''
