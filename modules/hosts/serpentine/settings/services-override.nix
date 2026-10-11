@@ -26,6 +26,23 @@
       };
     };
 
+    systemd.services.input-remapper-autoload = {
+      description = "Autoload input-remapper presets before the greeter starts";
+      wants = ["input-remapper.service"];
+      after = ["input-remapper.service"];
+      before = [
+        "greetd.service"
+        "display-manager.service"
+      ];
+      wantedBy = ["multi-user.target"];
+
+      serviceConfig = {
+        Type = "oneshot";
+        User = "alice";
+        ExecStart = "${pkgs.input-remapper}/bin/input-remapper-control --command autoload";
+      };
+    };
+
     services = {
       accounts-daemon.enable = true;
       tumbler.enable = true;

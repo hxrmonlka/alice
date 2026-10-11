@@ -77,7 +77,9 @@
         relative_line_numbers = true;
         terminal = {
           font_family = "0xProto Nerd Font Mono";
-          shell = "system";
+          shell = {
+            program = lib.getExe pkgs.fish;
+          };
         };
         telemetry = {
           metrics = false;
