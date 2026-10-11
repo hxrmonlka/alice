@@ -94,12 +94,17 @@
     "size": 24,
     "theme": "YeShunguang"
   },
+  "launcherLogoMode": "os",
+  "launcherLogoColorOverride": "primary",
+  "launcherLogoSizeOffset": -2,
   "acProfileName": "2",
   "batteryProfileName": "0",
   "batteryChargeLimit": 95,
   "batteryAutoPowerSaver": true,
   "matugenTemplateNeovim": true,
+  "lockScreenNotificationMode": 3,
   "osdPowerProfileEnabled": true,
+  "powerActionHoldDuration": 0.25,
   "barConfigs": [
     {
       "autoHide": false,
@@ -129,9 +134,13 @@
       "innerPadding": 4,
       "island": true,
       "islandCompactThickness": 27,
+      "islandFloating": false,
+      "islandHighContrast": false,
       "islandHoverCloseDelay": 70,
       "islandHoverOpenDelay": 400,
+      "islandReserveThickness": 34,
       "islandSatelliteGap": 23,
+      "islandTransparency": 1,
       "leftWidgets": [
         "launcherButton",
         "workspaceSwitcher",
@@ -171,8 +180,8 @@
       "useOverlayLayer": false,
       "visible": true,
       "widgetOutlineColor": "primary",
-      "widgetOutlineEnabled": false,
-      "widgetOutlineOpacity": 1,
+      "widgetOutlineEnabled": true,
+      "widgetOutlineOpacity": 0.2,
       "widgetOutlineThickness": 1,
       "widgetPadding": 8,
       "widgetTransparency": 1
@@ -207,6 +216,12 @@
   "builtInPluginSettings": {
     "dms_clipboard_search": {
       "trigger": "cb"
+    },
+    "dms_power": {
+      "trigger": "pw"
+    },
+    "dms_qr_generator": {
+      "trigger": "qrg"
     },
     "dms_settings_search": {
       "trigger": "?"

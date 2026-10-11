@@ -62,7 +62,7 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # --------------------------------My Resources------------------------------------------
+    # --------------------------------Resources------------------------------------------
     cursor-themes = {
       url = "github:hxrmonlka/resources/cursors";
       flake = false;
@@ -71,7 +71,7 @@
       url = "github:seiryouden/cursors";
       flake = false;
     };
-    # --------------------------------My Resources------------------------------------------
+    # --------------------------------Resources------------------------------------------
     danksearch = {
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";
