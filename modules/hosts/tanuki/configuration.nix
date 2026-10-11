@@ -49,6 +49,7 @@
         self.custom.konoe.alacritty
         self.custom.konoe.code
         self.custom.konoe.zen-browser
+        self.custom.konoe.luminaCli
         self.custom.tanuki.cursor
 
         # Common section

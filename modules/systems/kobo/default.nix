@@ -8,6 +8,7 @@ in {
   flake.custom.system-modules.kobo = {...}: {
     imports = [
       inputs.zen-browser.homeModules.beta
+      inputs.lumina.homeModules.lumina-cli
       (inputs.lumina.lib.signatures.mkStandaloneSignature "kobo" "yianyi")
     ];
 
@@ -20,6 +21,8 @@ in {
         inputs.lumina.packages.${system}.chatgpt
       ];
     };
+
+    programs.lumina-cli.enable = true;
 
     programs.zen-browser = {
       enable = true;

@@ -79,6 +79,7 @@
         self.custom.alice.gtk
         self.custom.alice.mangoConfig
         self.custom.alice.rust
+        self.custom.alice.luminaCli
 
         # Common section
         self.custom.home-common.fastfetchConfig
