@@ -11,7 +11,7 @@
     environment = {
       shellAliases = {
         at-world = "nix flake update; nh os boot";
-        build = "nh os switch";
+        nbuild = "nh os switch";
       };
       shells = [
         pkgs.zsh
