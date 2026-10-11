@@ -72,7 +72,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 │       ├── serpentine/       # hxrmonlka, yixanni
 │       ├── tanuki/           # seiryouden
 │       └── dev-shell.nix     # `nix develop` VM testing shell
-└── scripts/                  # Git hook install and settings sync scripts
+└── scripts/                  # Git hook install script
 ```
 
 `modules/parts.nix` declares the namespace each area writes into:
