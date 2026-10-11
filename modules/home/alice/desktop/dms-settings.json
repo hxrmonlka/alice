@@ -1,6 +1,8 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
+  "matugenScheme": "scheme-vibrant",
+  "matugenContrast": 0.4,
   "cornerRadius": 12,
   "motionEffect": 2,
   "blurEnabled": true,
