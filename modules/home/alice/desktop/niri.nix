@@ -35,7 +35,7 @@
 
         cursor = {
           xcursor-theme = "YeShunguang";
-          xcursor-size = 24;
+          xcursor-size = 18;
         };
 
         input = {
