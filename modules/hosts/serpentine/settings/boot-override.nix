@@ -27,9 +27,10 @@
   in {
     imports = [self.custom.commonModules.bootSettings];
     boot = {
-      loader.timeout = 0;
+      loader.timeout = 3;
       kernelPackages = lib.mkForce pkgs.cachyosKernels."linuxPackages-cachyos-latest";
       loader.grub.theme = "${inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.grub-theme}/grub/themes/tela";
+      loader.grub.timeoutStyle = "hidden";
       plymouth = {
         enable = true;
         theme = "spinner-centered";

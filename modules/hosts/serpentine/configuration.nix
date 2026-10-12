@@ -80,6 +80,7 @@
         self.custom.alice.mangoConfig
         self.custom.alice.rust
         self.custom.alice.luminaCli
+        self.custom.alice.swayidle
 
         # Common section
         self.custom.home-common.fastfetchConfig
