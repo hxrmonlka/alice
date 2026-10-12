@@ -59,8 +59,6 @@
 
           focus-ring = {
             width = 2;
-            active-color = "#dcedf9";
-            inactive-color = "#2b1712";
           };
 
           border.off = _: {};
