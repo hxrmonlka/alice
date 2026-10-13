@@ -630,11 +630,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1791722103,
-        "narHash": "sha256-PW47L/+4EYpTmTOhLEvP3BZr3DvHz8sObnQgtnow/ac=",
+        "lastModified": 1791796838,
+        "narHash": "sha256-TaW5U82V2E8mJUcCtFAtzhlO/G3m/8Kiy6Zljjl9Su0=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "d80f56336bb4164fa66e4c6803c3874c544c3abc",
+        "rev": "2e7a633a247a089b80d6f4090a2c8297b015275a",
         "type": "github"
       },
       "original": {
