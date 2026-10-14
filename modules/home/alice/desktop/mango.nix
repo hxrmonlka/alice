@@ -255,10 +255,10 @@
           "SUPER,m,spawn,dms ipc mic mute"
 
           # Apps
-          "SUPER+ALT,w,spawn,helium"
+          "SUPER,w,spawn,helium"
           "SUPER+ALT,v,spawn,virt-manager &"
           "SUPER,c,spawn,zeditor"
-          "SUPER,w,spawn,flatpak run app.zen_browser.zen"
+          "SUPER+ALT,w,spawn,flatpak run app.zen_browser.zen"
           "SUPER,d,spawn,discord"
           "SUPER,e,spawn,${lib.getExe pkgs.thunar}"
         ];
