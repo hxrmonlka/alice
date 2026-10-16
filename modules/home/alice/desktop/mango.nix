@@ -63,10 +63,10 @@
         zoom_end_ratio = "0.8";
         fade_in_begin_opacity = "0.5";
         fade_out_begin_opacity = "0.8";
-        animation_duration_move = 400;
-        animation_duration_open = 350;
-        animation_duration_tag = 300;
-        animation_duration_close = 500;
+        animation_duration_move = 300;
+        animation_duration_open = 260;
+        animation_duration_tag = 220;
+        animation_duration_close = 340;
         animation_duration_focus = 0;
         animation_curve_open = "0.46,1.0,0.29,1";
         animation_curve_move = "0.46,1.0,0.29,1";
