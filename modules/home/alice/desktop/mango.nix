@@ -27,6 +27,7 @@
     wayland.windowManager.mango = {
       enable = true;
       autostart_sh = ''
+        fcitx5 -r -d
         dms run &
         input-remapper-control --command autoload
         com.danklinux.dankcalendar daemon &

@@ -16,6 +16,7 @@
       self.custom.serpentine.packages
       self.custom.serpentine.fonts
       self.custom.serpentine.locales
+      self.custom.serpentine.inputMethod
       self.custom.serpentine.environment
       self.custom.serpentine.flatpaks
       self.custom.serpentine.servicesOverride

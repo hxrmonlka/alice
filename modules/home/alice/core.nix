@@ -8,10 +8,6 @@
       username = "alice";
       homeDirectory = "/home/alice";
       sessionPath = ["${config.home.homeDirectory}/.local/bin"];
-      sessionVariables = {
-        QT_IM_MODULE = "fcitx";
-        XMODIFIERS = "@im=fcitx";
-      };
     };
 
     home.stateVersion = "26.05";

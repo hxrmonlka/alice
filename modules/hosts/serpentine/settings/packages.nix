@@ -66,10 +66,7 @@
       concord-tui
       mpv
       nitch
-      fcitx5
-      fcitx5-gtk
-      kdePackages.fcitx5-configtool
-      fcitx5-mozc
+      kdePackages.qtdeclarative
     ];
     nixpkgs = {
       config = {
