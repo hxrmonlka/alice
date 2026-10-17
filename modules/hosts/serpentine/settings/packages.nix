@@ -67,6 +67,7 @@
       mpv
       nitch
       kdePackages.qtdeclarative
+      brightnessctl
     ];
     nixpkgs = {
       config = {
