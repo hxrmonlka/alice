@@ -62,7 +62,6 @@
       sourcekit-lsp
       openssl
       kdePackages.ark
-      todoist-electron
       concord-tui
       mpv
       nitch
