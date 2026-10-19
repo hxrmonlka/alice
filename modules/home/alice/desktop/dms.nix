@@ -47,7 +47,11 @@
       enableAudioWavelength = true;
       enableCalendarEvents = true;
 
-      settings = builtins.fromJSON (builtins.readFile ./dms-settings.json);
+      settings =
+        (builtins.fromJSON (builtins.readFile ./dms-settings.json))
+        // {
+          matugenTemplateMangowc = false;
+        };
       session = {};
 
       clipboardSettings = {

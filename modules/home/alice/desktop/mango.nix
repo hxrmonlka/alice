@@ -26,6 +26,9 @@
   }: {
     wayland.windowManager.mango = {
       enable = true;
+      bottomPrefixes = [
+        "source"
+      ];
       autostart_sh = ''
         fcitx5 -r -d
         dms run &
@@ -133,13 +136,13 @@
         scratchpad_height_ratio = "0.9";
         border_px = 2;
         root_color = "0x16161dff";
-        border_color = "0x2b1712ff";
         focus_color = "0xe985b4ff";
         maximized_screen_color = "0xe985b4ff";
         urgent_color = "0xad401fff";
         scratchpad_color = "0x516c93ff";
         global_color = "0xe985b4ff";
         overlay_color = "0x14a57cff";
+        source_optional = "./dms/colors.conf";
 
         # Tag layout rules
         tag_rule = [
@@ -235,6 +238,7 @@
           "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
           "NONE,XF86AudioLowerVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
           "NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          "NONE,XF86AudioMicMute,spawn,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
           # Brightness
           "NONE,XF86MonBrightnessUp,spawn,${lib.getExe pkgs.brightnessctl} s 5%+"
