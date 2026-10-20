@@ -14,16 +14,16 @@ permissions:
   pull-requests: write
 
 jobs:
-  update-flake-lock:
+  update-and-validate:
+    name: Update flake.lock and evaluate hosts
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
           ref: test-den
-          # Needed so create-pull-request can push the update branch
           persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -34,11 +34,26 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
             accept-flake-config = true
+            max-jobs = auto
 
       - name: Update flake lock
         run: |
           set -euo pipefail
           nix flake update
+
+      - name: Evaluate serpentine (post-update)
+        run: |
+          set -euo pipefail
+          echo "==> Evaluating nixosConfigurations.serpentine after lock update"
+          nix path-info --derivation \
+            .#nixosConfigurations.serpentine.config.system.build.toplevel
+
+      - name: Evaluate tanuki (post-update)
+        run: |
+          set -euo pipefail
+          echo "==> Evaluating nixosConfigurations.tanuki after lock update"
+          nix path-info --derivation \
+            .#nixosConfigurations.tanuki.config.system.build.toplevel
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v8
@@ -49,10 +64,9 @@ jobs:
           body: |
             Automated weekly update of `flake.lock`.
 
-            After merge, the CI workflow will evaluate `serpentine` and `tanuki`
-            to ensure the lock update does not break host evaluation.
+            Host evaluation for `serpentine` and `tanuki` already passed on this
+            branch before the PR was opened. CI will re-run on the PR as well.
           branch: ci/weekly-flake-update
           base: test-den
           delete-branch: true
-          # Avoid force-push when branch protection rules reject it
           force: false
