@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [test-den, main]
+  pull_request:
+    branches: [test-den, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate-hosts:
+    name: Evaluate NixOS hosts
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            accept-flake-config = true
+            max-jobs = auto
+
+      - name: Show flake outputs (sanity)
+        run: |
+          set -euo pipefail
+          echo "==> Flake metadata"
+          nix flake metadata --no-write-lock-file
+          echo ""
+          echo "==> Available nixosConfigurations"
+          nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' \
+            | jq -r '.[]' || true
+
+      - name: Evaluate serpentine system derivation
+        run: |
+          set -euo pipefail
+          echo "==> Evaluating nixosConfigurations.serpentine.config.system.build.toplevel"
+          # path-info --derivation forces full evaluation of the system
+          # without performing a full build. This catches syntax errors,
+          # missing attributes, and most package/module failures.
+          nix path-info --derivation \
+            .#nixosConfigurations.serpentine.config.system.build.toplevel
+
+      - name: Evaluate tanuki system derivation
+        run: |
+          set -euo pipefail
+          echo "==> Evaluating nixosConfigurations.tanuki.config.system.build.toplevel"
+          nix path-info --derivation \
+            .#nixosConfigurations.tanuki.config.system.build.toplevel
+
+      - name: Flake check (non-build)
+        # flake check runs defined checks and evaluates more of the flake.
+        # --no-build avoids expensive package builds when only evaluation is needed.
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          echo "==> nix flake check --no-build"
+          nix flake check --no-build --print-build-logs || {
+            echo "::warning::nix flake check reported issues (see log). Host evaluation above is the primary gate."
+            exit 0
+          }

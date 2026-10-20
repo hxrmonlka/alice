@@ -16,27 +16,43 @@ permissions:
 jobs:
   update-flake-lock:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
           ref: test-den
-          persist-credentials: false
+          # Needed so create-pull-request can push the update branch
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            accept-flake-config = true
 
       - name: Update flake lock
-        run: nix flake update
+        run: |
+          set -euo pipefail
+          nix flake update
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: update flake.lock"
           title: "chore: weekly flake.lock update"
           body: |
             Automated weekly update of `flake.lock`.
+
+            After merge, the CI workflow will evaluate `serpentine` and `tanuki`
+            to ensure the lock update does not break host evaluation.
           branch: ci/weekly-flake-update
           base: test-den
           delete-branch: true
+          # Avoid force-push when branch protection rules reject it
+          force: false
