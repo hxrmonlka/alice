@@ -67,6 +67,7 @@
       nitch
       kdePackages.qtdeclarative
       brightnessctl
+      zenity
     ];
     nixpkgs = {
       config = {
