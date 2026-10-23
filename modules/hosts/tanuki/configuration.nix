@@ -31,6 +31,7 @@
       # Hardware section
       self.custom.hardwareModules.asusSettings
       self.custom.hardwareModules.asustuf
+      self.custom.hardwareModules.keydSettings
     ];
 
     home-manager = {
