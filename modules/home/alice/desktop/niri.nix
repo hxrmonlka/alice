@@ -45,7 +45,6 @@
           keyboard = {
             xkb = {
               layout = "us";
-              options = "caps:escape";
             };
             repeat-rate = 40;
             repeat-delay = 250;
