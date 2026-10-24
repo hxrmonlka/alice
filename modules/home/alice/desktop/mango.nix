@@ -260,11 +260,13 @@ in {
           # Shoji
           "SUPER,s,spawn,qs ipc call spotlight toggle"
           "Super+SHIFT,m,spawn,qs ipc call media toggle"
-          "SUPER,v,spawn,qs ipc call island tab clipboard"
+          "SUPER,v,spawn,qs ipc call clipboard toggle"
           "SUPER+ALT,l,spawn,qs ipc call lock activate"
           "CTRL+ALT,Delete,spawn,qs ipc call power toggle"
-          "SUPER+SHIFT,w,spawn,qs ipc call island tab wallpapers"
           "SUPER+SHIFT,i,spawn,qs ipc call control toggle"
+          "SUPER+SHIFT,w,spawn,qs ipc call wallpaper toggle"
+          "SUPER,b,spawn,qs ipc call monitor toggle"
+          "SUPER+SHIFT,c,spawn,qs ipc call colorpicker copy"
 
           # Dank
           #          "SUPER,s,spawn,dms ipc spotlight-bar toggle"
