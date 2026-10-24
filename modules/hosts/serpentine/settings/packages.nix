@@ -62,11 +62,12 @@
       sourcekit-lsp
       openssl
       kdePackages.ark
-      todoist-electron
       concord-tui
       mpv
       nitch
       kdePackages.qtdeclarative
+      brightnessctl
+      zenity
     ];
     nixpkgs = {
       config = {

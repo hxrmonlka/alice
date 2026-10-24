@@ -84,7 +84,7 @@
         self.custom.alice.swayidle
 
         # Common section
-        self.custom.home-common.fastfetchConfig
+        # self.custom.home-common.fastfetchConfig
       ];
     };
     system.stateVersion = "26.05";

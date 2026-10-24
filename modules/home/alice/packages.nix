@@ -7,8 +7,6 @@
     home.packages = with pkgs;
       [
         antigravity-cli
-        cursor-cli
-        code-cursor-fhs
         nixfmt
         antigravity-ide
         starship

@@ -19,6 +19,17 @@
           openldap = prev.openldap.overrideAttrs {doCheck = false;};
         })
         (final: prev: {
+          mozc = prev.mozc.overrideAttrs (old: {
+            postPatch =
+              (old.postPatch or "")
+              + ''
+                substituteInPlace src/gui/dictionary_tool/dictionary_tool.ui \
+                  --replace-warn '"::mozc::gui::DictionaryContentTableWidget"' '"mozc::gui::DictionaryContentTableWidget"' \
+                  --replace-warn '<class>::mozc::gui::DictionaryContentTableWidget</class>' '<class>mozc::gui::DictionaryContentTableWidget</class>'
+              '';
+          });
+        })
+        (final: prev: {
           breakpad = prev.breakpad.overrideAttrs (old: {
             patches =
               (old.patches or [])
@@ -39,6 +50,17 @@
                 --prefix PATH ':' "${prev.lib.makeBinPath [prev.fpc prev.gdb prev.gnumake prev.binutils]}"
             '';
           });
+        })
+        (final: prev: {
+          khal =
+            if prev.khal.version == "0.14.1" then
+              prev.khal.overrideAttrs {
+                sphinxBuilders = [
+                  "html man"
+                ];
+              }
+            else
+              prev.khal;
         })
       ];
     };
