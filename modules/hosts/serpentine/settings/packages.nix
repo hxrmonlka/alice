@@ -68,6 +68,8 @@
       kdePackages.qtdeclarative
       brightnessctl
       zenity
+      jq
+      gammastep
     ];
     nixpkgs = {
       config = {

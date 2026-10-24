@@ -2,7 +2,17 @@
   self,
   inputs,
   ...
-}: {
+}: let
+  mangoPackage = pkgs: let
+    system = pkgs.stdenv.hostPlatform.system;
+    scenefx = inputs.mangowc.inputs.scenefx.packages.${system}.default.overrideAttrs (old: {
+      patches = (old.patches or []) ++ [../../../../patches/scenefx-output-saturation.patch];
+    });
+  in
+    (inputs.mangowc.packages.${system}.mango.override {inherit scenefx;}).overrideAttrs (old: {
+      patches = (old.patches or []) ++ [../../../../patches/mango-setgray.patch];
+    });
+in {
   flake.nixosModules.mangoWC = {
     pkgs,
     lib,
@@ -13,6 +23,7 @@
     ];
     programs.mango = {
       enable = true;
+      package = mangoPackage pkgs;
     };
     xdg.portal.wlr.settings.screencast = {
       chooser_type = "simple";
@@ -26,12 +37,14 @@
   }: {
     wayland.windowManager.mango = {
       enable = true;
+      package = mangoPackage pkgs;
       bottomPrefixes = [
         "source"
       ];
       autostart_sh = ''
         fcitx5 -r -d
-        dms run &
+        # dms run &
+        qs -d
         input-remapper-control --command autoload
         com.danklinux.dankcalendar daemon &
       '';
@@ -244,20 +257,29 @@
           "NONE,XF86MonBrightnessUp,spawn,${lib.getExe pkgs.brightnessctl} s 5%+"
           "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
 
+          # Shoji
+          "SUPER,s,spawn,qs ipc call spotlight toggle"
+          "Super+SHIFT,m,spawn,qs ipc call media toggle"
+          "SUPER,v,spawn,qs ipc call island tab clipboard"
+          "SUPER+ALT,l,spawn,qs ipc call lock activate"
+          "CTRL+ALT,Delete,spawn,qs ipc call power toggle"
+          "SUPER+SHIFT,w,spawn,qs ipc call island tab wallpapers"
+          "SUPER+SHIFT,i,spawn,qs ipc call control toggle"
+
           # Dank
-          "SUPER,s,spawn,dms ipc spotlight-bar toggle"
-          "SUPER+SHIFT,s,spawn,dms ipc call island toggle launcher"
-          "SUPER,n,spawn,dms ipc call notifications toggle"
-          "SUPER+SHIFT,m,spawn,dms ipc dash toggle media"
-          "SUPER,semicolon,spawn,dms ipc call emojiPicker toggle"
-          "SUPER+ALT,l,spawn,dms ipc lock lock"
-          "SUPER+SHIFT,w,spawn,dms ipc call dash toggle wallpaper"
-          "SUPER+SHIFT,i,spawn,dms ipc control-center toggle"
-          "SUPER+ALT,p,spawn,dms ipc mux toggle"
-          "SUPER+SHIFT,c,spawn,dms color pick -a"
-          "CTRL+ALT,Delete,spawn,dms ipc powermenu toggle"
-          "SUPER,v,spawn,dms ipc clipboard toggle"
-          "SUPER,m,spawn,dms ipc mic mute"
+          #          "SUPER,s,spawn,dms ipc spotlight-bar toggle"
+          #          "SUPER+SHIFT,s,spawn,dms ipc call island toggle launcher"
+          #          "SUPER,n,spawn,dms ipc call notifications toggle"
+          #          "SUPER+SHIFT,m,spawn,dms ipc dash toggle media"
+          #          "SUPER,semicolon,spawn,dms ipc call emojiPicker toggle"
+          #          "SUPER+ALT,l,spawn,dms ipc lock lock"
+          #          "SUPER+SHIFT,w,spawn,dms ipc call dash toggle wallpaper"
+          #          "SUPER+SHIFT,i,spawn,dms ipc control-center toggle"
+          #          "SUPER+ALT,p,spawn,dms ipc mux toggle"
+          #          "SUPER+SHIFT,c,spawn,dms color pick -a"
+          #          "CTRL+ALT,Delete,spawn,dms ipc powermenu toggle"
+          #          "SUPER,v,spawn,dms ipc clipboard toggle"
+          #          "SUPER,m,spawn,dms ipc mic mute"
 
           # Apps
           "SUPER,w,spawn,helium"
