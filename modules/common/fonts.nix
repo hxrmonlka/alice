@@ -19,6 +19,7 @@
       ipaexfont
       noto-fonts-cjk-serif
       twemoji-color-font
+      unifont
       noto-fonts-emoji-blob-bin
     ];
   };
