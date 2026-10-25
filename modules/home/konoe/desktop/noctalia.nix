@@ -14,7 +14,7 @@
           (old.patches or [])
           ++ prev.lib.optional
           (!prev.lib.any (p: prev.lib.hasSuffix "fix-vtable-link.patch" (toString p)) (old.patches or []))
-          ../../../common/patches/breakpad-fix-vtable-link.patch;
+          ../../../../patches/breakpad/breakpad-fix-vtable-link.patch;
       });
     });
   in {

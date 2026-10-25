@@ -6,11 +6,11 @@
   mangoPackage = pkgs: let
     system = pkgs.stdenv.hostPlatform.system;
     scenefx = inputs.mangowc.inputs.scenefx.packages.${system}.default.overrideAttrs (old: {
-      patches = (old.patches or []) ++ [../../../../patches/scenefx-output-saturation.patch];
+      patches = (old.patches or []) ++ [../../../../patches/mango/scenefx-output-saturation.patch];
     });
   in
     (inputs.mangowc.packages.${system}.mango.override {inherit scenefx;}).overrideAttrs (old: {
-      patches = (old.patches or []) ++ [../../../../patches/mango-setgray.patch];
+      patches = (old.patches or []) ++ [../../../../patches/mango/mango-setgray.patch];
     });
 in {
   flake.nixosModules.mangoWC = {
@@ -266,6 +266,7 @@ in {
           "SUPER+SHIFT,i,spawn,qs ipc call control toggle"
           "SUPER+SHIFT,w,spawn,qs ipc call wallpaper toggle"
           "SUPER,b,spawn,qs ipc call monitor toggle"
+          "SUPER,m,spawn,qs ipc call mic toggle"
           "SUPER+SHIFT,c,spawn,qs ipc call colorpicker copy"
 
           # Dank
