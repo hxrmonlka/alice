@@ -5,13 +5,9 @@
 }: let
   mangoPackage = pkgs: let
     system = pkgs.stdenv.hostPlatform.system;
-    scenefx = inputs.mangowc.inputs.scenefx.packages.${system}.default.overrideAttrs (old: {
-      patches = (old.patches or []) ++ [../../../../patches/mango/scenefx-output-saturation.patch];
-    });
+    scenefx = inputs.lumina.lib.patches.mango.scenefx inputs.mangowc.inputs.scenefx.packages.${system}.default;
   in
-    (inputs.mangowc.packages.${system}.mango.override {inherit scenefx;}).overrideAttrs (old: {
-      patches = (old.patches or []) ++ [../../../../patches/mango/mango-setgray.patch];
-    });
+    inputs.lumina.lib.patches.mango.setgray (inputs.mangowc.packages.${system}.mango.override {inherit scenefx;});
 in {
   flake.nixosModules.mangoWC = {
     pkgs,

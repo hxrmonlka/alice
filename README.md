@@ -110,6 +110,15 @@ nix develop
 build-vm <host>   # serpentine, tanuki
 ```
 
+## For other systems...
+
+Use this command to switch to a home-manager configuration with `nix run` if it's your system's first time using it:
+
+```bash
+nix run github:nix-community/home-manager -- switch --flake /path/to/alice#myuser
+```
+
+You might want to also set `programs.home-manager.enable` to `true` on the way. 
 ## License
 
 Alice is licensed under the [BSD 3-Clause License](LICENSE).

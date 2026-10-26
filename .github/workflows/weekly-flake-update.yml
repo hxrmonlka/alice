@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   update-and-validate:
-    name: Update flake.lock and evaluate hosts
+    name: Update flake.lock and evaluate all outputs
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -41,19 +41,30 @@ jobs:
           set -euo pipefail
           nix flake update
 
-      - name: Evaluate serpentine (post-update)
+      - name: Evaluate all NixOS system derivations
         run: |
           set -euo pipefail
-          echo "==> Evaluating nixosConfigurations.serpentine after lock update"
-          nix path-info --derivation \
-            .#nixosConfigurations.serpentine.config.system.build.toplevel
+          hosts="$(nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' | jq -r '.[]')"
+          test -n "${hosts}"
+          while IFS= read -r host; do
+            echo "==> Evaluating nixosConfigurations.${host} after lock update"
+            nix path-info --derivation ".#nixosConfigurations.\"${host}\".config.system.build.toplevel"
+          done <<< "${hosts}"
 
-      - name: Evaluate tanuki (post-update)
+      - name: Evaluate all Home Manager derivations
         run: |
           set -euo pipefail
-          echo "==> Evaluating nixosConfigurations.tanuki after lock update"
-          nix path-info --derivation \
-            .#nixosConfigurations.tanuki.config.system.build.toplevel
+          homes="$(nix eval --json .#homeConfigurations --apply 'builtins.attrNames' | jq -r '.[]')"
+          test -n "${homes}"
+          while IFS= read -r home; do
+            echo "==> Evaluating homeConfigurations.${home} after lock update"
+            nix path-info --derivation ".#homeConfigurations.\"${home}\".activationPackage"
+          done <<< "${homes}"
+
+      - name: Flake check (non-build)
+        run: |
+          set -euo pipefail
+          nix flake check --no-build --print-build-logs
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v8
@@ -64,8 +75,8 @@ jobs:
           body: |
             Automated weekly update of `flake.lock`.
 
-            Host evaluation for `serpentine` and `tanuki` already passed on this
-            branch before the PR was opened. CI will re-run on the PR as well.
+            All NixOS system derivations, Home Manager activation derivations,
+            and `nix flake check --no-build` passed before this PR was opened.
           branch: ci/weekly-flake-update
           base: test-den
           delete-branch: true
