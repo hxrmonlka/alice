@@ -2,8 +2,6 @@
   flake.custom.alice.matugen = {config, ...}: {
     xdg.configFile."matugen/templates/starship.toml".source = ./misc/starship-matugen.toml;
     xdg.configFile."matugen/templates/millennium.css".source = ./misc/millennium-matugen.css;
-    xdg.configFile."matugen/templates/thunar.css".source = ./misc/thunar-matugen.css;
-    xdg.configFile."matugen/templates/mango-colors.conf".source = ./misc/mango-colors-matugen.conf;
 
     xdg.configFile."matugen/config.toml".text = ''
       [config]
@@ -17,15 +15,6 @@
       [templates.millennium]
       input_path = '${config.xdg.configHome}/matugen/templates/millennium.css'
       output_path = '${config.home.homeDirectory}/.steam/steam/millennium/themes/Material-Theme/css/main/colors/matugen.css'
-
-      [templates.thunar]
-      input_path = '${config.xdg.configHome}/matugen/templates/thunar.css'
-      output_path = '${config.home.homeDirectory}/.config/gtk-3.0/thunar-colors.css'
-
-      [templates.mango]
-      input_path = '${config.xdg.configHome}/matugen/templates/mango-colors.conf'
-      output_path = '${config.home.homeDirectory}/.config/mango/dms/colors.conf'
-      post_hook = 'sh -c "[ -n \"''$MANGO_INSTANCE_SIGNATURE\" ] && mmsg dispatch reload_config || true"'
     '';
 
     home.file.".steam/steam/millennium/themes/Material-Theme/js/main/colors/matugen.js" = {

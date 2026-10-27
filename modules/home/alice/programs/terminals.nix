@@ -28,8 +28,7 @@
         "ctrl+shift+l" = "next_tab";
       };
       extraConfig = ''
-        include dank-theme.conf
-        include dank-tabs.conf
+        include shoji-theme.conf
       '';
     };
   };

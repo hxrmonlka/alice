@@ -151,7 +151,7 @@ in {
         scratchpad_color = "0x516c93ff";
         global_color = "0xe985b4ff";
         overlay_color = "0x14a57cff";
-        source_optional = "./dms/colors.conf";
+        source_optional = "./shoji/colors.conf";
 
         # Tag layout rules
         tag_rule = [
