@@ -42,30 +42,29 @@ jobs:
           nix flake metadata --no-write-lock-file
           echo ""
           echo "==> Available nixosConfigurations"
-          nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' \
-            | jq -r '.[]' || true
+          nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' | jq -r '.[]'
 
-      - name: Evaluate serpentine system derivation
+      - name: Evaluate all NixOS system derivations
         run: |
           set -euo pipefail
-          echo "==> Evaluating nixosConfigurations.serpentine.config.system.build.toplevel"
-          # path-info --derivation forces full evaluation without a full build.
-          nix path-info --derivation \
-            .#nixosConfigurations.serpentine.config.system.build.toplevel
+          hosts="$(nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' | jq -r '.[]')"
+          test -n "${hosts}"
+          while IFS= read -r host; do
+            echo "==> Evaluating nixosConfigurations.${host}"
+            nix path-info --derivation ".#nixosConfigurations.\"${host}\".config.system.build.toplevel"
+          done <<< "${hosts}"
 
-      - name: Evaluate tanuki system derivation
+      - name: Evaluate all Home Manager derivations
         run: |
           set -euo pipefail
-          echo "==> Evaluating nixosConfigurations.tanuki.config.system.build.toplevel"
-          nix path-info --derivation \
-            .#nixosConfigurations.tanuki.config.system.build.toplevel
+          homes="$(nix eval --json .#homeConfigurations --apply 'builtins.attrNames' | jq -r '.[]')"
+          test -n "${homes}"
+          while IFS= read -r home; do
+            echo "==> Evaluating homeConfigurations.${home}"
+            nix path-info --derivation ".#homeConfigurations.\"${home}\".activationPackage"
+          done <<< "${homes}"
 
       - name: Flake check (non-build)
-        continue-on-error: true
         run: |
           set -euo pipefail
-          echo "==> nix flake check --no-build"
-          nix flake check --no-build --print-build-logs || {
-            echo "::warning::nix flake check reported issues (see log). Host evaluation above is the primary gate."
-            exit 0
-          }
+          nix flake check --no-build --print-build-logs

@@ -5,13 +5,9 @@
 }: let
   mangoPackage = pkgs: let
     system = pkgs.stdenv.hostPlatform.system;
-    scenefx = inputs.mangowc.inputs.scenefx.packages.${system}.default.overrideAttrs (old: {
-      patches = (old.patches or []) ++ [../../../../patches/mango/scenefx-output-saturation.patch];
-    });
+    scenefx = inputs.lumina.lib.patches.mango.scenefx inputs.mangowc.inputs.scenefx.packages.${system}.default;
   in
-    (inputs.mangowc.packages.${system}.mango.override {inherit scenefx;}).overrideAttrs (old: {
-      patches = (old.patches or []) ++ [../../../../patches/mango/mango-setgray.patch];
-    });
+    inputs.lumina.lib.patches.mango.setgray (inputs.mangowc.packages.${system}.mango.override {inherit scenefx;});
 in {
   flake.nixosModules.mangoWC = {
     pkgs,
@@ -155,7 +151,7 @@ in {
         scratchpad_color = "0x516c93ff";
         global_color = "0xe985b4ff";
         overlay_color = "0x14a57cff";
-        source_optional = "./dms/colors.conf";
+        source_optional = "./shoji/colors.conf";
 
         # Tag layout rules
         tag_rule = [
@@ -243,9 +239,9 @@ in {
           "SUPER+SHIFT,9,tag,9,0"
 
           # Screenshots
-          "SUPER,t,spawn,dms screenshot"
-          "SUPER+SHIFT,t,spawn,dms screenshot full"
-          "SUPER+CTRL,t,spawn,dms screenshot window"
+          "SUPER,t,spawn,qs ipc call screenshot region"
+          "SUPER+SHIFT,t,spawn,qs ipc call screenshot fullscreen"
+          "SUPER+CTRL,t,spawn,qs ipc call screenshot window"
 
           # Volume
           "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"

@@ -30,13 +30,7 @@
           });
         })
         (final: prev: {
-          breakpad = prev.breakpad.overrideAttrs (old: {
-            patches =
-              (old.patches or [])
-              ++ prev.lib.optional
-              (!prev.lib.any (p: prev.lib.hasSuffix "fix-vtable-link.patch" (toString p)) (old.patches or []))
-              ../../patches/breakpad/breakpad-fix-vtable-link.patch;
-          });
+          breakpad = inputs.lumina.lib.patches.breakpad prev.breakpad;
         })
         (final: prev: {
           lazarus-qt6 = prev.lazarus-qt6.overrideAttrs (old: {
