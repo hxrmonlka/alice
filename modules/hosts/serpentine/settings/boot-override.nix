@@ -24,7 +24,6 @@
       loader.grub.theme = "${inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.grub-theme}/grub/themes/tela";
       loader.grub.timeoutStyle = "hidden";
       consoleLogLevel = 3;
-      initrd.verbose = false;
       kernelParams = [
         "quiet"
         "splash"
