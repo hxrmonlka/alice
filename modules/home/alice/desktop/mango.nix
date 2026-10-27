@@ -239,9 +239,9 @@ in {
           "SUPER+SHIFT,9,tag,9,0"
 
           # Screenshots
-          "SUPER,t,spawn,dms screenshot"
-          "SUPER+SHIFT,t,spawn,dms screenshot full"
-          "SUPER+CTRL,t,spawn,dms screenshot window"
+          "SUPER,t,spawn,qs ipc call screenshot region"
+          "SUPER+SHIFT,t,spawn,qs ipc call screenshot fullscreen"
+          "SUPER+CTRL,t,spawn,qs ipc call screenshot window"
 
           # Volume
           "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
