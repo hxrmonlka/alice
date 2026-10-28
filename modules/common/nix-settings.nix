@@ -19,17 +19,6 @@
           openldap = prev.openldap.overrideAttrs {doCheck = false;};
         })
         (final: prev: {
-          mozc = prev.mozc.overrideAttrs (old: {
-            postPatch =
-              (old.postPatch or "")
-              + ''
-                substituteInPlace src/gui/dictionary_tool/dictionary_tool.ui \
-                  --replace-warn '"::mozc::gui::DictionaryContentTableWidget"' '"mozc::gui::DictionaryContentTableWidget"' \
-                  --replace-warn '<class>::mozc::gui::DictionaryContentTableWidget</class>' '<class>mozc::gui::DictionaryContentTableWidget</class>'
-              '';
-          });
-        })
-        (final: prev: {
           breakpad = inputs.lumina.lib.patches.breakpad prev.breakpad;
         })
         (final: prev: {
