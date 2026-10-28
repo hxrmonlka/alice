@@ -49,7 +49,7 @@
       devin-cli
       nodejs_22
       clang-tools
-      dgop
+      dux-gop
       ardour
       qbittorrent
       usbutils

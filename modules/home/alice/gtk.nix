@@ -20,6 +20,11 @@
         @define-color theme_text_color @view_fg_color;
         @define-color theme_selected_bg_color @accent_bg_color;
         @define-color theme_selected_fg_color @accent_fg_color;
+
+        button.text-button {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
       '';
       gtk4.extraCss = ''
         @import url("shoji-colors.css");
@@ -31,6 +36,11 @@
         @define-color theme_text_color @view_fg_color;
         @define-color theme_selected_bg_color @accent_bg_color;
         @define-color theme_selected_fg_color @accent_fg_color;
+
+        button.text-button {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
       '';
     };
     xdg.configFile."gtk-3.0/gtk.css".force = true;
