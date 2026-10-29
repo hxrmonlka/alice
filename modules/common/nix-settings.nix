@@ -56,6 +56,7 @@
         fallback = true;
         substituters = [
           "https://cache.xinux.uz"
+          "https://noctalia.cachix.org"
         ];
         trusted-public-keys = [
           "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
