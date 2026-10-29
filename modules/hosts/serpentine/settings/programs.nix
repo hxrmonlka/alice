@@ -42,7 +42,7 @@
       };
       dux-search = {
         enable = true;
-        package = inputs.dux-search.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        package = inputs.danksearch.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
       nh = {
         enable = true;
