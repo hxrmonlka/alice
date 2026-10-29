@@ -4,6 +4,7 @@
   ...
 }: {
   flake.custom.serpentine.hostConfig = {...}: {
+    services.accounts-daemon.enable = true;
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
