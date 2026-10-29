@@ -47,6 +47,7 @@
         self.custom.konoe.core
         self.custom.konoe.spotify
         self.custom.konoe.niri
+        self.custom.konoe.noctalia
         self.custom.konoe.alacritty
         self.custom.konoe.code
         self.custom.konoe.zen-browser
