@@ -214,10 +214,8 @@
           "Mod+Semicolon".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle launcher /emo";
           "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
           "Mod+C".spawn = ["code"];
-          "Mod+W".spawn = [
-            "flatpak"
-            "run"
-            "app.zen_browser.zen"
+          "Mod+W".spawn-sh = [
+            "zen-beta"
           ];
 
           "Mod+Alt+L".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg session lock";
