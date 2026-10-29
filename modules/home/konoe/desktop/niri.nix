@@ -55,7 +55,7 @@
 
         layout = {
           gaps = 8;
-          center-focused-column = "never";
+          center-focused-column = "always";
 
           focus-ring = {
             width = 2;
