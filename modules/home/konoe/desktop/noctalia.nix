@@ -1,9 +1,6 @@
 {inputs, ...}: {
   flake.custom.konoe.noctalia = {...}: {
-    xdg.configFile."noctalia/launcher.toml".text = ''
-      [shell]
-      launch_apps_custom_command = "nvidia-offload $CMD"
-    '';
+    xdg.configFile."noctalia/noctalia.toml".source = ./noctalia.toml;
   };
 
   perSystem = {system, ...}: {
