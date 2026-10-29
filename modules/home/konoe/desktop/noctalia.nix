@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.custom.konoe.noctalia = {...}: {
-    xdg.configFile."noctalia/noctalia.toml".source = ./noctalia.toml;
+    xdg.configFile."noctalia/config.toml".source = ./noctalia.toml;
   };
 
   perSystem = {system, ...}: {
