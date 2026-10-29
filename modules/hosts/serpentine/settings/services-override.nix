@@ -44,6 +44,7 @@
     };
 
     services = {
+      gvfs.enable = true;
       accounts-daemon.enable = true;
       tumbler.enable = true;
       xserver.enable = lib.mkForce false;

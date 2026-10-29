@@ -40,9 +40,9 @@
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.aliceNiriPkg;
       };
-      dsearch = {
+      dux-search = {
         enable = true;
-        package = inputs.danksearch.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        package = inputs.dux-search.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
       nh = {
         enable = true;
