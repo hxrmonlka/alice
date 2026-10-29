@@ -57,8 +57,8 @@
         };
         theme = {
           mode = "system";
-          dark = "DankShell Dark Transparent";
-          light = "DankShell Light Transparent";
+          dark = "Shoji Dark Transparent";
+          light = "Shoji Light Transparent";
         };
         languages = {
           Nix = {
