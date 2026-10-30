@@ -5,6 +5,7 @@
       bashrcExtra = ''
         export PATH=$HOME/.local/bin:$PATH
         export PS1="[\u@\h \W]\$ "
+        export ZED_ALLOW_EMULATED_GPU=1
       '';
       shellAliases = {
         ".." = "cd ..";

@@ -16,9 +16,9 @@ in {
       username = "yianyi";
       homeDirectory = "/home/yianyi";
       stateVersion = "26.05";
-      packages = [
-        pkgs.nixd
-        pkgs.alejandra
+      packages = with pkgs; [
+        nixd
+        alejandra
         inputs.lumina.packages.${system}.sklauncher
         inputs.lumina.packages.${system}.chatgpt
       ];
@@ -50,6 +50,7 @@ in {
       self.custom.system-modules.kobo-waybar
       self.custom.system-modules.kobo-sway
       self.custom.home-common.fastfetchConfig
+      self.custom.home-common.fonts
       self.custom.system-modules.generic-linux
     ];
   };
