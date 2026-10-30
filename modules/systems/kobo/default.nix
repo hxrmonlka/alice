@@ -18,6 +18,7 @@ in {
       stateVersion = "26.05";
       packages = [
         pkgs.nixd
+        pkgs.alejandra
         inputs.lumina.packages.${system}.sklauncher
         inputs.lumina.packages.${system}.chatgpt
       ];
@@ -31,7 +32,7 @@ in {
         setAsDefaultBrowser = true;
       };
     };
-  
+
   };
 
   flake.homeConfigurations."yianyi@kobo" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -45,6 +46,7 @@ in {
     };
     modules = [
       self.custom.system-modules.kobo
+      self.custom.system-modules.kobo-bash
       self.custom.system-modules.kobo-waybar
       self.custom.system-modules.kobo-sway
       self.custom.home-common.fastfetchConfig

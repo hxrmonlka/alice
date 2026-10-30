@@ -13,6 +13,7 @@
     terminal = "kitty";
     resizeStep = "40px";
     browser = "firefox";
+    coder = "kitty -e zed";
     nixEnv = "env PATH=${config.home.profileDirectory}/bin:/nix/var/nix/profiles/default/bin:$PATH";
 
     screenshot = pkgs.writeShellScript "kobo-screenshot" ''
@@ -41,7 +42,7 @@
   in {
     options.kobo.wallpaper = lib.mkOption {
       type = lib.types.str;
-      default = "${home}/Pictures/Wallpapers/mana.jpg";
+      default = "${home}/Pictures/Wallpapers/mana.png";
     };
 
     config = {
@@ -66,8 +67,11 @@
         systemd.enable = false;
         xwayland = true;
         config = {
-          window.border = 0;
-          floating.border = 0;
+          gaps.inner = 10;
+          gaps.outer = 5;
+          window.titlebar = false;
+          window.border = 3;
+          floating.border = 3;
           modifier = mod;
           inherit terminal;
           menu = "wmenu-run";
@@ -81,6 +85,7 @@
           keybindings =
             {
               "${mod}+Return" = "exec ${nixEnv} ${terminal}";
+              "${mod}+c" = "exec ${coder}";
               "${mod}+s" = "exec ${browser}";
               "${mod}+d" = "exec ${nixEnv} wmenu-run";
               "${mod}+Tab" = "focus next";
