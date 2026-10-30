@@ -10,7 +10,7 @@
   }: {
     services.swayidle = let
       system = pkgs.stdenv.hostPlatform.system;
-      lock = "${lib.getExe inputs.dms.packages.${system}.dms-shell} ipc call lock lock";
+      lock = "qs ipc call lock activate";
       mmsg = "${inputs.mangowc.packages.${system}.mango}/bin/mmsg";
     in {
       enable = true;
