@@ -13,7 +13,7 @@
     ];
     programs.dms-greeter = {
       enable = true;
-      package = pkgs.dms-greeter;
+      package = pkgs.dux-greeter;
       compositor = {
         name = "mango";
         customConfig = ''

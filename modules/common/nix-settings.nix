@@ -36,14 +36,14 @@
         })
         (final: prev: {
           khal =
-            if prev.khal.version == "0.14.1" then
+            if prev.khal.version == "0.14.1"
+            then
               prev.khal.overrideAttrs {
                 sphinxBuilders = [
                   "html man"
                 ];
               }
-            else
-              prev.khal;
+            else prev.khal;
         })
       ];
     };
@@ -55,11 +55,11 @@
         ];
         fallback = true;
         substituters = [
-          "https://cache.xinux.uz"
+          "https://cache.lantian.pub/lantian"
           "https://noctalia.cachix.org"
         ];
         trusted-public-keys = [
-          "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
+          "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         ];
       };
