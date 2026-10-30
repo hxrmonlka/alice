@@ -10,7 +10,7 @@
     };
 
     home.packages = [
-      inputs.nixgl.packages.x86_64-linux.nixGL
+      inputs.nixgl.packages.x86_64-linux.nixGLIntel
     ];
   };
 }

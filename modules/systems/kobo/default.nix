@@ -22,12 +22,15 @@ in {
       ];
     };
 
-    programs.lumina-cli.enable = true;
-
-    programs.zen-browser = {
-      enable = true;
-      setAsDefaultBrowser = true;
+    programs = {
+      lumina-cli.enable = true;
+      home-manager.enable = true;
+      zen-browser = {
+        enable = true;
+        setAsDefaultBrowser = true;
+      };
     };
+  
   };
 
   flake.homeConfigurations."yianyi@kobo" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -41,7 +44,7 @@ in {
     };
     modules = [
       self.custom.system-modules.kobo
-      self.custom.system-modules.kobo-bedrock
+      self.custom.system-modules.kobo-waybar
       self.custom.system-modules.kobo-sway
       self.custom.home-common.fastfetchConfig
       self.custom.system-modules.generic-linux
