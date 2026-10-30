@@ -17,6 +17,7 @@ in {
       homeDirectory = "/home/yianyi";
       stateVersion = "26.05";
       packages = [
+        pkgs.nixd
         inputs.lumina.packages.${system}.sklauncher
         inputs.lumina.packages.${system}.chatgpt
       ];
