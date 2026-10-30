@@ -13,6 +13,7 @@
     terminal = "kitty";
     resizeStep = "40px";
     browser = "firefox";
+    nixEnv = "env PATH=${config.home.profileDirectory}/bin:/nix/var/nix/profiles/default/bin:$PATH";
 
     screenshot = pkgs.writeShellScript "kobo-screenshot" ''
       region=$(${pkgs.slurp}/bin/slurp) || exit 0
@@ -79,12 +80,12 @@
           ];
           keybindings =
             {
-              "${mod}+Return" = "exec ${terminal}";
+              "${mod}+Return" = "exec ${nixEnv} ${terminal}";
               "${mod}+s" = "exec ${browser}";
-              "${mod}+d" = "exec wmenu-run";
+              "${mod}+d" = "exec ${nixEnv} wmenu-run";
               "${mod}+Tab" = "focus next";
               "${mod}+w" = "kill";
-              "${mod}+e" = "exec nautilus";
+              "${mod}+e" = "exec ${nixEnv} nautilus";
               "${mod}+a" = "exec ${screenshot}";
               "${mod}+b" = "exec swaymsg exit";
 
