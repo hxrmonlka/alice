@@ -20,6 +20,7 @@
       runtimePkgs = with pkgs; [wireplumber input-remapper];
       settings = {
         spawn-at-startup = [
+          ["fcitx5" "-r"]
           (lib.getExe pkgs.xsettingsd)
           (lib.getExe inputs.hibiki.packages.${pkgs.stdenv.hostPlatform.system}.default)
           # Nope, not anymore.
@@ -35,7 +36,7 @@
 
         cursor = {
           xcursor-theme = "YeShunguang";
-          xcursor-size = 24;
+          xcursor-size = 18;
         };
 
         input = {
@@ -44,7 +45,6 @@
           keyboard = {
             xkb = {
               layout = "us";
-              options = "caps:escape";
             };
             repeat-rate = 40;
             repeat-delay = 250;

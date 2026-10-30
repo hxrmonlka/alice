@@ -17,6 +17,8 @@
       nixfmt
       self.packages.${pkgs.stdenv.hostPlatform.system}.konoeNoctalia
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.sklauncher
+      pciutils
+      quickshell
     ];
     nixpkgs.config.allowUnfree = lib.mkForce true;
   };

@@ -7,9 +7,17 @@
     pkgs,
     lib,
     config,
-    osConfig,
+    osConfig ? null,
+    hostName ? null,
     ...
-  }: {
+  }: let
+    host =
+      if osConfig != null
+      then osConfig.networking.hostName
+      else if hostName != null
+      then hostName
+      else "unknown";
+  in {
     programs.fastfetch = {
       enable = true;
       settings = {
@@ -28,7 +36,7 @@
           }
           {
             type = "custom";
-            format = "Alice — ${osConfig.networking.hostName}";
+            format = "Alice — ${host}";
             key = " PC";
             keyColor = "green";
           }

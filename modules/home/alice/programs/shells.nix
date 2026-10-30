@@ -4,24 +4,35 @@
   ...
 }: {
   flake.nixosModules.zsh-sys-level = _: {
-    programs.zsh.enable = true;
+    programs.zsh = {
+      enable = true;
+      promptInit = ''
+        nitch
+      '';
+    };
   };
   flake.custom.alice.shells = {
     pkgs,
     lib,
     ...
   }: {
+    home.shellAliases = {
+      # Global shell aliases, I guess.
+      ll = "ls -l";
+      ls = "eza --icons=always";
+      lstree = "eza --icons=always --tree";
+      jj = "lazygit";
+      quit = "exit";
+      cd = "z";
+      at-world = "nix flake update; nh os boot";
+      nbuild = "nh os switch";
+      ga = "git add .";
+      gp = "git push";
+    };
     programs = {
       nushell = {
         enable = true;
-        shellAliases = {
-          ll = "ls -l";
-          ex = "eza --icons";
-          lstree = "eza --icons --tree";
-          jj = "lazygit";
-          quit = "exit";
-          cd = "z";
-        };
+        loadSessionVariables = true;
         settings = {
           show_banner = false;
         };
@@ -29,19 +40,14 @@
       fish = {
         enable = true;
         shellAbbrs = {
-          ll = "ls -l";
-          ls = "eza --icons";
-          lstree = "eza --icons --tree";
           ols = lib.getExe' pkgs.coreutils "ls";
-          jj = "lazygit";
-          quit = "exit";
-          cd = "z";
         };
         generateCompletions = true;
         interactiveShellInit = ''
           set fish_greeting
           echo ">>> Current mode: fish"
           echo ">>> ls is replaced by eza."
+          nitch
         '';
       };
       zsh = {
@@ -58,12 +64,6 @@
           echo ">>> ls is replaced by eza."
         '';
         shellAliases = {
-          ll = "ls -l";
-          ex = "eza --icons";
-          lstree = "eza --icons --tree";
-          jj = "lazygit";
-          quit = "exit";
-          cd = "z";
           nd = "nix develop -c zsh";
         };
       };

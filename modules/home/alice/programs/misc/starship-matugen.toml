@@ -2,7 +2,7 @@ add_newline = false
 command_timeout = 1000
 palette = "alice"
 format = "$cmd_duration[•ᴗ• ](accent)$character"
-right_format = "[✦ ](accent)$directory$git_branch$git_status${custom.venv}$status"
+right_format = "[✦ ](accent)$directory$git_branch$git_status$git_metrics${custom.venv}$status"
 
 [cmd_duration]
 min_time = 500
@@ -36,6 +36,13 @@ staged = "+"
 untracked = "?"
 deleted = "-"
 
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
+format = "( [+$added]($added_style))( [-$deleted]($deleted_style))"
+added_style = "accent"
+deleted_style = "urgent"
+
 [custom.venv]
 command = "echo ♯"
 when = '[ -n "$VIRTUAL_ENV" ]'
@@ -45,9 +52,11 @@ shell = ["bash", "-c"]
 
 [status]
 disabled = false
-success_symbol = "[❤︎](accent)"
-symbol = "[×](urgent)"
-format = " $symbol"
+success_symbol = '﹙˵¬ᴗ¬˵﹚'
+symbol = '﹙╥﹏╥﹚'
+success_style = "accent"
+failure_style = "urgent"
+format = " [$symbol]($style)"
 
 [palettes.alice]
 accent = "{{colors.primary.default.hex}}"

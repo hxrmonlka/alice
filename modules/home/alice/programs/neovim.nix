@@ -151,16 +151,14 @@
 
       cat << 'EOF' > $out/user/configs/lsp-servers/nil_ls.lua
       return function(opts)
-        opts.settings = {
-          ['nil'] = {
-            formatting = {
-              command = {"alejandra"},
-            },
-            nix = {
-              flake = {
-                autoEvalInputs = true,
-                autoArchive = true,
-              },
+        opts.init_options = {
+          formatting = {
+            command = {"alejandra"},
+          },
+          nix = {
+            flake = {
+              autoEvalInputs = true,
+              autoArchive = true,
             },
           },
         }

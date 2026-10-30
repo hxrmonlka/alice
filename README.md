@@ -21,7 +21,7 @@ The name's just there because my humour sucks.
 </details>
 <details>
 <summary><b>Where can I learn more about it?</b></summary>
-You can learn more about it by going through the <a href="https://github.com/hxrmonlka/alice/wiki">documentation</a>. (Though this is still being developed.)
+You can learn more about it by going through the <a href="https://github.com/hxrmonlka/alice/wiki">documentation</a>.
 </details>
 
 ## Introduction
@@ -58,7 +58,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 ├── flake.nix              # mkFlake + import-tree ./modules
 ├── flake.lock
 ├── modules/
-│   ├── _systems          # Nix declarations for other systems
+│   ├── systems           # Nix declarations for other systems
 │   ├── parts.nix          # flake.custom.* namespace declarations
 │   ├── common/             # Shared NixOS config (boot, fonts, services, nix settings)
 │   │   └── home/            # Shared Home Manager config
@@ -72,7 +72,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 │       ├── serpentine/       # hxrmonlka, yixanni
 │       ├── tanuki/           # seiryouden
 │       └── dev-shell.nix     # `nix develop` VM testing shell
-└── scripts/                  # Git hook install and settings sync scripts
+└── scripts/                  # Git hook install script
 ```
 
 `modules/parts.nix` declares the namespace each area writes into:
@@ -86,7 +86,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 | `flake.custom.commonModules`   | `modules/common`           | Shared NixOS config                             |
 | `flake.custom.home-common`     | `modules/common/home`      | Shared Home Manager config                      |
 | `flake.custom.hardwareModules` | `modules/hardware`         | Hardware and driver modules                     |
-| `flake.custom.system-modules`  | `modules/_systems`         | Other systems that doesn't revolve around NixOS |
+| `flake.custom.system-modules`  | `modules/systems`          | Other systems that doesn't revolve around NixOS |
 
 ## Getting Started
 
@@ -110,6 +110,15 @@ nix develop
 build-vm <host>   # serpentine, tanuki
 ```
 
+## For other systems...
+
+Use this command to switch to a home-manager configuration with `nix run` if it's your system's first time using it:
+
+```bash
+nix run github:nix-community/home-manager -- switch --flake /path/to/alice#myuser
+```
+
+You might want to also set `programs.home-manager.enable` to `true` on the way. 
 ## License
 
 Alice is licensed under the [BSD 3-Clause License](LICENSE).

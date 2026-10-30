@@ -14,7 +14,7 @@
 
     gtk.cursorTheme = {
       name = "YeShunguang";
-      size = 24;
+      size = 18;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.cursor-themes;
     };
 

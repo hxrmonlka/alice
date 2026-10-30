@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  # After the weekly job pushes the updated lock to this branch
+  push:
+    branches: [ci/weekly-flake-update]
+  # Cover the PR that lands the weekly update (and any other PRs)
+  pull_request:
+    branches: [test-den, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate-hosts:
+    name: Evaluate NixOS hosts
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            accept-flake-config = true
+            max-jobs = auto
+
+      - name: Show flake outputs (sanity)
+        run: |
+          set -euo pipefail
+          echo "==> Flake metadata"
+          nix flake metadata --no-write-lock-file
+          echo ""
+          echo "==> Available nixosConfigurations"
+          nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' | jq -r '.[]'
+
+      - name: Evaluate all NixOS system derivations
+        run: |
+          set -euo pipefail
+          hosts="$(nix eval --json .#nixosConfigurations --apply 'builtins.attrNames' | jq -r '.[]')"
+          test -n "${hosts}"
+          while IFS= read -r host; do
+            echo "==> Evaluating nixosConfigurations.${host}"
+            nix path-info --derivation ".#nixosConfigurations.\"${host}\".config.system.build.toplevel"
+          done <<< "${hosts}"
+
+      - name: Evaluate all Home Manager derivations
+        run: |
+          set -euo pipefail
+          homes="$(nix eval --json .#homeConfigurations --apply 'builtins.attrNames' | jq -r '.[]')"
+          test -n "${homes}"
+          while IFS= read -r home; do
+            echo "==> Evaluating homeConfigurations.${home}"
+            nix path-info --derivation ".#homeConfigurations.\"${home}\".activationPackage"
+          done <<< "${homes}"
+
+      - name: Flake check (non-build)
+        run: |
+          set -euo pipefail
+          nix flake check --no-build --print-build-logs

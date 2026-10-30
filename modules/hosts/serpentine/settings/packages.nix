@@ -49,7 +49,7 @@
       devin-cli
       nodejs_22
       clang-tools
-      dgop
+      dux-gop
       ardour
       qbittorrent
       usbutils
@@ -62,7 +62,14 @@
       sourcekit-lsp
       openssl
       kdePackages.ark
-      todoist-electron
+      concord-tui
+      mpv
+      nitch
+      kdePackages.qtdeclarative
+      brightnessctl
+      zenity
+      jq
+      gammastep
     ];
     nixpkgs = {
       config = {

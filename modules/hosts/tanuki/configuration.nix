@@ -17,6 +17,7 @@
       self.custom.tanuki.packages
       self.custom.tanuki.flatpaks
       self.custom.tanuki.services-override
+      self.custom.tanuki.bash
 
       # Common section
       self.custom.commonModules.nixSettings
@@ -30,6 +31,7 @@
       # Hardware section
       self.custom.hardwareModules.asusSettings
       self.custom.hardwareModules.asustuf
+      self.custom.hardwareModules.keydSettings
     ];
 
     home-manager = {
@@ -45,9 +47,12 @@
         self.custom.konoe.core
         self.custom.konoe.spotify
         self.custom.konoe.niri
+        self.custom.konoe.noctalia
         self.custom.konoe.alacritty
         self.custom.konoe.code
         self.custom.konoe.zen-browser
+        self.custom.konoe.luminaCli
+        self.custom.tanuki.cursor
 
         # Common section
         self.custom.home-common.fastfetchConfig

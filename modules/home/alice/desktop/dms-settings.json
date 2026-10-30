@@ -1,7 +1,9 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
+  "matugenContrast": 0.4,
   "cornerRadius": 12,
+  "clockFormat": "24h",
   "motionEffect": 2,
   "blurEnabled": true,
   "blurWallpaperOnOverview": true,
@@ -94,17 +96,19 @@
     "size": 24,
     "theme": "YeShunguang"
   },
+  "launcherLogoMode": "os",
+  "launcherLogoColorOverride": "primary",
+  "launcherLogoSizeOffset": -2,
+  "acLockTimeout": 900,
   "acProfileName": "2",
   "batteryProfileName": "0",
   "batteryChargeLimit": 95,
   "batteryAutoPowerSaver": true,
+  "lockBeforeSuspend": true,
   "matugenTemplateNeovim": true,
-  "dankIslandBarId": "default",
-  "dankIslandCompactHeight": 27,
-  "dankIslandHoverOpenDelay": 400,
-  "dankIslandHoverCloseDelay": 70,
-  "dankIslandSatelliteGap": 23,
+  "lockScreenNotificationMode": 3,
   "osdPowerProfileEnabled": true,
+  "powerActionHoldDuration": 0.25,
   "barConfigs": [
     {
       "autoHide": false,
@@ -132,6 +136,15 @@
       "iconScale": 1,
       "id": "default",
       "innerPadding": 4,
+      "island": true,
+      "islandCompactThickness": 27,
+      "islandFloating": false,
+      "islandHighContrast": false,
+      "islandHoverCloseDelay": 70,
+      "islandHoverOpenDelay": 400,
+      "islandReserveThickness": 34,
+      "islandSatelliteGap": 23,
+      "islandTransparency": 1,
       "leftWidgets": [
         "launcherButton",
         "workspaceSwitcher",
@@ -171,8 +184,8 @@
       "useOverlayLayer": false,
       "visible": true,
       "widgetOutlineColor": "primary",
-      "widgetOutlineEnabled": false,
-      "widgetOutlineOpacity": 1,
+      "widgetOutlineEnabled": true,
+      "widgetOutlineOpacity": 0.2,
       "widgetOutlineThickness": 1,
       "widgetPadding": 8,
       "widgetTransparency": 1
@@ -208,9 +221,15 @@
     "dms_clipboard_search": {
       "trigger": "cb"
     },
+    "dms_power": {
+      "trigger": "pw"
+    },
+    "dms_qr_generator": {
+      "trigger": "qrg"
+    },
     "dms_settings_search": {
       "trigger": "?"
     }
   },
-  "configVersion": 17
+  "configVersion": 18
 }

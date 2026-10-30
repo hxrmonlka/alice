@@ -15,11 +15,16 @@
       runtimePkgs = with pkgs; [wireplumber];
       settings = {
         spawn-at-startup = [
-          (lib.getExe self'.packages.konoeNoctalia)
+          (lib.getExe' self'.packages.konoeNoctalia "noctalia")
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
         prefer-no-csd = true;
+
+        cursor = {
+          xcursor-theme = "BlueNeonGlass";
+          xcursor-size = 24;
+        };
 
         hotkey-overlay."skip-at-startup" = _: {};
 
@@ -50,12 +55,10 @@
 
         layout = {
           gaps = 8;
-          center-focused-column = "never";
+          center-focused-column = "always";
 
           focus-ring = {
             width = 2;
-            active-color = "#e985b4";
-            inactive-color = "#2b1712";
           };
 
           border.off = _: {};
@@ -131,7 +134,6 @@
           "Shift+F11".maximize-column = {};
           "F11".fullscreen-window = {};
           "Mod+Shift+F".toggle-window-floating = {};
-          "Mod+C".center-column = {};
 
           "Mod+H".focus-column-left = {};
           "Mod+J".focus-column-right = {};
@@ -207,28 +209,27 @@
           "XF86MonBrightnessUp".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%+";
           "XF86MonBrightnessDown".spawn-sh = "${lib.getExe pkgs.brightnessctl} s 5%-";
 
-          "Mod+Space".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher toggle";
-          "Mod+N".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call media toggle";
-          "Mod+Semicolon".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher emoji";
+          "Mod+Space".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle launcher";
+          "Mod+N".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle control-center media";
+          "Mod+Semicolon".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle launcher /emo";
           "Mod+D".spawn-sh = lib.getExe pkgs.wlr-which-key;
-          "Mod+W".spawn = [
-            "flatpak"
-            "run"
-            "app.zen_browser.zen"
+          "Mod+C".spawn = ["code"];
+          "Mod+W".spawn-sh = [
+            "zen-beta"
           ];
 
-          "Mod+Alt+L".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call lockScreen lock";
-          "Mod+Shift+W".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call wallpaper toggle";
-          "Mod+Shift+I".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call controlCenter toggle";
+          "Mod+Alt+L".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg session lock";
+          "Mod+Shift+W".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle wallpaper";
+          "Mod+Shift+I".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle control-center";
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
-          "Ctrl+Alt+Delete".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call sessionMenu toggle";
-          "Mod+V".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call launcher clipboard";
+          "Ctrl+Alt+Delete".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle session";
+          "Mod+V".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg panel-toggle clipboard";
           "Mod+Shift+P".power-off-monitors = {};
-          "Mod+M".spawn-sh = "${lib.getExe self'.packages.konoeNoctalia} ipc call volume muteInput";
+          "Mod+M".spawn-sh = "${lib.getExe' self'.packages.konoeNoctalia "noctalia"} msg mic-mute";
           "Mod+O".toggle-overview = {};
         };
         extraConfig = ''
-          include optional=true "~/.config/niri/noctalia.kdl"
+          include optional=true "noctalia.kdl"
         '';
       };
     };
