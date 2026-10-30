@@ -5,7 +5,7 @@
 }: let
   system = "x86_64-linux";
 in {
-  flake.custom.system-modules.kobo = {...}: {
+  flake.custom.system-modules.kobo = {pkgs, ...}: {
     imports = [
       inputs.zen-browser.homeModules.beta
       inputs.lumina.homeModules.lumina-cli
