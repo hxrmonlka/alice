@@ -26,6 +26,7 @@
         "com.danklinux.dankcalendar"
         "org.blender.Blender"
         "org.inkscape.Inkscape"
+        "org.kde.kdenlive"
       ];
       update = {
         auto.enable = true;

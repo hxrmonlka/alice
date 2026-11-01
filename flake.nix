@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-pinned.url = "github:nixos/nixpkgs/61b7c44c4073f0b827768aff0049561b5110ea5a";
     dank-greeter.url = "github:AvengeMedia/dank-greeter";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -12,7 +13,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    wrapper-modules.url = "github:nix-community/nix-wrapper-modules";
     lumina = {
       url = "github:hxrmonlka/lumina/un/test";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,10 +23,7 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
     nvimdots.url = "github:ayamir/nvimdots";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -33,6 +31,14 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    system-manager = {
+      url = "github:numtide/system-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixgl = {
+      url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helium = {
@@ -53,12 +59,16 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # --------------------------------My Resources------------------------------------------
+    # --------------------------------Resources------------------------------------------
     cursor-themes = {
       url = "github:hxrmonlka/resources/cursors";
       flake = false;
     };
-    # --------------------------------My Resources------------------------------------------
+    tanuki-cursors = {
+      url = "github:seiryouden/cursors";
+      flake = false;
+    };
+    # --------------------------------Resources------------------------------------------
     danksearch = {
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";

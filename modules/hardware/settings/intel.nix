@@ -5,10 +5,12 @@
 }: {
   flake.custom.hardwareModules.intelSettings = {...}: {
     imports = [
-      self.custom.hardwareModules.hardwareIntel
-      self.custom.hardwareModules.vulkan
+      inputs.lumina.lib.hardware.intel
+      inputs.lumina.lib.hardware.vulkan
+      inputs.nixos-hardware.nixosModules.common-pc-laptop
+      inputs.nixos-hardware.nixosModules.common-pc-ssd
     ];
-    hardware.alice.intel = {
+    hardware.lumina.intel = {
       gpu = {
         enable = true;
         generation = "legacy";
@@ -16,7 +18,7 @@
       };
       cpu.enable = true;
     };
-    hardware.alice.vulkan = {
+    hardware.lumina.vulkan = {
       enable = true;
       tools = true;
     };

@@ -3,17 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.alice.nixcord = {config, ...}: {
-    xdg.configFile = {
-      "matugen/templates/dank-discord.css".source = "${inputs.dms}/quickshell/matugen/templates/vesktop.css";
-
-      "matugen/dms/configs/equicord.toml".text = ''
-        [templates.equicord]
-        input_path = "${config.xdg.configHome}/matugen/templates/dank-discord.css"
-        output_path = "${config.xdg.configHome}/Equicord/themes/dank-discord.css"
-      '';
-    };
-
+  flake.custom.alice.nixcord = {...}: {
     programs.nixcord = {
       enable = true;
 
@@ -25,7 +15,7 @@
         useQuickCss = true;
 
         enabledThemes = [
-          "dank-discord.css"
+          "shoji-equicord.css"
         ];
 
         plugins = {

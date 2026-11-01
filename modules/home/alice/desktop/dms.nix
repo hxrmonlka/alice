@@ -8,12 +8,22 @@
     config,
     ...
   }: {
-    imports = [inputs.dank-greeter.nixosModules.default];
+    imports = [
+      inputs.dank-greeter.nixosModules.default
+    ];
     programs.dms-greeter = {
       enable = true;
-      package = pkgs.dms-greeter;
-      compositor.name = "mango";
-      configHome = "/home/alice";
+      package = pkgs.dux-greeter;
+      compositor = {
+        name = "mango";
+        customConfig = ''
+          # Hello.
+          # This is intended to be empty,
+          # because /etc/mango/config.conf is read upon boot,
+          # but it doesn't exist, so it emits an error in the lockscreen.
+        '';
+      };
+      configHome = "${config.users.users.alice.home}";
       configFiles = ["${config.users.users.alice.home}/.config/DankMaterialShell/settings.json"];
       logs = {
         save = false;
@@ -37,7 +47,11 @@
       enableAudioWavelength = true;
       enableCalendarEvents = true;
 
-      settings = builtins.fromJSON (builtins.readFile ./dms-settings.json);
+      settings =
+        (builtins.fromJSON (builtins.readFile ./dms-settings.json))
+        // {
+          matugenTemplateMangowc = false;
+        };
       session = {};
 
       clipboardSettings = {

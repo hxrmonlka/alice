@@ -22,17 +22,34 @@ reviews:
   path_instructions:
     - path: "modules/**/*.nix"
       instructions: |
-        This repo uses the Dendritic flake-parts pattern.
-        - Every module file should expose outputs under a unique key in flake.custom.alice,
-          flake.custom.konoe, flake.custom.serpentine, flake.custom.tanuki, flake.custom.commonModules, or flake.custom.hardwareModules,
-          never flake.homeModules directly.
-        - Cross-class imports (NixOS ↔ Home Manager) are forbidden. Flag any.
-          (Exclude any configuration.nix files inside any hosts directory.)
-        - lib.mkIf is forbidden in import lists. Flag any.
-        - self must be closed over from the outer flake-parts scope, not assumed in scope inside NixOS module lambdas.
-        - Wrapped packages must be referenced via self.packages.${pkgs.stdenv.hostPlatform.system}.<name>.
-        - Noctalia theming: never source Noctalia files from the Nix store. Only reference by name/output.
-          Same applies to DMS (DankMaterialShell).
+        This repository uses the Dendritic flake-parts pattern with import-tree.
+
+        Module namespaces are declared in modules/parts.nix:
+        - flake.custom.serpentine: Serpentine system modules.
+        - flake.custom.tanuki: Tanuki system modules.
+        - flake.custom.alice: Alice Home Manager modules.
+        - flake.custom.konoe: Konoe Home Manager modules.
+        - flake.custom.home-common: Shared Home Manager modules.
+        - flake.custom.commonModules: Shared NixOS modules.
+        - flake.custom.hardwareModules: Hardware and driver modules.
+        - flake.custom.system-modules: Modules for non-NixOS systems.
+
+        - Place module outputs in the namespace matching their responsibility.
+        - Use unique attribute names within each namespace.
+        - flake.nixosModules and flake.homeModules are valid top-level
+          namespaces for reusable NixOS and Home Manager module exports.
+        - Do not confuse host-specific modules with reusable module exports.
+        - Keep NixOS and Home Manager module responsibilities separate.
+        - Host configuration files are composition points. They may
+          intentionally import NixOS and Home Manager modules into their
+          respective configuration scopes.
+        - Do not use lib.mkIf inside imports lists. Use appropriate
+          conditional imports instead. lib.mkIf remains valid for conditional configuration.
+        - self must be closed over from the outer flake-parts scope,
+          not assumed to exist inside nested NixOS module lambdas.
+        - Wrapped packages must use
+          self.packages.${pkgs.stdenv.hostPlatform.system}.<name>.
+
     - path: "flake.nix"
       instructions: |
         flake.nix must remain minimal: inputs + mkFlake only.

@@ -6,6 +6,8 @@
   flake.custom.tanuki.services-override = {pkgs, ...}: {
     imports = [self.custom.commonModules.systemServices];
 
+    hardware.keyd.disabledKeyboards = ["0001:0001:09b4e68d"];
+
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;

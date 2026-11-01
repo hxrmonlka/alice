@@ -4,6 +4,7 @@
   ...
 }: {
   flake.custom.serpentine.hostConfig = {...}: {
+    services.accounts-daemon.enable = true;
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
@@ -14,7 +15,9 @@
       self.custom.serpentine.programs
       self.custom.serpentine.userSystemConfig
       self.custom.serpentine.packages
+      self.custom.serpentine.fonts
       self.custom.serpentine.locales
+      self.custom.serpentine.inputMethod
       self.custom.serpentine.environment
       self.custom.serpentine.flatpaks
       self.custom.serpentine.servicesOverride
@@ -38,6 +41,7 @@
       self.nixosModules.dgreet
       self.nixosModules.mangoWC
       self.nixosModules.lumina-browser-settings
+      self.nixosModules.helium-theme
       self.nixosModules.zsh-sys-level
     ];
 
@@ -78,9 +82,11 @@
         self.custom.alice.gtk
         self.custom.alice.mangoConfig
         self.custom.alice.rust
+        self.custom.alice.luminaCli
+        self.custom.alice.swayidle
 
         # Common section
-        self.custom.home-common.fastfetchConfig
+        # self.custom.home-common.fastfetchConfig
       ];
     };
     system.stateVersion = "26.05";

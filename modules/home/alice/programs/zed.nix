@@ -17,7 +17,6 @@
         "toml"
         "html"
         "ruby"
-        "vue"
         "dockerfile"
         "make"
         "latex"
@@ -27,25 +26,39 @@
         "swift"
         "python"
       ];
-      extraPackages = [pkgs.nil pkgs.alejandra pkgs.statix pkgs.deadnix];
+      extraPackages = [pkgs.nil pkgs.alejandra pkgs.statix pkgs.deadnix pkgs.nixd];
       userSettings = {
+        project_panel = {
+          dock = "right";
+        };
+        debugger = {
+          dock = "right";
+        };
+        outline_panel = {
+          dock = "right";
+        };
+        git_panel = {
+          dock = "right";
+        };
         semantic_tokens = "combined";
         lsp = {
           nil = {
             binary = {
               path = lib.getExe pkgs.nil;
             };
-            settings = {
-              flake = {
-                autoArchive = true;
+            initialization_options = {
+              nix = {
+                flake = {
+                  autoArchive = true;
+                };
               };
             };
           };
         };
         theme = {
           mode = "system";
-          dark = "DankShell Dark Transparent";
-          light = "DankShell Light Transparent";
+          dark = "Shoji Dark Transparent";
+          light = "Shoji Light Transparent";
         };
         languages = {
           Nix = {
@@ -62,7 +75,9 @@
         relative_line_numbers = true;
         terminal = {
           font_family = "0xProto Nerd Font Mono";
-          shell = "system";
+          shell = {
+            program = lib.getExe pkgs.fish;
+          };
         };
         telemetry = {
           metrics = false;

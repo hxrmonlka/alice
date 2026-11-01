@@ -1,12 +1,9 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  perSystem = {pkgs, ...}: {
-    packages.konoeNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
-      inherit pkgs;
-      settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
-    };
+{inputs, ...}: {
+  flake.custom.konoe.noctalia = {...}: {
+    xdg.configFile."noctalia/config.toml".source = ./noctalia.toml;
+  };
+
+  perSystem = {system, ...}: {
+    packages.konoeNoctalia = inputs.noctalia.packages.${system}.default;
   };
 }

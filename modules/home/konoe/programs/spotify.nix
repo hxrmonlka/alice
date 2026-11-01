@@ -16,8 +16,7 @@
         adblock
       ];
 
-      theme = spicePkgs.themes.text;
-      colorScheme = "Rigel";
+      theme = spicePkgs.themes.starryNight;
     };
   };
 }

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_ROOT="$(git rev-parse --show-toplevel)"
+if ! command -v lumina >/dev/null 2>&1; then
+  echo "pre-commit: lumina not found in PATH, skipping sync." >&2
+  exit 0
+fi
 
-"${REPO_ROOT}/scripts/sync-noctalia-kdl.sh"
-git add "${REPO_ROOT}/modules/home/konoe/desktop/noctalia.kdl"
+exec lumina hook pre-commit

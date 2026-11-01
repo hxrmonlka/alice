@@ -1,5 +1,4 @@
 {
-  withSystem,
   self,
   inputs,
   ...
