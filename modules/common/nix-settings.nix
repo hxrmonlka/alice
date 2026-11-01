@@ -34,17 +34,6 @@
             '';
           });
         })
-        (final: prev: {
-          khal =
-            if prev.khal.version == "0.14.1"
-            then
-              prev.khal.overrideAttrs {
-                sphinxBuilders = [
-                  "html man"
-                ];
-              }
-            else prev.khal;
-        })
       ];
     };
     nix = {
