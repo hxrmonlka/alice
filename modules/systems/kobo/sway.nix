@@ -1,4 +1,4 @@
-{...}: {
+{inputs, ...}: {
   flake.custom.system-modules.kobo-sway = {
     config,
     lib,
@@ -12,7 +12,7 @@
     modShift = "${mod}+Shift";
     terminal = "kitty";
     resizeStep = "40px";
-    browser = "${lib.getExe inputs.zen-browser.packages.${pkgs.system}.beta}";
+    browser = "${lib.getExe inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta}";
     coder = "kitty -e zed";
     nixEnv = "env PATH=${config.home.profileDirectory}/bin:/nix/var/nix/profiles/default/bin:$PATH";
 
