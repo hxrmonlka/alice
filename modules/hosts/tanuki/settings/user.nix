@@ -13,6 +13,5 @@
         "wheel"
       ];
     };
-    virtualisation.vmVariant.users.users.konoe.initialPassword = "test";
   };
 }

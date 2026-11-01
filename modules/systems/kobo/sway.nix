@@ -12,7 +12,7 @@
     modShift = "${mod}+Shift";
     terminal = "kitty";
     resizeStep = "40px";
-    browser = "firefox";
+    browser = "${lib.getExe inputs.zen-browser.packages.${pkgs.system}.beta}";
     coder = "kitty -e zed";
     nixEnv = "env PATH=${config.home.profileDirectory}/bin:/nix/var/nix/profiles/default/bin:$PATH";
 

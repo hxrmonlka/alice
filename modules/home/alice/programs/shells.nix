@@ -24,7 +24,7 @@
       jj = "lazygit";
       quit = "exit";
       cd = "z";
-      at-world = "nix flake update; nh os boot";
+      at-world = "nh os boot --update";
       nbuild = "nh os switch";
       ga = "git add .";
       gp = "git push";

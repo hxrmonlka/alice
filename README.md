@@ -115,7 +115,7 @@ build-vm <host>   # serpentine, tanuki
 Use this command to switch to a home-manager configuration with `nix run` if it's your system's first time using it:
 
 ```bash
-nix run github:nix-community/home-manager -- switch --flake /path/to/alice#myuser
+nix run github:nix-community/home-manager -- switch --flake /path/to/alice#myuser@hostname
 ```
 
 You might want to also set `programs.home-manager.enable` to `true` on the way. 

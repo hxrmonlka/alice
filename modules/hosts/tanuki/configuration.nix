@@ -52,7 +52,7 @@
         self.custom.konoe.code
         self.custom.konoe.zen-browser
         self.custom.konoe.luminaCli
-        self.custom.tanuki.cursor
+        self.custom.konoe.cursor
 
         # Common section
         self.custom.home-common.fastfetchConfig

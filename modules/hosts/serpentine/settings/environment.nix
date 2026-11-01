@@ -10,7 +10,7 @@
   }: {
     environment = {
       shellAliases = {
-        at-world = "nix flake update; nh os boot";
+        at-world = "nix flake update && nh os boot";
         nbuild = "nh os switch";
       };
       shells = [

@@ -21,7 +21,7 @@
     };
   };
 
-  flake.custom.tanuki.cursor = {pkgs, ...}: {
+  flake.custom.konoe.cursor = {pkgs, ...}: {
     home.pointerCursor = {
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.tanuki-cursors;
