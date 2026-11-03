@@ -8,6 +8,7 @@
       bluetooth.enable = true;
     };
     services = {
+      greetd.enable = true;
       input-remapper = {
         enable = false;
         enableUdevRules = false;

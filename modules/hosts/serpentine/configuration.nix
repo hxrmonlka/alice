@@ -5,6 +5,11 @@
 }: {
   flake.custom.serpentine.hostConfig = {...}: {
     services.accounts-daemon.enable = true;
+    shoji.greeter.enable = true;
+    specialisation.dux-greeter.configuration = {lib, ...}: {
+      imports = [self.nixosModules.dgreet];
+      shoji.greeter.enable = lib.mkForce false;
+    };
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
@@ -38,7 +43,7 @@
       self.custom.hardwareModules.otdSettings
 
       # Misc
-      self.nixosModules.dgreet
+      self.nixosModules.shojiGreeter
       self.nixosModules.mangoWC
       self.nixosModules.lumina-browser-settings
       self.nixosModules.helium-theme
@@ -84,6 +89,7 @@
         self.custom.alice.rust
         self.custom.alice.luminaCli
         self.custom.alice.swayidle
+        self.custom.alice.shojiGreeterSync
 
         # Common section
         # self.custom.home-common.fastfetchConfig

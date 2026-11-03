@@ -629,11 +629,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1793260134,
-        "narHash": "sha256-5ItoHaPRDKrpsEGzmHDjfpSFRblR0MxjK6y/yda3lWA=",
+        "lastModified": 1793698804,
+        "narHash": "sha256-hA9+XlDh30znT9iHXTU+aSc8yP2YEPshED7RykwZN2Q=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "e9dbb55ff1ec3c050bd5d087979d4aa0017b6e0d",
+        "rev": "034db82f0f32b6e5217839500cedfd0c1a6df303",
         "type": "github"
       },
       "original": {
@@ -1304,6 +1304,7 @@
         "nvimdots": "nvimdots",
         "quickshell": "quickshell",
         "rust-overlay": "rust-overlay",
+        "shoji": "shoji",
         "spicetify-nix": "spicetify-nix",
         "system-manager": "system-manager",
         "tanuki-cursors": "tanuki-cursors",
@@ -1351,6 +1352,23 @@
       "original": {
         "owner": "wlrfx",
         "repo": "scenefx",
+        "type": "github"
+      }
+    },
+    "shoji": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793699716,
+        "narHash": "sha256-TXN/iMySTTnpHUALl3ov3gc3ye84M9J3Rfye0qQ/Lxs=",
+        "owner": "hxrmonlka",
+        "repo": "shoji",
+        "rev": "2fffab05d4b68213f6d105520d7a9c5765922d36",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hxrmonlka",
+        "ref": "eup",
+        "repo": "shoji",
         "type": "github"
       }
     },

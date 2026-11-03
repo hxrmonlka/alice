@@ -59,6 +59,10 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    shoji = {
+      url = "github:hxrmonlka/shoji/eup";
+      flake = false;
+    };
     # --------------------------------Resources------------------------------------------
     cursor-themes = {
       url = "github:hxrmonlka/resources/cursors";

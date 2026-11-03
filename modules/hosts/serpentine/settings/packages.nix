@@ -70,6 +70,7 @@
       zenity
       jq
       gammastep
+      greetd
     ];
     nixpkgs = {
       config = {
