@@ -11,13 +11,12 @@
 <summary><b>What is this?</b></summary>
 <ul>
 <li> It's my NixOS dotfiles. It's not really focused on ricing since it's genuinely just a NixOS dotfiles. </li>
-<li>This one's more focused on functionality than aesthetics, though, I <i>could</i> maybe think of that soon. </li>
+<li>This one's more focused on functionality than aesthetics, though, I <i>could</i> maybe think of that soon. (Maybe that's already happening.) </li>
 </ul>
 </details>
 <details>
 <summary><b>Where is Epsilon?</b></summary>
-As of now, Epsilon is still in development. It's not ready to be applied in Alice yet. :(
-The name's just there because my humour sucks.
+As of now, Epsilon is still in development (it's still in a local repository lol). It's not ready to be applied in Alice yet. :(
 </details>
 <details>
 <summary><b>Where can I learn more about it?</b></summary>
