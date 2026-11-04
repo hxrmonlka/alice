@@ -14,9 +14,11 @@
     path = lib.makeBinPath [
       mango
       qs
+      pkgs.bash
       pkgs.coreutils
       pkgs.gawk
       pkgs.gnused
+      pkgs.networkmanager
       pkgs.glibc.bin
       pkgs.systemd
     ];
@@ -28,7 +30,7 @@
       ${mango}/bin/mmsg -d quit
     '';
     mangoConf = pkgs.writeText "shoji-greeter-mango.conf" ''
-      exec_once=${start}
+      exec_once=${pkgs.runtimeShell} ${start}
     '';
   in {
     options.shoji.greeter.enable = lib.mkEnableOption "the shoji greeter";
@@ -42,7 +44,7 @@
           enable = true;
           settings.default_session = {
             user = "greeter";
-            command = "${pkgs.coreutils}/bin/env PATH=${path} HOME=${dir} SHOJI_GREETER_STATE=${dir}/state.json XDG_DATA_DIRS=${sessions}/share:/run/current-system/sw/share ${mango}/bin/mango -c ${mangoConf}";
+            command = "${pkgs.coreutils}/bin/env PATH=${path} HOME=${dir} SHOJI_GREETER_STATE=${dir}/state.json SHOJI_GREETER_SESSION_LOG=${dir}/session.log XDG_DATA_DIRS=${sessions}/share:/run/current-system/sw/share ${mango}/bin/mango -c ${mangoConf}";
           };
         };
       })
