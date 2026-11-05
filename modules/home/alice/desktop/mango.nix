@@ -135,6 +135,7 @@ in {
 
         # Mouse
         mouse_natural_scrolling = 0;
+        mouse_accel_speed = -0.7;
 
         # Appearance
         gap_inner_horizontal = 8;
