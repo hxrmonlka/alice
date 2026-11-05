@@ -8,60 +8,7 @@
     lib,
     ...
   }: {
-    imports = [
-      inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".beta
-    ];
     programs = {
-      zen-browser = {
-        enable = true;
-        profiles.default = {
-          search = {
-            default = "google";
-
-            engines = {
-              mynixos = {
-                name = "My NixOS";
-                urls = [
-                  {
-                    template = "https://mynixos.com/search?q={searchTerms}";
-                  }
-                ];
-                definedAliases = ["@mn" "@mynixos"];
-              };
-
-              nix-packages = {
-                name = "Nix Packages";
-                urls = [
-                  {
-                    template = "https://search.nixos.org/packages?query={searchTerms}";
-                  }
-                ];
-                definedAliases = ["@np" "@nixpkgs"];
-              };
-
-              kagi = {
-                name = "Kagi";
-                urls = [
-                  {
-                    template = "https://kagi.com/search?q={searchTerms}";
-                  }
-                ];
-                definedAliases = ["@k" "@kagi"];
-              };
-
-              google = {
-                name = "Google";
-                urls = [
-                  {
-                    template = "https://duckduckgo.com/?q={searchTerms}";
-                  }
-                ];
-                definedAliases = ["@g" "@google"];
-              };
-            };
-          };
-        };
-      };
       firefox = {
         enable = true;
         package = pkgs.firefox;

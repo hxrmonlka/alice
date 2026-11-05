@@ -4,9 +4,74 @@
   ...
 }: {
   flake.custom.alice.browser = {pkgs, ...}: {
-    programs.chromium = {
-      enable = true;
-      package = inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    imports = [
+      inputs.zen-browser.homeModules.beta
+    ];
+    programs = {
+      chromium = {
+        enable = true;
+        package = inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      };
+      zen-browser = {
+        enable = true;
+        profiles.default = {
+          search = {
+            default = "google";
+
+            engines = {
+              wikipedia = {
+                name = "Wikipedia";
+                urls = [
+                  {
+                    template = "https://en.wikipedia.org/w/index.php?search={searchTerms}";
+                  }
+                ];
+                definedAliases = ["@mw"];
+              };
+
+              mynixos = {
+                name = "My NixOS";
+                urls = [
+                  {
+                    template = "https://mynixos.com/search?q={searchTerms}";
+                  }
+                ];
+                definedAliases = ["@mn" "@mynixos"];
+              };
+
+              nix-packages = {
+                name = "Nix Packages";
+                urls = [
+                  {
+                    template = "https://search.nixos.org/packages?query={searchTerms}";
+                  }
+                ];
+                definedAliases = ["@np" "@nixpkgs"];
+              };
+
+              kagi = {
+                name = "Kagi";
+                urls = [
+                  {
+                    template = "https://kagi.com/search?q={searchTerms}";
+                  }
+                ];
+                definedAliases = ["@k" "@kagi"];
+              };
+
+              google = {
+                name = "Google";
+                urls = [
+                  {
+                    template = "https://duckduckgo.com/?q={searchTerms}";
+                  }
+                ];
+                definedAliases = ["@g" "@google"];
+              };
+            };
+          };
+        };
+      };
     };
   };
   flake.nixosModules.helium-theme = {...}: {
