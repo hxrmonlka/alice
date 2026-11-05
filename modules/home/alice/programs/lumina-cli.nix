@@ -4,7 +4,7 @@
 
     programs.lumina-cli = {
       enable = true;
-      configPath = "${config.home.homeDirectory}/alice";
+      configPath = "${config.home.homeDirectory}/alice-project/alice";
     };
   };
 }
