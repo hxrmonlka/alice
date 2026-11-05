@@ -4,7 +4,6 @@
   ...
 }: {
   flake.custom.serpentine.hostConfig = {...}: {
-    services.accounts-daemon.enable = true;
     shoji.greeter.enable = true;
     specialisation.dux-greeter.configuration = {lib, ...}: {
       imports = [self.nixosModules.dgreet];
