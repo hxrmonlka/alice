@@ -19,6 +19,16 @@
             default = "google";
 
             engines = {
+              merriamwebster = {
+                name = "Merriam-Webster";
+                urls = [
+                  {
+                    template = "https://www.merriam-webster.com/dictionary/{searchTerms}";
+                  }
+                ];
+                definedAliases = ["@mw"];
+              };
+
               wikipedia = {
                 name = "Wikipedia";
                 urls = [
@@ -26,7 +36,7 @@
                     template = "https://en.wikipedia.org/w/index.php?search={searchTerms}";
                   }
                 ];
-                definedAliases = ["@mw"];
+                definedAliases = ["@wiki"];
               };
 
               mynixos = {
