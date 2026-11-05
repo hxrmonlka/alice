@@ -12,7 +12,6 @@
       packages = [
         "com.obsproject.Studio"
         "io.github.shiftey.Desktop"
-        "app.zen_browser.zen"
         "org.vinegarhq.Sober"
         "net.trowell.kotoba"
         "moe.launcher.sleepy-launcher"
