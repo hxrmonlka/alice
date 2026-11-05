@@ -19,7 +19,7 @@
       pkgs.gawk
       pkgs.gnused
       pkgs.networkmanager
-      pkgs.glibc.bin
+      pkgs.getent
       pkgs.systemd
     ];
     start = pkgs.writeShellScript "shoji-greeter-start" ''
