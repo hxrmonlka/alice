@@ -11,6 +11,14 @@
     programs.zed-editor = {
       enable = true;
       enableMcpIntegration = true;
+      userKeymaps = [
+        {
+          context = "Workspace";
+          bindings = {
+            "alt-d" = "workspace::ToggleBottomDock";
+          };
+        }
+      ];
       extensions = [
         "nix"
         "rust"
