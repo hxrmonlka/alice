@@ -18,6 +18,7 @@
         "greeter"
       ];
     };
+    home-manager.backupFileExtension = "backup";
     virtualisation.vmVariant.users.users.alice.initialPassword = "test";
   };
 }
