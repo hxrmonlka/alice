@@ -12,6 +12,7 @@ in {
   flake.nixosModules.mangoWC = {
     pkgs,
     lib,
+    config,
     ...
   }: {
     imports = [
@@ -29,8 +30,11 @@ in {
   flake.custom.alice.mangoConfig = {
     lib,
     pkgs,
+    config,
     ...
-  }: {
+  }: let
+    alt-browser-package = config.programs.zen-browser.package;
+  in {
     wayland.windowManager.mango = {
       enable = true;
       package = mangoPackage pkgs;
@@ -285,7 +289,7 @@ in {
           "SUPER,w,spawn,helium"
           "SUPER+ALT,v,spawn,virt-manager &"
           "SUPER,c,spawn,zeditor"
-          "SUPER+ALT,w,spawn,zen-beta"
+          "SUPER+ALT,w,spawn,${lib.getExe alt-browser-package}"
           "SUPER,d,spawn,discord"
           "SUPER,e,spawn,${lib.getExe pkgs.thunar}"
         ];
