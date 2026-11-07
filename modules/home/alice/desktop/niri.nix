@@ -228,11 +228,7 @@
           "Mod+Semicolon".spawn = ["dms" "ipc" "call" "emojiPicker" "toggle"]; # Available if you have Emoji Picker by Loc Huynh installed
           "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
-          "Mod+Alt+W".spawn = [
-            "flatpak"
-            "run"
-            "app.zen_browser.zen"
-          ];
+          "Mod+Alt+W".spawn-sh = lib.getExe inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;
           "Mod+Alt+L".spawn = [
             "dms"
             "ipc"

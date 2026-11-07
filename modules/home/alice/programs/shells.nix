@@ -26,6 +26,7 @@
       cd = "z";
       at-world = "nh os boot --update";
       nbuild = "nh os switch";
+      ngarb = "nh clean all --keep 3";
       ga = "git add .";
       gp = "git push";
     };
@@ -33,9 +34,24 @@
       nushell = {
         enable = true;
         loadSessionVariables = true;
+        environmentVariables.CARAPACE_BRIDGES = "zsh,fish,bash";
         settings = {
           show_banner = false;
+          highlight_resolved_externals = true;
         };
+        extraConfig = ''
+          print ">>> Current mode: nushell"
+          print ">>> ls is replaced by eza."
+
+          nitch
+        '';
+      };
+      carapace = {
+        enable = true;
+        enableNushellIntegration = true;
+        enableFishIntegration = false;
+        enableZshIntegration = false;
+        enableBashIntegration = false;
       };
       fish = {
         enable = true;
