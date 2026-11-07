@@ -6,7 +6,7 @@
   imports = [inputs.easy-hosts.flakeModule];
 
   easy-hosts.hosts = {
-    serpentine.modules = [self.custom.serpentine.hostConfig];
+    ekpyrosis.modules = [self.custom.ekpyrosis.hostConfig];
     tanuki.modules = [self.custom.tanuki.hostConfig];
   };
 }

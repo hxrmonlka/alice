@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.hostConfig = {...}: {
+  flake.custom.ekpyrosis.hostConfig = {...}: {
     shoji.greeter.enable = true;
     specialisation.dux-greeter.configuration = {lib, ...}: {
       imports = [self.nixosModules.dgreet];
@@ -12,21 +12,21 @@
     imports = [
       # Inputs section
       inputs.home-manager.nixosModules.home-manager
-      (inputs.lumina.lib.signatures.mkHostSignature "serpentine")
+      (inputs.lumina.lib.signatures.mkHostSignature "ekpyrosis")
 
-      # Self section (under ./modules/hosts/serpentine/)
-      self.custom.serpentine.networking
-      self.custom.serpentine.programs
-      self.custom.serpentine.userSystemConfig
-      self.custom.serpentine.packages
-      self.custom.serpentine.fonts
-      self.custom.serpentine.locales
-      self.custom.serpentine.inputMethod
-      self.custom.serpentine.environment
-      self.custom.serpentine.flatpaks
-      self.custom.serpentine.servicesOverride
-      self.custom.serpentine.bootOverride
-      self.custom.serpentine.gamingOverride
+      # Self section (under ./modules/hosts/ekpyrosis/)
+      self.custom.ekpyrosis.networking
+      self.custom.ekpyrosis.programs
+      self.custom.ekpyrosis.userSystemConfig
+      self.custom.ekpyrosis.packages
+      self.custom.ekpyrosis.fonts
+      self.custom.ekpyrosis.locales
+      self.custom.ekpyrosis.inputMethod
+      self.custom.ekpyrosis.environment
+      self.custom.ekpyrosis.flatpaks
+      self.custom.ekpyrosis.servicesOverride
+      self.custom.ekpyrosis.bootOverride
+      self.custom.ekpyrosis.gamingOverride
 
       # Subsection: Gaming modules (under ./modules/gaming)
       self.nixosModules.games
@@ -55,7 +55,7 @@
       extraSpecialArgs = {inherit inputs self;};
       users.alice.imports = [
         # Inputs section
-        (inputs.lumina.lib.signatures.mkUserSignature "serpentine" "alice")
+        (inputs.lumina.lib.signatures.mkUserSignature "ekpyrosis" "alice")
         inputs.nvimdots.homeManagerModules.default
         inputs.spicetify-nix.homeManagerModules.default
         inputs.mangowc.hmModules.mango

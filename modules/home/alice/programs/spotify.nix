@@ -13,12 +13,12 @@
   }: let
     system = pkgs.stdenv.hostPlatform.system;
     spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-    isSerpentine = ((osConfig.networking or {}).hostName or "") == "serpentine";
+    isEkpyrosis = ((osConfig.networking or {}).hostName or "") == "ekpyrosis";
   in {
     imports = [inputs.lumina.homeModules.spicetify-live];
 
     config = lib.mkMerge [
-      (lib.mkIf isSerpentine {
+      (lib.mkIf isEkpyrosis {
         programs.spicetify.enable = false;
 
         home.packages = [
@@ -66,7 +66,7 @@
           watchColors = true;
         };
       })
-      (lib.mkIf (!isSerpentine) {
+      (lib.mkIf (!isEkpyrosis) {
         programs.spicetify = {
           enable = true;
           enabledExtensions = with spicePkgs.extensions; [

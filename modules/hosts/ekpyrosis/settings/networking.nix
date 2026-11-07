@@ -3,10 +3,10 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.networking = _: {
+  flake.custom.ekpyrosis.networking = _: {
     networking = {
       firewall.trustedInterfaces = ["virbr0"];
-      hostName = "serpentine";
+      hostName = "ekpyrosis";
       networkmanager = {
         enable = true;
         wifi.macAddress = "random";

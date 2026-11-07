@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.userSystemConfig = {pkgs, ...}: {
+  flake.custom.ekpyrosis.userSystemConfig = {pkgs, ...}: {
     users.users.alice = {
       isNormalUser = true;
       description = "Alice";

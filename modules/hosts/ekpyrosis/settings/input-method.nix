@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.inputMethod = {pkgs, ...}: {
+  flake.custom.ekpyrosis.inputMethod = {pkgs, ...}: {
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";

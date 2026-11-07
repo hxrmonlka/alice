@@ -30,7 +30,7 @@ Alice is built upon the [Dendritic pattern](https://discourse.nixos.org/t/the-de
 Each hosts are managed by collaborators who use Alice's dotfiles:
 
 - `tanuki` is managed by [seiryouden](https://github.com/seiryouden).
-- `serpentine` and other systems are managed by [hxrmonlka](https://github.com/hxrmonlka), and [yixanni](https://github.com/yixanni).
+- `ekpyrosis` and other systems are managed by [hxrmonlka](https://github.com/hxrmonlka), and [yixanni](https://github.com/yixanni).
 
 ### Branches
 
@@ -42,11 +42,11 @@ Each hosts are managed by collaborators who use Alice's dotfiles:
 
 Current look of each hosts in Alice:
 
-| Serpentine                                                        | Tanuki                                                        |
+| Ekpyrosis                                                        | Tanuki                                                        |
 | :---------------------------------------------------------------- | :------------------------------------------------------------ |
-| <img src="previews/preview_1.png" width="1920" alt="Serpentine"/> | <img src="previews/preview_2.png" width="1920" alt="Tanuki"/> |
+| <img src="previews/preview_1.png" width="1920" alt="Ekpyrosis"/> | <img src="previews/preview_2.png" width="1920" alt="Tanuki"/> |
 
-Each hosts have their kind of aesthetics, hardware settings, etc. Depending on the set up, they are also used for specific fields. `serpentine` is made entirely for daily-basis activities, `tanuki` is slightly more for the gaming side.
+Each hosts have their kind of aesthetics, hardware settings, etc. Depending on the set up, they are also used for specific fields. `ekpyrosis` is made entirely for daily-basis activities, `tanuki` is slightly more for the gaming side.
 
 ## Structure
 
@@ -68,7 +68,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 │   │   ├── alice/            # Home Manager modules for user alice
 │   │   └── konoe/            # Home Manager modules for user konoe
 │   └── hosts/
-│       ├── serpentine/       # hxrmonlka, yixanni
+│       ├── ekpyrosis/        # hxrmonlka, yixanni
 │       ├── tanuki/           # seiryouden
 │       └── dev-shell.nix     # `nix develop` VM testing shell
 └── scripts/                  # Git hook install script
@@ -78,7 +78,7 @@ This is a basic example of what Alice currently contains, preferably focusing on
 
 | Namespace                      | Source                     | Description                                     |
 | :----------------------------- | :------------------------- | :---------------------------------------------- |
-| `flake.custom.serpentine`      | `modules/hosts/serpentine` | System-level config for Serpentine              |
+| `flake.custom.ekpyrosis`      | `modules/hosts/ekpyrosis` | System-level config for Ekpyrosis              |
 | `flake.custom.tanuki`          | `modules/hosts/tanuki`     | System-level config for Tanuki                  |
 | `flake.custom.alice`           | `modules/home/alice`       | Home Manager modules for user alice             |
 | `flake.custom.konoe`           | `modules/home/konoe`       | Home Manager modules for user konoe             |
@@ -106,7 +106,7 @@ Test a host in a disposable VM:
 
 ```bash
 nix develop
-build-vm <host>   # serpentine, tanuki
+build-vm <host>   # ekpyrosis, tanuki
 ```
 
 ## For other systems...

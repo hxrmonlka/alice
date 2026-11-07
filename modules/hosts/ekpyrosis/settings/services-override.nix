@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.servicesOverride = {
+  flake.custom.ekpyrosis.servicesOverride = {
     lib,
     pkgs,
     ...

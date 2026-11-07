@@ -6,12 +6,6 @@
       description = "System-level namespace for Tanuki.";
     };
 
-    serpentine = lib.mkOption {
-      type = lib.types.lazyAttrsOf lib.types.unspecified;
-      default = {};
-      description = "System-level namespace for Serpentine.";
-    };
-
     ekpyrosis = lib.mkOption {
       type = lib.types.lazyAttrsOf lib.types.unspecified;
       default = {};

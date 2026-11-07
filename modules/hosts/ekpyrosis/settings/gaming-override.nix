@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.gamingOverride = {
+  flake.custom.ekpyrosis.gamingOverride = {
     pkgs,
     lib,
     ...

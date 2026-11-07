@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.packages = {
+  flake.custom.ekpyrosis.packages = {
     pkgs,
     lib,
     ...

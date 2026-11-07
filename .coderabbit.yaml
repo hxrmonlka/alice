@@ -25,7 +25,7 @@ reviews:
         This repository uses the Dendritic flake-parts pattern with import-tree.
 
         Module namespaces are declared in modules/parts.nix:
-        - flake.custom.serpentine: Serpentine system modules.
+        - flake.custom.ekpyrosis: Ekpyrosis system modules.
         - flake.custom.tanuki: Tanuki system modules.
         - flake.custom.alice: Alice Home Manager modules.
         - flake.custom.konoe: Konoe Home Manager modules.

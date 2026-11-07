@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.flatpaks = {...}: {
+  flake.custom.ekpyrosis.flatpaks = {...}: {
     imports = [
       inputs.nix-flatpak.nixosModules.nix-flatpak
     ];

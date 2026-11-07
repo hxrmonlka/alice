@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.custom.serpentine.bootOverride = {
+  flake.custom.ekpyrosis.bootOverride = {
     pkgs,
     lib,
     ...
