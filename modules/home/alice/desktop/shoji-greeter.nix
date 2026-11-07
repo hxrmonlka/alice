@@ -44,7 +44,7 @@
           enable = true;
           settings.default_session = {
             user = "greeter";
-            command = "${pkgs.coreutils}/bin/env PATH=${path} HOME=${dir} SHOJI_GREETER_STATE=${dir}/state.json SHOJI_GREETER_SESSION_LOG=${dir}/session.log XDG_DATA_DIRS=${sessions}/share:/run/current-system/sw/share ${mango}/bin/mango -c ${mangoConf}";
+            command = "${pkgs.coreutils}/bin/env -u QT_IM_MODULE -u GTK_IM_MODULE -u XMODIFIERS PATH=${path} HOME=${dir} SHOJI_GREETER_STATE=${dir}/state.json SHOJI_GREETER_SESSION_LOG=${dir}/session.log XDG_DATA_DIRS=${sessions}/share:/run/current-system/sw/share ${mango}/bin/mango -c ${mangoConf}";
           };
         };
       })
