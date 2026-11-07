@@ -16,6 +16,7 @@
           context = "Workspace";
           bindings = {
             "alt-d" = "workspace::ToggleBottomDock";
+            "alt-q" = "pane::CloseActiveItem";
           };
         }
       ];
