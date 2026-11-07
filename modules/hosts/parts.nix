@@ -12,10 +12,10 @@
       description = "System-level namespace for Serpentine.";
     };
 
-    ekspyrosis = lib.mkOption {
+    ekpyrosis = lib.mkOption {
       type = lib.types.lazyAttrsOf lib.types.unspecified;
       default = {};
-      description = "System-level namespace for Ekspyrosis.";
+      description = "System-level namespace for Ekpyrosis.";
     };
   };
 }
