@@ -8,7 +8,7 @@
       isNormalUser = true;
       description = "Alice";
       home = "/home/alice";
-      shell = pkgs.zsh;
+      shell = pkgs.nushell;
       extraGroups = [
         "networkmanager"
         "wheel"

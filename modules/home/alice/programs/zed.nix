@@ -85,7 +85,7 @@
         terminal = {
           font_family = "0xProto Nerd Font Mono";
           shell = {
-            program = lib.getExe pkgs.fish;
+            program = lib.getExe pkgs.nushell;
           };
         };
         telemetry = {

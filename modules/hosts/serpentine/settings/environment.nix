@@ -14,7 +14,7 @@
         nbuild = "nh os switch";
       };
       shells = [
-        pkgs.zsh
+        pkgs.nushell
       ];
     };
   };
