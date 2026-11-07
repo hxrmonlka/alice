@@ -17,6 +17,7 @@
         package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;
         profiles.default = {
           search = {
+            force = true;
             default = "google";
 
             engines = {
