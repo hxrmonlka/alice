@@ -1,3 +1,5 @@
 e.md
 .tmp/
 .obsidian/
+*.qcow2
+result*
