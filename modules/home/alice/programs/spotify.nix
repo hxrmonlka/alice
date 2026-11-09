@@ -33,6 +33,7 @@
         lumina.spicetify = {
           enable = true;
           spotifyPackage = pkgs.spotify;
+          launchFlags = ["--disable-gpu-sandbox"];
           liveDir = "${config.home.homeDirectory}/.local/share/spotify-shoji-live";
           theme = {
             name = "ShojiText";
