@@ -1,5 +1,5 @@
 {...}: {
-  flake.custom.system-modules.kobo-waybar = {pkgs, ...}: {
+  flake.custom.kobo.waybar = {pkgs, ...}: {
     fonts.fontconfig.enable = true;
 
     home.packages = [pkgs.jetbrains-mono];

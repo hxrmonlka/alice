@@ -5,7 +5,7 @@
 }: let
   system = "x86_64-linux";
 in {
-  flake.custom.system-modules.kobo = {pkgs, ...}: {
+  flake.custom.kobo.system = {pkgs, ...}: {
     imports = [
       inputs.zen-browser.homeModules.beta
       inputs.lumina.homeModules.lumina-cli
@@ -45,10 +45,10 @@ in {
       hostName = "kobo";
     };
     modules = [
-      self.custom.system-modules.kobo
-      self.custom.system-modules.kobo-bash
-      self.custom.system-modules.kobo-waybar
-      self.custom.system-modules.kobo-sway
+      self.custom.kobo.system
+      self.custom.kobo.bash
+      self.custom.kobo.waybar
+      self.custom.kobo.sway
       self.custom.home-common.fastfetchConfig
       self.custom.home-common.fonts
       self.custom.system-modules.generic-linux

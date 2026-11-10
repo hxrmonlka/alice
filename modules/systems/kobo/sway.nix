@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.custom.system-modules.kobo-sway = {
+  flake.custom.kobo.sway = {
     config,
     lib,
     pkgs,

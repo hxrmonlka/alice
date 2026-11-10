@@ -1,5 +1,5 @@
 {...}: {
-  flake.custom.system-modules.kobo-bash = {...}: {
+  flake.custom.kobo.bash = {...}: {
     programs.bash = {
       enable = true;
       bashrcExtra = ''
