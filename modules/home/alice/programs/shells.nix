@@ -18,17 +18,16 @@
   }: {
     home.shellAliases = {
       # Global shell aliases, I guess.
-      ll = "ls -l";
-      ls = "eza --icons=always";
-      lstree = "eza --icons=always --tree";
       jj = "lazygit";
       quit = "exit";
       cd = "z";
+      cat = "${lib.getExe pkgs.bat}";
       at-world = "nh os boot --update";
       nbuild = "nh os switch";
       ngarb = "nh clean all --keep 3";
       ga = "git add .";
       gp = "git push";
+      anic = "ani-cli -c";
     };
     programs = {
       nushell = {
@@ -65,6 +64,11 @@
           echo ">>> ls is replaced by eza."
           nitch
         '';
+        shellAliases = {
+          ll = "ls -l";
+          ls = "eza --icons=always";
+          lstree = "eza --icons=always --tree";
+        };
       };
       zsh = {
         enable = true;
@@ -81,6 +85,9 @@
         '';
         shellAliases = {
           nd = "nix develop -c zsh";
+          ll = "ls -l";
+          ls = "eza --icons=always";
+          lstree = "eza --icons=always --tree";
         };
       };
       zoxide = {
