@@ -62,7 +62,6 @@
       sourcekit-lsp
       openssl
       kdePackages.ark
-      concord-tui
       mpv
       nitch
       kdePackages.qtdeclarative
