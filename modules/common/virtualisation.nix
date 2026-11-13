@@ -4,6 +4,8 @@
   ...
 }: {
   flake.custom.commonModules.virtualisation = {pkgs, ...}: {
+    imports = [inputs.lumina.nixosModules.waydroid];
+
     environment.systemPackages = with pkgs; [
       lazydocker
       qemu_kvm
@@ -21,7 +23,11 @@
 
       spiceUSBRedirection.enable = true;
       docker.enable = true;
-      waydroid.enable = true;
+    };
+
+    lumina.waydroid = {
+      enable = true;
+      houdini.enable = true;
     };
   };
 }
