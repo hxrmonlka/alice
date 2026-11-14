@@ -291,7 +291,7 @@ in {
           "SUPER,c,spawn,zeditor"
           "SUPER+ALT,w,spawn,${lib.getExe alt-browser-package}"
           "SUPER,d,spawn,discord"
-          "SUPER,e,spawn,${lib.getExe pkgs.thunar}"
+          "SUPER,e,spawn,${lib.getExe pkgs.nautilus}"
         ];
 
         mousebind = [

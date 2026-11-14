@@ -56,6 +56,15 @@
       ani-cli
       proton-vpn
       hicolor-icon-theme
+      gdk-pixbuf
+      ffmpeg-headless
+      ffmpegthumbnailer
+      librsvg
+      webp-pixbuf-loader
+      libheif.bin
+      libheif.out
+      libavif
+      libjxl
       loupe
       showtime
       glibc
