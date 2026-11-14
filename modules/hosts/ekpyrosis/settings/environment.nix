@@ -9,6 +9,9 @@
     ...
   }: {
     environment = {
+      pathsToLink = [
+        "share/thumbnailers"
+      ];
       shellAliases = {
         at-world = "nix flake update && nh os boot";
         nbuild = "nh os switch";
