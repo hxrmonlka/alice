@@ -32,9 +32,7 @@ in {
     pkgs,
     config,
     ...
-  }: let
-    alt-browser-package = config.programs.zen-browser.package;
-  in {
+  }: {
     wayland.windowManager.mango = {
       enable = true;
       package = mangoPackage pkgs;
@@ -289,7 +287,7 @@ in {
           "SUPER,w,spawn,helium"
           "SUPER+ALT,v,spawn,virt-manager &"
           "SUPER,c,spawn,zeditor"
-          "SUPER+ALT,w,spawn,${lib.getExe alt-browser-package}"
+          "SUPER+ALT,w,spawn,zen-beta"
           "SUPER,d,spawn,discord"
           "SUPER,e,spawn,${lib.getExe pkgs.nautilus}"
         ];
