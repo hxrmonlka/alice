@@ -294,7 +294,6 @@ in {
 
         mousebind = [
           "SUPER,btn_left,moveresize,curmove"
-          "NONE,btn_middle,togglemaximizescreen,0"
           "SUPER,btn_right,moveresize,curresize"
         ];
 
