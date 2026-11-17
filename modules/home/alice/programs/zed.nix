@@ -19,6 +19,15 @@
             "alt-q" = "pane::CloseActiveItem";
           };
         }
+        {
+          context = "Editor && vim_mode == normal";
+          bindings = {
+            "ctrl-h" = ["workspace::ActivatePaneInDirection" "Left"];
+            "ctrl-l" = ["workspace::ActivatePaneInDirection" "Right"];
+            "ctrl-k" = ["workspace::ActivatePaneInDirection" "Up"];
+            "ctrl-j" = ["workspace::ActivatePaneInDirection" "Down"];
+          };
+        }
       ];
       extensions = [
         "nix"
