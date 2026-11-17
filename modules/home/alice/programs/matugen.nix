@@ -1,5 +1,7 @@
 {...}: {
-  flake.custom.alice.matugen = {config, ...}: {
+  flake.custom.alice.matugen = {config, ...}: let
+    obsidianVault = "${config.home.homeDirectory}/Documents";
+  in {
     xdg.configFile."matugen/templates/starship.toml".source = ./misc/starship-matugen.toml;
     xdg.configFile."matugen/templates/millennium.css".source = ./misc/millennium-matugen.css;
     xdg.configFile."matugen/templates/nushell.nu".source = ./misc/nushell-matugen.nu;
@@ -21,6 +23,15 @@
       [templates.millennium]
       input_path = '${config.xdg.configHome}/matugen/templates/millennium.css'
       output_path = '${config.home.homeDirectory}/.steam/steam/millennium/themes/Material-Theme/css/main/colors/matugen.css'
+
+      [templates.Obsidian]
+      input_path = '${config.xdg.configHome}/matugen/templates/obsidian-material3.css'
+      output_path = '${obsidianVault}/.obsidian/snippets/obsidian-material3.css'
+
+      # More vaults: one entry per vault (same input_path, its own output_path).
+      # [templates.Obsidian-second]
+      # input_path = '${config.xdg.configHome}/matugen/templates/obsidian-material3.css'
+      # output_path = '/second/vault/.obsidian/snippets/obsidian-material3.css'
     '';
 
     home.file.".steam/steam/millennium/themes/Material-Theme/js/main/colors/matugen.js" = {
