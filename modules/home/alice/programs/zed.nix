@@ -44,7 +44,7 @@
         "swift"
         "python"
       ];
-      extraPackages = [pkgs.nil pkgs.alejandra pkgs.statix pkgs.deadnix pkgs.nixd];
+      extraPackages = [pkgs.nil pkgs.alejandra pkgs.statix pkgs.deadnix pkgs.nixd pkgs.rustfmt];
       userSettings = {
         project_panel = {
           dock = "right";
@@ -87,6 +87,10 @@
                 arguments = ["--quiet" "--"];
               };
             };
+            format_on_save = "on";
+          };
+          Rust = {
+            formatter = "language_server";
             format_on_save = "on";
           };
         };
