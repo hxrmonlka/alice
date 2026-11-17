@@ -221,10 +221,10 @@
           "Mod+S".spawn = [
             "dms"
             "ipc"
-            "launcher"
+            "spotlight-bar"
             "toggle"
           ];
-          "Mod+N".spawn = ["dms" "ipc" "dash" "toggle" "media"];
+          "Mod+N".spawn = ["dms" "ipc" "call" "notifications" "toggle"];
           "Mod+Semicolon".spawn = ["dms" "ipc" "call" "emojiPicker" "toggle"]; # Available if you have Emoji Picker by Loc Huynh installed
           "Mod+D".spawn = ["discord"];
           "Mod+W".spawn = ["helium"];
