@@ -38,6 +38,10 @@
           show_banner = false;
           highlight_resolved_externals = true;
         };
+        shellAliases = {
+          igr = "ignore --stderr";
+          igout = "ignore --stdout";
+        };
         extraConfig = ''
           print ">>> Current mode: nushell"
           print ">>> ls is replaced by eza."
