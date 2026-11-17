@@ -301,11 +301,6 @@ in {
           "SUPER,UP,viewtoleft_have_client"
           "SUPER,DOWN,viewtoright_have_client"
         ];
-
-        layer_rule = [
-          "animation_type_open:zoom,layer_name:noctalia"
-          "animation_type_close:zoom,layer_name:noctalia"
-        ];
       };
     };
   };
