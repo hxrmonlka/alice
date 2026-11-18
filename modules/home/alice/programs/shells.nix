@@ -34,6 +34,11 @@
         enable = true;
         loadSessionVariables = true;
         environmentVariables.CARAPACE_BRIDGES = "zsh,fish,bash";
+        plugins = with pkgs.nushellPlugins; [
+          skim
+          query
+          formats
+        ];
         settings = {
           show_banner = false;
           highlight_resolved_externals = true;
