@@ -230,6 +230,10 @@
         };
         extraConfig = ''
           include optional=true "noctalia.kdl"
+          layer-rule {
+            match namespace="^noctalia-backdrop"
+            place-within-backdrop true
+          }
         '';
       };
     };
