@@ -43,10 +43,6 @@
           igr = "ignore --stderr";
           igout = "ignore --stdout";
         };
-        shellAliases = {
-          igr = "ignore --stderr";
-          igout = "ignore --stdout";
-        };
         extraConfig = ''
           def untar [archive: path] {
             let folder_name = ($archive | path basename | str replace -r '\.(tar(\.[^.]+)?|tgz|tbz2|txz)$' ''')
