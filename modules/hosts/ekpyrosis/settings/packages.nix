@@ -80,6 +80,7 @@
       gammastep
       greetd
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.coderabbit-cli
+      nautilus
     ];
     nixpkgs = {
       config = {
