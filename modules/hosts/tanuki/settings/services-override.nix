@@ -3,12 +3,17 @@
   inputs,
   ...
 }: {
-  flake.custom.tanuki.services-override = {pkgs, ...}: {
+  flake.custom.tanuki.services-override = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [self.custom.commonModules.systemServices];
 
     hardware.keyd.disabledKeyboards = ["0001:0001:09b4e68d"];
 
     services = {
+      greetd.enable = lib.mkForce false;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
       asusd.enable = true;

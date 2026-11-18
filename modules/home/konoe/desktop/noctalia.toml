@@ -1,6 +1,11 @@
 [audio]
 enable_overdrive = true
 
+[backdrop]
+enabled = true
+blur_intensity = 0.5
+tint_intensity = 0.3
+
 [bar.default]
 capsule_thickness = 0.52999999187886715
 padding = 15
@@ -82,3 +87,7 @@ path = "/home/konoe/Pictures/Wallpapers/night-anime-vehicle-blue-waiting-Shiniga
 
 [wallpaper.monitors.eDP-1]
 path = "/home/konoe/Pictures/Wallpapers/night-anime-vehicle-blue-waiting-Shinigami-no-Testament-724040-wallhere.com.jpg"
+
+[widget.volume-actions]
+scroll_up = "volume-up 3%"
+scroll_down = "volume-down 3%"
