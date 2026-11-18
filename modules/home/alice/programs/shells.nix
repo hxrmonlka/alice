@@ -37,6 +37,7 @@
         settings = {
           show_banner = false;
           highlight_resolved_externals = true;
+          show_hints = false;
         };
         shellAliases = {
           igr = "ignore --stderr";
