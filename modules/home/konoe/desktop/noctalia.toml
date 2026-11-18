@@ -1,5 +1,6 @@
 [audio]
 enable_overdrive = true
+setVolume = 3
 
 [bar.default]
 capsule_thickness = 0.52999999187886715
