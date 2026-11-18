@@ -19,6 +19,7 @@
       inputs.lumina.packages.${pkgs.stdenv.hostPlatform.system}.sklauncher
       pciutils
       quickshell
+      rnix-lsp
     ];
     nixpkgs.config.allowUnfree = lib.mkForce true;
   };
