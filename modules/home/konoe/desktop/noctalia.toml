@@ -1,6 +1,5 @@
 [audio]
 enable_overdrive = true
-setVolume = 3
 
 [backdrop]
 enabled = true
@@ -88,3 +87,7 @@ path = "/home/konoe/Pictures/Wallpapers/night-anime-vehicle-blue-waiting-Shiniga
 
 [wallpaper.monitors.eDP-1]
 path = "/home/konoe/Pictures/Wallpapers/night-anime-vehicle-blue-waiting-Shinigami-no-Testament-724040-wallhere.com.jpg"
+
+[widget.volume-actions]
+scroll_up = "volume-up 3%"
+scroll_down = "volume-down 3%"
