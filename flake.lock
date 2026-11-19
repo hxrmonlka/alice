@@ -654,7 +654,9 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "shoji": "shoji",
+        "shoji": [
+          "shoji"
+        ],
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
@@ -1333,7 +1335,7 @@
         "nvimdots": "nvimdots",
         "quickshell": "quickshell",
         "rust-overlay": "rust-overlay",
-        "shoji": "shoji_2",
+        "shoji": "shoji",
         "spicetify-nix": "spicetify-nix",
         "system-manager": "system-manager",
         "tanuki-cursors": "tanuki-cursors",
@@ -1385,23 +1387,6 @@
       }
     },
     "shoji": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1795088327,
-        "narHash": "sha256-0txpwqQw4F0pUfb7r84BjkEY+Q4jVRbPSN0vfE6a2IA=",
-        "owner": "hxrmonlka",
-        "repo": "shoji",
-        "rev": "c4d3fc7ac505347ed336736ccbf631b9efab39cd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hxrmonlka",
-        "ref": "eup",
-        "repo": "shoji",
-        "type": "github"
-      }
-    },
-    "shoji_2": {
       "flake": false,
       "locked": {
         "lastModified": 1795088327,

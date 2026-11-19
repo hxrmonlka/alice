@@ -17,6 +17,7 @@
     lumina = {
       url = "github:hxrmonlka/lumina/un/test";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.shoji.follows = "shoji";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     quickshell = {
