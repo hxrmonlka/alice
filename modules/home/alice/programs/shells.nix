@@ -28,6 +28,7 @@
       ga = "git add .";
       gp = "git push";
       anic = "ani-cli -c";
+      shoji-local = "nh os switch --override-input shoji path:/home/alice/alice-projects/shoji";
     };
     programs = {
       nushell = {
