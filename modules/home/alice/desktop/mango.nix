@@ -42,7 +42,7 @@ in {
       autostart_sh = ''
         fcitx5 -r -d
         # dms run &
-        qs -d
+        shoji run -d
         input-remapper-control --command autoload
         com.danklinux.dankcalendar daemon &
       '';
@@ -242,9 +242,9 @@ in {
           "SUPER+SHIFT,9,tag,9,0"
 
           # Screenshots
-          "SUPER,t,spawn,qs ipc call screenshot region"
-          "SUPER+SHIFT,t,spawn,qs ipc call screenshot fullscreen"
-          "SUPER+CTRL,t,spawn,qs ipc call screenshot window"
+          "SUPER,t,spawn,shoji screenshot region"
+          "SUPER+SHIFT,t,spawn,shoji screenshot fullscreen"
+          "SUPER+CTRL,t,spawn,shoji screenshot window"
 
           # Volume
           "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
@@ -257,16 +257,16 @@ in {
           "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
 
           # Shoji
-          "SUPER,s,spawn,qs ipc call spotlight toggle"
-          "Super+SHIFT,m,spawn,qs ipc call media toggle"
-          "SUPER,v,spawn,qs ipc call clipboard toggle"
-          "SUPER+ALT,l,spawn,qs ipc call lock activate"
-          "CTRL+ALT,Delete,spawn,qs ipc call power toggle"
-          "SUPER+SHIFT,i,spawn,qs ipc call control toggle"
-          "SUPER+SHIFT,w,spawn,qs ipc call wallpaper toggle"
-          "SUPER,b,spawn,qs ipc call monitor toggle"
-          "SUPER,m,spawn,qs ipc call mic toggle"
-          "SUPER+SHIFT,c,spawn,qs ipc call colorpicker copy"
+          "SUPER,s,spawn,shoji spotlight toggle"
+          "Super+SHIFT,m,spawn,shoji media toggle"
+          "SUPER,v,spawn,shoji clipboard toggle"
+          "SUPER+ALT,l,spawn,shoji lock activate"
+          "CTRL+ALT,Delete,spawn,shoji power toggle"
+          "SUPER+SHIFT,i,spawn,shoji control toggle"
+          "SUPER+SHIFT,w,spawn,shoji wallpaper toggle"
+          "SUPER,b,spawn,shoji monitor toggle"
+          "SUPER,m,spawn,shoji mic toggle"
+          "SUPER+SHIFT,c,spawn,shoji colorpicker copy"
 
           # Dank
           #          "SUPER,s,spawn,dms ipc spotlight-bar toggle"
