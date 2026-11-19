@@ -1,8 +1,5 @@
 {inputs, ...}: {
-  flake.custom.system-modules.generic-linux = {
-    lib,
-    ...
-  }: {
+  flake.custom.system-modules.generic-linux = {lib, ...}: {
     targets.genericLinux.enable = true;
 
     home.sessionVariables = {

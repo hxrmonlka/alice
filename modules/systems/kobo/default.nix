@@ -5,7 +5,7 @@
 }: let
   system = "x86_64-linux";
 in {
-  flake.custom.kobo.system = {pkgs, ...}: {
+  flake.custom.kobo.system = {...}: {
     imports = [
       inputs.zen-browser.homeModules.beta
       inputs.lumina.homeModules.lumina-cli
@@ -16,23 +16,7 @@ in {
       username = "yianyi";
       homeDirectory = "/home/yianyi";
       stateVersion = "26.05";
-      packages = with pkgs; [
-        nixd
-        alejandra
-        inputs.lumina.packages.${system}.sklauncher
-        inputs.lumina.packages.${system}.chatgpt
-      ];
     };
-
-    programs = {
-      lumina-cli.enable = true;
-      home-manager.enable = true;
-      zen-browser = {
-        enable = true;
-        setAsDefaultBrowser = true;
-      };
-    };
-
   };
 
   flake.homeConfigurations."yianyi@kobo" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -45,6 +29,8 @@ in {
       hostName = "kobo";
     };
     modules = [
+      self.custom.kobo.home-pkgs
+      self.custom.kobo.programs
       self.custom.kobo.system
       self.custom.kobo.bash
       self.custom.kobo.waybar
