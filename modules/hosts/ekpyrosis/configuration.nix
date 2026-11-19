@@ -87,6 +87,7 @@
         self.custom.alice.mangoConfig
         self.custom.alice.rust
         self.custom.alice.luminaCli
+        self.custom.alice.shoji
         self.custom.alice.swayidle
         self.custom.alice.shojiGreeterSync
 
