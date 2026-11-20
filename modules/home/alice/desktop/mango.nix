@@ -247,14 +247,14 @@ in {
           "SUPER+CTRL,t,spawn,shoji screenshot window"
 
           # Volume
-          "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
-          "NONE,XF86AudioLowerVolume,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
+          "NONE,XF86AudioRaiseVolume,spawn,shoji osd volume 5"
+          "NONE,XF86AudioLowerVolume,spawn,shoji osd volume -5"
           "NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           "NONE,XF86AudioMicMute,spawn,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
           # Brightness
-          "NONE,XF86MonBrightnessUp,spawn,${lib.getExe pkgs.brightnessctl} s 5%+"
-          "NONE,XF86MonBrightnessDown,spawn,${lib.getExe pkgs.brightnessctl} s 5%-"
+          "NONE,XF86MonBrightnessUp,spawn,shoji osd brightness 5"
+          "NONE,XF86MonBrightnessDown,spawn,shoji osd brightness -5"
 
           # Shoji
           "SUPER,s,spawn,shoji spotlight toggle"
