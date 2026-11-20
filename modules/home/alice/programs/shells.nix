@@ -28,7 +28,9 @@
       ga = "git add .";
       gp = "git push";
       anic = "ani-cli -c";
-      shoji-local = "nh os switch --override-input shoji path:/home/alice/alice-projects/shoji";
+      nbuild-shoji = "nh os switch --override-input shoji path:/home/alice/Projects/shoji";
+      nbuild-lumina = "nh os switch --override-input lumina path:/home/alice/Projects/lumina";
+      nbuild-local = "nh os switch --override-input shoji path:/home/alice/Projects/shoji --override-input lumina path:/home/alice/Projects/lumina";
     };
     programs = {
       nushell = {
