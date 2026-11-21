@@ -170,7 +170,7 @@ in {
         ];
 
         bind = [
-          "SUPER,r,reload_config"
+          "SUPER+SHIFT,r,reload_config"
           "SUPER,o,toggleoverview"
 
           # Core window management
@@ -267,6 +267,7 @@ in {
           "SUPER,b,spawn,shoji monitor toggle"
           "SUPER,m,spawn,shoji mic toggle"
           "SUPER+SHIFT,c,spawn,shoji colorpicker copy"
+          "SUPER,r,spawn_shell,shoji kill; shoji run -d"
 
           # Dank
           #          "SUPER,s,spawn,dms ipc spotlight-bar toggle"
@@ -285,7 +286,7 @@ in {
 
           # Apps
           "SUPER,w,spawn,helium"
-          "SUPER+ALT,v,spawn,virt-manager &"
+          "SUPER+ALT,v,spawn,virt-manager"
           "SUPER,c,spawn,zeditor"
           "SUPER+ALT,w,spawn,zen-beta"
           "SUPER,d,spawn,discord"
