@@ -263,6 +263,7 @@ in {
           "SUPER+ALT,l,spawn,shoji lock activate"
           "CTRL+ALT,Delete,spawn,shoji power toggle"
           "SUPER+SHIFT,i,spawn,shoji control toggle"
+          "SUPER,i,spawn,shoji island glance"
           "SUPER+SHIFT,w,spawn,shoji wallpaper toggle"
           "SUPER,b,spawn,shoji monitor toggle"
           "SUPER,m,spawn,shoji mic toggle"
