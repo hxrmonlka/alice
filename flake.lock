@@ -683,11 +683,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1795489312,
-        "narHash": "sha256-FVq/3R6ON6ED3+1yfVtbvc9V/gvRgdrTfrbxNL0WLsE=",
+        "lastModified": 1795608349,
+        "narHash": "sha256-O0PvPI7i4cdxT8w5B7HL6sCprfSJqGC6ehleUwFAzEY=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "a5c7de31ff4510e0d79a5368633f51558c6a0a71",
+        "rev": "84d9bda682ce0b5bdcae005c997001b28abe4d55",
         "type": "github"
       },
       "original": {
@@ -1434,11 +1434,11 @@
     "shoji": {
       "flake": false,
       "locked": {
-        "lastModified": 1795512924,
-        "narHash": "sha256-s5NNZACMnbgcR9YRa5Gyc0ll7CnQMf6ENvtE2P7eohc=",
+        "lastModified": 1795603811,
+        "narHash": "sha256-NeotDW9Wha8v60f8VzMRxyhMUAujUV8atfqd5rAvFAs=",
         "owner": "hxrmonlka",
         "repo": "shoji",
-        "rev": "4b93a17870717aa06a1cc544725745d6fe9cfeff",
+        "rev": "dfc0dde6b83203693b2399f696a0547d0752abfb",
         "type": "github"
       },
       "original": {
