@@ -46,9 +46,11 @@
         substituters = [
           "https://cache.lantian.pub/lantian"
           "https://noctalia.cachix.org"
+          "https://cache.manic.systems"
         ];
         trusted-public-keys = [
           "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
+          "cache.manic.systems-1:s6OZanN8Us8vRi0jVivP3qlMn0cYHBjBALKrNe5nH8s="
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         ];
       };
