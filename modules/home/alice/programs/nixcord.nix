@@ -45,7 +45,6 @@
 
           voiceRejoin.enable = true;
           whosWatching.enable = true;
-          youtubeAdblock.enable = true;
         };
       };
     };
