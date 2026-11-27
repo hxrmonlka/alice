@@ -62,7 +62,6 @@
     };
     shoji = {
       url = "github:hxrmonlka/shoji/eup";
-      flake = false;
     };
     # --------------------------------Resources------------------------------------------
     cursor-themes = {
