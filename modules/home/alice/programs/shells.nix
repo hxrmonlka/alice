@@ -58,6 +58,8 @@
             ^tar -xvf $archive -C $folder_name
           }
 
+          idx init $nu.home-dir --no-content-indexing | ignore
+
           print ">>> Current mode: nushell"
           print ">>> ls is replaced by eza."
 
