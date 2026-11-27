@@ -715,11 +715,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1795784685,
-        "narHash": "sha256-0QYHIix7UGUsJUWXhTi6+iCV0g7EmL3VQf93t4fkU+A=",
+        "lastModified": 1795785080,
+        "narHash": "sha256-6LtrYKiDOrvtJsngBK9xIZLZeELrQOjHidh5w8ta4K0=",
         "owner": "hxrmonlka",
         "repo": "lumina",
-        "rev": "acdf88a1e1cd83b1d46c965a92eba221a7d4580c",
+        "rev": "bf6cf895aeda69aadee12c778c13b96f7fea3411",
         "type": "github"
       },
       "original": {
