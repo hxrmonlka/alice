@@ -1524,11 +1524,11 @@
         "quickshell": "quickshell_2"
       },
       "locked": {
-        "lastModified": 1795784994,
-        "narHash": "sha256-RmKLfPGfiwtpZFC6rdvTbxowbWR0xJL/mYUaQEFjob0=",
+        "lastModified": 1795787974,
+        "narHash": "sha256-id60qFysg12uSL4WDs7DDxLfB2uLeO470AMbMLfvkVQ=",
         "owner": "hxrmonlka",
         "repo": "shoji",
-        "rev": "0f6e7228a6ab52f505c25071353954610072314b",
+        "rev": "2e9ed531a9940981ee066b73a9b60bd11fd8f02b",
         "type": "github"
       },
       "original": {
