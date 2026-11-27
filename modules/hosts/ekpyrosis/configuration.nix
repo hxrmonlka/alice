@@ -42,7 +42,7 @@
       self.custom.hardwareModules.otdSettings
 
       # Misc
-      self.nixosModules.shojiGreeter
+      inputs.shoji.nixosModules.default
       self.nixosModules.mangoWC
       self.nixosModules.lumina-browser-settings
       self.nixosModules.helium-theme
@@ -89,7 +89,6 @@
         self.custom.alice.luminaCli
         self.custom.alice.shoji
         self.custom.alice.swayidle
-        self.custom.alice.shojiGreeterSync
 
         # Common section
         # self.custom.home-common.fastfetchConfig
